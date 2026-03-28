@@ -11,16 +11,6 @@ thumbnail: /public/NintendoGameBoyThumb.png
 image: /public/images/GameBoy/Game Boy Development Hardware Devkit.jpg
 twitterimage: https://www.retroreversing.com/public/images/GameBoy/Game Boy Development Hardware Devkit.jpg
 editlink: /consoles/gameboy/GameboyDevelopmentKitHardware.md
-videocarousel:
-  - title: GB Smart Development kit
-    image: https://img.youtube.com/vi/GYwV4Y1t2sQ/hqdefault.jpg
-    youtube: GYwV4Y1t2sQ
-  - title: Wide Boy
-    image: https://img.youtube.com/vi/llIz6qjDfLc/hqdefault.jpg
-    youtube: llIz6qjDfLc
-  - title: Famicom Wide Boy
-    image: https://img.youtube.com/vi/zOF4Wm2_6oM/hqdefault.jpg
-    youtube: zOF4Wm2_6oM
 breadcrumbs:
   - name: Home
     url: /
@@ -31,7 +21,7 @@ breadcrumbs:
 recommend: 
 - gameboy
 - devkit
-updatedAt: '2020-01-10'
+updatedAt: '2026-03-28'
 ---
 This post covers all the hardware developers used to create games for the original Dot Matrix Game Boy (DMG) and Game Boy Color (GBC) and some were even used for early Game Boy Advance development. Developers used both official Nintendo development kits and some unofficial 3rd party devices to create retail games for the Game Boy and Game Boy Color.
 
@@ -41,15 +31,30 @@ The Official programming development kit for the Gameboy consisted of the Debugg
 
 They both connect to a developer workstation such as an IBM-PC via the SCSI port and offer a few software tools for communication between the IBM-PC and the Intelligent systems hardware.
 
+
 ## DMG-ICE (Debugger + Emulator)
 <section class="postSection">
 <img src="/public/ZAgzBlXrARIEyn2KnTa4g_img_2.png" class="wow slideInLeft postImage" />
 <img src="/public/ZAgzBlXrARIEyn2KnTa4g_img_3.jpg" class="wow slideInLeft postImage" />
 <img src="/public/ZAgzBlXrARIEyn2KnTa4g_img_4.jpg" class="wow slideInLeft postImage" />
 <div markdown="1">
-  The **Integrated Circuit Emulator** or ICE was developed for the original Gameboy (DMG) and allowed developers to debug issues effecting their games, set breakpoints and inspect memory. This is also known as the **Program development system** (confirmation needed) but information on exactly how it was used is sparse.
+  The **Integrated Circuit Emulator** or ICE was developed for the original Gameboy (DMG) and allowed developers to debug issues effecting their games, set breakpoints and inspect memory. This may also have been known as the **Program development system** (confirmation needed) but this information is unconfirmed.
+
 </div>
 </section>
+
+
+### A Practical DMG-ICE Workflow
+The clearest preserved example comes from the Super Game Boy sample package in the Nintendo Gigaleak.
+Its batch files and debugger script make the older workflow unusually legible:
+
+* `MIFES` was used to edit the source files on the workstation
+* `ISDMG` assembled the main program
+* `ISLINK` linked the image
+* `isd` launched the debugger session
+* `START.ICE` told the debugger to load `SGB_MAIN`, map `CHRDAT.COM` into bank 2 at `$4000`, and then run against the DMG ICE environment
+
+{% include link-to-other-post.html post="/super-game-boy-sdk/" description="For a concrete preserved example of the DMG ICE workflow in action, see the Super Game Boy sample package." %}
 
 
 ## IS-CGB-EMU (Nintendo Game Boy Color Emulator)
@@ -61,8 +66,15 @@ The **IS-CGB-EMU** (Intelligent Systems Color Game Boy Emulator) was hardware th
   If the **IS-CGB-DEBUGGER** label is ticked on the bottom of the unit then it also supported debugging options such as setting breakpoints, tracing, inspecting memory etc and is likely an ICE (Similar to DMG-ICE) [^12].
 
 The Later units also had support for the **AGB** (Advanced GameBoy or Gameboy Advance) built into the hardware.
+
+The Zelda DX source tree from the Nintendo Gigaleak gives this a bit more texture.
+Its Color-era build folders still preserve debugger-ready `.ISX` outputs, `.prn` listings, `.map` files, and `isdwd*.dat` metadata right beside the source, which fits a workstation-plus-debugger workflow rather than a simple cartridge downloader alone.
 </div>
 </section>
+
+The Super Game Boy sample package and the Zelda DX source leak preserve the PC-side tools and debugger metadata that would have been used with this hardware in practice.
+
+{% include link-to-other-post.html post="/game-boy-file-formats" description="For the file formats used by this toolchain, including `.ISX`, `.ICE`, `.PRN`, and the debugger sidecar files, see this post." %}
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I picked up a cool GBC dev kit. The IS-CGB-Emulator. I love the cartridge and cable that connects the handheld to the unit. Does anyone else have one of these or even the GBA version? Please post photos of your kit. I’d love to see it :) <a href="https://t.co/NDhShaEToK">pic.twitter.com/NDhShaEToK</a></p>&mdash; Andrew (@AndrewEarley7) <a href="https://twitter.com/AndrewEarley7/status/1335466371463794688?ref_src=twsrc%5Etfw">December 6, 2020</a></blockquote> 
 
@@ -98,7 +110,9 @@ The **WideBoy** was used to present Game Boy games on a bigger screen such as a 
 </div>
 </section>
 
-{% include link-to-other-site.html url="https://www.chrismcovell.com/wideboy.html" description="**Chris M Covell** has an excellent page on the WideBoy" image="https://www.chrismcovell.com/images/WideBoyFamilyM.jpg" title="Nintendo WideBoy"  %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zOF4Wm2_6oM?si=XUyRkxS8erjR6Ygi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+{% include link-to-other-site.html url="https://www.chrismcovell.com/wideboy.html" description="Chris M Covell has an excellent page on the WideBoy" image="https://www.chrismcovell.com/images/WideBoyFamilyM.jpg" title="Nintendo WideBoy"  %}
 
 ## N64 Wide Boy (Wide-Boy64 or WideBoy64) (DMG & CGB)
 <section class="postSection">

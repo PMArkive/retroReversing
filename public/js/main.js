@@ -194,7 +194,7 @@ function setModalMaxHeight(element) {
 function replaceAll(str, find, replace) {
        return str.replace(new RegExp(find, 'g'), replace);
 }
-    
+
 function handle_tab_groups() {
       var rr_tab_groups = $(".rr-tabs");
 
@@ -202,7 +202,7 @@ function handle_tab_groups() {
         var rr_tabs = $(tab_group).find('.rr-tab');
 
         var li_tabs = rr_tabs.map(function mapTabsToHeaders(i,v) {
-          var title = $(v).attr('title'); 
+          var title = $(v).attr('title');
           var isdefault = $(v).attr('default') === "";
           var classnames = "";
           if (isdefault) {
@@ -211,7 +211,7 @@ function handle_tab_groups() {
           var href_title=replaceAll(title,' ','___');
           return '<li><a class="'+classnames+'" href="#/'+href_title+'">'+title+'</a></li>';
         });
-        
+
         var result_html = li_tabs.toArray().join('');
         $(tab_group).prepend('<ul class="tabs group">'+result_html+'</ul>');
 
@@ -241,7 +241,7 @@ function isInView(element) {
     return (elementTop >= scrollTop && elementTop <= scrollTop + windowHeight);
   }
 
-    function lazyLoad() {
+function lazyLoad() {
       var card_images = document.querySelectorAll('.lazy-load');
 
       // loop over each lazy loadable image
@@ -253,7 +253,7 @@ function isInView(element) {
 
           // change the src of the content image to load the new high res photo
           content_image.src = image_url;
-        
+
         try {
            $(content_image).removeClass("lazy-load");
         } catch (e) {
@@ -262,7 +262,46 @@ function isInView(element) {
       });
 
     }
-  
+
+function initializeMermaidDiagrams() {
+  if (typeof mermaid === "undefined") {
+    return;
+  }
+
+  var mermaidBlocks = document.querySelectorAll("pre code.language-mermaid, pre code.lang-mermaid");
+
+  mermaidBlocks.forEach(function(codeBlock, index) {
+    var pre = codeBlock.parentElement;
+    if (!pre || pre.dataset.mermaidProcessed === "true") {
+      return;
+    }
+
+    var mermaidContainer = document.createElement("div");
+    mermaidContainer.className = "mermaid";
+    mermaidContainer.textContent = codeBlock.textContent;
+    mermaidContainer.id = "mermaid-diagram-" + index;
+    pre.replaceWith(mermaidContainer);
+  });
+
+  mermaid.initialize({
+    startOnLoad: false,
+    securityLevel: "loose",
+    theme: "default"
+  });
+
+  if (typeof mermaid.run === "function") {
+    mermaid.run({
+      querySelector: ".mermaid"
+    });
+  } else if (typeof mermaid.init === "function") {
+    mermaid.init(undefined, document.querySelectorAll(".mermaid"));
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  initializeMermaidDiagrams();
+});
+
   function setupCarousel() {
     var items = 1;
 //       if ($(window).width() > 600) {
@@ -276,7 +315,7 @@ function isInView(element) {
         autoplay: true,
         items: items
       });
-      
+
       $('.owl-slide-no-auto').owlCarousel({
         nav: true,
         loop: true,
@@ -284,10 +323,10 @@ function isInView(element) {
         items: 1
       });
   }
-  
+
   function setupDataTables(retryCount) {
     // Table Handling
-    try {      
+    try {
           // Make markdown tables have the bootstrap table class to look pretty
           $('table').addClass('table');
 
@@ -308,9 +347,9 @@ function isInView(element) {
       }
     }
     //  End Table Handling
-    
+
   }
-  
+
   function generateChangelogs($) {
         $('.rr-version-gen').each(function(index) {
             $(this).replaceWith( `<div>
@@ -337,7 +376,7 @@ function isInView(element) {
      }
 
 
-    
+
     (function($) {
       handle_tab_groups();
     })(jQuery);
@@ -347,24 +386,24 @@ function isInView(element) {
       lazyLoad();
     }
 
-    
+
     (function($) {
       "use strict";
-      
+
      $(document).ready(function() {
       setupCarousel();
       setupDataTables(0);
 
       // lightbox
       // $('[data-lightbox]').lightbox();
-      
+
       // scroll animations
       new WOW().init();
 
        $(window).scroll(onScroll)
-      
+
        generateChangelogs($);
-      
+
       // geopattern
       $(function() {
         $('.geopattern').each(function geoP() {
@@ -372,18 +411,18 @@ function isInView(element) {
         })
       });
       // end geopattern
-      
+
     // Lazy Load Images
     //     window.addEventListener('load', function() {
       // setTimeout to simulate the delay from a real page load
       setTimeout(lazyLoad, 1000);
     //     });
-    
+
     window.addEventListener('click', function() {
       // Whenever the user clicks on something like the table page buttons, make sure to load any new images
       setTimeout(lazyLoad, 100);
     });
-      
+
     }); // end ready function
-      
+
     })(jQuery);
