@@ -2,7 +2,7 @@
 title: RetroReversing
 tagline: 'Retro Reversing'
 description: 'Retro Video Game Reverse Engineering.'
-baseurl: "/"
+baseurl: ""
 url: https://www.retroreversing.com
 logo: '/public/logo.png'
 highlighter: rouge
@@ -31,7 +31,7 @@ kramdown:
 # excerpt_separator: "<!-- more -->"
 sass:
   style: compressed
-  sass_dir: _scss    
+  sass_dir: _scss
 # paginate: 5
 # paginate_path: '/blog/page:num'
 permalink: pretty
@@ -41,12 +41,12 @@ version: 1.0.0
 
 # Navigation (2nd level links supported)
 nav:
-  Home:           
+  Home:
     - '/'
 
 # Where are tags and categories displayed
-tag_page: '/blog/tags/'
-category_page: '/blog/categories/'
+# tag_page: '/blog/tags/'
+# category_page: '/blog/categories/'
 
 hero:
   image: /public/img/we_will_be_giants_by_yalestewart.jpg
@@ -59,28 +59,59 @@ google_analytics_token: 'UA-00000000-1' # leave blank if you don't want google a
 disqus_short_name: 'retro-reversing' # leave blank if you don't want disqus
 
 category_images:
+  3d: /public/images/3d.png
   amiga: /public/consoles/Amiga.png
   amstrad_cpc: /public/consoles/Amstrad CPC.png
   arcade: /public/consoles/Arcade.png
+  atari2600: /public/consoles/Atari 2600.png
   atari_2600: /public/consoles/Atari 2600.png
   atari_5200: /public/consoles/Atari 5200.png
   atari_7800: /public/consoles/Atari 7800.png
   atari_800: /public/consoles/Atari 800.png
+  atarijaguar: /public/consoles/Atari Jaguar.png
   jaguar: /public/consoles/Atari Jaguar.png
   lynx: /public/consoles/Atari Lynx.png
   atari_st: /public/consoles/Atari ST.png
+  bookazines: /public/images/Magazine.png
+  cheatcartridge: /public/images/Hardware.png
+  codemasters: /public/images/RetroReversingLogoSmall.png
   colecovision: /public/consoles/Colecovision.png
   commodore_64: /public/consoles/Commodore 64.png
   commodore_amiga_cd32: /public/consoles/Commodore Amiga CD32.png
   commodore_cdtv: /public/consoles/Commodore CDTV.png
   computer_modern: /public/consoles/Computer Modern.png
-  computer_old_design: /public/consoles/Computer Old Design.png
+  computer_old_design: /public/consoles/PC.png
+  cracking: /public/images/RetroReversingLogoSmall.png
+  crossproducts: /public/images/Magazine.png
+  datel: /public/images/PC.png
+  devkit: /public/consoles/Hardware.png
+  disassemblers: /public/images/RetroReversingLogoSmall.png
+  dos: /public/consoles/PC.png
   vectrex: /public/consoles/GCE Vectrex.png
+  ds: /public/consoles/Nintendo DS.png
+  fairchild-channel-f: /public/consoles/Fairchild Channel F.png
+  fileformats: /public/consoles/PC.png
   magnavox_odyssey_2: /public/consoles/Magnavox Odyssey 2.png
   magnavox_odyssey: /public/consoles/Magnavox Odyssey.png
+  gamecom: /public/consoles/Game.com.png
+  gameengines: /public/consoles/PC.png
+  games: /public/images/RetroReversingLogoSmall.png
+  ghidra: /public/consoles/PC.png
+  handhelds: /public/consoles/Handhelds.png
+  hardware: /public/consoles/Hardware.png
+  incomplete: /public/images/RetroReversingLogoSmall.png
+  industry: /public/images/Magazine.png
+  intellivision: /public/consoles/Intellivision.png
+  introduction: /public/consoles/PC.png
+  leak: /public/consoles/Leaks.png
+  magazines: /public/images/Magazine.png
+  maths: /public/consoles/PC.png
   matell_intellivision: /public/consoles/Matell Intellivision.png
-  360: /public/consoles/Microsoft Xbox 360.png
+  "360": /public/consoles/Microsoft Xbox 360.png
+  xbox360: /public/consoles/Microsoft Xbox 360.png
   xbox: /public/consoles/Microsoft Xbox.png
+  msx: /public/consoles/PC.png
+  news: /public/images/RetroReversingLogoSmall.png
   nec_pc_engine_cd: /public/consoles/Nec PC Engine CD.png
   nec_pc_engine: /public/consoles/Nec PC Engine.png
   nec_pc_fx: /public/consoles/Nec PC FX.png
@@ -95,7 +126,15 @@ category_images:
   gbc: /public/consoles/Nintendo Game Boy Color.png
   gameboy: /public/consoles/Nintendo Game Boy.png
   gamecube: /public/consoles/Nintendo Gamecube.png
+  pc: /public/consoles/PC.png
+  pc-88: /public/consoles/PC.png
+  PokemonMini: /public/consoles/PokemonMini.png
   satellaview: /public/consoles/Nintendo Satellaview.png
+  programming: /public/images/PC.png
+  ps1: /public/consoles/Sony Playstation.png
+  ps2: /public/consoles/Sony PlayStation 2.png
+  ps3: /public/consoles/Sony Playstation 3.png
+  ps4: /public/consoles/Sony Playstation 4.png
   switch: /public/consoles/Nintendo Switch.png
   virtualboy: /public/consoles/Nintendo Virtual Boy.png
   wii: /public/consoles/Nintendo Wii.png
@@ -106,6 +145,7 @@ category_images:
   pinball: /public/consoles/Pinball.png
   pokemonmini: /public/consoles/PokemonMini.png
   segacd: /public/consoles/SEGA CD.png
+  sdk: /public/consoles/PC.png
   snk_neo_geo_pocket_color: /public/consoles/SNK Neo Geo Pocket Color.png
   snk_neo_geo_pocket: /public/consoles/SNK Neo Geo Pocket.png
   snk_neo_geo_cd: /public/consoles/SNK Neo-Geo CD.png
@@ -122,56 +162,63 @@ category_images:
   saturn: /public/consoles/Sega Saturn.png
   sinclair_zx_spectrum: /public/consoles/Sinclair ZX Spectrum.png
   psp: /public/consoles/psp.svg
+  snes: /public/consoles/Super Nintendo Entertainment System.png
+  snsystems: /public/images/RetroReversingLogoSmall.png
   sony_psvita: /public/consoles/Sony PSVita.png
   sony_playstation_2: /public/consoles/Sony PlayStation 2.png
   sony_playstation_3: /public/consoles/Sony Playstation 3.png
   sony_playstation: /public/consoles/Sony Playstation.png
+  sourcecode: /public/consoles/PC.png
   super_nintendo_entertainment_system: /public/consoles/Super Nintendo Entertainment System.png
+  symbols: /public/consoles/PC.png
   turbografx16: /public/consoles/TurboGrafx-16.png
+  tools: /public/consoles/PC.png
+  tutorial: /public/consoles/PC.png
+  vita: /public/consoles/Sony PSVita.png
   wonderswan_color: /public/consoles/WonderSwan Color.png
   wonderswan: /public/consoles/WonderSwan.png
-  
+  zxspectrum: /public/consoles/Sinclair ZX Spectrum.png
 
-references: 
+
+references:
   - title: Behind The Screens
-    name: BehindTheScreens 
+    name: BehindTheScreens
     link: https://www.youtube.com/channel/UC1scN415hiatrUSAg_51xqA
     image: https://yt3.ggpht.com/-59MNhf4K7fw/AAAAAAAAAAI/AAAAAAAAAAA/jA_EjpcyXIg/s288-c-k-no-mo-rj-c0xffffff/photo.jpg
   - title: Game Hut
-    name: gamehut 
+    name: gamehut
     link: https://www.youtube.com/channel/UCfVFSjHQ57zyxajhhRc7i0g
     image: https://yt3.ggpht.com/a-/AN66SAzmSs3uEl8n6m0SWGpoACUDlukDsGtK_uPV4w=s288-mo-c-c0xffffffff-rj-k-no
   - title: YouTube
-    name: youtube 
+    name: youtube
     link: https://www.youtube.com/
     image: /public/Web-Youtube-alt-2-Metro-icon.png
   - title: Wayback Machine
-    name: wayback 
+    name: wayback
     link: https://archive.org/web/
     image: /public/references/wayback.jpg
   - title: Archive.org
-    name: archive.org 
+    name: archive.org
     link: https://archive.org/
     image: /public/references/wayback.jpg
   - title: Devs Play (Double Fine)
-    name: DevsPlay 
+    name: DevsPlay
     link: https://www.youtube.com/user/DoubleFineProd/
     image: /public/Web-Youtube-alt-2-Metro-icon.png
   - title: Computerphile
-    name: computerphile 
+    name: computerphile
     link: https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA
     image: https://yt3.ggpht.com/-JFhbdoLwRlI/AAAAAAAAAAI/AAAAAAAAAAA/RemIzWPj2ZA/s288-c-k-no-mo-rj-c0xffffff/photo.jpg
   - title: ASSEMblergames.com
-    name: assemblergames 
+    name: assemblergames
     link: https://www.ASSEMblergames.com
     image: /public/references/assemblergames.png
   - title: Kim Justice
-    name: kimjustice 
+    name: kimjustice
     link: https://www.youtube.com/channel/UC9ZWVL1Elyt2cdiQYjxS_1w
     image: https://yt3.ggpht.com/-ns-hCUvw_1E/AAAAAAAAAAI/AAAAAAAAAAA/hPwWZRtfU1E/s88-c-k-no-mo-rj-c0xffffff/photo.jpg
   - title: SegaRetro.org
-    name: segaretro.org 
+    name: segaretro.org
     link: https://www.segaretro.org
     image: https://segaretro.org/skins/foreground/assets/img/segaretro_logo.png
-    
-    
+

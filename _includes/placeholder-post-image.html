@@ -4,9 +4,19 @@ Parameters:
 * post - The Post (Page) that this is a placeholder thumbnail image for
 {% endcomment %}
 {% if include.post.title %}
-  <div style="position: relative; color: white; height:150px; background-color: black; display: block;" class="geopattern" data-title="{{ include.post.title }}">
-    <img class="lazy-load" style="padding-left:2px; max-height: 32% !important; background-color: black; min-height: 32% !important; height:32% !important; display: block;" data-image-full="/public/images/RRPlaceholder.jpg" alt="{{ include.post.title }}">
-    <span style="max-width:84%; position: absolute; top:9%; left: 14%; white-space: nowrap; text-overflow: ellipsis; background-color: unset; text-transform: uppercase; overflow: hidden; font-weight: 900;">
+  {% assign placeholder_category = include.post.category | default: include.post.console | default: include.post.categories.first %}
+  {% assign placeholder_category_image = site.category_images[placeholder_category] %}
+  <div class="geopattern rr-placeholder-post-image" data-title="{{ include.post.title }}">
+    <img class="lazy-load rr-placeholder-post-image__logo" data-image-full="/public/images/RRPlaceholder.jpg" alt="{{ include.post.title }}" />
+    {% if placeholder_category %}
+    {% if placeholder_category_image and placeholder_category_image != '/public/images/RetroReversingLogoSmall.png' %}
+      <img class="rr-placeholder-post-image__category-image" src="{{ placeholder_category_image }}" alt="{{ placeholder_category | replace: '-', ' ' }}" />
+    {% endif %}
+    <span class="rr-placeholder-post-image__category">
+        {{ placeholder_category | replace: '-', ' ' }}
+    </span>
+    {% endif %}
+    <span class="rr-placeholder-post-image__title">
     {% if include.post.shorttitle %}
         {{ include.post.shorttitle | split: '-' | first }}
     {% else %}
