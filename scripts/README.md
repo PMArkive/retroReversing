@@ -126,6 +126,36 @@ node scripts/validate-includes.js
 - Remove or update references to non-existent posts
 - Fill in or remove empty post paths (e.g., `post="//"`)
 
+## generate-placeholder-social-images.js
+
+Generates static social-card JPGs for posts and category pages that do not have an `image` or `twitterimage` in frontmatter.
+
+### Usage
+```bash
+node scripts/generate-placeholder-social-images.js
+```
+
+### Description
+- Scans `pages/` and `categories/` for Markdown and HTML content files
+- Uses `title`, `shorttitle`, `permalink`, `category` and the `category_images` block in `_config.yml`
+- Uses the Ruby `geo_pattern` gem to generate deterministic SVG backgrounds from each page seed
+- Uses `@resvg/resvg-js` in Node to rasterize the SVG into a JPG
+- Falls back to `rsvg-convert` when the Node renderer is unavailable
+- Outputs deterministic JPGs and SVGs to `public/generated/placeholders/`
+- Names each output from the permalink, so `/ps4/` becomes `ps4.jpg`
+- Skips hidden pages and pages that already define `image` or `twitterimage`
+
+### Output
+- Creates 1200x630 JPGs suitable for Twitter/Open Graph cards
+- Saves the source SVG alongside each JPG in `public/generated/placeholders/`
+- Reuses existing generated files when they are already up to date
+- Prints a generated/skipped summary at the end
+
+### Requirements
+- `gem install geo_pattern` for real GeoPattern SVG backgrounds
+- `npm install` to install the Node rasterizer used for JPG output
+- Optional: `brew install librsvg` for `rsvg-convert` fallback support
+
 ## GitHub Action Integration
 
 The repository includes a GitHub Action (`.github/workflows/markdown-validation.yml`) that automatically runs these scripts on pull requests to ensure content quality.
