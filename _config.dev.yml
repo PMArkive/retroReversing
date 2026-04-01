@@ -1,0 +1,22 @@
+# Development-only overrides for faster local iteration.
+# The difference is it doesn't generate the redirects.
+# Use with: jekyll serve --config _config.yml,_config.dev.yml --livereload
+
+plugins:
+  - jekyll-include-cache
+
+whitelist:
+  - jekyll-include-cache
+
+# Keep local output lean.
+exclude:
+  - _site.backup
+  - templates
+  - node_modules
+  - tmp
+  - .cache
+  - .DS_Store
+  - scripts
+  - .github
+  - .git
+  - .vscode

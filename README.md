@@ -119,3 +119,7 @@ bundle install
 To preview the site on your machine:
 * Run `jekyll serve --livereload` from the project root.
 * Open [http://localhost:4000](http://localhost:4000) in your browser.
+
+For faster local iteration while writing content:
+* Run `jekyll serve --config _config.yml,_config.dev.yml --livereload`
+* This disables redirect generation locally, which reduces rebuild fan-out.
