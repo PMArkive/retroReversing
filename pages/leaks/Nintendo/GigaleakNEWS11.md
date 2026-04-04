@@ -3,9 +3,6 @@ layout: post
 tags:
 - nintendo
 - gigaleak
-- news
-- sfc
-- dmg
 title: Gigaleak - NEWS_11 Workstation Restore (Hino)
 category: nintendo
 permalink: /gigaleak-news-11
@@ -155,11 +152,14 @@ It looks like a tool and documentation bundle:
 
 If you are trying to understand how these formats were produced and moved around, this is the most directly “tooling shaped” part of the restore.
 
-### What SRD Probably Means
+### What SRD Means
 In this tree, `srd` clearly acts like a shared tools prefix, with references to `/usr/local/srd/bin` and `/usr/local/srd/doc`.
-Outside this restore, `SRD` is most commonly expanded as **Systems Research & Development**, the name used by the long-running Nintendo partner company **SRD Co., Ltd.**
+`SRD` is **Systems Research & Development**, the name used by the long-running Nintendo partner company **SRD Co., Ltd.**
 
-So the most useful practical reading here is:
+SRD is also known for having operated a CAD software division for decades.
+That matters here because `NEWS_11` preserves not just project assets, but what reads like an installable CAD tool bundle with dedicated output and transfer utilities for `CHR` (`CGX`), `COL`, `SCR`, `OBJ`, `PNL`, and `MAP`.
+
+So the practical reading here is:
 
 * `srd/` is a shared internal tool bundle
 * the tools and docs are installed and managed under `/usr/local/srd`

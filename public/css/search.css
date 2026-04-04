@@ -55,6 +55,24 @@ body.header-inline-search-enabled #header .navbar-right > a[data-toggle="search"
   display: none;
 }
 
+@media (max-width: 768px) {
+  #desktop-search-form {
+    display: none;
+  }
+
+  #header .navbar-right > a[data-toggle="search"] {
+    display: inline-flex !important;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    padding: 6px 8px;
+  }
+
+  #header .navbar-right > a[data-toggle="search"]:hover {
+    color: #fff;
+  }
+}
+
 #search-results {
   background: #fff;
   border: 1px solid #ddd;
