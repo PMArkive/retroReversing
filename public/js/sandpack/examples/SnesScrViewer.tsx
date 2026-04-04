@@ -24,6 +24,8 @@ interface ParsedCgx {
   tileCount: number;
   bytesPerTile: number;
   tiles: Uint8Array[];
+  tileTable?: Uint8Array;
+  tileTableShift?: number;
   warnings: string[];
 }
 
@@ -42,6 +44,18 @@ interface ParsedScr {
   metadataBytes: number;
   trailerBytes: number;
   extraBytes: number;
+  wordEndianness: 'le' | 'be';
+  cadHeader?: {
+    signature: string;
+    scbank?: number;
+    mode41?: number;
+    flag42?: number;
+    mode43?: number;
+    mode44?: number;
+    byte45?: number;
+    byte46?: number;
+    value47_48?: number;
+  };
   entryCount: number;
   blockCount: number;
   blocks: ScrEntry[][];
@@ -116,8 +130,28 @@ function parseCol(buffer: Uint8Array): ParsedCol | null {
 function parseCgx(buffer: Uint8Array, bitDepth: BitDepth): ParsedCgx {
   const warnings: string[] = [];
   const tileSize = bytesPerTile(bitDepth);
-  const tileCount = Math.floor(buffer.length / tileSize);
-  const remainder = buffer.length % tileSize;
+  const standardBankBytes = 1024 * tileSize;
+  let source = buffer;
+  let tileTable: Uint8Array | undefined;
+  let tileTableShift: number | undefined;
+
+  if (buffer.length >= standardBankBytes + 0x100) {
+    const header = new TextDecoder().decode(buffer.slice(standardBankBytes, standardBankBytes + 0x20));
+    if (header.includes('NAK1989') && header.includes('S-CG-CAD')) {
+      source = buffer.slice(0, standardBankBytes);
+      warnings.push('Detected S-CG-CAD CGX metadata tail. Rendered only the front tile record region.');
+      if (buffer.length >= standardBankBytes + 0x500 && (bitDepth === 2 || bitDepth === 4)) {
+        tileTable = buffer.slice(standardBankBytes + 0x100, standardBankBytes + 0x500);
+        tileTableShift = bitDepth === 2 ? 2 : 4;
+        warnings.push(
+          'Note: this CGX also contains a 0x400 per-tile table (S-CG-CAD palette prefix metadata). Use the toggle below if you want to apply it for debugging.',
+        );
+      }
+    }
+  }
+
+  const tileCount = Math.floor(source.length / tileSize);
+  const remainder = source.length % tileSize;
 
   if (remainder !== 0) {
     warnings.push(
@@ -128,13 +162,15 @@ function parseCgx(buffer: Uint8Array, bitDepth: BitDepth): ParsedCgx {
   const tiles: Uint8Array[] = [];
   for (let i = 0; i < tileCount; i += 1) {
     const start = i * tileSize;
-    tiles.push(buffer.slice(start, start + tileSize));
+    tiles.push(source.slice(start, start + tileSize));
   }
 
   return {
     tileCount,
     bytesPerTile: tileSize,
     tiles,
+    tileTable,
+    tileTableShift,
     warnings,
   };
 }
@@ -145,6 +181,27 @@ function parseScr(buffer: Uint8Array): ParsedScr | null {
   const warnings: string[] = [];
   if (buffer.length % 2 !== 0) {
     warnings.push('Odd file size detected. The final byte was ignored.');
+  }
+
+  let wordEndianness: 'le' | 'be' = 'le';
+  let cadHeader: ParsedScr['cadHeader'];
+  if (buffer.length >= 0x8000 + 0x20) {
+    const signature = new TextDecoder().decode(buffer.slice(0x8000, 0x8000 + 0x20));
+    if (signature.includes('NAK1989') && signature.includes('S-CG-CAD')) {
+      wordEndianness = 'be';
+      cadHeader = {
+        signature: signature.replace(/\0.*$/, ''),
+        scbank: buffer[0x8000 + 0x40],
+        mode41: buffer[0x8000 + 0x41] & 0x03,
+        flag42: buffer[0x8000 + 0x42] & 0x02,
+        mode43: buffer[0x8000 + 0x43] & 0x03,
+        mode44: buffer[0x8000 + 0x44] & 0x03,
+        byte45: buffer[0x8000 + 0x45],
+        byte46: buffer[0x8000 + 0x46],
+        value47_48: (buffer[0x8000 + 0x47] << 8) | buffer[0x8000 + 0x48],
+      };
+      warnings.push('Detected S-CG-CAD SCR metadata tail. Parsed the 16-bit tilemap words as big-endian.');
+    }
   }
 
   const layoutBytes = Math.min(buffer.length, 8192);
@@ -163,7 +220,10 @@ function parseScr(buffer: Uint8Array): ParsedScr | null {
 
     for (let i = 0; i < 1024 && startWord + i < wordCount; i += 1) {
       const wordOffset = (startWord + i) * 2;
-      const raw = buffer[wordOffset] | (buffer[wordOffset + 1] << 8);
+      const raw =
+        wordEndianness === 'be'
+          ? (buffer[wordOffset] << 8) | buffer[wordOffset + 1]
+          : buffer[wordOffset] | (buffer[wordOffset + 1] << 8);
       const entry: ScrEntry = {
         raw,
         tileIndex: raw & 0x03ff,
@@ -201,6 +261,8 @@ function parseScr(buffer: Uint8Array): ParsedScr | null {
     metadataBytes,
     trailerBytes,
     extraBytes,
+    wordEndianness,
+    cadHeader,
     entryCount: wordCount,
     blockCount,
     blocks,
@@ -249,6 +311,7 @@ function getPaletteRgb(
   paletteIndex: number,
   colorIndex: number,
   bitDepth: BitDepth,
+  rowOverride?: number,
 ): [number, number, number] {
   if (!palette) {
     return [0, 0, 0];
@@ -265,7 +328,8 @@ function getPaletteRgb(
     ];
   }
 
-  const row = palette.rows[paletteIndex] || palette.rows[0];
+  const resolvedRowIndex = rowOverride != null ? rowOverride : paletteIndex;
+  const row = palette.rows[resolvedRowIndex] || palette.rows[0];
   const rowSize = bitDepth === 2 ? 4 : 16;
   const picked = row?.[colorIndex % rowSize];
   if (!picked) return [0, 0, 0];
@@ -285,6 +349,7 @@ function drawEntry(
   tile: Uint8Array | null,
   bitDepth: BitDepth,
   palette: ParsedCol | null,
+  tilePrefix: number,
 ) {
   for (let py = 0; py < 8; py += 1) {
     for (let px = 0; px < 8; px += 1) {
@@ -295,11 +360,28 @@ function drawEntry(
       if (tile) {
         const sourceX = entry.hFlip ? 7 - px : px;
         const sourceY = entry.vFlip ? 7 - py : py;
-        const colorIndex = decodePixel(tile, bitDepth, sourceX, sourceY);
-        [red, green, blue] = getPaletteRgb(palette, entry.paletteIndex, colorIndex, bitDepth);
+        const baseIndex = decodePixel(tile, bitDepth, sourceX, sourceY);
+        const combinedIndex = tilePrefix | baseIndex;
+
+        if (palette && tilePrefix !== 0 && bitDepth !== 8) {
+          if (bitDepth === 4) {
+            const resolvedRow = (combinedIndex >> 4) & 0x0f;
+            const resolvedIndex = combinedIndex & 0x0f;
+            [red, green, blue] = getPaletteRgb(palette, entry.paletteIndex, resolvedIndex, bitDepth, resolvedRow);
+          } else {
+            const resolvedRow = (combinedIndex >> 2) & 0x3f;
+            const resolvedIndex = combinedIndex & 0x03;
+            [red, green, blue] = getPaletteRgb(palette, entry.paletteIndex, resolvedIndex, bitDepth, resolvedRow);
+          }
+        } else {
+          [red, green, blue] = getPaletteRgb(palette, entry.paletteIndex, combinedIndex, bitDepth);
+        }
 
         if (!palette) {
-          const shade = bitDepth === 8 ? colorIndex : Math.round((colorIndex / ((1 << bitDepth) - 1)) * 255);
+          const shade =
+            bitDepth === 8
+              ? combinedIndex
+              : Math.round(((combinedIndex & ((1 << bitDepth) - 1)) / ((1 << bitDepth) - 1)) * 255);
           red = shade;
           green = shade;
           blue = shade;
@@ -326,6 +408,7 @@ function drawScr(
   bitDepth: BitDepth,
   scale: number,
   viewMode: ViewMode,
+  applyCadTileTable: boolean,
 ) {
   const blockWidth = 32 * 8;
   const blockHeight = 32 * 8;
@@ -358,6 +441,10 @@ function drawScr(
       const tileX = (tileIndex % 32) * 8;
       const tileY = Math.floor(tileIndex / 32) * 8;
       const tile = cgx?.tiles[entry.tileIndex] || null;
+      const tilePrefix =
+        applyCadTileTable && cgx?.tileTable && cgx.tileTableShift != null && bitDepth !== 8
+          ? cgx.tileTable[entry.tileIndex] << cgx.tileTableShift
+          : 0;
       drawEntry(
         data,
         canvasWidth,
@@ -367,6 +454,7 @@ function drawScr(
         tile,
         bitDepth,
         palette,
+        tilePrefix,
       );
     }
   }
@@ -383,6 +471,7 @@ function SnesScrViewer() {
   const [manualBitDepth, setManualBitDepth] = useState(false);
   const [viewMode, setViewMode] = useState<ViewMode>('all');
   const [scale, setScale] = useState(2);
+  const [applyCadTileTable, setApplyCadTileTable] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   const scr = useMemo(() => {
@@ -409,8 +498,8 @@ function SnesScrViewer() {
 
   useEffect(() => {
     if (!scr || !canvasRef.current) return;
-    drawScr(canvasRef.current, scr, cgx, palette, bitDepth, scale, viewMode);
-  }, [scr, cgx, palette, bitDepth, scale, viewMode]);
+    drawScr(canvasRef.current, scr, cgx, palette, bitDepth, scale, viewMode, applyCadTileTable);
+  }, [scr, cgx, palette, bitDepth, scale, viewMode, applyCadTileTable]);
 
   function downloadRenderedImage() {
     if (!canvasRef.current) return;
@@ -462,6 +551,15 @@ function SnesScrViewer() {
       </div>
 
       <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
+        <label style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+          <input
+            type="checkbox"
+            checked={applyCadTileTable}
+            onChange={(event) => setApplyCadTileTable(event.target.checked)}
+          />
+          Apply S-CG-CAD CGX per-tile palette prefix table (debug)
+        </label>
+
         <label>
           View:{' '}
           <select
@@ -517,7 +615,15 @@ function SnesScrViewer() {
           <div className="font-medium">SCR Summary</div>
           <div>{scr.byteLength} bytes total</div>
           <div>{scr.layoutBytes} bytes rendered as tilemap blocks</div>
+          <div>Word endianness: {scr.wordEndianness}</div>
           <div>{scr.entryCount} 16-bit entries across {scr.blockCount} detected blocks</div>
+          {scr.cadHeader && (
+            <div style={{ color: '#1f2937' }}>
+              S-CG-CAD header: scbank={scr.cadHeader.scbank} mode41={scr.cadHeader.mode41} flag42={scr.cadHeader.flag42}{' '}
+              mode43={scr.cadHeader.mode43} mode44={scr.cadHeader.mode44} byte45={scr.cadHeader.byte45} byte46={scr.cadHeader.byte46}{' '}
+              value47_48=0x{scr.cadHeader.value47_48?.toString(16).toUpperCase().padStart(4, '0')}
+            </div>
+          )}
           {autoDetect && (
             <div>
               Auto-detect: {autoDetect.recommended

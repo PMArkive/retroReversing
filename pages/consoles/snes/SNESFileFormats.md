@@ -59,7 +59,7 @@ These file types come from a Sony NEWS workstation art pipeline tool commonly re
 In practice it behaves like an editor that saves multiple linked layers as separate files, rather than exporting one baked screen per save.
 
 ## S-CG-CAD
-The Computer Aided Design tool known as `S-CG-CAD` or `S-CAD` was developed by long term Nintendo partner company SRD (Systems Research and Development). It was intended to un on **MIPS-based Sony NEWS** workstations, the executables themselves are **MIPS big-endian ECOFF** (often reported as "MIPSEB ECOFF executable (paged)"). 
+The Computer Aided Design tool known as `S-CG-CAD` or `S-CAD` was developed by long term Nintendo partner company **SRD** (Systems Research and Development). It was intended to un on **MIPS-based Sony NEWS** workstations, the executables themselves are **MIPS big-endian ECOFF** (often reported as "MIPSEB ECOFF executable (paged)"). 
 
 If you have the ability to run these executables they can be found in the gigaleak in the NEWS.7z archive, specifically the NEWS_11 tape backup under the user `hino`'s home directory.
 
@@ -88,7 +88,7 @@ Main CAD application binaries:
 Location | File | Type | Purpose
 ---|---|---|---
 `srd/cad/bin` | `cad` | ECOFF binary | The main S-CG-CAD editor.
-`srd/cad/bin` | `cad_test` | ECOFF binary | Test build of the CAD editor.
+`srd/cad/bin` | `cad_test` | ECOFF binary | Unstripped S-CG-CAD test build.
 `srd/cad/bin` | `pr_chr_B` | ECOFF binary | Printer output helper: character sheets (large).
 `srd/cad/bin` | `pr_chr_M` | ECOFF binary | Printer output helper: character sheets (medium).
 `srd/cad/bin` | `pr_chr_S` | ECOFF binary | Printer output helper: character sheets (small).
@@ -108,13 +108,13 @@ Location | File | Type | Purpose
 `srd/cad/environment` | `mkcad_srd` | text/script | Creates a `.CAD_SRD` workspace directory and moves CAD state files into it.
 
 ### Reverse Engineering the executables
-The main `cad` executable is unfortunetly stripped (no debug symbols to get function names), however there is a `cad_test` executable that is completely unstripped!
+The main `cad` executable is unfortunately stripped (no debug symbols to get function names), but there is also an unstripped S-CG-CAD test build shipped as `cad_test`.
 
 It is a **MIPS big-endian ECOFF** executable, and its ECOFF a.out optional header has `vstamp = 0x020B`, i.e. **2.11**.
 
-That `vstamp` is the “toolchain version stamp” written by the compiler/linker in MIPS ECOFF output, so this binary was built with a **MIPS ECOFF toolchain stamping version 2.11** (the classic vendor `cc`/`ld` style toolchain used on NEWS-OS era MIPS systems), rather than something like modern GCC/ELF.
+That `vstamp` is the "toolchain version stamp" written by the compiler/linker in MIPS ECOFF output, so this binary was built with a **MIPS ECOFF toolchain stamping version 2.11** (the classic vendor `cc`/`ld` style toolchain used on NEWS-OS era MIPS systems), rather than something like modern GCC/ELF.
 
-Unfortunetly it is in ECOFF format which Ghidra has a hard time understanding so the best thing to do is to convert to an elf like so (note that despite the strip debug it will still have the names):
+Unfortunately it is in ECOFF format which Ghidra has a hard time understanding, so the best thing to do is to convert it to an ELF like so (note that despite `--strip-debug` it will still have symbol names):
 ```
 mipsel-linux-gnu-objcopy --strip-debug -O elf32-tradbigmips cad_test cad_test.elf
 ```
@@ -150,9 +150,9 @@ sfx_main | full screen preview transfer | CGX, OBJ, COL, SCR
 tl_main1 | tile and palette focused preview | CGX, OBZ, COL
 tl_main2 | full screen preview but with OBZ format and CAD.DAT | CGX, OBZ, COL, SCR, CAD.DAT
 
-`sfx_main` and `tl_main2` both transfer enough data to show a full composed screen (.SCR), but they’re aimed at different CAD workflows and they move different payload sets:
-* sfx_main (the “full CAD screen” transfer) uploads CGX + OBJ + COL + SCR. It’s the only one that explicitly expects the standard .OBJ object-layout files.
-* tl_main2 (the “tile/layout” transfer) uploads CGX + OBZ + COL + SCR and also a CAD.DAT blob. It uses CAD.OBZ instead of per-slot .OBJ, and it has extra per-transfer state/config via CAD.DAT.
+`sfx_main` and `tl_main2` both transfer enough data to show a full composed screen (.SCR), but they are aimed at different CAD workflows and they move different payload sets:
+* sfx_main (the "full CAD screen" transfer) uploads CGX + OBJ + COL + SCR. It is the only one that explicitly expects the standard .OBJ object-layout files.
+* tl_main2 (the "tile/layout" transfer) uploads CGX + OBZ + COL + SCR and also a CAD.DAT blob. It uses CAD.OBZ instead of per-slot .OBJ, and it has extra per-transfer state/config via CAD.DAT.
 
 This is a useful lens for interpreting the formats on this page: the file types were designed to be transferred as a bundle, then interpreted by a small runtime on the SNES devkit.
 
@@ -165,9 +165,10 @@ It has 2 bytes per color and uses SNES `BGR555` packed color in little-endian or
 Field | Value
 ---|---
 Encoding | little-endian SNES BGR555
-Common size | 1,024 bytes
-Colors | 512 color words
-Layout | 32 palette rows of 16 colors
+Record region | `0x200` bytes (256 colors)
+Common size | `0x400` bytes in S-CG-CAD saves (record region + tool metadata)
+Colors | 256 color words
+Layout | 16 palette rows of 16 colors
 Row slot 0 | commonly treated as transparent or backdrop-like
 
 ### Byte Layout
@@ -197,6 +198,34 @@ Decode rules:
 * `r5 = (v >> 0) & 0x1F`, `g5 = (v >> 5) & 0x1F`, `b5 = (v >> 10) & 0x1F`
 * expand 5-bit to 8-bit with `(c5 << 3) | (c5 >> 2)`
 
+### Tool metadata (S-CG-CAD)
+S-CG-CAD saves often append tool metadata after the `0x200`-byte record region, making a common on-disk size of `0x400` bytes:
+
+Offset | Size | Meaning | Notes
+---|---:|---|---
+`0x0200` | `0x100` | tool header block | Observed to begin with ASCII `NAK1989 S-CG-CADVer...` in multiple assets.
+`0x0300` | `0x100` | per-row tool metadata | S-CG-CAD writes `0x80` bytes of row data (32 rows x 4 bytes) and leaves the remaining bytes as reserved/zero.
+
+In the S-CG-CAD decompile, only a small part of this metadata is clearly referenced so far. If you are writing a rewriter, preserve `0x0200..0x03FF` exactly where possible.
+
+The per-row metadata is written as a flat table at `0x0300..0x037F`:
+
+* 32 entries (one per palette row), 4 bytes per entry.
+* Each entry is copied from the low byte of four 32-bit words in a 16-byte-per-row structure (the `save_col` decomp reads bytes at offsets `+3`, `+7`, `+0x0B`, `+0x0F` from a `0x10`-byte stride per row).
+* These bytes appear to be S-CG-CAD editor-side palette table state (preview colors / attribute selectors) rather than SNES runtime palette data. The tool updates them via the palette table UI and uses `cgbank` to decide which bits are meaningful when rendering the palette table.
+
+Important note: S-CG-CAD does not appear to read the `0x0200..0x03FF` metadata when opening a normal `.COL` via `load_col`. The metadata is still saved and is useful for round-tripping, but the decompiled tool path that restores editor state (`rstr_col`) reads a different stream shape: `0x200` bytes of color words, followed by `0x200` bytes of palette metadata, followed by a single byte written into `cgbank`.
+
+### What `cgbank` does (S-CG-CAD)
+Although the name is misleading, `cgbank` in this tool acts like a per-palette "color mode" selector that affects how the editor maps palette indices into its workstation-side 8-bit color table.
+
+The decompiled `colors_change` routine shows three main behaviors based on `cgbank`:
+
+* `cgbank = 0` - updates a 32-entry repeating window (`index & 0x1F`)
+* `cgbank = 1` - updates a 128-entry repeating window (`index & 0x7F`)
+* `cgbank = 2` - updates all 256 entries (with special-cased reserved indices like `fore`, `back`, and `mixc`)
+
+This is editor/UI behavior, not SNES runtime palette data, but the chosen mode is still persisted in S-CG-CAD's save/backup flows.
 
 ### Interactive COL Viewer
 This viewer loads a COL file and shows every row as swatches.
@@ -223,6 +252,39 @@ Size | 4bpp tiles | Notes
 17,664 bytes | 552 | compact text or small UI banks
 34,048 bytes | 1,064 | common menu and title banks
 65,792 bytes | 2,056 | large shared banks
+
+S-CG-CAD also uses fixed "standard bank" CGX containers that bundle 1024 tiles plus tool metadata. These are easiest to recognize by file size:
+
+File size | Record region | Bit depth | Tiles | Tail bytes | Notes
+---|---:|---:|---:|---:|---
+`0x4500` | `0x4000` | 2bpp | 1024 | `0x100` header + `0x400` per-tile table | S-CG-CAD reads 2bpp planes and ORs `tile_table[i] << 2` into each pixel index.
+`0x8500` | `0x8000` | 4bpp | 1024 | `0x100` header + `0x400` per-tile table | S-CG-CAD reads SNES 4bpp planes and ORs `tile_table[i] << 4` into each pixel index.
+`0x10100` | `0x10000` | 8bpp | 1024 | `0x100` header | S-CG-CAD reads SNES 8bpp planes; no per-tile table is stored in this variant.
+
+In these S-CG-CAD variants the first `record region` bytes are still standard planar tile data and can be decoded normally. The extra `0x100` header commonly begins with ASCII `NAK1989 S-CG-CADVer...`, and the per-tile table is tool-specific metadata that affects how the editor constructs 8-bit pixel indices.
+
+### Per-tile table (S-CG-CAD)
+In the `0x4500` and `0x8500` variants, S-CG-CAD stores a 1024-byte table after the `0x100` header. Each entry is one byte per tile. The tool uses it as a per-tile "pixel index prefix":
+
+* For 2bpp CGX (`0x4500`), S-CG-CAD combines it as `pixel_index = (tile_table[tile] << 2) | pixel_2bpp`.
+* For 4bpp CGX (`0x8500`), S-CG-CAD combines it as `pixel_index = (tile_table[tile] << 4) | pixel_4bpp`.
+
+That means the table acts like a per-tile palette selector in editor space (it chooses which group of 4 or 16 colors the tile's pixels index into), even though the underlying record region is still standard planar 2bpp/4bpp tile data.
+
+In the 2bpp variant there is an extra twist: `save_cgx` writes the table byte as `(header_0x23 << 3) | (chars[tile] >> 2 & 7)`. Because `load_cgx` later shifts the full table byte left by 2, that effectively makes the final 8-bit editor pixel index:
+
+* `pixel_index = (header_0x23 << 5) | ((chars[tile] >> 2 & 7) << 2) | pixel_2bpp`
+
+This matches the preview path in `data_zoom2.c`, which adds `header_0x23 << 5` as a constant per-bank contribution.
+
+Some bytes inside the `0x100` CGX header are set by the tool and appear to mirror editor state:
+
+Offset | Size | Meaning | Notes
+---|---:|---|---
+`0x20` | `1` | `cgbank` mode | Same mode described in the COL section; affects how pixel indices are interpreted in the editor.
+`0x21` | `1` | colormap bank index | Read by `load_cgx` as a 2-bit value and passed into the tool's `G_Colormap_change()` path. It is changed by the "color bank" menu and appears to select which X11 colormap bank the editor uses for previews.
+`0x22` | `1` | BG/OBJ palette toggle | Read by `load_cgx` as a 1-bit value and toggled by `bg_obj_color_change()`. In the tool it is packed into the "colormap mode" bits (shifted left by 7) when installing or previewing the colormap.
+`0x23` | `1` | cell index (2-bit) | Read by `load_cgx` as a 2-bit value and selected by `cell_change()` when `cgbank` is `0`. In the tool it is packed into the "colormap mode" bits (shifted left by 5) for some preview paths.
 
 The Nintendo CGE UI (Color Graphics Editor) explicitly shows 4bit and 8x8 editing for this data family.
 
@@ -290,7 +352,7 @@ Each tilemap block is a 32x32 grid of 16-bit words:
 * 32 x 32 = 1,024 entries
 * 1,024 x 2 bytes = 2,048 bytes per block
 
-Each entry is a 16-bit little-endian word with this bitfield layout:
+Each entry is a 16-bit word with this bitfield layout:
 
 Bits | Meaning
 ---|---
@@ -302,12 +364,42 @@ Bits | Meaning
 
 If you are writing a parser:
 
-* read 16-bit `w` little-endian
+* read 16-bit `w` from the file
 * `tile = w & 0x03FF`
 * `pal = (w >> 10) & 0x07`
 * `pri = (w >> 13) & 0x01`
 * `hflip = (w >> 14) & 0x01`
 * `vflip = (w >> 15) & 0x01`
+
+Endianness note:
+
+* In a ROM or 65c816 runtime context, SNES tilemap words are typically stored little-endian.
+* In the S-CG-CAD `save_scr` path, the tool explicitly byte-swaps each 16-bit word before writing it, and `load_scr` swaps it back after reading. That means S-CG-CAD-authored `.SCR` files are big-endian on disk for the 16-bit tilemap words.
+
+S-CG-CAD also writes a `0x100` metadata header (starting with ASCII `NAK1989 S-CG-CADVer...`) at `0x8000`, followed by a `0x200` trailer region. A few header bytes appear to mirror editor state:
+
+Offset (from 0x8000) | Size | Meaning | Notes
+---|---:|---|---
+`0x40` | `1` | `scbank` mode | Stored as-is; decomp shows values `0..2`.
+`0x41` | `1` | unknown SCR mode byte (2-bit) | Read as `header[0x41]` with `& 3`.
+`0x42` | `1` | unknown SCR flag (bit 1) | Read as `header[0x42] & 2`.
+`0x43` | `1` | unknown SCR mode byte (2-bit) | Read as `header[0x43] & 3`.
+`0x44` | `1` | unknown SCR mode byte (2-bit) | Read as `header[0x44] & 3`.
+`0x45` | `1` | unknown SCR byte | Stored as-is.
+`0x46` | `1` | unknown SCR byte | Stored as-is.
+`0x47..0x48` | `2` | unknown SCR 16-bit value | Read as a big-endian 16-bit value from the header bytes.
+
+### Toolchain conversion
+Some pipelines include small conversion utilities that export a CAD-authored `.SCR` into a simpler table for PC-side tooling.
+
+One example is `stdscr.c` (header: "NEWS-CAD (SCR_File) -> STD_SCR (*.STD)", MS-DOS ver 1.11, 1992-04-13). It reads `base.SCR` as 4 blocks of `0x400` entries, but for each entry it takes one byte and discards the next byte, which effectively strips the upper byte of the 16-bit tilemap word (the byte that carries most attribute bits) and keeps the low byte.
+
+It then repacks the four 32x32 blocks into a single `0x1000` byte output called `base.STD`:
+
+* blocks 0 and 1 are placed side-by-side to form a 64x32 region (each 32-byte row becomes 64 bytes)
+* blocks 2 and 3 are placed side-by-side to form another 64x32 region below it
+
+In other words, this "MS-DOS screen" is not a DOS graphics format like a VGA framebuffer. It is a raw 4KB 64x64 grid of 8-bit tile indices, intended for quick viewing, printing, or importing into PC-side tools that do not need per-tile SNES attributes.
 
 The CAD tool UI shows the same workflow split: screen, object, map, and SFX metadata as separate operations.
 
@@ -333,51 +425,67 @@ In the source archives there are at least two closely related "OBJ" layouts:
 Format | Record region | Frame count | Slots per frame | Bytes per slot
 ---|---:|---:|---:|---:
 OBJ | 12,288 bytes | 32 | 64 | 6
-CAD workspace OBJ | 49,152 bytes | 64 | 128 | 6
-OBX | 49,152 bytes | 64 | 128 | 6
+Extended OBJ | 24,576 bytes | 64 | 64 | 6
+OBX (observed) | 49,152 bytes | 64 | 128 | 6
 
 Files commonly append a CAD metadata tail after the record region.
 
+### Toolchain conversion
+Some projects also include small conversion utilities that turn CAD-authored `.OBX` data into assembler-friendly tables for the game runtime.
+
+One example is `eobjcnvX.c`, which reads a full 49,152-byte `.OBX` record region (`64 * 128 * 6`), filters to slots where the "display enable" flag (byte 0 bit `0x80`) is set, applies a global X/Y offset, and writes the results out as `eobj.dat` using `BYTE` and `HEX` directives.
+
+This is not a different on-disk `.OBX` format: it is a build-time export that (a) changes representation (text + directives rather than a binary container), and (b) intentionally alters some fields (it emits the packed word as two bytes and clears bits `0x30` in the high byte, which corresponds to dropping the priority bits in the packed attribute + tile word described below).
+
 ### Entry Layout
 #### CAD OBJ / OBX (6-byte slots)
-Each slot is 6 bytes:
+Each slot is 6 bytes. In the S-CG-CAD toolchain, bytes `4..5` are treated as a single big-endian 16-bit value, not two independent bytes.
 
 Byte | Meaning
 ---|---
-1 | flags: bit 7 display enable, other bits tool-dependent (see notes below)
+1 | flags: bit 7 display enable, bit 0 size select
 2 | group info (tool classification)
 3 | Y displacement (signed 8-bit)
 4 | X displacement (signed 8-bit)
-5 | attributes: YXPPCCCT
-6 | tile number
+5..6 | packed attribute + tile word (big-endian, see below)
 
 ### Byte Layout
 OBJ and OBX record regions are a flat array of 6-byte slots, grouped into frames.
-Parsers should treat each slot as six independent bytes.
+Parsers should not assume byte `4` is the attribute byte and byte `5` is the tile byte. In the main S-CG-CAD parsing path, bytes `4..5` are decoded as a single 16-bit value.
 
 Slot byte | Meaning | Decode
 ---|---|---
-`0` | flags | bit 7 display enable
+`0` | flags | bit 7 display enable, bit 0 size select
 `1` | group info | tool classification byte
 `2` | Y | signed 8-bit (two's complement)
 `3` | X | signed 8-bit (two's complement)
-`4` | attributes | `YXPPCCCT`
-`5` | tile number | tile index byte
+`4..5` | packed attr + tile | big-endian 16-bit word
+
+Flag byte notes (S-CG-CAD):
+
+* bit `0x80` (display enable) and bit `0x01` (size select) are the only flag bits referenced in the S-CG-CAD paths traced so far.
+* other bits may exist for other tools or workflows, but are not clearly interpreted in the decompiled S-CG-CAD OBJ editor logic yet.
+
+Group info notes (S-CG-CAD):
+
+* byte 1 is preserved on load/save, but is not clearly consumed by the S-CG-CAD editing, printing, or selection paths traced so far.
+* treat it as a tool classification byte and preserve it exactly when rewriting files.
+* in some observed S-CG-CAD OBJ assets, this byte is `0x00` for all slots (so it may be unused in at least some projects).
+* in other observed OBJ assets, it takes small integer values (commonly `0x00..0x05`, and sometimes higher like `0x09`), suggesting it is used as a lightweight grouping or classification tag by some pipelines even if S-CG-CAD does not interpret it directly.
 
 Signed coordinate decode:
 
 * `x = X` if `X < 0x80`, else `X - 0x100`
 * `y = Y` if `Y < 0x80`, else `Y - 0x100`
 
-Attribute byte bits:
+Packed attribute + tile word bits (from the S-CG-CAD decode):
 
 Bits | Meaning
 ---|---
-7 | vertical flip (Y)
-6 | horizontal flip (X)
-5 to 4 | priority (PP)
-3 to 1 | palette row (CCC)
-0 | tile page / name select (T)
+15 to 14 | flip selector (2-bit; behaves like X/Y flip, where bit 0 is X flip and bit 1 is Y flip)
+13 to 12 | priority (PP)
+11 to 9 | palette row (CCC)
+8 to 0 | tile index (9-bit, `0x000..0x1FF`)
 
 Rendering notes:
 
@@ -385,6 +493,25 @@ Rendering notes:
 * the size flag selects the SNES OAM small/large size pair, which is configurable
 * VRAM and CGRAM offsets shift the tile and palette bases when the project expects an offset load
 * project tooling may use a smaller or customized container, so parsers should not assume one fixed size without checking (a common heuristic is to locate the `NAK1989` tool header and treat everything before it as the record region)
+* the S-CG-CAD read/write loops walk slot indices `63` down to `0`, so the first 6 bytes in a frame correspond to slot index `63`
+* in S-CG-CAD preview/image paths, the tile index high bit (bit 8) is also used as a coarse bank select: if `tileId < 0x100` it uses the per-bank "F address" base, otherwise it uses the per-bank "B address" base
+
+Priority and palette usage notes (S-CG-CAD):
+
+* The palette row (CCC) is used by S-CG-CAD's object image generation and preview paths (it is applied as a high-nibble / palette selection when composing pixels), and the UI can edit it for selected objects.
+* The priority (PP) is editable and is printed in report output, but the S-CG-CAD on-screen selection and arrangement paths traced so far do not use it for overlap ordering (draw order is still slot-order based).
+
+Tile banking and "F/B address" notes (S-CG-CAD preview):
+
+* S-CG-CAD treats the tile index high bit (bit 8) as a coarse bank selector. In preview/image paths it checks `tileId >> 8`:
+  * `tileId < 0x100` - uses the per-bank "F address" preset from header byte `0x55`
+  * `tileId >= 0x100` - uses the per-bank "B address" preset from header byte `0x56`
+* Those presets are indices into a 16-bit base table (a list of words like `0x0000, 0x0100, 0x0200, 0x0300, ...`). The selected base word is then OR'd into the character fetch address used to look up tiles in the active OBJ CGX bank.
+* In other words, even though the on-disk tile id is only 9-bit, S-CG-CAD can shift the effective tile base through the header presets during preview.
+* Practical interpretation for preview renderers: treat each preset as selecting a 0x100-tile page, then add the low 8 bits of the on-disk tile id:
+  * `baseTiles = (preset & 0x0F) * 0x100`
+  * `effectiveTile = baseTiles + (tileId & 0xFF)`
+* This is S-CG-CAD tool behavior for preview and report generation, not a documented SNES OAM hardware field.
 
 #### What "size select" means on SNES
 The SNES PPU chooses sprite sizes in two layers: a global mode and a per-sprite toggle.
@@ -396,8 +523,8 @@ Flag notes:
 * CAD-side tooling clearly uses bit `0x80` in the first byte as a display/enable toggle.
 * The exact bit used for "size select" differs between toolchains and file layouts:
   * In the `pr_obj__` printer/report tool, the entry flag byte uses bit `0x01` as the size-select toggle.
+  * In the S-CG-CAD CAD toolchain path (`load_obj` / `save_obj`), byte 0 bit `0x01` is also used as the size-select toggle.
   * In `.OBZ`, size select is stored in bit `0x40` of OBZ byte 0 (see OBZ section below).
-  * For CAD `.OBJ` / `.OBX` files, many observed assets only toggle bit `0x01` (and never set `0x40`), so treat bit `0x40` as unconfirmed for the on-disk CAD format until traced end-to-end in `obj_tool`.
 
 #### Printer OBJ (`pr_obj__`) (10-byte entries)
 The `pr_obj__` printer/report utility reads an "OBJ" region as 10-byte entries, 64 entries per frame, 64 frames:
@@ -427,34 +554,25 @@ Offset | Meaning | Notes
 ### Sequence Data
 Some object containers also include a small sequence table used to define simple animations as a timed list of frame indices.
 
-The sequence table is stored as fixed-size blocks of raw bytes:
+In the S-CG-CAD toolchain, the sequence table is a fixed block stored after the `0x100` header, and it is decoded as raw (timer, frame) pairs.
 
-Field | Value
----|---
-Sequence count | 16 sequences
-Sequence size | tool-dependent (see below)
-Steps per sequence | tool-dependent
-End marker | first pair where both bytes are zero
-
-Byte layout for each sequence:
-
-Offset | Size | Meaning
----|---:|---
-`0x00` | `2` | duration 0, frame 0
-`0x02` | `2` | duration 1, frame 1
-... | ... | ...
-`0x1E` | `2` | duration 15, frame 15
+Container | Total sequence table size | Sequences | Steps per sequence | Bytes per step
+---|---:|---:|---:|---:
+OBJ (`0x3000` record region) | `0x400` bytes | 16 | 32 | 2
+Extended OBJ (`0x6000` record region) | `0x800` bytes | 16 | 64 | 2
 
 Each step is two bytes:
 
-Byte | Meaning
----|---
-`duration` | number of ticks to hold this frame (commonly treated as 16ms units by viewers)
-`frame` | zero-based frame index to display
+Byte | Meaning | Notes
+---|---|---
+`0` | timer / duration | Tool UI edits this as an 8-bit value; `0x00` is treated as "unused" in printer output paths.
+`1` | frame index | Treated as a 0..63 value in the UI (masked to `0x3F`); used to select which OBJ frame to preview.
+
+The table is stored as a flat array: for each sequence (0..15), write `steps_per_sequence` steps, each step two bytes.
 
 Common location rules:
 
-* in many OBJ/OBX-style files with a trailing CAD tail, the table starts at `record_region_bytes + 0x100` (for example `0x3100` in a `0x3000`-byte OBJ record region)
+* in OBJ/OBX-style files with a trailing S-CG-CAD tail, the sequence table starts at `record_region_bytes + 0x100` (for example `0x3100` in a `0x3000`-byte OBJ record region)
 * in OBZ files, sequence data (when present) lives in the tail region starting at `0x6000`
 
 `pr_obj__` sequence table variant:
@@ -466,7 +584,34 @@ Sequence size | `0x80` bytes each
 Steps per sequence | 64 (duration, frame) pairs
 Total size | `0x800` bytes
 
-This viewer renders OBJ or OBX frames and optionally applies CGX and COL.
+### Header and per-bank settings (S-CG-CAD)
+S-CG-CAD OBJ containers include an additional fixed `0x100` bytes after the record region (and before the sequence table). The tool copies a small set of bytes out of this block into per-bank state, and those values affect how it previews and edits OBJ data.
+
+Only a few offsets are clearly referenced in the decompiled S-CG-CAD paths so far, but they are worth documenting because they are persisted on save/load:
+
+The start of the block is a tool signature and build string in observed assets. For example, multiple OBJ files in the NEWS archives have ASCII text beginning with `NAK1989 S-CG-CADVer...` followed by a date-like string (for example `901226`).
+
+Offset | Size | Meaning | Notes
+---|---:|---|---
+`0x00` | `0x20` | tool signature and version string | Observed as `NAK1989 S-CG-CADVer1.23 901226  ` (ASCII), but treat as tool metadata, not part of the sprite record format.
+`0x50` | `1` | OAM size mode selector | Used as an index bit in size and hit-test tables (combined with per-sprite size bit 0).
+`0x51` | `1` | CGX bank for OBJ | Masked to `& 3` on load (values `0..3`).
+`0x52` | `1` | COL bank for OBJ | Masked to `& 3` on load (values `0..3`).
+`0x53` | `1` | COL base/address preset | Menu-driven setting used by the OBJ color preview path.
+`0x54` | `1` | V-mode selector | Used as a mode switch in selection/hit-test and preview paths. Observed values are `0` and `1` in S-CG-CAD UI menus.
+`0x55` | `1` | "F address" preset | Menu-driven setting used by character-sheet preview routines.
+`0x56` | `1` | "B address" preset | Menu-driven setting used by character-sheet preview routines.
+
+Bytes outside the offsets above are not clearly consumed by the S-CG-CAD OBJ editing path yet. If you are writing an extractor or rewriter, preserve the full `0x100` block exactly where possible.
+
+Practical notes if you are writing tools:
+
+* **Observed tool metadata** - The leading ASCII signature/version string is stable and is best treated as CAD provenance, not sprite data.
+* **Known-used settings** - The offsets `0x50..0x56` are actively used by S-CG-CAD and should be preserved if you want the tool to reopen a file consistently.
+* **Unknown/reserved bytes** - Other bytes in the `0x100` block are not clearly consumed by the S-CG-CAD OBJ editing path yet. Preserve the full `0x100` block exactly where possible.
+
+### Interactive OBJ Viewer
+This viewer renders OBJ or OBX frames and optionally applies CGX and COL right inside the browser.
 
 <rr-sandpack
   template="react-ts"

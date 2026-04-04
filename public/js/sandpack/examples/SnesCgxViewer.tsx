@@ -20,6 +20,8 @@ interface ParsedCgx {
   tileCount: number;
   bytesPerTile: number;
   tiles: Uint8Array[];
+  tileTable?: Uint8Array;
+  tileTableShift?: number;
   warnings: string[];
 }
 
@@ -86,8 +88,33 @@ function decodePaletteColor(value: number): PaletteColor {
 function parseCgx(buffer: Uint8Array, bitDepth: BitDepth): ParsedCgx {
   const warnings: string[] = [];
   const tileSize = bytesPerTile(bitDepth);
-  const tileCount = Math.floor(buffer.length / tileSize);
-  const remainder = buffer.length % tileSize;
+  const standardBankBytes = 1024 * tileSize;
+  let source = buffer;
+  let tileTable: Uint8Array | undefined;
+  let tileTableShift: number | undefined;
+
+  // S-CG-CAD CGX files commonly have:
+  // - record region: 1024 tiles (0x4000/0x8000/0x10000)
+  // - 0x100 tool header (often "NAK1989 S-CG-CAD...")
+  // - optional 0x400 per-tile table (2bpp/4bpp variants)
+  if (buffer.length >= standardBankBytes + 0x100) {
+    const header = new TextDecoder().decode(buffer.slice(standardBankBytes, standardBankBytes + 0x20));
+    if (header.includes('NAK1989') && header.includes('S-CG-CAD')) {
+      if (buffer.length >= standardBankBytes + 0x500) {
+        tileTable = buffer.slice(standardBankBytes + 0x100, standardBankBytes + 0x500);
+        tileTableShift = bitDepth === 2 ? 2 : bitDepth === 4 ? 4 : undefined;
+        warnings.push(
+          'Detected S-CG-CAD CGX metadata (+0x100 header, +0x400 per-tile table). Rendered only the front tile record region.',
+        );
+      } else {
+        warnings.push('Detected S-CG-CAD CGX metadata (+0x100 header). Rendered only the front tile record region.');
+      }
+      source = buffer.slice(0, standardBankBytes);
+    }
+  }
+
+  const tileCount = Math.floor(source.length / tileSize);
+  const remainder = source.length % tileSize;
 
   if (remainder !== 0) {
     warnings.push(
@@ -98,14 +125,16 @@ function parseCgx(buffer: Uint8Array, bitDepth: BitDepth): ParsedCgx {
   const tiles: Uint8Array[] = [];
   for (let i = 0; i < tileCount; i += 1) {
     const start = i * tileSize;
-    tiles.push(buffer.slice(start, start + tileSize));
+    tiles.push(source.slice(start, start + tileSize));
   }
 
   return {
-    byteLength: buffer.length,
+    byteLength: source.length,
     tileCount,
     bytesPerTile: tileSize,
     tiles,
+    tileTable,
+    tileTableShift,
     warnings,
   };
 }
@@ -228,11 +257,24 @@ function drawTiles(
     const tile = parsed.tiles[tileIndex];
     const tileX = (tileIndex % tilesPerRow) * 8;
     const tileY = Math.floor(tileIndex / tilesPerRow) * 8;
+    const tilePrefix =
+      parsed.tileTable && parsed.tileTableShift != null ? parsed.tileTable[tileIndex] << parsed.tileTableShift : 0;
 
     for (let y = 0; y < 8; y += 1) {
       for (let x = 0; x < 8; x += 1) {
-        const colorIndex = decodePixel(tile, bitDepth, x, y);
-        const [red, green, blue] = getPaletteColor(colorIndex, bitDepth, palette, selectedRow);
+        const colorIndex = tilePrefix | decodePixel(tile, bitDepth, x, y);
+        let resolvedRow = selectedRow;
+        let resolvedIndex = colorIndex;
+        if (palette && parsed.tileTable && parsed.tileTableShift != null && bitDepth !== 8) {
+          if (bitDepth === 4) {
+            resolvedRow = (colorIndex >> 4) & 0x0f;
+            resolvedIndex = colorIndex & 0x0f;
+          } else if (bitDepth === 2) {
+            resolvedRow = (colorIndex >> 2) & 0x3f;
+            resolvedIndex = colorIndex & 0x03;
+          }
+        }
+        const [red, green, blue] = getPaletteColor(resolvedIndex, bitDepth, palette, resolvedRow);
         const pixelIndex = ((tileY + y) * width + (tileX + x)) * 4;
         data[pixelIndex] = red;
         data[pixelIndex + 1] = green;

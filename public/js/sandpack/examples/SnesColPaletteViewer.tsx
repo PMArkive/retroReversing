@@ -38,17 +38,31 @@ function decodeColor(value: number): PaletteColor {
 function parseColFile(buffer: Uint8Array): ParsedPalette | null {
   if (buffer.length < 2) return null;
 
+  let source = buffer;
   const warnings: string[] = [];
   if (buffer.length % 2 !== 0) {
     warnings.push('Odd file size detected. The final byte was ignored.');
   }
 
-  const wordCount = Math.floor(buffer.length / 2);
+  // S-CG-CAD COL saves commonly store:
+  // - 0x200-byte palette record region (256 colors)
+  // - 0x100-byte tool header at 0x200 (often beginning with "NAK1989 S-CG-CAD...")
+  // - 0x100-byte tail metadata
+  // In that case, render only the front 0x200 bytes as palette data.
+  if (buffer.length >= 0x400) {
+    const header = new TextDecoder().decode(buffer.slice(0x200, 0x200 + 0x20));
+    if (header.includes('NAK1989') && header.includes('S-CG-CAD')) {
+      source = buffer.slice(0, 0x200);
+      warnings.push('Detected S-CG-CAD COL metadata at 0x200. Rendered only the front 0x200-byte palette region.');
+    }
+  }
+
+  const wordCount = Math.floor(source.length / 2);
   const colors: PaletteColor[] = [];
 
   for (let i = 0; i < wordCount; i += 1) {
     const offset = i * 2;
-    const value = buffer[offset] | (buffer[offset + 1] << 8);
+    const value = source[offset] | (source[offset + 1] << 8);
     colors.push(decodeColor(value));
   }
 
@@ -57,14 +71,14 @@ function parseColFile(buffer: Uint8Array): ParsedPalette | null {
     rows.push(colors.slice(i, i + 16));
   }
 
-  if (wordCount !== 512) {
-    warnings.push(
-      `This file has ${wordCount} colors instead of the common 512-color SNES workstation palette bank.`,
-    );
+  if (wordCount === 256) {
+    warnings.push('This COL contains 256 colors (16 rows x 16), which matches the S-CG-CAD palette record region.');
+  } else if (wordCount !== 512) {
+    warnings.push(`This file has ${wordCount} colors. Common layouts are 256 (S-CG-CAD) or 512 (some other toolchains).`);
   }
 
   return {
-    byteLength: buffer.length,
+    byteLength: source.length,
     colorCount: wordCount,
     rowCount: rows.length,
     rows,
