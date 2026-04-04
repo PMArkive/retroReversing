@@ -26,6 +26,7 @@ const reactUrl = `https://esm.sh/react@18${deps}`;
 const reactDomUrl = `https://esm.sh/react-dom@18/client${deps}`;
 const sandpackUrl = `https://esm.sh/@codesandbox/sandpack-react@2.2.0${deps}`;
 const themeUrl = `https://esm.sh/@codesandbox/sandpack-themes@2.0.21${deps}`;
+const RESIZE_HANDLE_HEIGHT = 12;
 
 const defaultFiles = {
   "/App.tsx": {
@@ -48,24 +49,153 @@ const defaultFiles = {
 class RRSandpack extends HTMLElement {
   constructor() {
     super();
+    this._editorHeight = parseInt(this.getAttribute("editor-height") || "400", 10);
+    this._editorWidth = parseInt(this.getAttribute("editor-width") || "60", 10);
+    this._resizable = this.getAttribute("resizable") !== "false";
+    this._hostHeight = this._resizable
+      ? this._editorHeight + RESIZE_HANDLE_HEIGHT
+      : this._editorHeight;
+    this._root = null;
+    this._renderProps = null;
+    this._resizeObserver = null;
+    this._isDraggingResize = false;
+    this._resizeStartY = 0;
+    this._resizeStartHeight = 0;
+
+    this.style.display = "block";
+    this.style.width = "100%";
+    this.style.minHeight = `${this._hostHeight}px`;
+    this.style.position = "relative";
+    if (this._resizable) {
+      this.style.height = `${this._hostHeight}px`;
+      this.style.overflow = "hidden";
+    }
+
+    const contentHeight = this._resizable
+      ? `calc(100% - ${RESIZE_HANDLE_HEIGHT}px)`
+      : "100%";
+
     this._container = document.createElement("div");
+    this._container.style.width = "100%";
+    this._container.style.height = contentHeight;
+    this._container.style.minHeight = `${this._editorHeight}px`;
     this._placeholder = document.createElement("div");
-    this._placeholder.textContent = "Loading interactive example...";
+    this._placeholder.style.width = "100%";
+    this._placeholder.style.height = contentHeight;
+    this._placeholder.style.minHeight = `${this._editorHeight}px`;
+    this._placeholder.style.display = "flex";
+    this._placeholder.style.flexDirection = "column";
+    this._placeholder.style.alignItems = "center";
+    this._placeholder.style.justifyContent = "center";
+    this._placeholder.style.gap = "12px";
+    this._placeholder.style.cursor = "pointer";
+    this._placeholder.style.background = "rgba(0,0,0,0.05)";
+    this._placeholder.style.border = "2px dashed rgba(128,128,128,0.4)";
+    this._placeholder.style.borderRadius = "6px";
+    this._placeholder.style.color = "rgba(128,128,128,0.9)";
+    this._placeholder.style.userSelect = "none";
+
+    const _label = document.createElement("span");
+    _label.textContent = this.getAttribute("placeholder") || "▶  Click to load interactive example";
+    _label.style.fontSize = "0.95rem";
+    _label.style.fontFamily = "system-ui, sans-serif";
+    this._placeholder.appendChild(_label);
+
+    this._onPlaceholderClick = () => {
+      this._placeholder.removeEventListener("click", this._onPlaceholderClick);
+      _label.textContent = "Loading...";
+      this._placeholder.style.cursor = "default";
+      this._initSandpack();
+    };
+    this._placeholder.addEventListener("click", this._onPlaceholderClick);
     this.appendChild(this._placeholder);
-    this._observer = null;
+
+    this._resizeHandle = document.createElement("div");
+    this._resizeHandle.style.height = `${RESIZE_HANDLE_HEIGHT}px`;
+    this._resizeHandle.style.width = "100%";
+    this._resizeHandle.style.cursor = "ns-resize";
+    this._resizeHandle.style.userSelect = "none";
+    this._resizeHandle.style.touchAction = "none";
+    this._resizeHandle.style.borderTop = "1px solid rgba(255, 255, 255, 0.2)";
+    this._resizeHandle.style.background = "rgba(255, 255, 255, 0.04)";
+
+    if (this._resizable) {
+      this._resizeHandle.addEventListener("pointerdown", this._onResizePointerDown);
+      this.appendChild(this._resizeHandle);
+    }
+
   }
 
-  connectedCallback() {
-    this._observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          this._observer.disconnect();
-          this._initSandpack();
-        }
-      },
-      { threshold: 0.1 }
+  connectedCallback() {}
+
+  disconnectedCallback() {
+    if (this._onPlaceholderClick) {
+      this._placeholder.removeEventListener("click", this._onPlaceholderClick);
+    }
+    if (this._resizeObserver) {
+      this._resizeObserver.disconnect();
+    }
+    if (this._resizable) {
+      this._resizeHandle.removeEventListener("pointerdown", this._onResizePointerDown);
+      window.removeEventListener("pointermove", this._onResizePointerMove);
+      window.removeEventListener("pointerup", this._onResizePointerUp);
+      document.body.style.cursor = "";
+    }
+  }
+
+  _getCurrentEditorHeight() {
+    const resizeHandleOffset = this._resizable ? RESIZE_HANDLE_HEIGHT : 0;
+    return this._resizable
+      ? Math.max(this._editorHeight, Math.round((this.clientHeight || this._editorHeight) - resizeHandleOffset))
+      : this._editorHeight;
+  }
+
+  _onResizePointerDown = (event) => {
+    event.preventDefault();
+    this._isDraggingResize = true;
+    this._resizeStartY = event.clientY;
+    this._resizeStartHeight = this.clientHeight;
+    document.body.style.cursor = "ns-resize";
+    window.addEventListener("pointermove", this._onResizePointerMove);
+    window.addEventListener("pointerup", this._onResizePointerUp);
+  };
+
+  _onResizePointerMove = (event) => {
+    if (!this._isDraggingResize) return;
+    const deltaY = event.clientY - this._resizeStartY;
+    const minHeight = this._editorHeight + RESIZE_HANDLE_HEIGHT;
+    const nextHeight = Math.max(minHeight, Math.round(this._resizeStartHeight + deltaY));
+    this.style.height = `${nextHeight}px`;
+    this._renderSandpack();
+  };
+
+  _onResizePointerUp = () => {
+    this._isDraggingResize = false;
+    document.body.style.cursor = "";
+    window.removeEventListener("pointermove", this._onResizePointerMove);
+    window.removeEventListener("pointerup", this._onResizePointerUp);
+  };
+
+  _renderSandpack() {
+    if (!this._root || !this._renderProps) return;
+
+    this._root.render(
+      this._renderProps.React.createElement(this._renderProps.Sandpack, {
+        template: this._renderProps.templateAttr,
+        theme: "auto",
+        files: this._renderProps.files,
+        options: {
+          initMode: "user-visible",
+          showTabs: this._renderProps.showTabsAttr,
+          showLineNumbers: true,
+          showConsoleButton: true,
+          wrapContent: true,
+          editorHeight: this._getCurrentEditorHeight(),
+          editorWidthPercentage: this._editorWidth,
+          resizablePanels: true,
+        },
+      })
     );
-    this._observer.observe(this);
   }
 
   async _initSandpack() {
@@ -78,9 +208,6 @@ class RRSandpack extends HTMLElement {
 
     const templateAttr = this.getAttribute("template") || "react-ts";
     const showTabsAttr = this.hasAttribute("show-tabs");
-
-    const editorHeight = parseInt(this.getAttribute("editor-height") || "400", 10);
-    const editorWidth = parseInt(this.getAttribute("editor-width") || "60", 10);
 
     let userFiles = {};
     const tpl = this.querySelector("template");
@@ -121,26 +248,22 @@ class RRSandpack extends HTMLElement {
     );
 
     this.removeChild(this._placeholder);
-    this.appendChild(this._container);
+    if (this._resizable) {
+      this.insertBefore(this._container, this._resizeHandle);
+    } else {
+      this.appendChild(this._container);
+    }
 
-    const root = ReactDOM.createRoot(this._container);
-    root.render(
-      React.createElement(Sandpack, {
-        template: templateAttr,
-        theme: "auto",
-        files,
-        options: {
-          //externalResources: ["https://cdn.tailwindcss.com"],
-          initMode: "user-visible",
-          showTabs: showTabsAttr,
-          showLineNumbers: true,
-          showConsoleButton: true,
-          wrapContent: true,
-          editorHeight,
-          editorWidthPercentage: editorWidth
-        },
-      })
-    );
+    this._root = ReactDOM.createRoot(this._container);
+    this._renderProps = { React, Sandpack, templateAttr, showTabsAttr, files };
+    this._renderSandpack();
+
+    if (this._resizable) {
+      this._resizeObserver = new ResizeObserver(() => {
+        this._renderSandpack();
+      });
+      this._resizeObserver.observe(this);
+    }
   }
 }
 
