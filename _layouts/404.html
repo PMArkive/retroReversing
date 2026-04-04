@@ -73,6 +73,14 @@
 
   <script>
     (function () {
+      // Redirect trailing-slash URLs to the canonical no-slash version
+      // e.g. /snes/ → /snes  (fixes old permalink 404s)
+      if (window.location.pathname.length > 1 && window.location.pathname.endsWith('/')) {
+        var noSlash = window.location.pathname.slice(0, -1) + window.location.search + window.location.hash;
+        window.location.replace(noSlash);
+        return;
+      }
+
       var breadcrumbEl = document.getElementById('breadcrumb-topic');
       var relatedWrapper = document.getElementById('related-posts-wrapper');
       var relatedList   = document.getElementById('related-posts-list');
