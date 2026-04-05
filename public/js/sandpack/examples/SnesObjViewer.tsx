@@ -9,6 +9,8 @@ type SizeOverride = 'auto' | 'small' | 'large';
 type SizePreviewMode = 'normal' | 'compare';
 type ObjFormatOverride = 'auto' | 'obj' | 'obj10' | 'obz';
 type FlipOverride = 'auto' | 'off' | 'on';
+type CadPreviewMode = 'standard' | 'real';
+type CadVMode = 0 | 1;
 
 interface PaletteColor {
   value: number;
@@ -225,6 +227,7 @@ function parseObj(
   buffer: Uint8Array,
   fileName?: string | null,
   override: ObjFormatOverride = 'auto',
+  acceptLegacySizeFlag = false,
 ): ParsedObj | null {
   if (buffer.length < 6) return null;
 
@@ -433,10 +436,14 @@ function parseObj(
         // Keep the high byte available for diagnostics/UI, but do not treat it as a SNES OAM attribute byte.
         const attr = (packed >> 8) & 0xff;
         const sawLegacySize = (byte1 & 0x40) !== 0;
-        const largeTile = (byte1 & 0x01) !== 0 || sawLegacySize;
-        if (sawLegacySize && (byte1 & 0x01) === 0) {
+        const largeTile = (byte1 & 0x01) !== 0 || (acceptLegacySizeFlag && sawLegacySize);
+        if (!acceptLegacySizeFlag && sawLegacySize) {
           warnings.push(
-            'Found OBJ/OBX entries with flag bit 0x40 set. This viewer treats bit 0 as size select by default and also accepts bit 0x40 as a legacy size flag.',
+            'Found OBJ/OBX entries with flag bit 0x40 set. S-CG-CAD uses bit 0 as size select; enable "Accept legacy size flag (0x40)" only if your source toolchain expects it.',
+          );
+        } else if (acceptLegacySizeFlag && sawLegacySize && (byte1 & 0x01) === 0) {
+          warnings.push(
+            'Found OBJ/OBX entries with flag bit 0x40 set. This viewer is treating it as a legacy size flag (in addition to bit 0).',
           );
         }
         records.push({
@@ -704,6 +711,9 @@ function drawObjects(
   vFlipOverride: FlipOverride,
   fAddressPreset: number,
   bAddressPreset: number,
+  useCadHeaderDefaults: boolean,
+  cadPreviewMode: CadPreviewMode,
+  cadVMode: CadVMode,
 ) {
   const margin = 8;
   const visibleRecords = records.filter((record) => record.display);
@@ -723,8 +733,12 @@ function drawObjects(
     return;
   }
 
+  const isSnesCadObj = objFormat === 'obj';
+  const useCadVMode = isSnesCadObj && useCadHeaderDefaults && cadVMode === 1;
+  const yDiv = useCadVMode ? 2 : 1;
+
   const xs = visibleRecords.map((record) => record.xSigned);
-  const ys = visibleRecords.map((record) => record.ySigned);
+  const ys = visibleRecords.map((record) => Math.trunc(record.ySigned / yDiv));
   const minX = Math.min(...xs);
   const minY = Math.min(...ys);
   const maxX = Math.max(
@@ -736,7 +750,9 @@ function drawObjects(
   const maxY = Math.max(
     ...visibleRecords.map((record) => {
       const largeTile = sizeOverride === 'auto' ? record.largeTile : sizeOverride === 'large';
-      return record.ySigned + getObjectDimensions(objectSizeMode, largeTile)[1] - 1;
+      const height = getObjectDimensions(objectSizeMode, largeTile)[1];
+      const scaledHeight = Math.ceil(height / yDiv);
+      return Math.trunc(record.ySigned / yDiv) + scaledHeight - 1;
     }),
   );
   const width = maxX - minX + 1 + margin * 2;
@@ -756,7 +772,7 @@ function drawObjects(
 
   for (const record of [...visibleRecords].reverse()) {
     const startX = record.xSigned - minX + margin;
-    const startY = record.ySigned - minY + margin;
+    const startY = Math.trunc(record.ySigned / yDiv) - minY + margin;
     const autoHFlip =
       objFormat === 'obj'
         ? ((record.flipSel ?? 0) & 0x01) !== 0
@@ -779,11 +795,12 @@ function drawObjects(
         : manualPaletteRow;
     const largeTile = sizeOverride === 'auto' ? record.largeTile : sizeOverride === 'large';
     const [objectWidth, objectHeight] = getObjectDimensions(objectSizeMode, largeTile);
+    const outObjectHeight = Math.ceil(objectHeight / yDiv);
     // VRAM offset is entered in SNES VRAM words (16-bit). Convert that to a tile offset, then to pixels.
     // parsedCgx.pixels is indexed in 8x8 tile pixels (tileIndex * 64).
     const vramBytes = vramOffset * 2;
     const vramTileOffset = parsedCgx ? Math.floor(vramBytes / parsedCgx.bytesPerTile) : 0;
-    const isSnesCadObj = objFormat === 'obj';
+    const useCadNibbleAddressing = isSnesCadObj && useCadHeaderDefaults;
     const addressPreset =
       isSnesCadObj && record.tileId >= 0x100
         ? Math.max(0, bAddressPreset | 0)
@@ -791,7 +808,7 @@ function drawObjects(
     const addressBaseTiles = isSnesCadObj ? (addressPreset & 0x0f) * 0x100 : 0;
     const tileBase = (vramTileOffset + addressBaseTiles + (isSnesCadObj ? (record.tileId & 0xff) : record.tileId)) * 64;
 
-    for (let py = 0; py < objectHeight; py += 1) {
+    for (let py = 0; py < outObjectHeight; py += 1) {
       for (let px = 0; px < objectWidth; px += 1) {
         const outX = startX + px;
         const outY = startY + py;
@@ -804,26 +821,34 @@ function drawObjects(
 
         if (parsedCgx) {
           const sourceX = hFlip ? objectWidth - 1 - px : px;
-          const sourceY = vFlip ? objectHeight - 1 - py : py;
+          const rawSourceY = py * yDiv;
+          const sourceY = vFlip ? objectHeight - 1 - rawSourceY : rawSourceY;
+          if (sourceY < 0 || sourceY >= objectHeight) continue;
           // parsedCgx.pixels is a linear array of 8x8 tiles (tileIndex * 64).
           // For SNES OBJ rendering, the tile number is an index into OBJ VRAM arranged in 16 tiles per row.
           // So the next tile row is +16 in tile index, not +tilesAcross.
           const tilesPerRow = Math.max(1, objTilesPerRow | 0);
           const tileInSpriteX = sourceX >> 3;
           const tileInSpriteY = sourceY >> 3;
-          const effectiveTileId = isSnesCadObj
-            ? addressBaseTiles + (record.tileId & 0xff)
-            : record.tileId;
-          const tileIndex = vramTileOffset + effectiveTileId + tileInSpriteX + tileInSpriteY * tilesPerRow;
+          const effectiveTileId = isSnesCadObj ? addressBaseTiles + (record.tileId & 0xff) : record.tileId;
+          const tileIndex = useCadNibbleAddressing
+            ? (() => {
+                const baseLow = record.tileId & 0xff;
+                const baseX = baseLow & 0x0f;
+                const baseY = baseLow & 0xf0;
+                const tileX = (baseX + tileInSpriteX) & 0x0f;
+                const tileY = (baseY + ((tileInSpriteY & 0x0f) << 4)) & 0xf0;
+                const low = tileY | tileX;
+                return vramTileOffset + addressBaseTiles + low;
+              })()
+            : vramTileOffset + effectiveTileId + tileInSpriteX + tileInSpriteY * tilesPerRow;
           const pixelOffset = tileIndex * 64 + (sourceY & 0x7) * 8 + (sourceX & 0x7);
           const colorIndex = parsedCgx.pixels[pixelOffset] ?? 0;
-          if (colorIndex === 0) {
+          const paletteIndex =
+            bitDepth === 8 ? cgramOffset + colorIndex : cgramOffset + paletteRow * 16 + colorIndex;
+          if (colorIndex === 0 && isSnesCadObj && useCadHeaderDefaults && cadPreviewMode === 'real') {
             alpha = 0;
           } else {
-            const paletteIndex =
-              bitDepth === 8
-                ? cgramOffset + colorIndex
-                : cgramOffset + paletteRow * 16 + colorIndex;
             [red, green, blue] = getPaletteRgb(parsedCol, paletteIndex, bitDepth);
           }
         } else {
@@ -932,6 +957,7 @@ function SnesObjViewer() {
   const [objName, setObjName] = useState('object-layout');
   const [objFileName, setObjFileName] = useState<string | null>(null);
   const [objFormatOverride, setObjFormatOverride] = useState<ObjFormatOverride>('auto');
+  const [acceptLegacySizeFlag, setAcceptLegacySizeFlag] = useState(false);
   const [sequenceIndex, setSequenceIndex] = useState<number | null>(null);
   const [sequenceStepIndex, setSequenceStepIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -942,7 +968,11 @@ function SnesObjViewer() {
   const [groupMode, setGroupMode] = useState<GroupMode>('frame64');
   const [groupIndex, setGroupIndex] = useState(0);
   const [clusterIndex, setClusterIndex] = useState(0);
+  const [groupInfoFilter, setGroupInfoFilter] = useState<number | null>(null);
   const [objectSizeMode, setObjectSizeMode] = useState(0);
+  const [useCadHeaderDefaults, setUseCadHeaderDefaults] = useState(true);
+  const [cadPreviewMode, setCadPreviewMode] = useState<CadPreviewMode>('standard');
+  const [cadVMode, setCadVMode] = useState<CadVMode>(0);
   const [sizePreviewMode, setSizePreviewMode] = useState<SizePreviewMode>('normal');
   const [sizeOverride, setSizeOverride] = useState<SizeOverride>('auto');
   const [objTilesPerRow, setObjTilesPerRow] = useState(16);
@@ -957,8 +987,8 @@ function SnesObjViewer() {
   const compareLargeRef = useRef<HTMLCanvasElement | null>(null);
 
   const parsedObj = useMemo(
-    () => (objBuffer ? parseObj(objBuffer, objFileName, objFormatOverride) : null),
-    [objBuffer, objFileName, objFormatOverride],
+    () => (objBuffer ? parseObj(objBuffer, objFileName, objFormatOverride, acceptLegacySizeFlag) : null),
+    [objBuffer, objFileName, objFormatOverride, acceptLegacySizeFlag],
   );
   const parsedCgx = useMemo(() => (cgxBuffer ? parseCgx(cgxBuffer, bitDepth) : null), [cgxBuffer, bitDepth]);
   const parsedCol = useMemo(() => (colBuffer ? parseCol(colBuffer) : null), [colBuffer]);
@@ -972,6 +1002,7 @@ function SnesObjViewer() {
     if (!parsedObj) return;
     if (!objBuffer) return;
     if (parsedObj.format !== 'obj') return;
+    if (!useCadHeaderDefaults) return;
 
     // S-CG-CAD stores preview VRAM base presets ("F address" and "B address") in the 0x100-byte OBJ header tail.
     // Auto-load them when the CAD metadata tail is present so the preview matches S-CG-CAD defaults.
@@ -980,9 +1011,12 @@ function SnesObjViewer() {
     const headerMarker = new TextDecoder().decode(objBuffer.slice(headerStart, headerStart + 0x20));
     if (!headerMarker.includes('NAK1989') || !headerMarker.includes('S-CG-CAD')) return;
 
+    setObjectSizeMode(objBuffer[headerStart + 0x50] & 0x07);
+    setCadVMode((objBuffer[headerStart + 0x54] & 1) as CadVMode);
     setFAddressPreset(objBuffer[headerStart + 0x55] & 0x0f);
     setBAddressPreset(objBuffer[headerStart + 0x56] & 0x0f);
-  }, [parsedObj, objBuffer]);
+    setObjTilesPerRow(16);
+  }, [parsedObj, objBuffer, useCadHeaderDefaults]);
 
   useEffect(() => {
     // Avoid confusing "sticky" state when switching between unrelated OBJ files.
@@ -998,6 +1032,11 @@ function SnesObjViewer() {
     setVFlipOverride('auto');
     setFAddressPreset(0);
     setBAddressPreset(0);
+    setGroupInfoFilter(null);
+    setUseCadHeaderDefaults(true);
+    setCadPreviewMode('standard');
+    setCadVMode(0);
+    setAcceptLegacySizeFlag(false);
   }, [objBuffer]);
 
   useEffect(() => {
@@ -1006,7 +1045,13 @@ function SnesObjViewer() {
     }
   }, [objBuffer]);
 
-  const groups = useMemo(() => buildGroups(parsedObj?.records || [], groupMode), [parsedObj, groupMode]);
+  const filteredRecords = useMemo(() => {
+    if (!parsedObj) return [];
+    if (groupInfoFilter == null) return parsedObj.records;
+    return parsedObj.records.filter((record) => record.groupInfo === groupInfoFilter);
+  }, [parsedObj, groupInfoFilter]);
+
+  const groups = useMemo(() => buildGroups(filteredRecords, groupMode), [filteredRecords, groupMode]);
   const frameRecords = useMemo(() => {
     if (groups.length === 0) return [];
     const safeIndex = Math.max(0, Math.min(groupIndex, groups.length - 1));
@@ -1065,7 +1110,7 @@ function SnesObjViewer() {
     if (!parsedObj) return;
 
     if (sizePreviewMode === 'compare') {
-      if (compareSmallRef.current) {
+          if (compareSmallRef.current) {
         drawObjects(
           compareSmallRef.current,
           visibleRecords,
@@ -1085,6 +1130,9 @@ function SnesObjViewer() {
           vFlipOverride,
           fAddressPreset,
           bAddressPreset,
+          useCadHeaderDefaults,
+          cadPreviewMode,
+          cadVMode,
         );
       }
       if (compareLargeRef.current) {
@@ -1107,6 +1155,9 @@ function SnesObjViewer() {
           vFlipOverride,
           fAddressPreset,
           bAddressPreset,
+          useCadHeaderDefaults,
+          cadPreviewMode,
+          cadVMode,
         );
       }
       return;
@@ -1132,6 +1183,9 @@ function SnesObjViewer() {
       vFlipOverride,
       fAddressPreset,
       bAddressPreset,
+      useCadHeaderDefaults,
+      cadPreviewMode,
+      cadVMode,
     );
   }, [
     visibleRecords,
@@ -1152,6 +1206,9 @@ function SnesObjViewer() {
     cgramOffset,
     fAddressPreset,
     bAddressPreset,
+    useCadHeaderDefaults,
+    cadPreviewMode,
+    cadVMode,
   ]);
 
   useEffect(() => {
@@ -1321,12 +1378,23 @@ function SnesObjViewer() {
                 max={64}
                 value={objTilesPerRow}
                 onChange={(event) => setObjTilesPerRow(Math.max(1, Math.min(64, Number(event.target.value) || 16)))}
+                disabled={parsedObj.format === 'obj' && useCadHeaderDefaults}
                 style={{ marginLeft: '0.5rem', width: '5rem' }}
               />
             </label>
 
             {parsedObj.format === 'obj' ? (
               <>
+                <label title="Some OBJ/OBX toolchains appear to use bit 0x40 as a size select flag. S-CG-CAD uses bit 0.">
+                  Accept legacy size flag (0x40):
+                  <input
+                    type="checkbox"
+                    checked={acceptLegacySizeFlag}
+                    onChange={(event) => setAcceptLegacySizeFlag(event.target.checked)}
+                    style={{ marginLeft: '0.5rem' }}
+                    disabled={useCadHeaderDefaults}
+                  />
+                </label>
                 <label title="S-CG-CAD preview base: (preset & 0x0F) * 0x100 tiles (used when tileId high bit is 0).">
                   F address preset:
                   <input
@@ -1355,6 +1423,31 @@ function SnesObjViewer() {
                 </label>
               </>
             ) : null}
+
+            <label title="Filters the rendered entries to only those with a matching group info byte (OBJ slot byte 1).">
+              Group info:
+              <select
+                value={groupInfoFilter == null ? 'all' : String(groupInfoFilter)}
+                onChange={(event) => {
+                  const value = event.target.value;
+                  if (value === 'all') {
+                    setGroupInfoFilter(null);
+                    return;
+                  }
+                  const parsed = Number(value);
+                  if (!Number.isFinite(parsed)) return;
+                  setGroupInfoFilter(parsed);
+                }}
+                style={{ marginLeft: '0.5rem' }}
+              >
+                <option value="all">All</option>
+                {parsedObj.groupInfoValues.map((value) => (
+                  <option key={value} value={value}>
+                    {value} ({formatHex(value, 2)})
+                  </option>
+                ))}
+              </select>
+            </label>
           </div>
 
           {sizePreviewMode === 'compare' ? (
@@ -1497,7 +1590,12 @@ function SnesObjViewer() {
 
         <label>
           OBJ size:
-          <select value={objectSizeMode} onChange={(event) => setObjectSizeMode(Number(event.target.value))} style={{ marginLeft: '0.5rem' }}>
+          <select
+            value={objectSizeMode}
+            onChange={(event) => setObjectSizeMode(Number(event.target.value))}
+            style={{ marginLeft: '0.5rem' }}
+            disabled={parsedObj?.format === 'obj' && useCadHeaderDefaults}
+          >
             {Object.entries(OBJECT_SIZE_SETTINGS).map(([key, value]) => (
               <option key={key} value={key}>
                 {value.label}
@@ -1505,6 +1603,46 @@ function SnesObjViewer() {
             ))}
           </select>
         </label>
+
+        {parsedObj?.format === 'obj' ? (
+          <label title="When enabled, uses the S-CG-CAD OBJ tail header defaults for preview (size mode, F/B presets, and 16 tiles per row).">
+            Use CAD header defaults:
+            <input
+              type="checkbox"
+              checked={useCadHeaderDefaults}
+              onChange={(event) => setUseCadHeaderDefaults(event.target.checked)}
+              style={{ marginLeft: '0.5rem' }}
+            />
+          </label>
+        ) : null}
+
+        {parsedObj?.format === 'obj' && useCadHeaderDefaults ? (
+          <label title="Matches S-CG-CAD's two preview paths (standard vs real). In real mode, color index 0 is treated as transparent.">
+            CAD preview:
+            <select
+              value={cadPreviewMode}
+              onChange={(event) => setCadPreviewMode(event.target.value as CadPreviewMode)}
+              style={{ marginLeft: '0.5rem' }}
+            >
+              <option value="standard">Standard</option>
+              <option value="real">Real</option>
+            </select>
+          </label>
+        ) : null}
+
+        {parsedObj?.format === 'obj' && useCadHeaderDefaults ? (
+          <label title="Matches S-CG-CAD's V-mode setting. When enabled, preview sprites are vertically squashed (roughly half height).">
+            CAD V-mode:
+            <select
+              value={cadVMode}
+              onChange={(event) => setCadVMode((Number(event.target.value) ? 1 : 0) as CadVMode)}
+              style={{ marginLeft: '0.5rem' }}
+            >
+              <option value={0}>0</option>
+              <option value={1}>1</option>
+            </select>
+          </label>
+        ) : null}
 
         <label>
           H flip:
