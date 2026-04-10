@@ -41,6 +41,11 @@ Most commercial games written for Game Boy/Game Boy Color/NES/SNES/SMS/MegaDrive
 
 {% include link-to-other-site.html url="https://x64.halb.it/" description="Alberto Ventafridda has created a client-side x86-64 Linux emulator and debugger that runs entirely in the browser, allowing for safe and accessible assembly experimentation." image="https://opengraph.githubassets.com/1/robalb/x86-64-playground" title="x86-64 Playground" %}
 
+### PacManOS: A Bare-Metal x86 Pac-Man Kernel
+[mdeclerk](https://github.com/mdeclerk) has developed PacManOS, a hobbyist project featuring a bare-metal 32-bit x86 kernel that boots directly into a playable Pac-Man clone. The repository contains the source code for the modular architecture, which is designed to allow other games to be easily plugged in on top of the custom kernel. It serves as an excellent technical reference for low-level OS development, featuring a cross-compiler setup and support for booting via QEMU or Bochs.
+
+{% include link-to-other-site.html url="https://github.com/mdeclerk/PacManOS" description="mdeclerk has released PacManOS, a 32-bit x86 kernel written in C and Assembly that demonstrates bare-metal game development and modular kernel design." image="https://opengraph.githubassets.com/1/mdeclerk/PacManOS" title="GitHub - mdeclerk/PacManOS: A bare-metal 32-bit x86 kernel that boots into a playable Pac-Man clone." %}
+
 ---
 # C/C++
 C and C++ revolutionized game development by introducing a higher level of abstraction without sacrificing performance (when compilers became good enough between the Mega Drive and Saturn era). 
