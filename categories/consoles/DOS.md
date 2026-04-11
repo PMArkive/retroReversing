@@ -97,6 +97,12 @@ Fabien Sanglard has an excellent series of articles on how he reverse engineered
 Thanks to debug symbols being found in the **Carmageddon Splat Pack** expansion and the amazing work of the community there is now a reversing project for Carmageddon called **Dethrace**.
 [dethrace-labs/dethrace: Reverse engineering the 1997 game "Carmageddon"](https://github.com/dethrace-labs/dethrace?tab=readme-ov-file)
 
+### How Pizza Tycoon Simulated Traffic
+[Pizza Legacy](https://pizzalegacy.nl/blog/traffic-system.html) features a technical write-up on reverse engineering the traffic simulation system from the 1994 DOS game Pizza Tycoon. The post covers the specific algorithms and engine optimizations the original developers used to route dozens of cars through a city on a strict 25 MHz CPU budget. These structural insights directly support the ongoing open-source C++ reimplementation of the game.
+
+{% include link-to-other-site.html url="https://pizzalegacy.nl/blog/traffic-system.html" description="The Pizza Legacy blog explores the reverse engineering of Pizza Tycoon's 1994 traffic engine, detailing how developers managed city-wide vehicle simulation with minimal CPU overhead." image="" title="How Pizza Tycoon simulated traffic on a 25 MHz CPU" %}
+
+
 ---
 ## DOS Gaming Aspect Ratio - 320x200
 The Youtuber **Displaced Gamers** has an excellent video explaining the common DOS aspect ratio:

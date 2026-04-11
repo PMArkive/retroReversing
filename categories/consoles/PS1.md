@@ -96,6 +96,13 @@ In this video EZScape demonstrates a few speed runs for PS1 games that could nev
 
 If you are interested in creating your own Tool-Assisted-Speedruns then you might want to check the latest version of **BizHawk**. If you are interested in improving some existing TAS then check out [PS1 Tool-assisted movies - TASVideos](https://tasvideos.org/Movies-PSX)
 
+## Homebrew
+
+### PSXSplash Documentation: Unity to PS1 Homebrew
+The [PSXSplash](https://psxsplash.github.io/docs/latest/) documentation provides a comprehensive guide for using SplashEdit, a Unity editor package designed for building PlayStation 1 games. This toolchain allows developers to design scenes in Unity, write game logic using Lua, and export the project directly to real PS1 hardware or emulators. The documentation covers essential technical topics such as VRAM packing, texture quantization, MIPS compiler integration, and Lua API references for handling entities, audio, and animations.
+
+{% include link-to-other-site.html url="https://psxsplash.github.io/docs/latest/" description="The PSXSplash documentation offers a detailed technical walkthrough for using Unity as a front-end editor to create authentic homebrew for the original PlayStation." image="https://opengraph.githubassets.com/1/psxsplash/splashedit" title="Introduction - PSXSplash Documentation" %}
+
 ---
 # Hardware
 

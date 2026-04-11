@@ -53,6 +53,11 @@ The most valuable reverse engineering projects tend to be the **platform exclusi
 Wikipedia maintains a list of Wii exclusives - [Wii-only games - Wikipedia](https://en.wikipedia.org/wiki/Category:Wii-only_games)
 
 
+## Porting Mac OS X to the Nintendo Wii
+[Bryan Keller's Dev Blog](https://bryankeller.github.io/2026/04/08/porting-mac-os-x-nintendo-wii.html) features an extensive technical breakdown of porting Mac OS X 10.0 (Cheetah) to the Nintendo Wii. The project leverages the PowerPC 750CL 'Broadway' CPU's compatibility with legacy Apple software, detailing the creation of a custom bootloader, kernel patching for memory management, and writing drivers for the Wii's Starlet ARM coprocessor. It provides a deep dive into the XNU kernel and the complexities of adapting a desktop OS to restricted console hardware.
+
+{% include link-to-other-site.html url="https://bryankeller.github.io/2026/04/08/porting-mac-os-x-nintendo-wii.html" description="Bryan Keller provides a comprehensive guide on porting Mac OS X to the Nintendo Wii, covering custom bootloader development, XNU kernel patches, and Starlet SoC driver implementation." image="https://bryankeller.github.io/assets/images/posts/wii-osx/wii-osx-hero.png" title="Porting Mac OS X to the Nintendo Wii" %}
+
 
 ---
 # All Posts tagged with Wii
