@@ -22,7 +22,6 @@ editlink: /tools/3DStudioMax.md
 
 ---
 # Version History
-
 There is an excellent article on **BeforeAndAfters** about the history of 3DS (Max) which is available here:
 https://beforesandafters.com/2020/06/04/a-visual-history-of-3ds-max/
 
@@ -69,7 +68,6 @@ You can also read more information about 3D Studio Release 3 in Game Developer M
 
 ---
 ## 3D Studio Release 4 (1994)
-
 The software was becoming much more mainstream by Release 4 and even has a few books published about it:
 * Inside 3D Studio Release 4 - New Riders Publishing - CD: [Inside 3D Studio Release 4 - CD : Internet Archive](https://archive.org/details/Inside3DSudioR4/1_inside_3ds-r4.jpg)
 
@@ -86,7 +84,6 @@ You can view a product demo created by AutoDesk in 1996 [^6] below:
 The video even shows Character Studio which is a tool to help create 3D animated characters and has built in animations for common walk cycles.
 
 ## 3D Studio Max 4 (2000)
-
 **3D Studio Max 4** was advertised at GDC 2001 including was a brief interview with Lance Alameda the Field Operations Manager at Discreet in the TV Show Electric Playground (Season 6 Episode 8) [^7]:
 <img width="1439" height="900" alt="Electric Playground - Still Frame" src="https://github.com/user-attachments/assets/adc798d8-80bb-40c3-ab57-0896c2630c95" />
 <img width="997" height="534" alt="Electric Playground - Showing Army Guy head being modelled in 3dsmax 4" src="https://github.com/user-attachments/assets/867d4f8e-6bbf-41f0-9527-336f22afe4a5" />

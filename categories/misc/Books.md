@@ -19,6 +19,7 @@ updatedAt: '2024-08-04'
 tags:
  - industry
 ---
+
 <style>
   td img {
     width: 198px;
@@ -36,7 +37,6 @@ This page is split into the following categories:
 
 ---
 # Books published around the same time as retro games
-
 This section will cover books available at the time when retro games were being created, for added context this section is broken down by year. 
 
 The list of books in this section is not an exhaustive list and mainly includes books that would have been notable at the time. We only list the book based on its first edition date in order to keep the lists a bit cleaner.
@@ -76,7 +76,6 @@ We have a separate post on the excellent "Game Programming Starter Kit" series. 
 {% include_cached link-to-other-post.html post="/GameProgrammingStarterKit" description="For more information about the Game Programming Starter Kit series check out this post." %}
 
 ---
-
 ## Published in 1976
 This section will cover books related to game development published in the year 1976, the year when the home game console market was just starting to take off with the release of the **Channel F**. It was also the year that Zilog would launch their Z80 microchip which would be used in many consoles and home computers in the future. 
 
@@ -735,7 +734,7 @@ Cover | Title | Author | Software | Notes
 <img class="lazy-load" data-image-full="https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/51uwKf5fgJL._AC_UY436_FMwebp_QL65_.jpg" /> | Game Production Handbook | Heather M Chandler | | 
 <img class="lazy-load" data-image-full="https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/51VuI9eJZGL._AC_UY436_FMwebp_QL65_.jpg" /> | Game Programming in C++: Start to Finish | Erik Yuzwa | C++, SDL, OpenGL | 
 <img class="lazy-load" data-image-full="https://m.media-amazon.com/images/I/51D3ctXQ5LL._AC_UY436_QL65_.jpg" /> | Game Programming Gems 6 | Mike Dickheiser | | 
-<img class="lazy-load" data-image-full="" /> | The Game Programmer’s Guide to Torque | Edward F. Maurina III | Torque Game Engine | 
+<img class="lazy-load" data-image-full="" /> | The Game Programmer's Guide to Torque | Edward F. Maurina III | Torque Game Engine | 
 <img class="lazy-load" data-image-full="" /> | Geometric Data Structures for Computer Graphics | Elmar Langetepe, Gabriel Zachmann | | 
 <img class="lazy-load" data-image-full="" /> | Introduction to 3D Game Programming with DirectX 9.0c: A Shader Approach | Frank D. Luna | DirectX 9.0c | 
 <img class="lazy-load" data-image-full="https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/51FvQYN3x3L._AC_UY436_FMwebp_QL65_.jpg" /> | Learn C++ By Making Games | Erik Yuzwa and Francois Dominic Laramee | C++, SDL | 
@@ -825,7 +824,6 @@ Cover | Title | Author | Software | Notes
 <img class="lazy-load" data-image-full="" /> | Unity game development essentials | Will Goldstone | Unity | 
 
 ---
-
 # Books about Retro Game Development with Modern Tools
 We tend to only cover retro games on this site and although the term retro means different things to different people, we have decided not to list game development books from 2010 and beyond. However we would like to list books published after 2010 if they are about Retro Game Development, that is what this section is for.
 

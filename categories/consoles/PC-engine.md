@@ -18,9 +18,9 @@ recommend:
  - introduction
 _updatedAt: '2025-02-15'
 ---
-# Introduction to the PC-Engine
 
-Sakharu Baguette has created an excellent documentary which explores the history of the PC Engine (known as the TurboGrafx-16 in North America), detailing its rise as a major rival to Nintendo in Japan and its struggle to find footing in the US [^1].
+# Introduction to the PC-Engine
+**Sakharu Baguette** has created an excellent documentary which explores the history of the PC Engine (known as the TurboGrafx-16 in North America), detailing its rise as a major rival to Nintendo in Japan and its struggle to find footing in the US [^1].
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ow13aO1OmJM?si=ZbrFdQnzaX3oSFsF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

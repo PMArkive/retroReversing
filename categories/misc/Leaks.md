@@ -52,7 +52,6 @@ In September 2020 the source code for Microsoft's Windows XP Operating System wa
 
 ---
 # Rockstar
-
 Although it didn't contain any programming files, the studio "accidentally" released a folder of internal development tools and game scripts in the retail release of GTA Trilogy for the Nintendo Switch.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">The Switch version is the Holy Grail for people, who likes behind the scenes. They leaked almost everything for the original trilogy. It includes:<br>Script sources...<br>Text sources...<br>Internal tools...<br>Some other weird files... <a href="https://t.co/FjvONzbeNh">pic.twitter.com/FjvONzbeNh</a></p>&mdash; Vadim M. (@NationalPepper) <a href="https://twitter.com/NationalPepper/status/1459294881139023874?ref_src=twsrc%5Etfw">November 12, 2021</a></blockquote> 

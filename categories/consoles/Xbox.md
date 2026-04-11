@@ -32,7 +32,6 @@ So grab your Xbox controller, and get ready to dive into the exciting world of X
 # Games
 
 ## Exclusives
-
 Wikipedia has a list of the games that are still exclusive to the original Microsoft Xbox - [Xbox-only games - Wikipedia](https://en.wikipedia.org/wiki/Category:Xbox-only_games)
 
 ---

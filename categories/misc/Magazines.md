@@ -94,7 +94,7 @@ Sadly **Wireframe** magazine is no longer producing new magazines after issue 70
 
 
 You can view all the issues on their official website:
-[Issues — Wireframe Magazine](https://wireframe.raspberrypi.com/issues)
+[Issues - Wireframe Magazine](https://wireframe.raspberrypi.com/issues)
 
 ### Relevant Articles
 It is worth reading the entire Wireframe issues cover-to-cover but the most important section for game development is the "Toolbox section of the magazine.
@@ -110,14 +110,14 @@ Issue | Name | Description
 2 | Life in the trenches | interview with Jane Whittaker on Atari Jaguar development of Alien vs Predator
 2 | FPS level design | Learn the basics of shooter level design with Half-Life 2
 2 | CityCraft | How understanding city functions results in better game design
-2 | Source Code | The simple yet effective AI behind Galaxian’s angry aliens
+2 | Source Code | The simple yet effective AI behind Galaxian's angry aliens
 2 | Maths of balance part 2 | Exploring how maths governs matchmaking and economics
-3 | Design principles | What Yars’ Revenge can teach us about design goals and planning
+3 | Design principles | What Yars' Revenge can teach us about design goals and planning
 3 | CityCraft | The abstract models that will make your video game cities shine
 3 | Source Code | How parallax scrolling gives 2D games the illusion of depth
 3 | Build a shooter in Unity | Get to grips with Unity in our step- by-step guide to making an FPS
 4 | CityCraft | Clever tricks to make our video game cities seem bigger and busier
-4 | Source Code | How to recreate the thrust motion in Atari’s coin-op classic, Asteroids
+4 | Source Code | How to recreate the thrust motion in Atari's coin-op classic, Asteroids
 4 | Publishing on itch.io | Our step-by-step guide to publishing and selling your games
 4 | Getting into the industry | Some professional advice for anyone hoping to make games for a living
 5 | Design principles | Why being prepared to deviate from established design ideas is essential
@@ -134,28 +134,28 @@ Issue | Name | Description
 7 | Finalising your Unity FPS | Add menus, special effects, and more in the final part of our guide
 8 | CityCraft | Ways to make your horror game locations even scarier
 8 | Structurally Sound | How music and sound intertwine to create atmospheric game worlds
-8 | Source Code | The code behind Missile Command’s unforgettable vapour trails
+8 | Source Code | The code behind Missile Command's unforgettable vapour trails
 8 | Squeezing the Beeb | How to fit a 1KB score attack game onto the BBC Micro
 9 | Design Principles | The power of marketing – and a strong game title
 9 | CityCraft | Understanding the hierarchies of villages, towns, and cities
 9 | Source Code | Recreating the disintegrating shields from Space Invaders
 9 | Character building | Import and animate a 3D character model in Unity
 10 | CityCraft | Must-read books for budding virtual city designers
-10 | Source Code | Recreate Pang’s evil bouncing balloons in Python
-10 | Get into Twine | A beginner’s guide to creating interactive fiction in Twine
+10 | Source Code | Recreate Pang's evil bouncing balloons in Python
+10 | Get into Twine | A beginner's guide to creating interactive fiction in Twine
 10 | Multiplayer detox | Ways to make safer, friendlier multiplayer games
 11 | Design Principles | Defining the difference between theme and design
 11 | CityCraft | Finding fantasy in medieval towns and cities
 11 | Source Code | Recreate the block smashing action of Breakout
 11 | Paper prototyping | How paper and card can help you make better games
 12 | CityCraft | Infrastructure fundamentals for virtual cities
-12 | Source Code | Recreate Bomberman’s four-way explosions
+12 | Source Code | Recreate Bomberman's four-way explosions
 12 | Making Snake | Code your own arcade game in JavaScript
-12 | Pushing PICO-8 | How to go beyond the virtual console’s memory limits
-13 | Design Principles | Defining the meaning of the word game’, and why it’s important
+12 | Pushing PICO-8 | How to go beyond the virtual console's memory limits
+13 | Design Principles | Defining the meaning of the word game', and why it's important
 13 | CityCraft | Bringing vibrancy and realism to your video game streets
 13 | Teleporting in Unity | Your guide to making an Overwatch-inspired blink mechanic
-13 | Source Code | Recreate Gyruss’s zooming starfield effect
+13 | Source Code | Recreate Gyruss's zooming starfield effect
 14 | CityCraft | Analysing the genius of City 17 and New Vegas
 14 | Art and commerce | Making creative games that actually sell
 14 | SIN made simple | Master the SIN function without all the fiddly maths
@@ -163,7 +163,7 @@ Issue | Name | Description
 15 | Design Principles | What video games say about their creators and players
 15 | Blasting off | Make a Jetpack feature in Unreal Engine 4
 15 | Source Code | Ant Attack-style isometric graphics explained
-15 | A new dev diary | Why the vertical slice is an indie dev’s best friend
+15 | A new dev diary | Why the vertical slice is an indie dev's best friend
 
 ---
 # Games Specific Magazines
@@ -312,12 +312,12 @@ Photoshop Creative | UK | | Published until September 2018
 
 It was typically issued monthly for example, Volume 2, No. 9 corresponds to September 1996​ but it is unclear when the first issue was published.
 
-In mid-1999, Miller Freeman announced that 3D Design would be rebranded as simply “3D” – the change took effect with the July 1999 issue​.
+In mid-1999, Miller Freeman announced that 3D Design would be rebranded as simply "3D" – the change took effect with the July 1999 issue​.
 
-After a brief run under the name 3D, the publication was eventually closed by **CMP Media** (which by then owned Miller Freeman’s titles) around late 1999 or 2000​ [^7].
+After a brief run under the name 3D, the publication was eventually closed by **CMP Media** (which by then owned Miller Freeman's titles) around late 1999 or 2000​ [^7].
 
 ### Editorial Team
-The magazine’s editorial team included industry veterans. Ted Greenwald served as an early Editor-in-Chief, and Kelly Dove was Senior Editor from 1995 to 1998 (later becoming Editor-in-Chief)​ [^8].
+The magazine's editorial team included industry veterans. Ted Greenwald served as an early Editor-in-Chief, and Kelly Dove was Senior Editor from 1995 to 1998 (later becoming Editor-in-Chief)​ [^8].
 
 Under their direction, 3D Design focused on the rapidly evolving field of 3D graphics. Technical editor Bill McCloskey, for example, wrote a monthly column on emerging web-3D technologies – he was among the first to cover VRML (Virtual Reality Modeling Language) for the Web​ [^9].
 
@@ -330,11 +330,11 @@ They also hosted an event called the **3D Design Conference & Exhibition** in 19
 In 1998 it took place on the 19th-22nd of May at the Moscone Center in San Francisco and is credited as the third event which presumably means it started in 1996 [^8].
 
 ### 3D Design Magazine Article Index (1996–1999)
-Below is a compiled editorial index of selected articles from *3D Design* magazine (Miller Freeman, Inc.), covering various issues from 1996 through 1999. Each entry lists the issue (YYYY-MM), article title, author, and a brief description as originally indicated in the magazine’s contents or summary.
+Below is a compiled editorial index of selected articles from *3D Design* magazine (Miller Freeman, Inc.), covering various issues from 1996 through 1999. Each entry lists the issue (YYYY-MM), article title, author, and a brief description as originally indicated in the magazine's contents or summary.
 
 Issue | Title | Author | Description
 ---|---|---|---
-1996-12  | Year in Review, Wired for 3D: Best of ’96 | Kelly Dove | A retrospective of the year’s top developments in 3D graphics and design, highlighting 1996’s “best of” moments and achievements in the industry.
+1996-12  | Year in Review, Wired for 3D: Best of '96 | Kelly Dove | A retrospective of the year's top developments in 3D graphics and design, highlighting 1996's "best of" moments and achievements in the industry.
 1997-06 | Inside The Sixth Man | Gretchen J. Bay | L.A.-based visual effects house Available Light pushes 3D to the limits as we look behind the scenes at the CG effects created for Disney's recent live-action release, The Sixth Man.
 1997-06 | Mastering the 3D Pipeline | Omid Rahmat | The Applications Programming Interface (API) affects everything from 3D performance to the actual look of the final image. If the ultimate ambition of your 3D design is real-time interaction, you better get a grip on the basics of 3D APIs because they may dictate how far your art can go.
 1997-06 | Accelerated 3D: Round One | Chris Tome | Do you really have to spend a lot of cash to get a 3D graphics board that is perfect for your needs? Not necessarily. Look here as the testing begins on nine 3D boards from ATI, Matrox, Intergraph, Diamond Multimedia, Dynamic Pictures, Accelgraphics, and Number 9, all of which retail for less than $1,000.
@@ -342,11 +342,11 @@ Issue | Title | Author | Description
 1997-06 | Plug-ins on the Side | Gretchen J. Bay | We've rounded up five exciting new plug-ins for 3D Studio MAX, Softimage, and Photoshop that can add flare and finesse to your next design project.
 1997-06 | Lighting 3D Cinematically. | Don Schaab and Robert Nederhorst | Lighting is a critical part of any 3D scene, but the principles of lighting have been around a lot longer than any software package you may have. Take a look at some of the tried-and-true lighting concepts pioneered by the folks in the film industry, and see how things done in the movies apply to the computer screen.
 1997-06 | Try to Maintain | Chris Tome | Managing all the resources for your creative endeavors can be a daunting task at best, particularly when they're stored in that silicon-based repository on your desk. Here are some helpful (and, of course, free) solutions to help you organize the plethora of files, data types, and projects cluttering up your hard drive.
-1997-08  | Big Kahuna Awards 1997    | Kelly Dove  | Coverage of the *3D Design* Conference’s inaugural “Big Kahuna” award winners for 1997 – showcasing the year’s most outstanding 3D design projects and innovators.
+1997-08  | Big Kahuna Awards 1997    | Kelly Dove  | Coverage of the *3D Design* Conference's inaugural "Big Kahuna" award winners for 1997 – showcasing the year's most outstanding 3D design projects and innovators.
 1997-10  | Let Bones Be the Backbone: Animation in Imagine | John Jackman | A practical look at character animation in Imagine 3D software, focusing on using bone structures to drive complex animations and bring 3D characters to life.
-1998-08  | The Best 3D of the Year: Big Kahuna Winners 1998 | Kelly Dove | An overview of the top 3D projects of 1998, honoring the winners of the 2nd annual Big Kahuna Awards. This feature celebrates the year’s most impressive work in 3D modeling, animation, and visual effects. |
-1999-04  | Wing Commander – From CD to Silver Screen | *Undisclosed* | “Digital Anvil’s popular computer game **Wing Commander** is winging its way to the big screen – join us behind the scenes as we look at the transition from desktop to feature film.” (Behind-the-scenes on the making of the **Wing Commander** movie’s CGI effects.)
-1999-04  | Don’t Bug Out!** *(Animating Arthropods in 3D Studio MAX)* | Undisclosed | Techniques for bringing creepy-crawlies to life: this tutorial-style article explains how to realistically model and animate insects and other arthropods using **3D Studio MAX**, from wing flaps to skittering legs (as hinted by the cover tagline).
+1998-08  | The Best 3D of the Year: Big Kahuna Winners 1998 | Kelly Dove | An overview of the top 3D projects of 1998, honoring the winners of the 2nd annual Big Kahuna Awards. This feature celebrates the year's most impressive work in 3D modeling, animation, and visual effects. |
+1999-04  | Wing Commander – From CD to Silver Screen | *Undisclosed* | "Digital Anvil's popular computer game **Wing Commander** is winging its way to the big screen – join us behind the scenes as we look at the transition from desktop to feature film." (Behind-the-scenes on the making of the **Wing Commander** movie's CGI effects.)
+1999-04  | Don't Bug Out!** *(Animating Arthropods in 3D Studio MAX)* | Undisclosed | Techniques for bringing creepy-crawlies to life: this tutorial-style article explains how to realistically model and animate insects and other arthropods using **3D Studio MAX**, from wing flaps to skittering legs (as hinted by the cover tagline).
 
 
 
@@ -664,7 +664,7 @@ Number | Date | Title
 86 | 2003-10 | Create Amazing Websites
 87 | 2003-11 | Sound and Vision
 88 | 2003-12 | Futuristic Web Design
-89 | 2004-01 | 2004’s Most influential Designers
+89 | 2004-01 | 2004's Most influential Designers
 90 | 2004-02 | Build Brilliant Flash Games
 91 | 2004-03 | Dreamweaver Power Tips
 92 | 2004-04 | Think like a Webmaster
@@ -770,64 +770,49 @@ ChatGPT 4o does a great job of translating the text but cannot generate an image
 # Tetris Lawsuit, Soviet Game Affairs...
 
 # Direct Interview with the Creator of "TETRIS"!!
-
 From fanbooks to international bestsellers—TETRIS is a global phenomenon!
 We met up with the creator, Alexey Pajitnov, in Tokyo for this exclusive interview! A genius from the Soviet Union has gifted the world one of the greatest puzzle games ever made.
 
 Meeting Alexey in person, we asked about the Tetris copyright battle, the Soviet game industry, and more.
 
 ## Interviewer:
-
 Let’s get straight to the point—who actually owns the rights to Tetris?
 
 ## Alexey:
-
 Originally, the rights to Tetris were owned entirely by the Soviet government. Everything I developed was government property, as I was working at a computer research institute at the time. So the rights belonged to the USSR, not to me personally.
 
 ## Interviewer:
-
 So when did you first hear that the game had become a global hit?
 
 ## Alexey:
-
 In February, I came to the U.S. for the first time and saw the Famicom version. I was shocked! There were so many versions—arcade, home console, PC... I had no idea.
 
 ## Interviewer:
-
 What do you think of the home console and arcade versions of Tetris?
 
 ## Alexey:
-
 Honestly, I’m thrilled. I created Tetris as a simple computer puzzle, and to see it now in so many forms is overwhelming. As a game designer, it’s a dream come true.
 
 ## Interviewer:
-
 What do you think of Japanese developers' interpretations of Tetris?
 
 ## Alexey:
-
 Japanese versions are amazing. They’ve taken my simple idea and turned it into something truly spectacular. The arcade version especially is so polished. The sprite movement is clean and fast—it’s very impressive.
 
 ## Interviewer:
-
 What was it like working as a game designer in the Soviet Union?
 
 ## Alexey:
-
 In the USSR, there wasn’t really a profession like "game designer." I was working with computer logic and AI studies. Game design was just something I did on the side. The concept of making games professionally didn’t exist in the Soviet Union.
 
 ## Interviewer:
-
 Do you have any plans for future games?
 
 ## Alexey:
-
 Yes, I'm involved in a few other projects besides Tetris. But they’re not quite ready yet. I hope one day people around the world will play those too.
 
 ---
-
 ### Caption Highlights:
-
 * "The Tetris games taking the world by storm!"
 * “This is the man behind the worldwide Tetris sensation—Alexey Pajitnov!”
 * “Pajitnov, originally a computer scientist, speaks softly but has a passionate love for puzzles.”

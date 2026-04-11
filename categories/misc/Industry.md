@@ -43,9 +43,9 @@ If you know of any other footage or information that should be added to this pag
 # Documentaries showing life in the industry
 
 
-## 1984 - Life in Imagine & Ocean Software (The Battle for Santa’s Software)
+## 1984 - Life in Imagine & Ocean Software (The Battle for Santa's Software)
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ChmQBK_EaUQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-**Commercial Breaks** was a 30 minute documentary series in the UK about businesses and one episode in particular from 1984 is of interest to this site, it was called "The Battle for Santa’s Software". It followed two British software companies, Imagine software and Ocean, only one remained at the end of the show!
+**Commercial Breaks** was a 30 minute documentary series in the UK about businesses and one episode in particular from 1984 is of interest to this site, it was called "The Battle for Santa's Software". It followed two British software companies, Imagine software and Ocean, only one remained at the end of the show!
 
 On the **Imagine Software** side Mark Butler was 23 when the documentary was filmed and it shows his extravagant lifestyle with his fast cars and sponsored motorbike teams. He had 70 people working for them in May 1984 and John Gibson was the only programmer over 30 (Known as Granddad).
 
@@ -56,7 +56,7 @@ Fortunately, former programmers at Imagine Software went on to establish **Psygn
 On the other side was **Ocean Software** and David Ward who managed to survive the time it took to film the documentary and showed off some of their upcoming games for the festive period.
 
 You can find more information about this documentary over on **VHiStory**: 
-[Commercial Breaks – Film 84 – Tomorrow’s World – Micro Live – tape 1 - VHiStory](https://vhistory.wordpress.com/2022/12/10/commercial-breaks-film-84-tomorrows-world-micro-live-tape-1/)
+[Commercial Breaks – Film 84 – Tomorrow's World – Micro Live – tape 1 - VHiStory](https://vhistory.wordpress.com/2022/12/10/commercial-breaks-film-84-tomorrows-world-micro-live-tape-1/)
 
 ## 1993 - A Visit to id Software (November 1993)
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HpEBUV_g9vU?si=dRFGtTx7VXNOzYsY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -133,7 +133,7 @@ Also shows of a development utility created to help designers create levels for 
 ---
 # Companies
 The games industry is made up of many companies, some as small as a single person and others so large they generate billions in revenue annually. 
-There are so many that have come and gone over the years that we can’t write about them all. Instead we focus on companies that pushed the boundaries in terms of the underlying technology, companies that most gamers may never have heard of but that made considerable technical achievements. 
+There are so many that have come and gone over the years that we can't write about them all. Instead we focus on companies that pushed the boundaries in terms of the underlying technology, companies that most gamers may never have heard of but that made considerable technical achievements. 
 Companies that defined iconic game engines such as **Krome's Merkury**, others such as **SN Systems** or **Cross Products** that created the game development tools that were used by most of the industry. 
 
 Others who used their genius a little more on the unauthorized size by creating products that could allow unauthorized code to run on the hardware such as **Datel's Action Replay** line of cheat devices.

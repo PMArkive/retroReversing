@@ -60,24 +60,6 @@ We want to avoid spreading misinformation as much as possible, which can be tric
 # Formatting Guidelines
 Posts are written in [GitHub Flavored Markdown](https://github.github.com/gfm/) but also support additional Jekyll includes that can be used for more advanced components.
 
-When a section is listing folder contents, prefer the existing includes over raw HTML or plain bullet dumps:
-* Use `connected-folder-tree.html` when showing folders with subfolders or a nested directory structure
-  `folder` should be the short display name and `path` should be the longer location, for example `folder="trunk"` and `path="agb_bootrom/trunk"`
-
-When referencing a real source file:
-* Use `source-code-card.html` and/or `source-code-card-grid.html` when you are actually showing the contents of a source file, such as its functions, variables, structs, or other internal symbols
-* Its best to float the code card to the side of the text with the `rr-code-card-aside` class and use it in sections talking about that source file.
-* Don't have the exact same code card in multiple sections of the same article
-* Do not use code cards just to summarize what a file is for or what companion files sit beside it - use a table or normal prose for that instead
-* The `functions`, `variables`, and `lines` fields on code cards must be exact numeric counts taken from the file contents, not descriptive text or estimates
-* If the exact counts are not known yet, leave the card out until the file has been inspected properly enough to count them
-* In a code-card item like `type::name::extra`, the final `extra` field is for function arguments only
-* For variables and other non-function symbols, leave the final field blank
-  Wrong: `- function::SAVE_FILE1::save wrapper for the first editor family`
-  Better: `- function::SAVE_FILE1::()`
-  Better: `- variable::Log_Format_2HD`
-* Prefer these includes over hand-written decorative HTML so the styling stays consistent across the site
-
 ## Writing Style Rules
 <div class="emoji">🔤</div>
 
@@ -102,26 +84,19 @@ We try to maintain consistent characters here are the main rules:
 * **Dashes** - For dashes, always use `-` and never `—` (em dash).
 * **Standards only** - Don't use characters that are not on standard keyboards. 
 
-## List Rules
-<div class="emoji">🔹</div>
-
-Lists can improve readability when used appropriately but should only be used when the context makes sense.
-We mainly use unordered lists (Markdown: `*`); only use ordered lists (Markdown: `-`) if there is a specific reason to do so.
-
-If using a list, we have a preferred format for lists where each list item has a short bold part followed by a dash (-) and more information:
-```markdown
-First we always have a short sentence introducing the list:
-* **Item title in bold** - More information about the item
+### Spelling
+We have automated spell checking with cspell but sometimes debug symbols and other technical terms may need to be excluded, if there is a big block of them you can you the following:
+```
+<!-- cspell:disable -->
+debug symbols that are not spelled correctly but we want to keep for accuracy
+<!-- cspell:enable -->
 ```
 
-Always have a sentence before the list explaining the list, never just have a list after a heading.
+## Table of Contents 
+* Do not generate your own table of contents as tyhis will be done at runtime based on the H1/H2/H3 etc elements.
+* But DO make sure to use the full range of headings from H1->H5
 
-However, if the list is too long (e.g. more than 10 items), use a Markdown table instead. The site supports searching within Markdown tables, which is not useful for short lists but ideal for long ones.
-
-## Table Rules
-* NEVER use excessive spacing in Markdown tables.
-* Rows in Markdown tables should not start or end with `|` as Markdown handles this automatically.
-
+---
 ## Markdown Rules
 Our pages tend to be broken up into different sections based on headings, headings are used for the table of contents and can be treated as distinct sections.
 
@@ -133,10 +108,30 @@ Here are some of the markdown rules:
 * **Use HR when jumping back up the heading hierarchy** - If a section ends at a deeper heading level and the next heading jumps back up, add a Markdown HR (`---`) immediately before the higher-level heading. For example, if an H4 section is followed by a new H1, place `---` directly before the H1.
 * **No line between HR and Heading** - the next line after a HR (`---`) should be the heading itself
 * **No line between heading and first paragraph** - the next line after a heading should always be the first paragraph of the section
-* **Never use numbered lists** - Just use `*` for all unordered lists.
 * **Short inline code** - If the code is short, wrap it with backticks (e.g. `eax, 0x00`).
 * **Don't mix bold and inline code** - Avoid `**\`literal\`**` styling. Use backticks for literals (commands, file names, extensions) and bold for emphasis, but not both at the same time.
 * **HR before H2/H3** - Have an HR before HR/H3 but only if its not the first sub heading under a heading
+
+
+### List Rules
+<div class="emoji">🔹</div>
+
+Rules for lists:
+* Lists can improve readability when used appropriately but should only be used when the context makes sense, don't overuse lists.
+* **Never use numbered lists** - Just use `*` for all unordered lists.
+* **Always have a sentence before the list** explaining the list, never just have a list after a heading.
+
+If using a list, we have a preferred format for lists where each list item has a short bold part followed by a dash (-) and more information:
+```markdown
+First we always have a short sentence introducing the list:
+* **Item title in bold** - More information about the item
+```
+
+However, if the list is too long (e.g. more than 10 items), use a Markdown table instead. The site supports searching within Markdown tables, which is not useful for short lists but ideal for long ones.
+
+### Table Rules
+* NEVER use excessive spacing in Markdown tables.
+* Rows in Markdown tables should not start or end with `|` as Markdown handles this automatically.
 
 
 ### Glossary Rules
@@ -166,13 +161,12 @@ tags:
 - gameboy
 - leak
 title: Example Page Title
-category: leak
+category: gameboy
 # category can also be a list when a page belongs to multiple areas:
 # category:
+# - gameboy
 # - leak
-# - snes
 image: /public/images/example.jpg
-twitterimage: https://www.retroreversing.com/public/images/example.jpg
 permalink: /example-page
 breadcrumbs:
   - name: Home
@@ -197,7 +191,7 @@ Field | Purpose
 `tags` | Search/discovery tags for the page, and the values other pages match against in their `recommend` lists, only use valid tags from `valid-tags.json`
 `title` | Full page title shown in the page header and metadata (do not use colons! as it messes with the yaml frontmatter)
 `category` | Main site grouping such as the games console name or others such as `leak`, `introduction`, `gameengines`, `maths`, or another section-specific category. This can be a single value (`category: leak`) or a list (`category: [leak, snes]`) when a page belongs to multiple categories.
-`image` | Main preview image used by the page and site cards, if there is not a unique one leave it blank and it will be generated based on the category and title, if in doubt leave blank
+`image` | Optional main preview image used by the page and site cards, if there is not a unique one leave it blank and it will be generated based on the category and title, for new pages leave blank (don't include)
 `twitterimage` | Absolute URL version of the preview image for social sharing, leave blank and it will be generated, if in doubt leave blank
 `permalink` | Final public path for the page (do not end with a trailing `/`; that is legacy format we are moving away from)
 `breadcrumbs` | Breadcrumb trail shown at the top of the page
@@ -275,9 +269,30 @@ Sandpack can be used to run react/typescript:
 ```
 
 ### Binary Parser
-See []../tools/n64RomViewer.html](../tools/n64RomViewer.html)
+See [../tools/n64RomViewer.html](../tools/n64RomViewer.html)
 ```
 file-parse.html include
+```
+
+## Folder listings
+When a section is listing folder contents, prefer the existing includes over raw HTML or plain bullet dumps:
+* Use `connected-folder-tree.html` when showing folders with subfolders or a nested directory structure
+  `folder` should be the short display name and `path` should be the longer location, for example `folder="trunk"` and `path="agb_bootrom/trunk"`
+
+Example:
+```markdown
+## The FZERO Source code directory (/src/FZERO)
+The FZERO folder si where the main source code live and it contains the following sub-directories:
+{% capture fzero_root_body %}
+The archive is split very neatly into the game itself and the DOS-side tools used to generate its content.
+{% endcapture %}
+
+{% capture folder_items %}
+- Game - Assembly source code for the game
+- Tools - C source code for the tools used to make the game
+{% endcapture %}
+
+{% include connected-folder-tree.html folder="FZERO" path="/src/FZERO" body=fzero_root_body version="/" content=folder_items %}
 ```
 
 ---
@@ -391,6 +406,41 @@ sleep(1);
 {% endraw %}
 
 ---
+
+## Code Cards
+When referencing a real source file:
+* Use `source-code-card.html` and/or `source-code-card-grid.html` when you are actually showing the contents of a source file, such as its functions, variables, structs, or other internal symbols
+* Its best to float the code card to the side of the text with the `rr-code-card-aside` class and use it in sections talking about that source file.
+* Don't have the exact same code card in multiple sections of the same article
+* Do not use code cards just to summarize what a file is for or what companion files sit beside it - use a table or normal prose for that instead
+* The `functions`, `variables`, and `lines` fields on code cards must be exact numeric counts taken from the file contents, not descriptive text or estimates
+* If the exact counts are not known yet, leave the card out until the file has been inspected properly enough to count them
+* In a code-card item like `type::name::extra`, the final `extra` field is for function arguments only
+* For variables and other non-function symbols, leave the final field blank
+  Wrong: `- function::SAVE_FILE1::save wrapper for the first editor family`
+  Function: `- void::SAVE_FILE1::()`
+  Variable: `- int::Log_Format_2HD`
+* Prefer these includes over hand-written decorative HTML so the styling stays consistent across the site
+
+### Example floating Code card
+```markdown
+{% capture sfxdos_core_items %}
+- void::press_slit::(FILE *rp, FILE *wp)
+- int::fgetw::(FILE *fp)
+- struct STACK::bomb[MAXBOMB]
+- int::bomb_count
+{% endcapture %}
+
+<div class="rr-code-card-aside" markdown="1">
+    {% include_cached source-code-card.html title="sfxdos.asm" items=sfxdos_core_items functions="4" variables="8" lines="400" class="rr-file-card-aside" %}
+    <div class="rr-code-card-aside-content" markdown="1">
+        The heart of the stack is `sfxdos.asm`.
+        Its header calls it a `Super Famicom Disk Operation System special version`, programmed by **Y. Nishida** on **29 October 1991**.
+    </div>
+</div>
+```
+
+---
 # Technical implementation
 This section is for lower level programming details about how some of the features on the site work.
 
@@ -419,21 +469,12 @@ To improve performance, this site uses a custom JavaScript-based lazy loading sy
 Any `<img>` element with the class `lazy-load` and a `data-image-full` attribute will be lazy loaded.
 The `src` attribute is set dynamically by JavaScript when the image is about to come into view.
 
-### How to use
-<div class="emoji">📝</div>
 You can use it like so:
 ```html
 <img class="lazy-load" data-image-full="/images/highres.jpg" alt="Description">
 ```
 You may set a low-res or placeholder `src` if desired, or leave it blank.
 When the image scrolls into view, the script will set `src` to the value of `data-image-full`.
-
-### Where it is used
-It is already used in the following places:
-* Home page cards (`_includes/home-card.html`)
-* Post and site link includes (`_includes/link-to-other-post.html`, `_includes/link-to-other-site.html`)
-* Placeholder images (`_includes/placeholder-post-image.html`)
-* Directly in markdown files (e.g., `categories/misc/Books.md`)
 
 ---
 ## Lightbox Gallery

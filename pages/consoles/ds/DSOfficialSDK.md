@@ -21,6 +21,7 @@ recommend:
 - gba
 editlink: /consoles/ds/DSOfficialSDK.md
 ---
+
 The NITRO SDK was previously known as the IRIS SDK, but got renamed sometime before April 2004 (release 1.0 of NITRO-SDK). Much of the structure and files remain from the IRIS SDK but most files have been renamed to NITRO.
 
 Even although the SDK was renamed to NITRO in version 1.0 it still distributed the release notes for the three IRIS SDK versions that started the project. Although in the 4.2 SDK leak these were removed ands the release notes just start from 1.0.
@@ -82,7 +83,6 @@ Note that there was also something called the "TWLwrap SDK" for DSi that was lea
 
 ---
 # Manual (/man)
-
 Contents:
 * a-z.html
 * alphabet.html
@@ -137,13 +137,11 @@ Contents:
 
 ---
 # Pre-compiled Header Cache (/cache)
-
 The Cache folder only contains one file:
 * ./cache/include/Don'tDeleteMe.txt
 
 ---
 # Bin (/bin)
-
 Contents:
 * ./bin/ARM9-TS/Release/mb_child_simple.srl
 * ./bin/ARM9-TS/Rom/mb_child.srl
@@ -601,7 +599,6 @@ Contents:
 * tools
 
 ---
-
 # Data (/data)
 Contents:
 * cht_data

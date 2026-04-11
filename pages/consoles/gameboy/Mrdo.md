@@ -19,6 +19,7 @@ breadcrumbs:
 recommend: gameboy
 editlink: /consoles/gameboy/Mrdo.md
 ---
+
 The source code for Ocean Software's Mr Do! port to the Game Boy has been officially released by two of the original developers.
 Description from Paul Hughes [^1]
 ```
@@ -30,6 +31,7 @@ I thought I'd also put it up.
 ```
 
 The header for the source file also mentions **Wesley Knackets&& developed it between the 28th of June and the 5th of September 1990, which is just a little over 2 months!
+
 ```cpp
 ****************************************************************************
 *									   *
@@ -50,7 +52,7 @@ Known developers:
 
 ---
 # Development kit
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">It was started on Special FX’s own Gameboy assembler and hardware and was finished on Ocean’s own Atari ST based assembler and hardware.</p>&mdash; Paul Hughes (@PaulieHughes) <a href="https://twitter.com/PaulieHughes/status/1231294467879116800?ref_src=twsrc%5Etfw">February 22, 2020</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">It was started on Special FX's own Gameboy assembler and hardware and was finished on Ocean's own Atari ST based assembler and hardware.</p>&mdash; Paul Hughes (@PaulieHughes) <a href="https://twitter.com/PaulieHughes/status/1231294467879116800?ref_src=twsrc%5Etfw">February 22, 2020</a></blockquote>
 
 ---
 # References

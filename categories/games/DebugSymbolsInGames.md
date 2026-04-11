@@ -13,7 +13,7 @@ redirect_from:
   - /games/symbols
   - /debugsymbols
   - /unstrippedbinaries
-editlink: ../categories/games/debugSymbols.md
+editlink: ../categories/games/DebugSymbolsInGames.md
 tags:
   - symbols
   - debug
@@ -88,7 +88,6 @@ There has also been a number of Nintendo leaks, leaking the full source code for
 
 ---
 ## SEGA consoles
-
 We have never been able to find any Sega Saturn games that actually have debug symbols left on the disc! Sega must have been a little more strict on game developers before the dreamcast, so if you do find any games with debug symbols then please let us know.
 
 ### Sega Dreamcast

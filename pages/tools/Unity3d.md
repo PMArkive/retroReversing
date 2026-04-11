@@ -34,16 +34,16 @@ Below is a version-by-version breakdown of major changes in Unity 1.0 through 1.
 Unity 1.0 launched as a Mac OS X-exclusive engine, with the Unity Editor running only on Mac. It could publish games as standalone Mac OS X applications, as web-embedded applets (via a Mac-only browser plugin), or even as Dashboard Widgets for OS X Tiger [^1] [^2]. (At release, there was **no ability to build Windows executables** – that came later with Unity 1.1 [^2].)
 
 ### Editor and Workflow
-Unity’s design was *editor-first* with a focus on ease of use. The Editor featured a GUI reminiscent of familiar content-creation tools (inspired by apps like Photoshop/Final Cut) to allow drag-and-drop asset import and WYSIWYG scene editing (“What You See Is What You Play” real-time preview) [^3]. 
+Unity's design was *editor-first* with a focus on ease of use. The Editor featured a GUI reminiscent of familiar content-creation tools (inspired by apps like Photoshop/Final Cut) to allow drag-and-drop asset import and WYSIWYG scene editing ("What You See Is What You Play" real-time preview) [^3]. 
 
 ### Scripting
 Unity 1.0 included an embedded **Mono runtime**, supporting **C# 1.1** and a custom JavaScript-like language (UnityScript) for game scripting [^1]. (Support for a Python-inspired language called **Boo** was also available in early Unity for .NET enthusiasts [^4].) Scripts were component-based and attached to GameObjects in the Editor. Developers could quickly iterate on gameplay using these high-level languages, which was a major selling point.
 
 ### Engine Features
 Even in 1.0, Unity had a capable 3D engine with support for:
-  - **Physics:** Integration of the **Ageia PhysX** physics engine for rigidbody dynamics, collisions, and triggers (used to power gameplay in Unity’s demo game *GooBall* [^1]). Ragdoll physics (jointed body simulations) were possible via PhysX, though the tooling for ragdolls would be improved in later versions.
-  - **Rendering:** An OpenGL-based renderer on Mac supporting dynamic lights, particle systems, and basic shaders. Unity 1.0 allowed programmable shaders via “ShaderLab”, though the initial feature set was modest. Advanced effects like real-time shadows were not yet present (those would arrive in Unity 2.0).
-  - **Audio:** Basic audio playback support for 3D sound effects and music.
+  * **Physics:** Integration of the **Ageia PhysX** physics engine for rigidbody dynamics, collisions, and triggers (used to power gameplay in Unity's demo game *GooBall* [^1]). Ragdoll physics (jointed body simulations) were possible via PhysX, though the tooling for ragdolls would be improved in later versions.
+  * **Rendering:** An OpenGL-based renderer on Mac supporting dynamic lights, particle systems, and basic shaders. Unity 1.0 allowed programmable shaders via "ShaderLab", though the initial feature set was modest. Advanced effects like real-time shadows were not yet present (those would arrive in Unity 2.0).
+  * **Audio:** Basic audio playback support for 3D sound effects and music.
 
 ### Other Features
 Unity 1.0 introduced the core **asset import pipeline** – support for common 3D formats, textures, etc., with updates reflected live in the Editor. 
@@ -63,17 +63,17 @@ Released just a couple of months after 1.0, Unity 1.1 was a major update aimed a
 ### Windows Standalone Support
 <img width="769" height="314" alt="image" src="https://github.com/user-attachments/assets/b9880148-e7dd-4de6-a584-deabfdb446fd" />
 
- For the first time, developers could deploy Unity games to Windows PCs with a single click [^2]. This opened up the much larger Windows audience. (Notably, this feature was part of Unity “Pro” – the paid tier – along with other high-end features.)
+ For the first time, developers could deploy Unity games to Windows PCs with a single click [^2]. This opened up the much larger Windows audience. (Notably, this feature was part of Unity "Pro" – the paid tier – along with other high-end features.)
 
 ### Rendering and Graphics
-Introduced several “next-gen” rendering capabilities:
-  - **Render-to-Texture Effects:** Unity 1.1 added support for camera effects that render to texture surfaces [^2]. This enabled techniques like reflections, refractions, video playback to textures, and other shader-based effects that were previously Pro-only. (Render-to-texture was mentioned as a Pro feature even in 1.0, but 1.1 expanded on it with new effects [^1].)
-  - **Virtual Displacement Mapping:** New support for **parallax/virtual displacement mapping** was added, allowing more depth detail on textured surfaces without increasing geometry [^2]. This was an early form of enhancing realism via shaders.
+Introduced several "next-gen" rendering capabilities:
+  * **Render-to-Texture Effects:** Unity 1.1 added support for camera effects that render to texture surfaces [^2]. This enabled techniques like reflections, refractions, video playback to textures, and other shader-based effects that were previously Pro-only. (Render-to-texture was mentioned as a Pro feature even in 1.0, but 1.1 expanded on it with new effects [^1].)
+  * **Virtual Displacement Mapping:** New support for **parallax/virtual displacement mapping** was added, allowing more depth detail on textured surfaces without increasing geometry [^2]. This was an early form of enhancing realism via shaders.
 
 ### Physics and Engine
- Unity 1.1 continued to leverage PhysX and improved the **“big game” workflow**:
-  - It introduced **better handling of large game projects** – the editor and engine were optimized so that even arbitrarily large scenes or games could be edited and tested entirely within Unity without splitting into external tools [^2]. This involved memory and performance tweaks enabling more complex scenes.
-  - The PhysX integration was refined (e.g., stability fixes and possibly initial support for ragdoll creation, though full ragdoll wizards came slightly later).
+ Unity 1.1 continued to leverage PhysX and improved the **"big game" workflow**:
+  * It introduced **better handling of large game projects** – the editor and engine were optimized so that even arbitrarily large scenes or games could be edited and tested entirely within Unity without splitting into external tools [^2]. This involved memory and performance tweaks enabling more complex scenes.
+  * The PhysX integration was refined (e.g., stability fixes and possibly initial support for ragdoll creation, though full ragdoll wizards came slightly later).
 
 ### Networking/Networking API for fetching Data
  Unity 1.1 added an **Asynchronous WWW API** for internet access [^2]. This gave developers a simple way to fetch data from web servers (for example, to pull down asset bundles or high score tables) without blocking the game. 
@@ -83,11 +83,11 @@ Introduced several “next-gen” rendering capabilities:
  A major addition was the introduction of a **C/C++ Plugin SDK** for Unity [^2] [^1]. This allowed developers to write native code plugins that could be called from Unity scripts. Through this, Unity games could interface with any hardware or libraries not supported out-of-the-box – a critical extension point for advanced developers (e.g., for VR hardware, custom device input, etc.).
 
 ### Documentation Improvements
-Documentation saw a boost – a new "30-page scripting tutorial" was included to help newcomers learn Unity’s API, and the manual/examples were greatly expanded [^2]. This was an important usability improvement for developer onboarding.
+Documentation saw a boost – a new "30-page scripting tutorial" was included to help newcomers learn Unity's API, and the manual/examples were greatly expanded [^2]. This was an important usability improvement for developer onboarding.
 
 ---
 ## Unity 1.2 (December 2005) – Graphics Enhancements & Stability
-Unity 1.2 arrived at the end of 2005, bringing a host of roughly "10 big new features" that further matured the engine’s graphics and usability.
+Unity 1.2 arrived at the end of 2005, bringing a host of roughly "10 big new features" that further matured the engine's graphics and usability.
 
 You can read the full release notes thanks to the Wayback Machine:
 [UNITY: Version History 1.2](https://web.archive.org/web/20060619181621/http://unity3d.com/whatsnew-1.2.html)
@@ -95,7 +95,7 @@ You can read the full release notes thanks to the Wayback Machine:
 ### Full-Screen Post-Processing Effects
 <img width="250" height="188" alt="image" src="https://github.com/user-attachments/assets/0f217b69-9970-4cf9-9130-c9bfd121e733" />
 
- Notably, Unity 1.2 introduced **full-screen motion blur** as a built-in effect [^5]. This allowed developers to enable motion blur on the camera, enhancing the visual fidelity for fast-moving scenes. It was one of Unity’s first built-in post-processing effects, utilizing the render-to-texture infrastructure.
+ Notably, Unity 1.2 introduced **full-screen motion blur** as a built-in effect [^5]. This allowed developers to enable motion blur on the camera, enhancing the visual fidelity for fast-moving scenes. It was one of Unity's first built-in post-processing effects, utilizing the render-to-texture infrastructure.
 
 ### Blob Shadows
 <img width="250" height="188" alt="image" src="https://github.com/user-attachments/assets/6a3315ca-90a1-43ba-9e4c-984954776144" />
@@ -113,7 +113,7 @@ It added two new joint-types: a spring-joint, and a specialized character-joint 
 ## Unity 1.5 (June 2006) – Major Upgrade (Intel Mac Support, New Animation System)
 <img width="720" height="235" alt="Unity 1.5 Image showing new features grain filter, precise animation control, lightmaps" src="https://github.com/user-attachments/assets/c716a6ef-4e2c-4425-a382-88270dbc43f3" />
 
-Unity 1.5 was a substantial update that arrived in mid-2006, coinciding with Apple’s transition to Intel Macs and a growing interest in browser gaming.
+Unity 1.5 was a substantial update that arrived in mid-2006, coinciding with Apple's transition to Intel Macs and a growing interest in browser gaming.
 
 You can read the full release notes thanks to the Wayback Machine:
 [UNITY: Version History 1.5](https://web.archive.org/web/20060621224345/http://unity3d.com/whatsnew-1.5.html)
@@ -131,7 +131,7 @@ Prior to Unity 1.5, the web player was Mac-only but the 1.5 release introduced a
  
 This enabled smoother character animations (e.g., blending a running animation with a shooting animation). It was a step up from the earlier system which had been more rudimentary. 
 
-This system laid the groundwork for Unity’s later Mecanim (though Mecanim itself came much later, in Unity 4).
+This system laid the groundwork for Unity's later Mecanim (though Mecanim itself came much later, in Unity 4).
 
 ### Physics and Vehicles - new Wheel Collider
 <img width="250" height="188" alt="image" src="https://github.com/user-attachments/assets/a4e4a3ac-057b-48ac-8ba7-b571916b3757" />
@@ -142,18 +142,19 @@ Using the wheel collider and related improvements, developers could create high-
 
 ### Graphics and Effects
  A number of rendering improvements were added:
-  - **Full-Screen Filters:** Unity 1.5 expanded the post-processing effects repertoire with built-in filters like *Noise*, *Glow/Bloom*, and *Contrast Stretch* (auto exposure) that developers could enable on cameras [^6]. These effects improved visual quality (Glow for HDR-like bloom, noise for image grain or visual feedback, etc.).
-  - **Lightmapping Support:** Unity 1.5 introduced support for **lightmaps** [^6]. This allowed developers to bake static global illumination or lighting onto textures, and then apply those in Unity for better performance and lighting quality. It was an important feature for higher fidelity environments.
-  - **Font Rendering:** Added support for **dynamic fonts and TrueType typography** in games [^6]. This meant easier text rendering and better-looking in-game text, benefiting UI and HUD design.
-  - **Terrain Foliage Shaders:** (In the 1.5.x cycle, Unity 1.5.1 specifically added new shaders for terrain grass and foliage rendering [^9], which improved how outdoor environments looked. Terrain as a system was still rudimentary, but these shaders were precursors to the full terrain engine in 2.0.)
+  * **Full-Screen Filters:** Unity 1.5 expanded the post-processing effects repertoire with built-in filters like *Noise*, *Glow/Bloom*, and *Contrast Stretch* (auto exposure) that developers could enable on cameras [^6]. These effects improved visual quality (Glow for HDR-like bloom, noise for image grain or visual feedback, etc.).
+  * **Lightmapping Support:** Unity 1.5 introduced support for **lightmaps** [^6]. This allowed developers to bake static global illumination or lighting onto textures, and then apply those in Unity for better performance and lighting quality. It was an important feature for higher fidelity environments.
+  * **Font Rendering:** Added support for **dynamic fonts and TrueType typography** in games [^6]. This meant easier text rendering and better-looking in-game text, benefiting UI and HUD design.
+  * **Terrain Foliage Shaders:** (In the 1.5.x cycle, Unity 1.5.1 specifically added new shaders for terrain grass and foliage rendering [^9], which improved how outdoor environments looked. Terrain as a system was still rudimentary, but these shaders were precursors to the full terrain engine in 2.0.)
+
 ### Asset Import and Pipeline
  Unity 1.5 extended its support for 3D art tools – notably adding **native import support for Cinema 4D files** [^6]. Artists using Cinema 4D could bring their models and scenes into Unity more directly. This was in addition to existing support for Maya, 3ds Max via FBX, etc.
 
 ### Scripting and API
  The scripting capabilities were enriched:
-  - A **Mesh manipulation API** was added, exposing mesh vertex data to scripts [^6]. This allowed developers to create or modify meshes at runtime (for procedural geometry, deformations, etc.). It opened up more dynamic content possibilities.
-  - Particle systems and textures also got scripting interfaces in 1.5 [^6], enabling code-driven control of particle emitters and dynamic texture creation or manipulation.
-  - The underlying Mono runtime might still have been .NET 1.1 in 1.5 (the generics upgrade came in 1.6), but Unity’s scripting API itself grew with new classes for the above features.
+  * A **Mesh manipulation API** was added, exposing mesh vertex data to scripts [^6]. This allowed developers to create or modify meshes at runtime (for procedural geometry, deformations, etc.). It opened up more dynamic content possibilities.
+  * Particle systems and textures also got scripting interfaces in 1.5 [^6], enabling code-driven control of particle emitters and dynamic texture creation or manipulation.
+  * The underlying Mono runtime might still have been .NET 1.1 in 1.5 (the generics upgrade came in 1.6), but Unity's scripting API itself grew with new classes for the above features.
 
 ### Documentation and Usability
 <img width="250" height="188" alt="image" src="https://github.com/user-attachments/assets/ae859413-c0a5-4dc6-97c7-f236b6be435d" />
@@ -161,29 +162,29 @@ Unity 1.5 shipped with **5× more documentation** than before [^6], reflecting a
 The editor UI itself saw various small improvements to accommodate the new systems (for example, an improved animation editor or property inspectors for new components like wheel colliders and lightmaps).
 
 ### Performance
-As a major update, Unity 1.5 focused on optimization – running the Editor on Intel Macs gave a big speed boost. Also, “under the hood” enhancements (garbage collection tuning, rendering optimizations, etc.) were likely part of this release, given the mention of “over 256 new features and improvements” [^6].
+As a major update, Unity 1.5 focused on optimization – running the Editor on Intel Macs gave a big speed boost. Also, "under the hood" enhancements (garbage collection tuning, rendering optimizations, etc.) were likely part of this release, given the mention of "over 256 new features and improvements" [^6].
 
 
 ---
 ## Unity 1.6 (November 2006) – Web Integration & Final 1.x Tweaks
 Unity 1.6 was the last major update of the 1.x series, arriving just before Unity 2.0, it was offered with the promise that anyone who bought Unity 1.6 would get a free upgrade to the forthcoming Unity 2.0 [^7]. 
-Its focus was on polishing the web player experience, improving the engine’s integration capabilities, and preparing for the next generation:
+Its focus was on polishing the web player experience, improving the engine's integration capabilities, and preparing for the next generation:
 
 You can read the full release notes thanks to the Wayback Machine:
 [UNITY: What's New 1.6](https://web.archive.org/web/20070113101019/http://unity3d.com/whatsnew-1.6.html)
 
-### Browser Integration (“Website interactivity”)
-A highlight of Unity 1.6 was full two-way communication between Unity content and the embedding webpage. The **Unity Web Player plugin could now fully interact with browser JavaScript** and vice versa [^7]. This meant a Unity game running in a webpage could call JavaScript functions on the page (and receive calls from JS), enabling deep integration – for example, custom HTML UI controls affecting the Unity game, or the game sending events/stats back to the page. This feature greatly improved Unity’s usefulness for web-based projects, allowing hybrid HTML5/Unity experiences and better integration with web APIs.
+### Browser Integration ("Website interactivity")
+A highlight of Unity 1.6 was full two-way communication between Unity content and the embedding webpage. The **Unity Web Player plugin could now fully interact with browser JavaScript** and vice versa [^7]. This meant a Unity game running in a webpage could call JavaScript functions on the page (and receive calls from JS), enabling deep integration – for example, custom HTML UI controls affecting the Unity game, or the game sending events/stats back to the page. This feature greatly improved Unity's usefulness for web-based projects, allowing hybrid HTML5/Unity experiences and better integration with web APIs.
 
 ### Upgraded .NET Scripting Runtime
-Unity 1.6 upgraded its Mono runtime to support **.NET 2.0 features**, including generics. Developers could now use modern C# 2.0 language features (like generics, nullable types, etc.) in their scripts [^8]. This “increased power” under the hood made coding in Unity more robust and aligned with contemporary C# standards (a welcome improvement for reverse-engineers and developers alike, as code could be more complex and still run).
+Unity 1.6 upgraded its Mono runtime to support **.NET 2.0 features**, including generics. Developers could now use modern C# 2.0 language features (like generics, nullable types, etc.) in their scripts [^8]. This "increased power" under the hood made coding in Unity more robust and aligned with contemporary C# standards (a welcome improvement for reverse-engineers and developers alike, as code could be more complex and still run).
 
 ### Performance and Usability
 Unity 1.6 brought **better performance optimizations** and editor usability tweaks:
-  - The phrase "increased power, better usability" was used in the release notes [^7]. The engine was refined for speed – one example being more efficient web player download size or performance. It also likely optimized asset loading and memory use, given the push toward larger projects.
-  - Usability improvements might have included Editor UI refinements in response to user feedback (e.g., more stable manipulation of objects, nicer gizmos, etc.). Although not a UI overhaul, 1.6 would smooth rough edges as the last 1.x version.
+  * The phrase "increased power, better usability" was used in the release notes [^7]. The engine was refined for speed – one example being more efficient web player download size or performance. It also likely optimized asset loading and memory use, given the push toward larger projects.
+  * Usability improvements might have included Editor UI refinements in response to user feedback (e.g., more stable manipulation of objects, nicer gizmos, etc.). Although not a UI overhaul, 1.6 would smooth rough edges as the last 1.x version.
 
-It effectively wrapped up the 1.x line by adding the last set of “nice-to-have” features so that the engine was quite complete for its era. This ensured developers could comfortably finish projects on 1.x or smoothly transition to 2.0. In fact, some aspects of 1.6 (like the web integration and updated Mono runtime) were crucial stepping stones for the big 2.0 release which introduced things like a full terrain engine, real-time shadows, and a Windows version of the Editor.
+It effectively wrapped up the 1.x line by adding the last set of "nice-to-have" features so that the engine was quite complete for its era. This ensured developers could comfortably finish projects on 1.x or smoothly transition to 2.0. In fact, some aspects of 1.6 (like the web integration and updated Mono runtime) were crucial stepping stones for the big 2.0 release which introduced things like a full terrain engine, real-time shadows, and a Windows version of the Editor.
 
 ---
 # Unity 2.x Historical Overview (2007-2009)
@@ -271,7 +272,7 @@ Unity 4.3.0 was released on the 6th September 2013 [^11].
 ## References
 [^1]: [Unity 1.1 Enables Game Publishing on Windows- The Mac Observer](https://www.macobserver.com/news/unity-enables-game-publishing-windows/#:~:text=Other%20additions%20to%20Unity%20include,fixes%20have%20also%20been%20made).
 [^2]: [Unity 1.1 Released: Windows, Big Game Workflow, C/C++ SDK - MacTech.com](https://www.mactech.com/2005/08/19/unity-1-1-released-windows-big-game-workflow-c-c-sdk/amp/#:~:text=Highlights%20of%20new%20features%20in,Unity%20is%20now%20fully%20supported).
-[^3]: [How Unity built the world’s most popular game engine - TechCrunch](https://techcrunch.com/2019/10/17/how-unity-built-the-worlds-most-popular-game-engine/#:~:text=Unity%201,game%20developer%20market%20used%20PCs).
+[^3]: [How Unity built the world's most popular game engine - TechCrunch](https://techcrunch.com/2019/10/17/how-unity-built-the-worlds-most-popular-game-engine/#:~:text=Unity%201,game%20developer%20market%20used%20PCs).
 [^4]: [Unity 1.2: 3D Game Editor - MacTech.com](https://www.mactech.com/2005/12/24/unity-1-2-3d-game-editor/#:~:text=Unity%201,Big%20New%20Features).
 [^5]: [Unity 3D game engine goes Universal - Macworld](https://www.macworld.com/article/180420/unity-10.html#:~:text=Unity%201,additive%20animations%2C%20layers%20and%20more)
 [^6]: [Unity game engine adds new grass and tree effects - Macworld](https://www.macworld.com/article/181782/unity-11.html#:~:text=Unity%20can%20be%20used%20to,character%20animation%20and%20ragdoll%20physics)

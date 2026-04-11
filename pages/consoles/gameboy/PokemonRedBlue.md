@@ -49,6 +49,7 @@ With this repository you can do anything you ever dreamed of changing in the ori
 </div>
 </section>
 
+---
 # Game Development
 The game was developed by only 5 programmers at Game Freak and released in Japan in early 1996.
 
@@ -99,6 +100,7 @@ If all goes well it will generate `pokered.gbc` and `pokeblue.gbc` which are byt
 </div>
 </section>
 
+---
 # Maps
 <section class="postSection">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tzr4Od68Gb0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -108,12 +110,12 @@ In the pokered source code the maps are saved as `.blk` files, these files are s
 </div>
 </section>
 
-
+---
 # References
 [^1]: [pret/pokered: disassembly of Pokémon Red/Blue](https://github.com/pret/pokered)
 [^2]: [Made in Assembly? (Pokemon Red Source Code) - YouTube](https://www.youtube.com/watch?v=NmLrRWFuXxc)
 [^3]: [pokered/credits_text.asm at 6ba3765c5932996f5da6417ae703794ff10bb1cb · pret/pokered](https://github.com/pret/pokered/blob/6ba3765c5932996f5da6417ae703794ff10bb1cb/text/credits_text.asm)
 [^4]: [The Making of Pokemon Red, Green and Blue - YouTube](https://www.youtube.com/watch?v=0s3z1t5Li5A)
-[^5]: [An Exclusive Look At Pokémon’s Early Design Documents - YouTube](https://www.youtube.com/watch?v=9l8V_eQ6wGQ)
+[^5]: [An Exclusive Look At Pokémon's Early Design Documents - YouTube](https://www.youtube.com/watch?v=9l8V_eQ6wGQ)
 [^6]: [What Dreams May Come: Prototype Data for Pokémon Red and Green – Helix Chamber](https://helixchamber.com/2019/02/16/what-dreams-may-come/)
 

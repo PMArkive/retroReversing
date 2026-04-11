@@ -27,6 +27,7 @@ recommend:
 - devkit
 updatedAt: '2026-03-28'
 ---
+
 This post covers all the hardware developers used to create games for the original Dot Matrix Game Boy (DMG) and Game Boy Color (GBC) and some were even used for early Game Boy Advance development. Developers used both official Nintendo development kits and some unofficial 3rd party devices to create retail games for the Game Boy and Game Boy Color.
 
 ---
@@ -61,6 +62,11 @@ Its batch files and debugger script make the older workflow unusually legible:
 {% include_cached link-to-other-post.html post="/super-game-boy-sdk" description="For a concrete preserved example of the DMG ICE workflow in action, see the Super Game Boy sample package." %}
 
 
+## Game Boy Color Prototype Board
+[Brett Weiss](https://www.youtube.com/watch?v=eZo25n6jmvY) provides a technical demonstration of a rare Game Boy Color prototype board, which was originally distributed to developers for pre-launch software testing. The video explores the unique hardware configuration of this "work-in-progress" unit, noting its reliance on a Super Famicom power adapter and its integration of core handheld components such as the IR sensor and microswitch buttons.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eZo25n6jmvY" title="Rare Game Boy Color Prototype in Action" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## IS-CGB-EMU (Nintendo Game Boy Color Emulator)
 <section class="postSection">
 <img src="/public/images/GameBoy/IntelligentSystems_ColorGameBoy_Emulator.jpg" class="wow slideInLeft postImage" />
@@ -80,7 +86,7 @@ The Super Game Boy sample package and the Zelda DX source leak preserve the PC-s
 
 {% include_cached link-to-other-post.html post="/game-boy-file-formats" description="For the file formats used by this toolchain, including `.ISX`, `.ICE`, `.PRN`, and the debugger sidecar files, see this post." %}
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I picked up a cool GBC dev kit. The IS-CGB-Emulator. I love the cartridge and cable that connects the handheld to the unit. Does anyone else have one of these or even the GBA version? Please post photos of your kit. I’d love to see it :) <a href="https://t.co/NDhShaEToK">pic.twitter.com/NDhShaEToK</a></p>&mdash; Andrew (@AndrewEarley7) <a href="https://twitter.com/AndrewEarley7/status/1335466371463794688?ref_src=twsrc%5Etfw">December 6, 2020</a></blockquote> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I picked up a cool GBC dev kit. The IS-CGB-Emulator. I love the cartridge and cable that connects the handheld to the unit. Does anyone else have one of these or even the GBA version? Please post photos of your kit. I'd love to see it :) <a href="https://t.co/NDhShaEToK">pic.twitter.com/NDhShaEToK</a></p>&mdash; Andrew (@AndrewEarley7) <a href="https://twitter.com/AndrewEarley7/status/1335466371463794688?ref_src=twsrc%5Etfw">December 6, 2020</a></blockquote> 
 
 {% include link-to-other-site.html url="http://devkits.handheldmuseum.com/IS-CGB-EMU/index.htm" title=" Handheld Museum - IS-CGB-EMU" description="The Handheld Museum website has an excellent page on the IS-CGB-EMU" image="http://devkits.handheldmuseum.com/IS-CGB-EMU/GBC_Emulator.jpg"  %}
 
@@ -233,7 +239,7 @@ The **Doctor GB Xchanger** was primarily sold as a piracy device but could be us
 [^5]: [GameBoy Dev Machine - GBA ROM DUMPED!](http://nintendoage.com/forum/messageview.cfm?catid=22&threadid=31950)
 [^6]: [GB SMART DEVELOPMENT KIT](http://www.goldenshop.com.hk/AI-trad/Misc_htm/m-smartgb.htm)
 [^7]: [DMG-MBC1 MULTI CHECKER CARTRIDGE](http://www.nesworld.com/gb/pics/dmgmbs1-3.jpg)
-[^8]: [Game Boy “DUCK” DMG Universal Dev](https://thissideout.wordpress.com/2014/03/11/game-boy-duck-dmg-universal-dev/)
+[^8]: [Game Boy "DUCK" DMG Universal Dev](https://thissideout.wordpress.com/2014/03/11/game-boy-duck-dmg-universal-dev/)
 [^9]: [Demo Vision](https://www.chrismcovell.com/demovision.html)
 [^10]: [WideBoy](https://www.chrismcovell.com/wideboy.html)
 [^11]: [Wide Boy 64](https://www.chrismcovell.com/wideboy64.html)

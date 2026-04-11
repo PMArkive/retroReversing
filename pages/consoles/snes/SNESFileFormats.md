@@ -26,6 +26,7 @@ This page is a practical reference for common SNES file formats used for develop
 
 ---
 # Source and Build Files
+
 Extension | What it is
 ---|---
 ASM | 65c816 assembly source
@@ -44,7 +45,6 @@ If you are new to SNES-era workstation and build tooling, this quick glossary sh
 
 ---
 # 2D Artwork Files
-
 The artwork files are all intended to be used by an internal Nintendo tool called `S-CG-CAD` or `SCAD` on a **Sony NEWS** workstation and the formats are designed to stack together:
 
 Layer | Purpose | Usually paired with
@@ -599,6 +599,7 @@ One example is `eobjcnvX.c`, which reads a full 49,152-byte `.OBX` record region
 This is not a different on-disk `.OBX` format: it is a build-time export that (a) changes representation (text + directives rather than a binary container), and (b) intentionally alters some fields (it emits the packed word as two bytes and clears bits `0x30` in the high byte, which corresponds to dropping the priority bits in the packed attribute + tile word described below).
 
 ### Entry Layout
+
 #### CAD OBJ / OBX (6-byte slots)
 Each slot is 6 bytes. In the S-CG-CAD toolchain, bytes `4..5` are treated as a single big-endian 16-bit value, not two independent bytes.
 
@@ -925,7 +926,9 @@ One common workflow in the CAD toolchain is to generate a packed Mode 7 map by c
 This makes the Mode 7 records particularly useful to preserve, even if you do not yet understand every other SFX field, because they describe which assets were intended to be combined when producing Mode 7 outputs.
 
 --- 
+
 ## Mode 7 and Map-Side Formats
+
 Extension | What it is
 ---|---
 MD7 | raw Mode 7 map bodies (commonly 32,768 bytes)
@@ -952,7 +955,7 @@ Offset | Size | Meaning
 #### Header fields
 Only one header field is clearly consumed by the tool:
 
-* **`0x0070`** - `panelBank` in the low 2 bits. The tool uses `header[0x70] & 0x03` as the "panel bank" selector.
+* `0x0070` - `panelBank` in the low 2 bits. The tool uses `header[0x70] & 0x03` as the "panel bank" selector.
 
 The first `0x20` bytes are typically an ASCII CAD provenance string like `NAK1989 S-CG-CADVer...`.
 
@@ -1001,6 +1004,7 @@ If you are round-tripping MAP files between tools, prefer preserving the header 
 
 ---
 ## Revision Markers
+
 Marker | Meaning
 ---|---
 BAK | saved backup revision, often meaningful

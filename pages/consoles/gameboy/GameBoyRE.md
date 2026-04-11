@@ -19,6 +19,7 @@ image: /public/images/gameboy/Game Boy Reversing Emulator.jpg
 twitterimage: https://www.retroreversing.com/public/images/gameboy/Game Boy Reversing Emulator.jpg
 updatedAt: '2020-10-17'
 ---
+
 # Introduction
 <section class="postSection">
 <img src="/public/images/gameboy/Game Boy Reversing Emulator.jpg" class="wow slideInLeft postImage" />
@@ -59,8 +60,8 @@ This allows you to play the game at full speed but then later playback the same 
 This is an effective way to log a games functionality without having to play at unbearable framerates.
 </div>
 </section>
----
 
+---
 ## Edit Input Playback for TASing
 <section class="postSection">
   <img src="/public/images/gameboy/GameBoyRE-TASing.jpg" class="wow bounceInUp postImage" />

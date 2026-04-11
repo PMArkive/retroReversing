@@ -28,6 +28,7 @@ redirect_from:
 tags:
   - gameboy
 ---
+
 # Introduction
 Welcome to our page dedicated to Game Boy reverse engineering! The Game Boy was a groundbreaking handheld gaming console that was released in 1989, and has since become an iconic symbol of the early days of portable gaming. If you're interested in learning more about the technical aspects of this console and how it works, you've come to the right place. 
 
@@ -37,8 +38,8 @@ So grab your Game Boy and get ready to dive into the exciting world of Game Boy 
 
 ## Original GameBoy Dot Matrix Game (DMG) Specs 
 Main specs of the original GameBoy:
- - **CPU**: z80 - LR35902 (Opcodes: http://www.pastraiser.com/cpu/gameboy/gameboy_opcodes.html)
- - **RAM**: 8KB (32KB in Color)
+ * **CPU**: z80 - LR35902 (Opcodes: http://www.pastraiser.com/cpu/gameboy/gameboy_opcodes.html)
+ * **RAM**: 8KB (32KB in Color)
 
 ## Game Boy Exclusive Games (DMG & Color)
 When it comes to finding a game to reverse engineer, it can be helpful to look at games that are cross-platform to compare builds. But the most valuable reverse engineering projects tend to be the platform exclusives, as these are the games people can no longer play on modern consoles.
@@ -78,7 +79,7 @@ The Pokemon Reverse Engineering Team (PRET) have managed to pull off a marvellou
 ## Legend of Zelda Links Awakening
 In August 2016 the website KZone started a full disassembly of the classic Game Boy game Link's Awakening, along the way they have written some excellent in-depth articles about how the game works. Check it out!
 
-{% include link-to-other-site.html url="https://kemenaran.winosx.com/posts/category-disassembling-links-awakening/" description="Find out how Zelda Link's Awakening for Game Boy works at KZone!" image="https://kemenaran.winosx.com/images/zelda-links-awakening-sfx/LADX-move.gif" title="Disassembling Link’s Awakening"  %}
+{% include link-to-other-site.html url="https://kemenaran.winosx.com/posts/category-disassembling-links-awakening/" description="Find out how Zelda Link's Awakening for Game Boy works at KZone!" image="https://kemenaran.winosx.com/images/zelda-links-awakening-sfx/LADX-move.gif" title="Disassembling Link's Awakening"  %}
 
 ## Looney Tunes: Carrot Crazy
 {% include link-to-other-site.html url="https://www.huderlem.com/blog/posts/carrot-crazy-1/" description="Find out how to reverse engineer Looney Tunes: Carrot Crazy for the GBC" image="https://www.huderlem.com/blog/posts/carrot-crazy-1/password-entry-screen.png" title="Reverse Engineering Carrot Crazy"  %}
@@ -142,8 +143,8 @@ To go along with the Game Boy Camera Nintendo also releases a Game Boy Printer t
 Similar to the Super GameBoy but this is for the Nintendo 64 and not licenced by Nintendo, I first saw this for sale in issue X of the UK Nintendo Official Magazine.
 <iframe width="560" height="420" src="https://www.youtube.com/embed/NiMx10PV_cw?color=white&theme=dark"></iframe>
 For more information: 
-- http://www.chrismcovell.com/gbbooster.html
-- https://gamehacking.org/wiki/Game_Booster_(Nintendo_64)
+* [Chris Mcovell's page](http://www.chrismcovell.com/gbbooster.html)
+* [GameHacking.org Wiki Page](https://gamehacking.org/wiki/Game_Booster_(Nintendo_64))
 
 ---
 ## Datel Game Booster for Sony Playstation
@@ -180,8 +181,8 @@ The Game Boy classic **R-Type** was programmed by **Jas Austin** completely from
 
 The company **B.I.T.S** obtained the license to develop the Game Boy version of the game but required a programmer to work on the title. **Jas Austin** heard about this through his agency and travelled to London to meet up, he impressed them so much that he was given a development kit and a deadline of a week to come up with a demo! He did such a good job he got a permanent job at **B.I.T.S** [^1].
 
-One cool easter egg he added to the game was an implementation of John Conway’s game of Life!
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I hid a version of John Conway’s game of Life in R-Type on the Game Boy.</p>&mdash; Jas Austin (@IamXERO) <a href="https://twitter.com/IamXERO/status/1379131739415719941?ref_src=twsrc%5Etfw">April 5, 2021</a></blockquote>
+One cool easter egg he added to the game was an implementation of John Conway's game of Life!
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I hid a version of John Conway's game of Life in R-Type on the Game Boy.</p>&mdash; Jas Austin (@IamXERO) <a href="https://twitter.com/IamXERO/status/1379131739415719941?ref_src=twsrc%5Etfw">April 5, 2021</a></blockquote>
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Source graphics for Game Boy R-Type Lv3 ship. By Mark Jones... <a href="https://twitter.com/hashtag/ScreenshotSaturday24YearsAgo?src=hash&amp;ref_src=twsrc%5Etfw">#ScreenshotSaturday24YearsAgo</a> <a href="http://t.co/RsKlc0rQOE">pic.twitter.com/RsKlc0rQOE</a></p>&mdash; Jas Austin (@IamXERO) <a href="https://twitter.com/IamXERO/status/591964228053016577?ref_src=twsrc%5Etfw">April 25, 2015</a></blockquote>
 
@@ -216,7 +217,7 @@ This is a very interesting project that played a large set of gameboy games in a
 {% include_cached link-to-other-post.html post="/game-boy-file-formats" description="For more about the game boy file formats information check out this post." %}
 
 ### DMG-palette-patcher
-[MrBlinky](https://github.com/MrBlinky/DMG-palette-patcher) has released a Python tool for patching Original Game Boy (DMG) ROMs to use specific color palettes when played on a Game Boy Color. The script works by modifying the ROM's header—specifically the license code and title checksum—to trick the Game Boy Color's boot ROM into automatically selecting one of 45 built-in color palettes, such as the classic grey theme, rather than the default blue-greenish hues.
+[MrBlinky](https://github.com/MrBlinky/DMG-palette-patcher) has released a Python tool for patching Original Game Boy (DMG) ROMs to use specific color palettes when played on a Game Boy Color. The script works by modifying the ROM's header-specifically the license code and title checksum-to trick the Game Boy Color's boot ROM into automatically selecting one of 45 built-in color palettes, such as the classic grey theme, rather than the default blue-greenish hues.
 
 {% include link-to-other-site.html url="https://github.com/MrBlinky/DMG-palette-patcher" description="MrBlinky has released DMG-palette-patcher, a tool that modifies Game Boy ROM headers to trigger specific built-in color palettes on the Game Boy Color." title="DMG-palette-patcher by MrBlinky" %}
 

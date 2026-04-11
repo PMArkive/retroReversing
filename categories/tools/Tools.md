@@ -22,9 +22,7 @@ tags:
  - software
 ---
 
-
 # Explore the Tools of the Trade
-
 Back in the day, game development was both an art and a science, involving a unique set of tools and technologies. On this site, you'll find comprehensive links and guides to the essential tools used during the golden era of video game creation.
 
 # Programming
@@ -32,9 +30,9 @@ Back in the day, game development was both an art and a science, involving a uni
 ## Programming Languages
 Discover the programming languages that powered the classics. From the assembly languages that squeezed every ounce of performance from early hardware to the C and C++ languages that enabled more complex game designs, we cover the essentials that brought pixels to life. Dive into the specifics of languages such as:
 
-- **Assembly**: The low-level language used for its unparalleled control over hardware.
-- **C**: The versatile language that struck a balance between performance and portability.
-- **C++**: The language that introduced object-oriented programming to game development.
+* **Assembly**: The low-level language used for its unparalleled control over hardware.
+* **C**: The versatile language that struck a balance between performance and portability.
+* **C++**: The language that introduced object-oriented programming to game development.
 
 For more information on the programming languages used for game development check out this post:
 {% include_cached link-to-other-post.html post="/programming-languages" description="For more information on Programming languages used for game development check out this post." %}
@@ -47,23 +45,22 @@ These powerful tools were pivotal in optimizing and translating the developers' 
 
 Understand the role of early compilers and their impact on game performance and development workflows. Key tools include:
 
-- **Assemblers**: Programs like **MASM** and **TASM** that converted assembly code into machine code.
-- **Compilers**: Tools like GCC and Watcom C that compiled higher-level code into efficient machine code.
+* **Assemblers**: Programs like **MASM** and **TASM** that converted assembly code into machine code.
+* **Compilers**: Tools like GCC and Watcom C that compiled higher-level code into efficient machine code.
 
 For more information on how GNU GCC was used in game development check out this post:
 {% include_cached link-to-other-post.html post="/compilers" description="For more information on how GNU GCC was used in game development check out the GCC section in the compiler post." %}
 
 ---
-
 ## Game Development IDEs
 Explore the Integrated Development Environments (IDEs) that were instrumental in retro game development. 
 
 These IDEs provided comprehensive toolsets for coding, debugging, and testing, streamlining the development process for many classic games. Key IDEs from this era include:
 
-- **Microsoft Visual Studio**: A powerful and versatile IDE that supported multiple programming languages, making it a favorite among game developers for its robust debugging tools and integrated development features.
-- **Borland C++**: Known for its speed and efficiency, Borland C++ was a popular choice for many game developers due to its advanced compiler technology and comprehensive library support.
-- **CodeWarrior**: Initially developed for Macintosh, CodeWarrior later expanded to support multiple platforms, offering a flexible environment for cross-platform development which was essential for many game studios. Had special versions for PS2 and Gamecube support [^2].
-- **Turbo C++**: An early IDE by Borland, Turbo C++ was known for its simplicity and speed, providing a streamlined environment for writing and testing code quickly.
+* **Microsoft Visual Studio**: A powerful and versatile IDE that supported multiple programming languages, making it a favorite among game developers for its robust debugging tools and integrated development features.
+* **Borland C++**: Known for its speed and efficiency, Borland C++ was a popular choice for many game developers due to its advanced compiler technology and comprehensive library support.
+* **CodeWarrior**: Initially developed for Macintosh, CodeWarrior later expanded to support multiple platforms, offering a flexible environment for cross-platform development which was essential for many game studios. Had special versions for PS2 and Gamecube support [^2].
+* **Turbo C++**: An early IDE by Borland, Turbo C++ was known for its simplicity and speed, providing a streamlined environment for writing and testing code quickly.
 
 These IDEs were pivotal in creating the games that defined a generation, providing the necessary tools and environments to bring imaginative worlds to life.
 
@@ -86,9 +83,9 @@ We have a post specifically about all the different SDKs for each platform.
 ## 3D Modelling
 Explore the evolution of 3D modeling tools that gave depth and realism to early 3D games. From primitive polygon editors to the pioneering software that laid the groundwork for today's sophisticated 3D graphics, get insights into the creative processes behind iconic game visuals. Essential tools and techniques include:
 
-- **Early Polygon Editors**: Basic tools for creating simple 3D models.
-- **Advanced Modelling Software**: Programs like 3D Studio, SoftImage and Maya that allowed for more detailed and complex designs.
-- **Texture Mapping**: Techniques for applying textures to 3D models to enhance visual realism.
+* **Early Polygon Editors**: Basic tools for creating simple 3D models.
+* **Advanced Modelling Software**: Programs like 3D Studio, SoftImage and Maya that allowed for more detailed and complex designs.
+* **Texture Mapping**: Techniques for applying textures to 3D models to enhance visual realism.
 
 For more information on 3D Software check out this post:
 {% include_cached link-to-other-post.html post="/3d-software" description="For more information on 3D Software check out this post." %}
@@ -106,9 +103,9 @@ Known software used in the creation of 2D Image asserts for retro video games in
 ## Music Creation
 Music has always been a cornerstone of the gaming experience. Uncover the music creation tools and techniques that produced the memorable soundtracks of retro games. Learn about the hardware limitations and ingenious methods composers used to create captivating game music. Important aspects include:
 
-- **Sound Chips**: Hardware like the SID chip in the Commodore 64 and the Yamaha YM2612 in the Sega Genesis that defined the sound of many classic games.
-- **Tracker Software**: Programs like FastTracker and ProTracker that allowed composers to create music with limited hardware capabilities.
-- **MIDI Composition**: The use of MIDI to sequence and control sound modules and synthesizers for richer game audio.
+* **Sound Chips**: Hardware like the SID chip in the Commodore 64 and the Yamaha YM2612 in the Sega Genesis that defined the sound of many classic games.
+* **Tracker Software**: Programs like FastTracker and ProTracker that allowed composers to create music with limited hardware capabilities.
+* **MIDI Composition**: The use of MIDI to sequence and control sound modules and synthesizers for richer game audio.
 
 
 ---
@@ -116,7 +113,7 @@ Music has always been a cornerstone of the gaming experience. Uncover the music 
 The tools used by producers for project management are much harder to find information on as no details will leak into the source code or compiled game binaries, however, we know of a few thanks to articles in magazines such as **Develop**.
 
 ## DevTrack by TechExcel
-DevTrack is TechExcel’s project issue-tracking tool, comprehensively managing issues as far reaching as new features, QA reports and IT activities. Clients include Activision, Electronic Arts, Sammy Studios, Sony Online Entertainment, Vivendi Universal.
+DevTrack is TechExcel's project issue-tracking tool, comprehensively managing issues as far reaching as new features, QA reports and IT activities. Clients include Activision, Electronic Arts, Sammy Studios, Sony Online Entertainment, Vivendi Universal.
 
 The reason we know about this tool is thanks to issue 78 of the UK game development magazine **Develop** which had a brief section on it:
 ![TECHEXCEL DEVTRACK](https://github.com/user-attachments/assets/0789c549-0dce-4838-9c22-500b0aa35285)
@@ -132,8 +129,7 @@ The product is still going strong in 2025!
 
 ---
 # Reverse Engineering Tools for Games
-
-Reverse engineering is a vital process for understanding and recreating the magic behind retro games. By dissecting and analyzing the original game code, assets, and mechanics, enthusiasts can learn how these classics were built and even modify or enhance them. Our site provides detailed information on the essential tools and techniques used in reverse engineering games. Here’s an overview of the key tools you'll need:
+Reverse engineering is a vital process for understanding and recreating the magic behind retro games. By dissecting and analyzing the original game code, assets, and mechanics, enthusiasts can learn how these classics were built and even modify or enhance them. Our site provides detailed information on the essential tools and techniques used in reverse engineering games. Here's an overview of the key tools you'll need:
 
 ## Disassemblers
 Disassemblers are crucial for breaking down compiled game code back into human-readable assembly language. These tools allow you to see the underlying instructions that the game uses to function, providing insight into the game's logic and structure.
@@ -149,25 +145,25 @@ For more information on Disassemblers check out this post:
 ## Debuggers
 Debuggers are used to test and analyze game code in real-time, allowing you to track the execution of programs, inspect memory, and find bugs or glitches.
 
-- **OllyDbg**: A popular Windows debugger known for its strong analysis capabilities and ease of use.
-- **x64dbg**: An open-source debugger for Windows with modern features and an active development community.
-- **Cheat Engine**: While primarily known as a game cheating tool, Cheat Engine’s debugging features make it useful for reverse engineering.
+* **OllyDbg**: A popular Windows debugger known for its strong analysis capabilities and ease of use.
+* **x64dbg**: An open-source debugger for Windows with modern features and an active development community.
+* **Cheat Engine**: While primarily known as a game cheating tool, Cheat Engine's debugging features make it useful for reverse engineering.
 
 ---
 ## Hex Editors
 Hex editors let you view and modify the raw binary data of game files. They are essential for making precise changes to game code and assets at the byte level.
 
-- **HxD**: A fast and efficient hex editor for Windows with features like file comparison and memory modification.
-- **Hex Fiend**: A powerful hex editor for macOS, capable of handling large files with ease.
-- **010 Editor**: A professional-grade hex editor with powerful scripting and parsing capabilities.
+* **HxD**: A fast and efficient hex editor for Windows with features like file comparison and memory modification.
+* **Hex Fiend**: A powerful hex editor for macOS, capable of handling large files with ease.
+* **010 Editor**: A professional-grade hex editor with powerful scripting and parsing capabilities.
 
 ---
 ## Decompilers
 Decompilers attempt to convert executable code back into a higher-level programming language, making it easier to understand and modify.
 
-- **Reko**: An open-source decompiler designed for multiple architectures and file formats.
-- **RetDec**: A retagetable machine-code decompiler that supports various architectures and file types.
-- **Ghidra**: Besides being a disassembler, Ghidra also includes decompiler features that provide pseudo-code representations of disassembled binaries.
+* **Reko**: An open-source decompiler designed for multiple architectures and file formats.
+* **RetDec**: A retagetable machine-code decompiler that supports various architectures and file types.
+* **Ghidra**: Besides being a disassembler, Ghidra also includes decompiler features that provide pseudo-code representations of disassembled binaries.
 
 For more information on Ghidra check out this post:
 {% include_cached link-to-other-post.html post="/intro-decompiling-with-ghidra" description="For more information on Ghidra check out this post." %}
@@ -176,10 +172,10 @@ For more information on Ghidra check out this post:
 ## File Format Analyzers
 Understanding game-specific file formats is crucial for modifying assets and extracting valuable information. These tools help analyze and manipulate proprietary file formats used in games.
 
-- **Game Extractor**: A tool for opening and modifying the archives used in many games.
-- **QuickBMS**: A universal script-based extractor that supports hundreds of game archive formats.
-- **TrID**: A utility for identifying file types and formats based on their binary signatures.
-- **Detect It Easy**: [horsicq/Detect-It-Easy: Program for determining types of files for Windows, Linux and MacOS.](https://github.com/horsicq/Detect-It-Easy?tab=readme-ov-file) (excellent for getting compiler/linker information for an executable)
+* **Game Extractor**: A tool for opening and modifying the archives used in many games.
+* **QuickBMS**: A universal script-based extractor that supports hundreds of game archive formats.
+* **TrID**: A utility for identifying file types and formats based on their binary signatures.
+* **Detect It Easy**: [horsicq/Detect-It-Easy: Program for determining types of files for Windows, Linux and MacOS.](https://github.com/horsicq/Detect-It-Easy?tab=readme-ov-file) (excellent for getting compiler/linker information for an executable)
 
 ### Diaphora - The Deeply Interactive Program Diffing Tool
 **Diaphora** is an advanced program diffing framework written by **joxeankoret** that integrates directly into the IDA Pro disassembler (and supports Ghidra via a script). 
@@ -204,9 +200,9 @@ The video demonstrates how to set up workspaces to visually compare function con
 ## Emulators
 Emulators replicate the hardware of old gaming systems on modern computers, allowing you to run and test games in a controlled environment.
 
-- **MAME**: An emulator that supports a wide range of arcade and console systems.
-- **PCSX2**: A PlayStation 2 emulator that provides debugging features for reverse engineering.
-- **Dolphin**: A GameCube and Wii emulator known for its accuracy and debugging tools.
+* **MAME**: An emulator that supports a wide range of arcade and console systems.
+* **PCSX2**: A PlayStation 2 emulator that provides debugging features for reverse engineering.
+* **Dolphin**: A GameCube and Wii emulator known for its accuracy and debugging tools.
 
 For more information on Reversing Emulators check out this post:
 {% include_cached link-to-other-post.html post="/Reversing-Emulators" description="For more information on Reversing Emulators check out this post." %}

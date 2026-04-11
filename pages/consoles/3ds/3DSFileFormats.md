@@ -21,6 +21,7 @@ recommend:
 editlink: /consoles/3ds/3DSFileFormats.md
 updatedAt: '2021-07-17'
 ---
+
 The **Nintendo 3DS** (Codename **CITRUS**) utilises a number of different file formats either created by Nintendo or third party. If you are interested in reverse engineering a 3DS game then you will most likely come across these formats, so it is a good idea to have at least some knowledge of how they work.
 
 The main file formats used in Nintendo 3DS games are outlined in the table below, with further detail in the sections of this post.
