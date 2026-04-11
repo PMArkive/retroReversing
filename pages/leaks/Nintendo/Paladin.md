@@ -74,7 +74,6 @@ Similar to the previous Gigaleak, this leak also contains content from the Ninte
 
 ---
 # E3 Leaf Green and Fire Red GBA ROMS (/E3)
-
 The files have the standard Nintendo SRL extension which was used both both GBA and NDS ROMS, you can rename the extension to **.gba** and they will play just fine in a GBA emulator.
 
 It is unclear the file naming convention and how far along the different builds of the game are but we know that the first 4 characters are the standard product ID for Leaf Green (BPGE) and Fire Red (BPRE).
@@ -327,7 +326,6 @@ It creates three different executables:
 * gen_id
 
 ## Source Code Files
-
 The files that will be checked out into the trunk directory are:
 * Makefile - Makefile for **gen_id**
 * Makefile.outputSharpID - Makefile for **outputSharpID** executable
@@ -832,7 +830,6 @@ Name | Description
 ./iris.h | 
 
 ### Precompiled Static Libraries (*.A) (/lib)
-
 These are:
 * ARM7-BB - Sub processor Library compiled for Bread Board IRIS
 * ARM7-TEG - Sub processor Library compiled for TEG board IRIS
@@ -874,7 +871,6 @@ Contents:
 
 ---
 ### Tools (/tools)
-
 contents:
 * ./bin
 * ./bin/makelcf.exe

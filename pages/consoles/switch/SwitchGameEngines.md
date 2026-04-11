@@ -63,7 +63,7 @@ Cities Skylines | 7.25MB
 Chicken Range | 4.87 MB
 Children of Morta | ?
 Cris Tales | 10.8 MB
-Cruis’n Blast | 8.13 MB
+Cruis'n Blast | 8.13 MB
 Cyanide & Happiness Freakpocalypse | 6.83 MB
 Empire of Sin | 8.75 MB
 Evergate | 4.90 MB
@@ -218,7 +218,6 @@ Dark Souls |
 
 ---
 # MT Framework (in-house Capcom engine)
-
 [MT Framework - Wikipedia](https://en.wikipedia.org/wiki/MT_Framework)
 
 Game Name | Details

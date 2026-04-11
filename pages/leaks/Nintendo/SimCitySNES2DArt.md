@@ -87,7 +87,6 @@ Those names line up very cleanly with the Super Famicom SimCity interface rather
 
 ---
 ## Glossary
-
 * **SIM**: SimCity SNES UI and menu art workspace
 * **SCR**: screen or panel layout data
 * **OBJ**: object-side placement data, often for UI or object-form text
@@ -310,7 +309,7 @@ Range | Working reading
 `0x0400` to `0x04ef` | structured lower block, likely one screen-state definition
 `0x0500` to `0x05ef` | second lower block with a very similar shape
 
-That does not prove the exact field names, but it does move the page beyond “this file is denser than the others.”
+That does not prove the exact field names, but it does move the page beyond "this file is denser than the others."
 `TOWN.SFX` now looks like a multi-region serialized tool record with several linked configuration blocks inside it.
 
 ---

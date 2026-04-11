@@ -93,7 +93,7 @@ We have dedicated deep-dives exploring the leaked source code and assets for eac
 {% include_cached link-to-other-post.html post="/super-mario-collection-source-code" description="Explore the Super Mario All-Stars (マリオコレクション) source code here." %}
 
 One small provenance detail is easy to miss here.
-While the primary unzipped source directories live under `other/SFC/ソースデータ`, three of these source trees—**F-Zero**, **Star Fox 2**, and **Super Mario Collection** (`srd13-SFCマリオコレクション`)—also survive duplicated inside `other/NEWS`. 
+While the primary unzipped source directories live under `other/SFC/ソースデータ`, three of these source trees-**F-Zero**, **Star Fox 2**, and **Super Mario Collection** (`srd13-SFCマリオコレクション`)-also survive duplicated inside `other/NEWS`. 
 
 So far this `NEWS` material looks identical to the `other/SFC/ソースデータ/` versions rather than a different branch, but it is still useful because it shows these exact snapshots were also present concurrently in a Sony NEWS-side working environment.
 
@@ -108,15 +108,15 @@ Beyond the source trees, the `NEWS.7z` archive also contains a **テープリス
 
 ### Tape Archive Backups (テープリストア)
 
-| Archive | Size | Entries | Contents |
-|---------|------|---------|----------|
-| **NEWS_02.tar** | 12M | 187 | System logs and user configs (`.net`, `.cshrc`, `.login`, `.logout`, mail profiles) and some compressed ROMs inside emails |
-| **NEWS_04.tar** | 96M | 5,309 | **Mixed graphics workstation**: 2,297 `.BAK`, 991 `.SCR`, 876 `.CGX`, 431 `.COL`, 266 `.OBJ`, 108 `.MAP`; includes late Star Fox 2 art, Zelda/GB-Zelda branches, confirmed Super Mario Kart assets, and a likely Pilotwings-era prototype |
-| **NEWS_05.tar** | 109M | 3,831 | **Star Fox 2 3D CAD Pipeline & Development Toolkit**: 628 `.txt`, 500 `.cad` 3D models, 371 `.anm` animations, 307 `.nca` Nintendo CAD files, 268 `.c` C source files |
-| **NEWS_09.tar** | 34M | 1,374 | **SNES sprite/level assets**: 502 `.BAK` backups, 213 `.CGX`, 128 `.COL`, 117 `.OBJ`, 56 `.SCR`, 52 `.PNL` panels - Yoshi-related content |
-| **NEWS_11.tar** | 127M | 5,401 | **Largest dump**: 921 `.CGX`, 709 `.OBJ`, 648 `.SCR`, 526 `.COL`, 391 `.BAK`, 336 `.cgx` - primarily Yoshi's Island production artwork and sprite objects |
-| **NEWS_17.tar** | 4.0K | 2 | Stub: `Backup.info` only |
-| **NEWS_41.tar** | 4.0K | 2 | Stub: `Backup.info` only |
+Archive | Size | Entries | Contents
+---------|------|---------|----------
+**NEWS_02.tar** | 12M | 187 | System logs and user configs (`.net`, `.cshrc`, `.login`, `.logout`, mail profiles) and some compressed ROMs inside emails
+**NEWS_04.tar** | 96M | 5,309 | **Mixed graphics workstation**: 2,297 `.BAK`, 991 `.SCR`, 876 `.CGX`, 431 `.COL`, 266 `.OBJ`, 108 `.MAP`; includes late Star Fox 2 art, Zelda/GB-Zelda branches, confirmed Super Mario Kart assets, and a likely Pilotwings-era prototype
+**NEWS_05.tar** | 109M | 3,831 | **Star Fox 2 3D CAD Pipeline & Development Toolkit**: 628 `.txt`, 500 `.cad` 3D models, 371 `.anm` animations, 307 `.nca` Nintendo CAD files, 268 `.c` C source files
+**NEWS_09.tar** | 34M | 1,374 | **SNES sprite/level assets**: 502 `.BAK` backups, 213 `.CGX`, 128 `.COL`, 117 `.OBJ`, 56 `.SCR`, 52 `.PNL` panels - Yoshi-related content
+**NEWS_11.tar** | 127M | 5,401 | **Largest dump**: 921 `.CGX`, 709 `.OBJ`, 648 `.SCR`, 526 `.COL`, 391 `.BAK`, 336 `.cgx` - primarily Yoshi's Island production artwork and sprite objects
+**NEWS_17.tar** | 4.0K | 2 | Stub: `Backup.info` only
+**NEWS_41.tar** | 4.0K | 2 | Stub: `Backup.info` only
 
 These tars represent raw workstation snapshots rather than organized source archives. The bulk of the data (NEWS_04, NEWS_05, NEWS_09, NEWS_11) consists of SNES development assets - heavily weighted toward graphics files (`.CGX`/`.COL` color palettes and screens), object definitions (`.OBJ`/`.OBZ` 3D/sprite data), and map data (`.MAP` and `.SCR`). Notably, NEWS_05 also preserves CAD files and animation source, suggesting multi-disciplinary workstation backups captured during active development cycles.
 
@@ -170,7 +170,6 @@ The archive is especially useful because it is not a clean, single-project hando
 It is a live multi-user workstation snapshot with three home directories, several different projects, and visible evidence of iterative art work.
 
 ---
-
 ### At a Glance
 `NEWS_04` is best understood as a **mixed graphics workstation backup**.
 It preserves:
@@ -188,7 +187,6 @@ Unlike `NEWS_05`, this archive contains almost no conventional program source.
 Its value comes from file naming, layout formats, revision backups, and the way several projects coexist on one machine.
 
 ---
-
 ### The Main Story: Masanao Arimoto's Workspace
 Arimoto's home directory is the most important part of the archive.
 It combines one late and unusually dense `SF2` workspace with several older Zelda-related branches.
@@ -205,7 +203,6 @@ Project | Files | Dominant types | Date range | Reading
 {% include_cached link-to-other-post.html post="/zelda-links-awakening-art-workspace" description="For the dedicated Link's Awakening / GB-zelda art workspace deep-dive, see this page." %}
 
 ---
-
 ### Tadashi Sugiyama's Mixed Graphics Workspace
 Sugiyama's home is the second major component of `NEWS_04`.
 It is older than Arimoto's, broader in scope, and reads like a workstation that served multiple productions over five years rather than one focused project.
@@ -265,7 +262,6 @@ One important extra detail at the NEWS_04 level is that Sugiyama's root director
 {% include_cached link-to-other-post.html post="/stunt-race-fx-2d-art-workspace" description="For the full FX2 analysis, see the dedicated Stunt Race FX 2D art page." %}
 
 ---
-
 ### NEWS_04 Timeline Snapshot
 
 Period | Project | Status
@@ -281,7 +277,6 @@ Period | Project | Status
 `1995-09-19` | `SF2` latest files | Late Star Fox 2 art branch remains active
 
 ---
-
 ### Practical 2D Workflow Pattern Preserved in NEWS_04
 ```mermaid
 flowchart LR
@@ -431,6 +426,7 @@ We have a dedicated page delving deep into the BroadOn design documents regardin
 The CVS Repository dump is from the 20th of October 2007 and mainly contains projects related to the WII Virtual console, such as emulators for Game Boy and DS, along with a few other small projects by individual developers.
 
 ## Checking out the latest version
+
 ### Step 1 - Extracting the tar
 The first step after extracting the 7Zip file to to extract the tar archive, you can do this like so:
 ```bash

@@ -98,7 +98,6 @@ For developers that didn't have a Sophia Systems Programming Box there was a muc
 <img src="/public/images/saturn/ConnectCartDevToRetailSaturn.png" />
 
 ---
-
 # Modified Sega Saturn
 The Modified Sega Saturn that Cross Products sold to game developers was known as the `DevSaturn` and can be seen in this sort youtube video:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/72Ac7R5TMuk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -208,7 +207,6 @@ In this side by side example of the Sega Saturn and Nintendo 64 you can see whic
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Comparing development hardware costs <a href="https://twitter.com/hashtag/SegaSaturn?src=hash&amp;ref_src=twsrc%5Etfw">#SegaSaturn</a> vs <a href="https://twitter.com/hashtag/Nintendo64?src=hash&amp;ref_src=twsrc%5Etfw">#Nintendo64</a> <a href="https://t.co/v5GOhLGFXg">pic.twitter.com/v5GOhLGFXg</a></p>&mdash; Shane Battye 🎮 (@shanebattye) <a href="https://twitter.com/shanebattye/status/1149429606509961219?ref_src=twsrc%5Etfw">July 11, 2019</a></blockquote> 
 
 ---
-
 # 3rd Party Development kits
 Although the Cross Products development kit was initially a 3rd party development kit it was included on this page as it became the official `CartDev` development kit. However there was also another competing 3rd party development kit by Sony of all people.. well technically a company that got bought by Sony: Sn Systems & Psygnosis. It was called the Psy-Q Saturn development kit and it was part of a cross platform suite of development kits.
 

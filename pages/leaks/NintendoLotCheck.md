@@ -206,7 +206,6 @@ The Publisher codes used for the above files are as follows:
 
 
 ---
-
 # Game Boy (DMG & GBC) Lot Check
 The Game Boy Lot check including both original and Color games was released to the public on the 9th of September as part of the Platinum Leak. The content was available inside the **platinum.7z** file in an archive called **dmg_sgb.7z**.
 
@@ -415,7 +414,7 @@ Zool (Japan).gb | Never released in Japan
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hello Kitty Pocket Camera Game Boy (I never thought I&#39;d say those words and yet here we are..) Press and hold Start + Select while booting up to access an &quot;erase all Data&quot; screen, as in the original Game Boy / Pocket Camera. <a href="https://t.co/B9wlynjzMe">pic.twitter.com/B9wlynjzMe</a></p>&mdash; ‏Soul filing cabinets (@nensondubois_) <a href="https://twitter.com/nensondubois_/status/1304630259514355714?ref_src=twsrc%5Etfw">September 12, 2020</a></blockquote>  
 
 ### Home Alone 2 - Kevin's Dream (DMGV6E-0)
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Here’s a Toys R Us Vidpro card for the Game Boy game Home Alone 2: Kevin’s Dream. This game was never released and I can barely find anything else about it <a href="https://t.co/9MjGWqHNzh">pic.twitter.com/9MjGWqHNzh</a></p>&mdash; N4Us (@TheN4Us) <a href="https://twitter.com/TheN4Us/status/1281017851814440962?ref_src=twsrc%5Etfw">July 9, 2020</a></blockquote>  
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Here's a Toys R Us Vidpro card for the Game Boy game Home Alone 2: Kevin's Dream. This game was never released and I can barely find anything else about it <a href="https://t.co/9MjGWqHNzh">pic.twitter.com/9MjGWqHNzh</a></p>&mdash; N4Us (@TheN4Us) <a href="https://twitter.com/TheN4Us/status/1281017851814440962?ref_src=twsrc%5Etfw">July 9, 2020</a></blockquote>  
 
 ### Lunar Chase/X (DMGECE-0.477)
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">The game &#39;X&#39;, developed by Argonaut on the Game Boy as a 3D title, never made it to the states. With the new <a href="https://twitter.com/hashtag/NintendoLeaks?src=hash&amp;ref_src=twsrc%5Etfw">#NintendoLeaks</a>, it appears this was intended to release as &#39;Lunar Chase&#39; at some point. <a href="https://twitter.com/dylancuthbert?ref_src=twsrc%5Etfw">@dylancuthbert</a> <a href="https://t.co/QfeLxC6hb9">pic.twitter.com/QfeLxC6hb9</a></p>&mdash; Nintendo Metro (@NintendoMetro) <a href="https://twitter.com/NintendoMetro/status/1303694957576740869?ref_src=twsrc%5Etfw">September 9, 2020</a></blockquote>  

@@ -26,10 +26,10 @@ recommend:
 - gamecube
 editlink: /leaks/Unexpected2021Leak.md
 ---
+
 On the **20th July 2021** the Nintendo Leaks (aka Gigaleaks) continued after a long hiatus, the content was obtained by Zammis Clark and then leaked online by anonymous individuals. 
 
 # Files Leaked
-
 The files that were leaked on the 20th July 2021 are as follows:
 * **datasheet.7z** - Low level hardware information for Switch Game cards and Gamecube memory cards
 * **DIAG4RVL.7z** - just contains DIAG4RVL.zip

@@ -59,7 +59,6 @@ The Games are:
 
 ---
 ## Interesting PSYQ Related Strings within the Games
-
 On Windows/DOS systems PSYQ the PSYQ SDK was normally installed to the root of the main harddrive, so it is very common to find games that have references to the location built into the executables, such as:
 * `c:/psyq/`
 * `d:\\psyqsat` (in the game BattleStations)

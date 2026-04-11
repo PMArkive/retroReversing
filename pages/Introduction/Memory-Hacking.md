@@ -25,6 +25,7 @@ recommend:
 editlink: /Introduction/Memory-Hacking.md
 updatedAt: '2021-03-24'
 ---
+
 # Memory Hacking
 One excellent way to get started modifying your favourite game is to use memory hacking techniques. By learning what memory locations are used for specific functions you can perform all sorts of crazy cheats and start to get an understanding of how the game works internally.
 
@@ -46,14 +47,14 @@ You can even use a tool like **Cheat Engine** to inspect memory of an emulator s
  Well sort of, it *could* be but the number 3 will also be used for many other non-lives related things in the game, for example an enemy could be located at position 3 on the Y axis etc. So we need to find out *which* location that has the number 3 corrosponds to the actual lives.
  
 The technique is simple:
-1. Perform an initial memory search for the current value of the stat you want (e.g Lives or HP).
-2. Change the stat in the game, e.g loose a life.
-3. Now do a "sub-search" which will search within the results of the first search for the new value of lives.
-4. The results should have been vastly reduced
-5. Repeat until you only get a couple of values
-6. Then change these values and the one that increases your lives is the variable you want
+* Perform an initial memory search for the current value of the stat you want (e.g Lives or HP).
+* Change the stat in the game, e.g loose a life.
+* Now do a "sub-search" which will search within the results of the first search for the new value of lives.
+* The results should have been vastly reduced
+* Repeat until you only get a couple of values
+* Then change these values and the one that increases your lives is the variable you want
 
-Now you can **lock** these memory addresses if you don’t want the game to change the stat, e.g you won’t lose HP.
+Now you can **lock** these memory addresses if you don't want the game to change the stat, e.g you won't lose HP.
  </div>
 </section> 
 
@@ -83,7 +84,6 @@ Memory Hacking is not exclusive to Emulators or cheat cartridges, the PC gaming 
 
 ---
 # iHaxGames - Cheat Engine for mac!
-
 Source code: [https://github.com/rwilfong50401/iHaxGamez](https://github.com/rwilfong50401/iHaxGamez) 
 
 ---

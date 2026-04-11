@@ -27,7 +27,6 @@ references:
 ---
 
 ## PS2 Official Software development Kit by Sony
-
 Last known version: **3.1.0** [^1]
 
 First known version: **0.3.0** [^2]
@@ -35,7 +34,6 @@ First known version: **0.3.0** [^2]
 Updates were provided to licenced PlayStation developers on ps2-pro.com, where the update contained just the files that have changed and could be dropped in place to overwrite the previous versions.
 
 ### SDK Versions
-
 
 SDK Version | Publicly Leaked? | Notes
 --- | --- | ---
@@ -156,22 +154,34 @@ One important point is that generating debug symbols doesn't ever modify the cod
 The simulator was released before developers got access to the hardware [^3], it is basically an emulator which virtualizes the hardware of the emotion engine on a standard pc. This emulator was not cycle-accurate so was not guaranteed to produce the same result as running on the physical hardware.
 
 ## EENet Library
+
 ## EyeToy® Vision Library
+
 ## HTTPS Library
+
 ## IOP Toolchain
+
 ## Libcheck Library
+
 ## Poweroff Processing Libraries
+
 ## Runtime Libraries 3.0.3
+
 ## Runtime Library Docs
+
 ## Sample Code
+
 ## Sample Data
+
 ## SIF DMA Package
+
 ## USB PSP™ Communications Library
+
 ## Demo Disc SDK
+
 ## Shell System Package
 
 ---
-
 # SDK Software
 
 ## HDD Checker

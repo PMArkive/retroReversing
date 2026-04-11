@@ -125,7 +125,6 @@ Is it possible to get standard COFF object files from the hitachi libraries?
 Note that although these library files also have the extension `.lib` they are not compatible with the Hitachi libraries listed above.
 
 ## PSYLIB
-
 Example to list the contents of a PsyQ static library:
 ```dos
 PSYLIB.EXE /l LIBSN.LIB

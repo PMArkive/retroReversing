@@ -131,7 +131,7 @@ So it is a good place to study the full `COL + CGX + SCR + OBJ` layer stack for 
 
 ---
 ## z-sword
-`z-sword/` is a strong “everything in one place” art workspace.
+`z-sword/` is a strong "everything in one place" art workspace.
 Compared with `z-mario-4`, it adds:
 
 * `MAP` resources
@@ -150,7 +150,7 @@ It looks like a tool and documentation bundle:
 * `srd/cad/bin/` includes transfer and print utilities like `pr_scr_*`, `pr_col_*`, `pr_obj_*`, `pr_chr_*`
 * `srd/doc/` contains tool documentation (`README.doc`, `cad` helpers, `arc`, `taraka`, `sf`, `srd`)
 
-If you are trying to understand how these formats were produced and moved around, this is the most directly “tooling shaped” part of the restore.
+If you are trying to understand how these formats were produced and moved around, this is the most directly "tooling shaped" part of the restore.
 
 ### What SRD Means
 In this tree, `srd` clearly acts like a shared tools prefix, with references to `/usr/local/srd/bin` and `/usr/local/srd/doc`.
@@ -177,7 +177,7 @@ Several of the core tools are compiled MIPS big-endian executables in ECOFF form
 That points to an IRIX-era MIPS workstation environment.
 The `srd/bin` folder also mixes in small shell scripts that act as wrappers and checks.
 
-### /usr/local/srd As a “Command Registry”
+### /usr/local/srd As a "Command Registry"
 The Japanese `srd/doc/README.doc` describes the intent of `/usr/local/srd/bin`:
 
 * commands registered there are free to use
@@ -207,7 +207,7 @@ The `srd/cad/bin/readme.doc` file lists the required binaries, and the names lin
 * `pr_pnl__` prints panels (`PNL`)
 * `pr_map__` prints maps (`MAP`)
 
-That is a very direct confirmation that these extensions are not just “game blobs”.
+That is a very direct confirmation that these extensions are not just "game blobs".
 They are first-class CAD layers with dedicated output paths.
 
 ### Super Famicom Payloads
@@ -221,7 +221,7 @@ File | Size | Notes
 `sfx_clear.hex` | `514` bytes | small helper payload
 `color_change.hex` | `331,062` bytes | large color-change payload plus `color_change.ADD`
 
-The important point is not that these are “ROMs”, but that they are tooling-side payloads sitting directly beside the CAD environment.
+The important point is not that these are "ROMs", but that they are tooling-side payloads sitting directly beside the CAD environment.
 They help explain why formats like `SFX` exist at all: they are part of a tool pipeline, not a game runtime format.
 
 ### Example Tool Docs
@@ -231,4 +231,4 @@ Two of the `srd/doc/*.doc` files are especially revealing:
 * `azrael` edits `MAP` files and checks overlap and bank overflow across multiple map inputs, marking issues per-line and returning status `1` on failure
 
 Those descriptions line up neatly with the rest of the restore:
-`NEWS_11` is full of intermediate CAD assets, and `srd/` preserves the “plumbing” used to validate, print, transfer, and manage them.
+`NEWS_11` is full of intermediate CAD assets, and `srd/` preserves the "plumbing" used to validate, print, transfer, and manage them.

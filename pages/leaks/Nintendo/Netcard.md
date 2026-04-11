@@ -66,7 +66,7 @@ The documentation reveals an ambitious server-client topology utilizing function
 
 ---
 ## The iQue Multimedia Player Features
-Digging into the `ncclient` C++ MFC source code itself reveals that the PC client wasn't just built for matchmaking—it was also an iTunes-style synchronization hub for turning the Game Boy Advance into a portable media center!
+Digging into the `ncclient` C++ MFC source code itself reveals that the PC client wasn't just built for matchmaking-it was also an iTunes-style synchronization hub for turning the Game Boy Advance into a portable media center!
 
 The `ncDlg.h` and `ncDlg.cpp` interface declarations expose explicit file management systems for three core non-gaming media types:
 * **MUSIC:** The client includes an `MCIMP3` audio player implementation and specifically checks file types to sync `.mp3`, `.wav`, and `.raw` audio files onto the Netcard's storage.
@@ -75,7 +75,7 @@ The `ncDlg.h` and `ncDlg.cpp` interface declarations expose explicit file manage
 
 The UI code tracks SD/Flash storage capacity using `m_freespace` and `m_cardspace` tracking variables, confirming the Netcard itself possessed internal memory meant to be managed over USB/link by this desktop client.
 
-### The Netcard Native GBA Firmware (`iqgba.tar`)
+### The Netcard Native GBA Firmware (iqgba.tar)
 This multimedia functionality is perfectly corroborated by the massive `iqgba.tar` archive found alongside it. Unlike the misplaced BroadOn Wii repository, `iqgba.tar` contains the actual target Game Boy Advance firmware source code under the `iQue-GBA/viewer/Viewer_NC/` compiler directory!
 
 This firmware (the NC Viewer) features a dedicated `ncpart/` module containing a fully native GBA MP3 software decoder (`mp3dec_mad.c`, utilizing the open-source MAD library) and user interface graphical assets (`mp3_bg.acg`, `mp3_obj.aob`) designed to render the Music Player natively on the GBA screen. It also contains `nc_lobby.c` and networking hooks directly referencing the `viewer_vng.h` protocol layer!
@@ -84,7 +84,7 @@ This firmware (the NC Viewer) features a dedicated `ncpart/` module containing a
 ## The PC Client & 3D Colosseum Mode
 Perhaps the most striking reveal in the `OnlinePokemonProject_Design.ppt` pitch deck and the `nc_stuff.7z` archive is that the GBA was planned to connect directly to a Windows PC Client managed by **iQue** (Nintendo's Chinese subsidiary).
 
-The archive actually contains the active source code for the `ncclient` Windows application—a C++ MFC tool meant to bridge the GBA to the internet and parse Netcard firmware.
+The archive actually contains the active source code for the `ncclient` Windows application-a C++ MFC tool meant to bridge the GBA to the internet and parse Netcard firmware.
 
 The 2004 design slides detail that while all controls and basic offline progression would remain on the Game Boy Advance, the `ncclient` PC software would be used to handle high-definition 3D rendering:
 
@@ -95,10 +95,10 @@ The 2004 design slides detail that while all controls and basic offline progress
 We also managed to find the exact Windows executables that iQue intended to use to deploy this entire system out to users. Inside the `nc_stuff.7z` archive lies an `NSIS` (Nullsoft Scriptable Install System) directory containing the compiled `NetCard0524` distribution build executable structure.
 
 This folder holds the underlying proxy engines that allowed the Game Boy Advance to seamlessly push data through the host PC and up to the IDC Linux servers:
-* **`libvng.dll`**: A compiled Windows dynamic link library version of the VNG connection API.
+* `libvng.dll`: A compiled Windows dynamic link library version of the VNG connection API.
 * **`vnproxy.exe` & `usbproxy.exe`**: Dedicated Virtual Network proxy engines meant to run silently in the background, tunneling the GBA's hardware USB driver (`usb_driver/`) traffic straight to the matchmaking servers.
 * **`pki_data/` & `root.pem`**: Public Key Infrastructure certificates, proving all communication between the Game Boy Advance Netcard and the online servers was fully encrypted!
-* **`tomp3.exe`**: A background audio conversion utility, confirming the PC `ncclient` actively ripped and converted audio files into a specific format to accommodate the GBA's lighter-weight MAD software decoding engine!
+* `tomp3.exe`: A background audio conversion utility, confirming the PC `ncclient` actively ripped and converted audio files into a specific format to accommodate the GBA's lighter-weight MAD software decoding engine!
 
 ---
 ## Structural Gameplay Changes (Offline & Online)
@@ -114,7 +114,7 @@ Because this Netcard infrastructure required constant server-side connectivity, 
 ## The Birth of IOS and the Fate of VNG
 The most historic revelation discovered within these documents is how deeply the cancelled GBA Netcard influenced the future of Nintendo hardware.
 
-Looking into the actual GBA source code inside `iqgba.tar` (`nc_lobby.c`), the Netcard natively boots using `<sc/ios.h>` and starts its server matchmaking loops through explicit `IOS_CreateThread()` calls. **IOS** stands for Internal Operating System—the notoriously secure, proprietary operating system developed by BroadOn that eventually powered the entirety of the Nintendo Wii's background network processing.
+Looking into the actual GBA source code inside `iqgba.tar` (`nc_lobby.c`), the Netcard natively boots using `<sc/ios.h>` and starts its server matchmaking loops through explicit `IOS_CreateThread()` calls. **IOS** stands for Internal Operating System-the notoriously secure, proprietary operating system developed by BroadOn that eventually powered the entirety of the Nintendo Wii's background network processing.
 
 This source code confirms that BroadOn successfully prototyped and implemented the core foundations of the Nintendo Wii's IOS directly onto the primitive Game Boy Advance processor *years* before the Wii even launched!
 

@@ -1294,19 +1294,17 @@ It shows the code, the assets, the message pipeline, and the messy regional buil
 
 
 # Art Assets in NEWS.7z / NEWS_04 Workstation Backups
-
 Beyond the source code branches analyzed above, the Gigaleak also preserves the **SNES Zelda 2D art and graphics workspaces** - specifically from the `NEWS_04` archive, a 96 MB Nintendo NEWS workstation backup.
 
 **Paths in archive:**
-- `NEWS_04.tar → home/arimoto/DELDA/` (earliest prototype phase)
-- `NEWS_04.tar → home/arimoto/zelda/` (main long-running SNES workspace)
+* `NEWS_04.tar → home/arimoto/DELDA/` (earliest prototype phase)
+* `NEWS_04.tar → home/arimoto/zelda/` (main long-running SNES workspace)
 
 Both directories belong to **Masanao Arimoto** and represent the SNES-side Zelda production across multiple years. `DELDA` captures the first pure tile-painting phase (May–October 1991), while `zelda` represents the broader, long-running production workspace (May 1991–July 1994) that was actively used for over three years.
 
 Together, these two folders preserve *A Link to the Past* development and extended follow-up work, with evidence of NES reference materials and potential successor project work preserved alongside the original SNES assets.
 
 ---
-
 ## Art Workspace Glossary
 
 <a id="glossary-delda"></a>
@@ -1394,20 +1392,16 @@ Together, these two folders preserve *A Link to the Past* development and extend
 **NEWS_04** - A 96 MB Nintendo NEWS workstation backup tape containing primarily graphics-side material. Preserved in the Gigaleak. Contains DELDA, zelda, GB-zelda Zelda project folders; Star Fox 2 2D workspace; and Sugiyama's multi-project overlay. Represents a snapshot of mixed multi-project workstation usage from 1991-1995.
 
 ---
-
 ## Overview: Two Phases of SNES Zelda Development
-
 The two SNES Zelda folders represent distinct phases of production on a single machine:
 
-- **DELDA** (213 files, May–October 1991): Pure tile-painting phase before map and object infrastructure
-- **zelda** (545 files, May 1991–July 1994): Main long-running production workspace spanning over three years
+* **DELDA** (213 files, May–October 1991): Pure tile-painting phase before map and object infrastructure
+* **zelda** (545 files, May 1991–July 1994): Main long-running production workspace spanning over three years
 
 Both started on the same day (May 23, 1991), suggesting the workstation was set up for Zelda work at that moment. `DELDA` closed in October 1991, and tile work moved fully into the main `zelda` tree, which continued active through mid-1994 - nearly three years after *A Link to the Past* shipped.
 
 ---
-
 ## DELDA: The Earliest Prototype
-
 `DELDA` is the smallest and shortest-lived of the three Zelda folders.
 Its five-month window - May to October 1991 - makes it a snapshot of the very first phase of Zelda work on this machine.
 
@@ -1426,9 +1420,7 @@ The `d` subfolder has almost all its files dated to October 21-23, which looks l
 That makes it feel like a pure tile-painting phase: the team was building raw graphics assets before the broader map and object infrastructure was established.
 
 ---
-
 ## zelda: The Long-Running SNES Branch
-
 The `zelda` folder runs for over three years and is the richest Zelda workspace on the machine.
 
 Subdir | Files | Date range | Dominant types | Reading
@@ -1443,7 +1435,6 @@ Subdir | Files | Date range | Dominant types | Reading
 `obj` | `1` | `1991-05-23` only | CGX | Single early object tile
 
 ### The d Subfolder: Dungeon Areas Named
-
 The `d` subfolder is by far the most interesting part of the `zelda` tree.
 Its files are named by dungeon or overworld area - and the area names are directly readable:
 
@@ -1464,7 +1455,6 @@ That is nearly three years after the game shipped in Japan (November 1991).
 This strongly suggests `zelda/d` was actively used for follow-up work - potentially the eventual SNES remake, regional port, or a successor project - long after the original title was complete.
 
 ### The m/tmp Sub-Snapshot
-
 The `m` subfolder contains a nested `tmp` folder dated entirely to `1992-12-01`.
 Its 34 files carry named tile types rather than numbered IDs:
 
@@ -1481,25 +1471,21 @@ This `tmp` snapshot reads like a world-map tile palette capture: terrain types (
 The `op-ed-nes` file is especially notable because it preserves a **NES-format tile set alongside the SNES assets** - suggesting the team was still referencing the NES original in late 1992 when designing or revising world-map terrain art.
 
 ---
-
 ## Production Timeline
-
 The timeline of DELDA and zelda:
 
-1. **May 23, 1991**: Both `DELDA` and `zelda/d` start on the same day - the workstation is initialized for Zelda work
-2. **May–October 1991**: `DELDA` runs as a pure tile-painting phase; `zelda` begins broader infrastructure
-3. **October 1991**: `DELDA` closes; tile work consolidates fully into `zelda`
-4. **November 1991**: *A Link to the Past* ships in Japan
-5. **November 1991–April 1992**: Core production continues; `zelda/m` (map data) active through April 1992
-6. **December 1992**: `zelda/m/tmp` snapshot captures world-map tile palette, notably preserving NES reference materials
-7. **July 1994**: Latest file in `zelda/d` - active three years after original release, suggesting follow-up work or reuse
+* **May 23, 1991**: Both `DELDA` and `zelda/d` start on the same day - the workstation is initialized for Zelda work
+* **May–October 1991**: `DELDA` runs as a pure tile-painting phase; `zelda` begins broader infrastructure
+* **October 1991**: `DELDA` closes; tile work consolidates fully into `zelda`
+* **November 1991**: *A Link to the Past* ships in Japan
+* **November 1991–April 1992**: Core production continues; `zelda/m` (map data) active through April 1992
+* **December 1992**: `zelda/m/tmp` snapshot captures world-map tile palette, notably preserving NES reference materials
+* **July 1994**: Latest file in `zelda/d` - active three years after original release, suggesting follow-up work or reuse
 
 The preservation of NES-format tiles in late 1992 (after ALTTP shipped) suggests continued reference to the original for consistency or potential successor/remake work.
 
 ---
-
 ## What Remains to Study
-
 * **Area ID mapping**: Correlating the numbered dungeon prefixes (`0-`, `1-`, `10-`, etc.) to specific in-game locations and progression
 * **Tile variation evolution**: Tracking how tile sets evolved between DELDA's pure painting phase and `zelda`'s broader infrastructure
 * **Screen composition**: Reconstructing how `khn` room layouts combined graphics, collision, and map data

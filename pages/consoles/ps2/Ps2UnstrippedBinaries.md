@@ -896,7 +896,6 @@ abs | Absolute Symbols
 extern | External Symbols
 
 ## .mdebug Section
-
 Some PS2 executable files contain a .mdebug section, which is an extended symbol table intended for use with certain versions of gdb. It contains rich debugging information in the STABS format such as complete data type definitions, function information (parameters, local variables, the return type), global variables, and more.
 
 The [Chaos Compiler Collection](https://github.com/chaoticgd/ccc) can be used to extract this information, either as C++ code or as a JSON file that can then be imported into [Ghidra](https://ghidra-sre.org/) using the provided extension.

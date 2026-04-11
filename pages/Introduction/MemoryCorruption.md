@@ -95,7 +95,6 @@ It works with RTC as it still uses the selected engine and settings from RTC, it
 Not currently available but will be very useful int he future to see the exact bytes that were corrupted and what their new value is.
 
 ---
-
 # Console Specific corrupting
 This section covers techniques for corrupting games for specific consoles.
 

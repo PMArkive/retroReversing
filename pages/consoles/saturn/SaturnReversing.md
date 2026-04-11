@@ -24,14 +24,12 @@ editlink: /consoles/saturn/SaturnReversing.md
 According to a post on segaxtreme.net the Sega Saturn executes the first file it find on the disc, most of the time its in the root directory in alphabetical order.
 
 ## Loading into IDA Pro
-
 Use a save state: [cyberwarriorx/yssloader: An IDA Pro plugin for importing Yabause YSS save states](https://github.com/cyberwarriorx/yssloader)
 
 ### PSYQ IDA Pro
 The standard SIG files won't find many functions if the game was compiled with PSYQ!
 
 ---
-
 ## Loading into Ghidra
 [VGKintsugi/Ghidra-SegaSaturn-Loader: Supports loading ISOs as well as Mednafen and Yabause emulator save states](https://github.com/VGKintsugi/Ghidra-SegaSaturn-Loader)
 

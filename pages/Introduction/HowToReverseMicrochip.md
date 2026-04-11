@@ -25,6 +25,7 @@ videocarousel:
     image: https://i.ytimg.com/vi/r8Vq5NV4Ens/sddefault.jpg
     youtube: 'r8Vq5NV4Ens'
 ---
+
 In this tutorial from Robert Baruch on his youtube channel [], the target chip used in the video series is the Texas Instruments 74LS01 Logic gate from 1986.
 
 # First step - photos before recapping
@@ -58,9 +59,9 @@ If you want a sharper image you can run it through Microsoft photo editor to inc
 You will notice that the particular chip in the video tutorial has a lot of metal covering the details. So it's time to delayer the chip.
 
 To do this you can:
-1. Use Armor etch to get rid of some of the glass
-2. Put in a solution of 6 parts `3% hydrogen peroxide` with 1 part `32% hydrochloric acid` for about 15 minutes
-3. Use Armor etch again to get rid of more glass
+* Use Armor etch to get rid of some of the glass
+* Put in a solution of 6 parts `3% hydrogen peroxide` with 1 part `32% hydrochloric acid` for about 15 minutes
+* Use Armor etch again to get rid of more glass
 
 Now you can repeat the imaging process from above with the delayed chip.
 

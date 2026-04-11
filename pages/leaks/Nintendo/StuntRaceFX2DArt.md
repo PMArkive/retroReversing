@@ -29,11 +29,9 @@ updatedAt: '2026-03-30'
 ---
 
 ## Archive Source
-
 This page is based on Gigaleak NEWS_04 `home/sugiyama/FX2/` (41 files), from **Tadashi Sugiyama's** workspace.
 
 ---
-
 ## Glossary
 
 <a id="glossary-fx2"></a>
@@ -67,9 +65,7 @@ This page is based on Gigaleak NEWS_04 `home/sugiyama/FX2/` (41 files), from **T
 * **Tadashi Sugiyama** - Nintendo developer with multi-project NEWS_04 workspace branches.
 
 ---
-
 ## Overview
-
 [`FX2`](#glossary-fx2) is a compact late-phase UI/art folder (`1993-07` to `1993-12`) containing player/cup selection assets and test objects.
 
 The lower-case naming style (`cpt`, `p-select`) differs from Sugiyama's other uppercase-heavy folders, which may indicate a different toolchain or handoff stage.
@@ -77,7 +73,6 @@ The lower-case naming style (`cpt`, `p-select`) differs from Sugiyama's other up
 With release in July 1994, this folder likely represents final UI lock before ship.
 
 ---
-
 ## Folder Snapshot
 
 {% capture fx2_body %}
@@ -99,7 +94,6 @@ Selection-centric naming | `cpt-*`, `p-select-*` | Menu and roster front-end wor
 Date window | `1993-07` to `1993-12` | Late production pass before 1994 release window
 
 ---
-
 ## Asset taxonomy
 
 Group | Example files | Interpretation
@@ -113,9 +107,7 @@ The branch is internally consistent.
 It reads as one focused UI pipeline rather than mixed mission or stage authoring.
 
 ---
-
 ## Lower-case naming as a workflow clue
-
 One of the strongest forensic hints in [`FX2`](#glossary-fx2) is naming style.
 
 Nearby Sugiyama branches are mostly uppercase-heavy (`MARIO-CAR`, `MAP-SELECT`, `GAMESELECT`, `SKYDIVE`).
@@ -131,7 +123,6 @@ Possible readings:
 This is not proof of team change by itself, but it is a persistent marker of branch identity.
 
 ---
-
 ## Timeline interpretation
 
 Date | Event | Reading
@@ -143,9 +134,7 @@ Date | Event | Reading
 The short, clean branch duration plus release proximity makes FX2 one of the clearest late-lock UI slices in NEWS_04.
 
 ---
-
 ## Relationship to CAR and SIM
-
 FX2 is useful when compared directly against other Sugiyama branches:
 
 * [`CAR`](/super-mario-kart-2d-art-workspace) is much larger and includes extensive track-side and localization iteration.
@@ -153,9 +142,7 @@ FX2 is useful when compared directly against other Sugiyama branches:
 * FX2 is the smallest and most focused, likely representing final-cycle selection UI work.
 
 ---
-
 ## Working hypothesis
-
 Current best reading:
 
 * **Primary** - final-cycle selection and roster UI assets for Wild Trax / Stunt Race FX.
@@ -164,9 +151,7 @@ Current best reading:
 The branch is consistent with late production stabilization rather than concept exploration.
 
 ---
-
 ## Open questions
-
 * Does `cpt` resolve to cup naming or captain naming in any surviving source/UI text tables?
 * Is `test-1.OBJ` referenced by any build manifest in the Wild Trax source tree?
 * Are lower-case naming conventions visible in any adjacent Wild Trax production directories?

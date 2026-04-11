@@ -148,7 +148,6 @@ It also contains `libcryptoX86.a` which is the result of compiling the BBPlayer 
 The executable `pkgbootrl` is whats called the "Bundle tool" and the source code is located in `rf/sw/bbplayer/tools/crls`.
 
 #### Kits folder - Software Development Kits
-
 The `N64 Sound Tools` folder holds the content distributed to Musicians as an addon to the official N64 SDK.
 
 {% include_cached link-to-other-post.html post="/n64sound" description="You can find out more about the N64 Sound Tools here." %}

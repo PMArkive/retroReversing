@@ -117,7 +117,6 @@ Size | Name | Notes
 
 ---
 ### Training Videos (/Docs/TrainingVideos)
-
 This folder contains both English and Japanese training videos related to optimizing games for the Playstation Vita.
 
 It contains a single MP4 video called **Lesson1.mp4** which lasts 6minutes and 38 seconds and talks about requesting and configuring Playstation Network (PSN) services for Vita games. It is quite an interesting video for people who have never seen the secret Vita Developer Network website (DevNet) that was only available to registered developers.

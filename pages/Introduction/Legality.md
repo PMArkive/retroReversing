@@ -15,6 +15,7 @@ recommend:
 updatedAt: '2022-09-23'
 editlink: /Introduction/Legality.md
 ---
+
 Reverse Engineering of commercial Games and Applications straddles a fine line of legality. Whether a Reverse Engineering project is legal or not completely depends on how it was accomplished.
 
 # Conversion from one from to another is still under copyright
@@ -79,7 +80,6 @@ The Super Mario 64 Decompilation project is an example of this as they have mana
 Reverse engineering is nothing new in the games industry and can go all the way back to the first Arcade games, with developers trying to figure out how their competitors managed to pull off the seemingly impossible in their new games.
 
 ## SEGA vs EA
-
 Former SEGA of America CEO **Tom Kalinske** was in charge when EA reverse-engineered the Sega Mega Drive. He was furious and famously said: 
 > "Trip [Hawkins], didn't your mother ever teach you the difference between right and wrong?"
 

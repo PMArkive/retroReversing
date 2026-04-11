@@ -21,6 +21,7 @@ recommend:
 - sdk
 editlink: /consoles/xbox/OfficialXboxSDK.md
 ---
+
 The Official software development kit for the original xbox was called the XDK (Xbox Development Kit). This was only provided to developers on their Xbox Developer Services website (xds.xbox.com) and not via CD/DVD.
 
 This was mainly due to the frequency in which the XDK changes, new builds would be available very frequently, at least a couple every month. This was a stark contrast to the SDKs from the previous generation that would only have a handful of releases during the whole lifetime of the console.

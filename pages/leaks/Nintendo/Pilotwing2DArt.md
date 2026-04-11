@@ -35,9 +35,7 @@ These directories are almost entirely art-side production material from the Supe
 {% include_cached link-to-other-post.html post="/snes-file-formats" description="For cross-project format definitions and evidence-backed extension behavior, see the SNES File Formats page." %}
 
 ---
-
 ## At a Glance
-
 The `fly` and `flyman` folders form a complete artist workspace pair with **817 files** total and no subdirectories.
 That flat, two-folder structure makes the archive feel less like a cleaned release and more like a direct snapshot of one developer's working branches copied at tape-restore time.
 
@@ -63,9 +61,7 @@ BAK (backups) | 137 | 139 | Heavy iteration trail in both folders
 This distribution shows a clean pipeline: `fly` produces reusable art components while `flyman` assembles mission layouts and progression structure. The presence of 276 backup files indicates this workspace captures an **active iteration snapshot**, not a frozen final export.
 
 ---
-
 ## Glossary of Key Terms
-
 If you are new to SNES art and layout production terminology, this glossary will help clarify the technical terms used throughout this page.
 
 * <a id="glossary-fly"></a>**fly** - Art-side folder with tiles, palettes, and object graphics.
@@ -79,9 +75,7 @@ If you are new to SNES art and layout production terminology, this glossary will
 * <a id="glossary-tadashi-sugiyama"></a>**Tadashi Sugiyama** - Nintendo developer whose NEWS_04 home contains `fly`, `flyman`, `CAR`, `SIM`, `MARIO`, and `FX2`.
 
 ---
-
 ## Executive summary
-
 [`fly`](#glossary-fly) and [`flyman`](#glossary-flyman) open on the same day (`1989-10-13`) and split cleanly into art production vs layout composition.
 
 The branch contains strong Pilotwings discipline vocabulary and a large [`Mode 7`](#glossary-mode7) package.
@@ -91,9 +85,7 @@ It also contains explicit combat naming that extends beyond neutral training lab
 The best current reading is a branch where Pilotwings lesson content and combat-capable mission content coexisted, including material consistent with the helicopter combat lane seen in the shipped game.
 
 ---
-
 ## Folder snapshot
-
 The folders share origin timing but diverge in closure behavior.
 
 `flyman` closes in 1991, while `fly` carries late 1994 timestamps likely influenced by tape restore handling.
@@ -104,9 +96,7 @@ Folder | Files | Date range | Dominant types | Role
 `flyman` | `429` | `1989-10-13` to `1991-05-07` | [`SCR`](#glossary-scr), [`BAK`](#glossary-bak) | Stage and lesson composition
 
 ---
-
 ## Discipline matrix
-
 The clearest evidence for Pilotwings-era identity is discipline naming.
 
 Family | Example files | Interpreted feature
@@ -123,9 +113,7 @@ This is a dense cluster of flight-discipline naming.
 That concentration is hard to explain as generic flight tooling.
 
 ---
-
 ## Combat matrix
-
 The branch also preserves combat-oriented naming families.
 
 Family | Example files | Why it matters
@@ -142,9 +130,7 @@ Shipped Pilotwings does include combat in the final helicopter test, with projec
 The interesting question is not whether combat existed, but how broad and differently framed that combat content was during production.
 
 ---
-
 ## Mode 7 architecture deep dive
-
 The `M7-*` set looks like a modular terrain and condition system.
 
 Group | Example files | System role
@@ -161,9 +147,7 @@ This pattern suggests a production workflow where a small set of geometry/tile b
 That is efficient for memory-limited SNES workflows and consistent with late-1980s/early-1990s console production habits.
 
 ---
-
 ## flyman layout grammar
-
 `flyman` appears to encode lesson and mission progression as grouped screen families.
 
 Group | Likely function | Notes
@@ -180,7 +164,6 @@ Group | Likely function | Notes
 A practical reading is that `fly` supplied reusable art modules while `flyman` assembled stage-facing lesson screens and mission sequences.
 
 ## Mode 7 composition and course variants
-
 The `M7-BG-C0/C00/C01` naming pattern deserves closer attention now that we have actual file presence data.
 
 In `fly` these three tiles exist:
@@ -189,7 +172,7 @@ In `fly` these three tiles exist:
 * `M7-BG-C00.CGX`, `M7-BG-C00.CGX.BAK` (dated Oct 13, 1989)
 * `M7-BG-C01.CGX`, `M7-BG-C01.CGX.BAK` (dated Oct 13, 1989)
 
-All three arrived on the same day with identical backup pairs. This is not random — it is **three coordinated course base tiles**.
+All three arrived on the same day with identical backup pairs. This is not random - it is **three coordinated course base tiles**.
 
 Matching palette sets exist for each:
 
@@ -208,9 +191,7 @@ In practical gameplay terms: **players could fly three different aerial courses 
 The `C` prefix interpretation remains open (course, condition, context, or credential), but the systematic presence of three parallel course trees makes "course" more credible than ever.
 
 ---
-
 ## Deeper Mode 7 condition-palette catalog
-
 The `M7-L-*` palette family is larger and more structured than initially noted.
 
 Complete catalog of weather/condition states in `fly`:
@@ -239,9 +220,7 @@ Interpretation:
 This modular palette system is a hallmark of efficient SNES production: buy one set of terrain tiles, swap eight color schemes to generate 8 distinct-feeling environments.
 
 ---
-
 ## File-level walkthrough
-
 To go deeper than folder labels, it helps to look at how specific filename families appear to cooperate.
 
 The pattern below is the clearest recurring structure in the workspace.
@@ -257,9 +236,7 @@ That three-part structure is exactly what you would expect from an efficient SNE
 It keeps expensive tile production reusable while moving variation into smaller palette and layout layers.
 
 ---
-
 ## Representative family dossiers
-
 These family snapshots are useful because they combine naming semantics with likely production intent.
 
 Family | Example evidence | Why this family matters
@@ -274,9 +251,7 @@ Family | Example evidence | Why this family matters
 The repeated base-plus-variant behavior across multiple discipline families is one of the strongest signs of deliberate content planning.
 
 ---
-
 ## Combat footprint detail
-
 The combat layer is not just a single odd token.
 
 It spans objects, enemies, and environment sets.
@@ -294,9 +269,7 @@ For a reader, this is the key tension in the archive.
 The same workspace that looks strongly Pilotwings-like also preserves a broader combat vocabulary than the final game surfaces outside its helicopter combat segment.
 
 ---
-
 ## Notable filename evidence sets
-
 If you want the shortest high-signal view of this archive, these are the most useful exemplar sets.
 
 Each set groups names that, together, show one production behavior clearly.
@@ -316,9 +289,7 @@ The sets are easiest to read as one combined statement:
 * combat naming confirms broader design experimentation inside the same workspace
 
 ---
-
 ## Stem continuity test
-
 One practical way to read these files is a stem-continuity check.
 
 If a stem appears across graphics, palette, and screen families, it likely represents an implemented content thread rather than a discarded name stub.
@@ -333,9 +304,7 @@ Combat stem continuity | Combat tokens across object and background families | B
 This is a useful checkpoint because it connects archive naming to probable in-engine behavior.
 
 ---
-
 ## flyman mission progression architecture
-
 The `flyman` folder shows dense composition work organized by progression families.
 
 Core progression spine:
@@ -348,7 +317,7 @@ Family | Count | Range | Interpretation
 `MAP4` | 16 screens | `MAP4-1` through `MAP4-16` (selective backups) | Lesson 4 is most complex, densest iteration evidence
 `MAP5` | 6 screens + variant | `MAP5-1` through `MAP5-4`, `MAP5-2B`, `MAP5-4B` | Lesson 5 with explicit B-variants
 `MAP6` | 37 screens | `MAP6-0` through `MAP6-36` | Lesson 6 is largest single progression (extensive variant/backup trail)
-`MAP7` | 64 screens | `MAP7-1` through `MAP7-64` | Lesson 7 is **massive** — more screens than many entire games
+`MAP7` | 64 screens | `MAP7-1` through `MAP7-64` | Lesson 7 is **massive** - more screens than many entire games
 `MAP8` | 8 screens | `MAP8-1` through `MAP8-8` | Lesson 8 conclusion
 
 Mission branch families (non-linear paths):
@@ -381,7 +350,7 @@ Data interpretation:
   * one massive free-roam course
   * 64 individual challenge variations of the same mission
   * a progression grid (`8×8` or similar) of tiered difficulty/feature unlocks
-* The presence of `B`-variants (`MAP5-2B`, `MAP5-4B`, `CHIKA-B*`, etc.) alongside main lanes suggests **parallel design iteration** — not just backups, but deliberate alternate routes tested in parallel.
+* The presence of `B`-variants (`MAP5-2B`, `MAP5-4B`, `CHIKA-B*`, etc.) alongside main lanes suggests **parallel design iteration** - not just backups, but deliberate alternate routes tested in parallel.
 * Heavy backup presence in `MAP4` and `MAP6` is evidence of **sustained iteration**, not final polish.
 
 This architecture is consistent with a flight-training game where:
@@ -406,9 +375,7 @@ flowchart TD
 This model is consistent with the extension split and token grammar already visible in the folders.
 
 ---
-
 ## Low-level decoding guide (without raw files)
-
 You can understand most of the technical structure in this workspace directly from naming and extension patterns.
 
 Artifact type | Typical extension | What it usually represents | What to infer from this page
@@ -429,15 +396,12 @@ The key practical model is that this archive preserves a layered SNES workflow:
 That is enough to reconstruct a credible low-level production picture without opening the original binary files.
 
 ---
-
 ## Pilotwings-specific format findings beyond the generic SNES profile
-
 The generic SNES format page explains what `SCR`, `CGX`, `COL`, and `OBJ` are across projects.
 
 Pilotwings adds branch-specific detail about how those formats were used in day-to-day production.
 
 ### SCR format behavior is extremely consistent across both folders
-
 All `SCR` files in both folders are exactly `8,960` bytes:
 
 * `fly`: `78` of `78` files at `8,960`
@@ -446,7 +410,6 @@ All `SCR` files in both folders are exactly `8,960` bytes:
 That is strong evidence of one stable editor-side layout container shared across both art testing (`fly`) and mission composition (`flyman`).
 
 ### Pilotwings SCR files show multiple opening-pattern classes
-
 The first 16-bit words split into a few recurring behaviors.
 
 Pattern class | Example file | Opening words | Reading
@@ -459,7 +422,6 @@ Mixed attribute entries | `PANEL.SCR` | `0x0092`, `0x0093`, `0x0000`, `0x4093`..
 This gives a stronger practical model than just "SCR holds layout": the format supports both blank templates and pre-seeded composition blocks under the same fixed container size.
 
 ### Variant pairs show two different editing styles
-
 Comparing close variant pairs reveals two distinct workflows.
 
 Pair | First differing byte | What it suggests
@@ -475,7 +437,6 @@ So Pilotwings does not use only one edit pattern.
 Some families are cloned early into separate branches, while others keep a shared front block and diverge later.
 
 ### File-type distribution also exposes a small layout-side helper bank
-
 Unlike a purely `SCR` folder, `flyman` keeps a tiny graphics and palette support set:
 
 * `BG.CGX`
@@ -488,15 +449,12 @@ This is useful format evidence: mission composition in Pilotwings was not strict
 The layout branch retained a minimal local graphics and palette payload for composition and preview work.
 
 ---
-
 ## Deep dive on under-documented format families
-
 The two highest-value remaining format families are `MET*` and `LICENSE*`.
 
 Both families preserve cross-file evidence (`SCR`, `CGX`, `COL`) and clear variant behavior.
 
 ### MET family structure and variant behavior
-
 The `MET*` set is broader than the earlier meter discussion and appears to encode several HUD or mission-meter modes.
 
 Family slice | Files | Size pattern | What it suggests
@@ -535,7 +493,6 @@ The practical implication is a two-layer meter pipeline:
 * per-course and per-discipline branches for mission-specific tuning
 
 ### LICENSE family and localization behavior
-
 The `LICENSE*` family is one of the clearest UI/localization format clusters in the branch.
 
 Family slice | Files | Size pattern | What it suggests
@@ -569,9 +526,7 @@ That combination suggests the family was maintained as a deliberate localization
 This is stronger than a one-off translated screen and looks like a proper reusable front-end localization workflow.
 
 ---
-
 ## Timestamp forensics
-
 Date behavior in NEWS_04 needs caution.
 
 Date | Observation | Confidence
@@ -586,7 +541,6 @@ Why this matters:
 * If some files were genuinely accessed or revised at restore time, late timestamps may represent archival edits, not gameplay-system iteration.
 
 ---
-
 ## Competing hypotheses and confidence
 
 Hypothesis | Description | Confidence
@@ -598,9 +552,7 @@ Mixed folder contamination | Different project assets merged into one branch by 
 Current best fit remains the first hypothesis, with the second still plausible.
 
 ---
-
 ## Synthesis: what the data tells us
-
 Now that we have examined actual file evidence in depth, several conclusions are stronger than before:
 
 **Curriculum structure:** The presence of a `64-file TEST grid` (created in a single batch on day 1) plus the `MAP1-8` + branches system in `flyman` points to **deliberate curriculum design**. This was not improvisation; it was planned lesson progression.
@@ -619,7 +571,7 @@ Now that we have examined actual file evidence in depth, several conclusions are
 * `OBJ-BOMB` weapons
 * `BG-FORTRESS`, `BG-ENEMYSHIP`, `BG-BASESHIP` combat backdrops
 
-...across object, palette, and background layers means **combat was not a single experiment or discarded branch — it was integrated into the same mission assembly pipeline** as the flight lessons. It reached object level and environment level, suggesting structured gameplay intent.
+...across object, palette, and background layers means **combat was not a single experiment or discarded branch - it was integrated into the same mission assembly pipeline** as the flight lessons. It reached object level and environment level, suggesting structured gameplay intent.
 
 **Production velocity:** Heavy backup presence in `MAP4`, `MAP6`, `CHIKA-B*`, `JUMP*` variants suggests these were **actively iterated, not frozen designs**. The workspace captures an **in-flight development snapshot**, not just a final asset dump.
 
@@ -634,9 +586,7 @@ These are the main unresolved points that would most improve confidence if answe
 * Compare `ROKETMAN`, `HELI`, and `PLANE` sprite dimensions against known Pilotwings ROM assets.
 
 ---
-
 ## Production pipeline reconstruction
-
 The current file evidence supports a three-lane pipeline:
 
 Lane | Primary folder | Main data families | Role in build flow
@@ -652,9 +602,7 @@ Why this matters:
 * It gives a clean mechanism for discipline-focused lessons and alternate visual conditions.
 
 ---
-
 ## Mission topology
-
 A likely mission graph can be inferred from naming density:
 
 * Core lesson spine: `MAP1` to `MAP8`.
@@ -672,7 +620,6 @@ The combat tokens likely represent either:
 * an early mission flavor that was softened before release.
 
 ---
-
 ## Evidence-weighted interpretation
 
 Signal class | Observed strength | Supports | Risk
@@ -690,9 +637,7 @@ Net reading:
 * Timestamp tails should not be over-interpreted without per-file clustering.
 
 ---
-
 ## File-type breakdown by extension
-
 The physical composition of each folder reveals different production roles.
 
 Folder | CGX | COL | SCR | OBJ | BAK | Total
@@ -716,9 +661,7 @@ Percentage breakdown inside `fly`:
 This composition shows a folder balancing asset creation with intermediate composition testing, not a raw graphics dump.
 
 ---
-
 ## Asset token census
-
 This section provides a conservative token census from currently confirmed values and naming families.
 
 Known quantitative anchors:
@@ -752,9 +695,7 @@ Important caveat:
 * A full filename inventory is still needed for exact per-token counts.
 
 ---
-
 ## What could change this interpretation
-
 The current hypothesis should be rejected or downgraded if any of the following become true:
 
 * `BOSS/UFO/FORTRESS` assets are proven to be copied in bulk from another project branch.
@@ -764,9 +705,7 @@ The current hypothesis should be rejected or downgraded if any of the following 
 If these checks fail, the branch may be a mixed workspace rather than a coherent Pilotwings-predecessor line.
 
 ---
-
 ## High-value extraction targets
-
 For future binary-level analysis, prioritize:
 
 * one representative file from each discipline family (`SKYDIVE`, `HANG`, `PARA`, `ROCKET`, `HELI`, `PLANE`)
@@ -777,9 +716,7 @@ For future binary-level analysis, prioritize:
 This minimizes extraction effort while maximizing comparative signal.
 
 ---
-
 ## Filename grammar and what it implies
-
 A useful next-pass signal is naming grammar, not just naming presence.
 
 Observed grammar patterns:
@@ -800,9 +737,7 @@ Interpretation:
 * Shared environment namespaces across `fly` and `flyman` imply coordinated asset-layout handoff.
 
 ---
-
 ## Branch-phase model
-
 This workspace can be modeled as phases, each with different evidence strength.
 
 Phase | Operational description | Evidence basis | Confidence
@@ -818,9 +753,7 @@ Why this helps:
 * It gives a framework for testing whether combat content was early, late, or mixed.
 
 ---
-
 ## Restore-artifact heuristics
-
 Because NEWS_04 appears tape-restored, timestamp interpretation needs guardrails.
 
 Use these heuristics before making historical claims:
@@ -835,9 +768,7 @@ Practical rule:
 * Historical claims should be tagged High confidence only when both naming semantics and timestamp clusters align.
 
 ---
-
 ## How to verify these conclusions
-
 To strengthen attribution confidence, use this protocol:
 
 * Build a full filename inventory for `fly` and `flyman`.
@@ -857,9 +788,7 @@ Suggested reporting format:
 This keeps the analysis reproducible and easier to audit.
 
 ---
-
 ## Signal summary by subsystem
-
 After the narrative sections, this table provides one compact index of the strongest technical signals.
 
 Subsystem | High-signal names | What it shows
@@ -870,9 +799,7 @@ Combat layer | `BOSS*`, `CHIKABOSS*`, `UFO*`, `CORE*`, `OBJ-BOMB*`, `BG-FORTRESS
 Layout layer | `MAP1` to `MAP8`, `RACE*`, `JUMP*`, `BONUS*`, `CHIKA-*`, `BGBG-*` | Stage progression and branch composition were authored on the layout side
 
 ---
-
 ## Cross-folder handoff model
-
 The strongest operational explanation is a staged handoff from art production to mission composition.
 
 Asset family | `fly` role | `flyman` role | Expected runtime impact
@@ -883,9 +810,7 @@ Mode 7 banks (`M7-*`) | Maintain terrain/condition packages | Reference mission 
 Combat sets (`BOSS`, `UFO`, `FORTRESS`) | Preserve enemy/background art families | Potentially integrate into branch-only maps | Evidence of broader pre-convergence design scope
 
 ---
-
 ## Runtime scene assembly model
-
 ```mermaid
 flowchart LR
   A["<b>fly assets</b><br>CGX/COL and object families"] --> B["<b>themed banks</b><br>discipline + environment variants"]
@@ -900,9 +825,7 @@ This model is consistent with the folder split and naming grammar.
 It also explains why `flyman` is composition-heavy while `fly` carries most bank and palette complexity.
 
 ---
-
 ## Evidence ledger for historical claims
-
 This table summarizes where the current interpretation is strongest and where uncertainty still remains.
 
 Claim | Positive evidence | Weakening factor | Current confidence
@@ -913,9 +836,7 @@ Combat content was part of active design scope | Multiple combat namespaces, not
 Late `1994` timestamps indicate active post-release iteration | Present in `fly` tail | Could be restore-touch artifacts rather than true edits | Medium-low
 
 ---
-
 ## Unpacked filename families
-
 These are the most interesting unresolved groups in `fly` and `flyman`, unpacked in one place.
 
 Family | Current reading | Why it matters | Confidence
@@ -930,9 +851,7 @@ Family | Current reading | Why it matters | Confidence
 `.BAK` clusters | Local backup snapshots around edits | Best tool for reconstructing real edit history | Medium
 
 ---
-
-### `M7-BG-C0`, `M7-BG-C00`, `M7-BG-C01`
-
+### M7-BG-C0, M7-BG-C00, M7-BG-C01
 The `C0/C00/C01` variation is unlikely to be random naming.
 
 The most practical interpretations are:
@@ -944,9 +863,7 @@ The most practical interpretations are:
 Given how compact SNES memory budgets were, a small cluster of closely named Mode 7 banks usually means planned variation rather than abandoned scraps.
 
 ---
-
-### `M7-METER` and `M7-METER-B`
-
+### M7-METER and M7-METER-B
 This pair likely represents HUD composition variants that were selected by mission context.
 
 Possible split logic:
@@ -958,9 +875,7 @@ Possible split logic:
 Because both are `.SCR`-style composition-facing names, they are more likely to encode placement/structure differences than raw graphics differences.
 
 ---
-
-### `M7-CHIKA` and `M7-FORTRESS`
-
+### M7-CHIKA and M7-FORTRESS
 This is one of the strongest links between the flight-discipline and combat layers.
 
 `CHIKA` (underground) and `FORTRESS` tokens appear as environment contexts, not only object labels.
@@ -990,9 +905,7 @@ The symmetry across palettes, screens, and object-side assets strongly implies a
 ---
 
 ---
-
-### `-L` discipline variants (`HANG-L`, `PARA-L`)
-
+### -L discipline variants (HANG-L, PARA-L)
 The `-L` suffix appears repeatedly in discipline families and likely marks a systematic subtype.
 
 Evidence from actual files:
@@ -1015,9 +928,7 @@ The clearer answer comes from `flyman` where `L1` and `L2` groups appear at top 
 Because `-L` appears in more than one discipline family, it reads as a naming rule, not a one-off exception.
 
 ---
-
-### `BGBG-*` composites in `flyman`
-
+### BGBG-* composites in flyman
 `BGBG-*` is likely a composition convention for layered background-over-background screens.
 
 This is important because it points to authored staging behavior in `flyman`:
@@ -1029,9 +940,7 @@ This is important because it points to authored staging behavior in `flyman`:
 This helps explain why `flyman` is large despite being extension-light.
 
 ---
-
 ### Early TEST grid layout evidence
-
 One of the clearest production artifacts is the `TEST-*` family in `fly`.
 
 The pattern is highly structured:
@@ -1043,12 +952,12 @@ The pattern is highly structured:
 
 The grid structure is telling:
 
-| Level | A variant | B variant | C variant | D variant |
-|-------|-----------|-----------|-----------|-----------|
-| `TEST-1` to `TEST-9` | ✓ | ✓ | ✓ | ✓ |
-| `TEST-10` to `TEST-16` | ✓ | ✓ | ✓ | ✓ |
+Level | A variant | B variant | C variant | D variant
+-------|-----------|-----------|-----------|-----------
+`TEST-1` to `TEST-9` | ✓ | ✓ | ✓ | ✓
+`TEST-10` to `TEST-16` | ✓ | ✓ | ✓ | ✓
 
-This is not random test clutter. It is a **systematic 16×4 layout test grid** — likely representing:
+This is not random test clutter. It is a **systematic 16×4 layout test grid** - likely representing:
 * 16 lessons or courses
 * 4 screen variants per lesson (A/B/C/D might be tutorial steps, difficulty modes, or input method variants)
 
@@ -1057,7 +966,7 @@ The uniform timestamp and file size suggest:
 * They use consistent baseline geometry/tiling
 * They represent a **planned curriculum structure with 64 baseline compositions**
 
-This directly supports the `flyman` evidence of numbered progression (`MAP1` to `MAP8`) — the `TEST` grid may have been early scaffolding before the final `MAP`/`RACE`/`JUMP`/`BONUS` branching structure was locked in.
+This directly supports the `flyman` evidence of numbered progression (`MAP1` to `MAP8`) - the `TEST` grid may have been early scaffolding before the final `MAP`/`RACE`/`JUMP`/`BONUS` branching structure was locked in.
 
 ---
 
@@ -1070,9 +979,7 @@ The best current candidates are:
 Because `-L` appears in more than one discipline family, it reads as a naming rule, not a one-off exception.
 
 ---
-
-### `ROKETMAN` actor-side signal
-
+### ROKETMAN actor-side signal
 `ROKETMAN` is especially useful because it sounds like a rider/actor naming form rather than a pure course token.
 
 That makes it a bridge between:
@@ -1083,9 +990,7 @@ That makes it a bridge between:
 If future stem continuity checks find `ROKETMAN` tied to object and screen layers, this would strongly support a complete implemented gameplay thread.
 
 ---
-
-### `BOSS-1/2/3` and `CHIKABOSS` progression
-
+### BOSS-1/2/3 and CHIKABOSS progression
 The numbering pattern implies progression structure.
 
 Combined with `CHIKABOSS`, the data suggests:
@@ -1098,9 +1003,7 @@ This is more structured than a stray enemy test bank.
 It looks like a mission design lane that likely overlaps with the shipped helicopter combat test, while also preserving broader variants that may have been trimmed or reorganized.
 
 ---
-
-### `.BAK` clusters and chronology
-
+### .BAK clusters and chronology
 `.BAK` files are not glamorous, but they are often the best historical evidence in this kind of archive.
 
 When grouped by stem, they can show:
@@ -1112,9 +1015,7 @@ When grouped by stem, they can show:
 For this workspace, `.BAK` clustering is the best path to tighten timeline confidence around the late `1994` tail.
 
 ---
-
 ## Additional on-disk families worth documenting
-
 After checking the files directly on disk, several families stand out as meaningful production signals that were not previously unpacked in detail.
 
 Family | Non-BAK files | Total files | Example names | Why it matters
@@ -1142,9 +1043,7 @@ The same non-backup filename appears in both folders for only four names:
 That overlap is small but high-value. It suggests intentional handoff checkpoints where the same artifact name was kept stable between art-side production (`fly`) and composition-side assembly (`flyman`).
 
 ---
-
 ## If you want to take this further
-
 To move from broad inference to stronger attribution, extract one compact batch with strict pairing rules:
 
 * one stem family that exists in both mission and environment contexts

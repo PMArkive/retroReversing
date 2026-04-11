@@ -18,7 +18,6 @@ editlink: ./industry/IndieDevelopment.md
 ---
 
 # Why Nintendo doesn't like 3rd party developers?
-
 In 1986 the year in which many believed the video games industry was finished due to the Atari collapse (google for the ET situation..). Nintendo were doing well in Japan but they were worried about the collapsed video game market in the USA. They wanted to release their Famicom system in the US but due to what had just happened to Atari they were of course cautious. 
 
 Hiroshi Yamauchi president of Nintendo at the time believed the failure was due to too many 3rd party rubbish games: 
@@ -31,5 +30,5 @@ They have even put in place a number of security measures to stop unlicensed dev
 
 This along with the threat of piracy has kept nintendo away from allowing 'homebrew development' on any of their consoles.
 
-It wasn't until they saw the success of many indie games such as minecraft and the success of 'app stores for games’ that they have started opening up their hardware to indie developers.
+It wasn't until they saw the success of many indie games such as minecraft and the success of 'app stores for games' that they have started opening up their hardware to indie developers.
 
