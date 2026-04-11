@@ -53,18 +53,18 @@ In the 1990 interview with **Mark Stephen Pierce** the following was published (
 
 
 ## What did a Typical Arcade Game Development Team Look Like?
-In the early days of arcade gaming, development teams needed to be highly specialized. Unlike today’s streamlined development environments, both **hardware and software** had to be built **from scratch** for each new game. This required expertise across a wide range of disciplines, from custom chip design to game logic and audiovisual presentation.
+In the early days of arcade gaming, development teams needed to be highly specialized. Unlike today's streamlined development environments, both **hardware and software** had to be built **from scratch** for each new game. This required expertise across a wide range of disciplines, from custom chip design to game logic and audiovisual presentation.
 
-As arcade hardware evolved and became more standardized—often borrowing from or influencing console architectures—the **hardware workload** decreased slightly. However, the **software and design** demands increased, calling for larger, more diverse teams to handle game mechanics, visual design, sound, and player experience.
+As arcade hardware evolved and became more standardized-often borrowing from or influencing console architectures-the **hardware workload** decreased slightly. However, the **software and design** demands increased, calling for larger, more diverse teams to handle game mechanics, visual design, sound, and player experience.
 
-A great example is Taito’s groundbreaking 1987 arcade title, **Darius**, which employed a team with clearly defined roles:
-- **Sound Designer** – Yasuhiko Tanaka
-- **Composer** – Hisayoshi “OGR” Ogura
-- **Cabinet Designer** – Natsuki Hirosawa
-- **Game Designer** – Junji Yarita
-- **Planner** – Akira Fujita
-- **Programmer** – Toru Sagawara
-- **Hardware Engineer** – Takeki Nakamura
+A great example is Taito's groundbreaking 1987 arcade title, **Darius**, which employed a team with clearly defined roles:
+* **Sound Designer** – Yasuhiko Tanaka
+* **Composer** – Hisayoshi "OGR" Ogura
+* **Cabinet Designer** – Natsuki Hirosawa
+* **Game Designer** – Junji Yarita
+* **Planner** – Akira Fujita
+* **Programmer** – Toru Sagawara
+* **Hardware Engineer** – Takeki Nakamura
 
 For a deeper look into the development of *Darius*, check out this excellent translated interview on **shmuplations**:  
 [Darius I & II – 1986/89 Developer Interviews – shmuplations.com](https://shmuplations.com/dariusii/)
@@ -103,7 +103,7 @@ As for the software side, they had to write their own text editor and assembler,
 In Retro Gamer 28 there is an excellent article from **Archer Maclean** where he went to a presentation by **Eugene Jarvis** and this is what he had to say [^3]:
 > He went on to describe that his code spilled over into multiple files on more
 than one floppy, and yet there were no multi-floppy code-linkers so he devised the exact same bizarre jump vector solution I had devised to allow non-linked blocks of code to communicate.
-> Then he described how he had to write ‘utilities’ to edit tiny bitmaps drawn on graph paper and entered as hex,
+> Then he described how he had to write 'utilities' to edit tiny bitmaps drawn on graph paper and entered as hex,
 > and how to get around the one hour compile times by editing memory directly and disassembling in your head,
 > and how to make interesting sounds from 30 bytes of data, and how to write ultra-tight optimised machine code to move small bitmaps around a screen fast, and off course, cram it all into a 32k ROM.
 
@@ -129,9 +129,9 @@ Speed-up kits, also known as **enhancement kits**, were aftermarket hardware mod
 
 ## Purpose and Impact of Speed Up Kits
 The primary motivations for implementing speed-up kits included:
-- **Increased Revenue**: Faster gameplay reduced session times, allowing more players per hour and increasing coin drop rates.
-- **Extended Cabinet Life**: By refreshing game mechanics, operators could delay purchasing new machines.
-- **Enhanced Player Engagement**: New challenges and features kept experienced players interested.
+* **Increased Revenue**: Faster gameplay reduced session times, allowing more players per hour and increasing coin drop rates.
+* **Extended Cabinet Life**: By refreshing game mechanics, operators could delay purchasing new machines.
+* **Enhanced Player Engagement**: New challenges and features kept experienced players interested.
 
 For example, the original **Asteroids** game allowed skilled players to play indefinitely on a single credit. A speed-up kit made the game more challenging, thereby reducing playtime per credit and increasing revenue .
 
@@ -141,23 +141,23 @@ For example, the original **Asteroids** game allowed skilled players to play ind
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rhM8NAMW_VQ?si=hHhQDzRVGSHGOtsp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Some of the most famous examples of speed up kits are:
-- **Super Missile Attack**: Developed by General Computer Corporation (GCC), this kit modified Atari's *Missile Command*, adding new enemies and increasing difficulty. Its success led to legal action from Atari, which was eventually settled when Atari hired GCC to develop games .
-- **Ms Pac Man**: Another GCC project, this kit transformed Namco's **Pac-Man** into **Crazy Otto**, introducing new mazes and improved AI. Midway licensed and released it as an official sequel called **Ms Pac Man** [^6].
+* **Super Missile Attack**: Developed by General Computer Corporation (GCC), this kit modified Atari's *Missile Command*, adding new enemies and increasing difficulty. Its success led to legal action from Atari, which was eventually settled when Atari hired GCC to develop games .
+* **Ms Pac Man**: Another GCC project, this kit transformed Namco's **Pac-Man** into **Crazy Otto**, introducing new mazes and improved AI. Midway licensed and released it as an official sequel called **Ms Pac Man** [^6].
 
 ---
 ## How were Speed Up Kits implemented?
 Speed-up kits were typically implemented through reverse engineering the original game and modifying it using:
 
-- **Daughterboards**: Additional circuit boards that modified signals or data paths.
-- **ROM Replacements**: Swapping out original ROM chips with modified versions containing new code.
-- **Clock Modifications**: Altering the system clock to increase CPU speed, thus speeding up gameplay .
+* **Daughterboards**: Additional circuit boards that modified signals or data paths.
+* **ROM Replacements**: Swapping out original ROM chips with modified versions containing new code.
+* **Clock Modifications**: Altering the system clock to increase CPU speed, thus speeding up gameplay .
 
 ---
 ## Legal and Ethical Considerations
 While speed-up kits offered benefits to arcade operators, they raised legal and ethical questions:
 
-- **Intellectual Property**: Modifying and distributing altered versions of games without permission infringed on the original developers' rights.
-- **Quality Control**: Unauthorized modifications could lead to inconsistent gameplay experiences and potential hardware issues.
+* **Intellectual Property**: Modifying and distributing altered versions of games without permission infringed on the original developers' rights.
+* **Quality Control**: Unauthorized modifications could lead to inconsistent gameplay experiences and potential hardware issues.
 
 The legal dispute between Atari and GCC over **Super Missile Attack** highlighted these concerns. The settlement resulted in GCC ceasing unauthorized modifications and instead developing licensed content resulting in **Ms Pac Man** [^6].
 
@@ -165,9 +165,9 @@ The legal dispute between Atari and GCC over **Super Missile Attack** highlighte
 ## Legacy of Speed Up Kits
 Speed-up kits played a significant role in the arcade industry's evolution:
 
-- **Innovation Catalyst**: They demonstrated the demand for game enhancements, influencing official sequels and updates.
-- **Technical Advancement**: The reverse engineering skills developed during kit creation contributed to advancements in game development and hardware understanding.
-- **Preservation Challenges**: Today, original speed-up kits are valuable to collectors and historians but pose challenges for preservation due to their unofficial nature.
+* **Innovation Catalyst**: They demonstrated the demand for game enhancements, influencing official sequels and updates.
+* **Technical Advancement**: The reverse engineering skills developed during kit creation contributed to advancements in game development and hardware understanding.
+* **Preservation Challenges**: Today, original speed-up kits are valuable to collectors and historians but pose challenges for preservation due to their unofficial nature.
 
 
 ---
@@ -206,7 +206,7 @@ JSMESS was created by cross-compiling the original C/C++ codebase into JavaScrip
 
 The original source code for JSMESS, is still available on [JSMESS original Github](https://github.com/jsmess/jsmess). But please note that it has now been integrated into the **main MAME repository**, so this repository is now **archived** and no longer actively maintained, but the source remains accessible for historical and reference purposes.
 
-For an up-to-date build of JSMESS you can follow the Emscripten part of the guide here: [Compiling MAME — MAME Documentation 0.278 documentation](https://docs.mamedev.org/initialsetup/compilingmame.html#emscripten-javascript-and-html)
+For an up-to-date build of JSMESS you can follow the Emscripten part of the guide here: [Compiling MAME - MAME Documentation 0.278 documentation](https://docs.mamedev.org/initialsetup/compilingmame.html#emscripten-javascript-and-html)
 
 ---
 ### 2015 - MAME merges with MESS
@@ -228,8 +228,12 @@ MAME was again featured in EDGE magazine in **October 2002**, where it was descr
 # Unreleased Arcade Games 
 
 ## Rare's Razz Board 
+The RAZZ is a 1988-era custom arcade board from Rare that used a unique Hitachi Z80-based "DMA hijacking" technique to enable high-speed sprite rendering and an extensive color palette, serving as the technical foundation for unreleased projects like the flight simulator 'Fokker' and the 'Playboy' handheld prototype.
 
-[Rare Gamer - Fokker](https://www.raregamer.co.uk/games/fokker/)
+### Fokker (Unreleased Arcade Game)
+Rare Gamer provides a technical overview of Fokker, a cancelled 1988 arcade flight simulator that was intended to be Rare's first coin-op release. The link details the game's development on the proprietary "Razz" arcade board, which enabled 3D bi-plane dogfighting and bombing runs through early hardware-accelerated rendering techniques. Lead programmer Simon Hallam managed a five-month development cycle before the project was cancelled, leaving behind a functional prototype that serves as a significant milestone in Rare’s early technical history.
+
+{% include link-to-other-site.html url="https://www.raregamer.co.uk/games/fokker/" description="Rare Gamer explores the history and technical implementation of Fokker, a cancelled 1988 arcade flight simulator that utilized Rare's custom Razz board." image="https://www.raregamer.co.uk/wp-content/uploads/2012/03/fokker_01.png" title="Fokker - Rare Gamer" %}
 
 ---
 # References

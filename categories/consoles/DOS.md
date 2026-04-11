@@ -51,13 +51,13 @@ Unlike modern PCs it was fairly common to have Game ports (15-pin DA-15 connecto
 ## DOS-era Graphics Hardware
 For DOS games, the video card ports and expansion bus types evolved over time, with **ISA** dominating early DOS gaming through the 80s and early 90s. 
 
-Here’s a chronological overview of the common video card ports used for DOS gaming graphics and their associated buses:
+Here's a chronological overview of the common video card ports used for DOS gaming graphics and their associated buses:
 
-| Bus / Port Type | Time Period | Notes & Relation to DOS Gaming |
-|---|---|---|
-| **ISA (Industry Standard Architecture)** | 1981 to mid-1990s | The dominant bus for early DOS graphics cards like CGA, EGA, and VGA cards. ISA ran at 8 MHz (later 16-bit at 8-10 MHz) and was the standard for most DOS expansion cards initially. |
-| **VESA Local Bus (VLB)** | Early 1990s (~1992 to 1994) | A 32-bit local bus designed to increase throughput for VGA/SVGA cards by connecting directly to the CPU bus at 33 MHz. VLB cards were used briefly in DOS gaming to allow faster graphics and higher resolutions. Mostly on 486 systems. |
-| **PCI (Peripheral Component Interconnect)** | Mid 1990s onwards (from ~1993) | PCI replaced VLB and ISA for most expansions. PCI introduced a separate clock and 32-bit or 64-bit data width with higher throughput, becoming common in late DOS era and Windows 95 gaming. Many late DOS and early Windows 3.x/95 games used PCI graphics cards. |
+Bus / Port Type | Time Period | Notes & Relation to DOS Gaming
+---|---|---
+**ISA (Industry Standard Architecture)** | 1981 to mid-1990s | The dominant bus for early DOS graphics cards like CGA, EGA, and VGA cards. ISA ran at 8 MHz (later 16-bit at 8-10 MHz) and was the standard for most DOS expansion cards initially.
+**VESA Local Bus (VLB)** | Early 1990s (~1992 to 1994) | A 32-bit local bus designed to increase throughput for VGA/SVGA cards by connecting directly to the CPU bus at 33 MHz. VLB cards were used briefly in DOS gaming to allow faster graphics and higher resolutions. Mostly on 486 systems.
+**PCI (Peripheral Component Interconnect)** | Mid 1990s onwards (from ~1993) | PCI replaced VLB and ISA for most expansions. PCI introduced a separate clock and 32-bit or 64-bit data width with higher throughput, becoming common in late DOS era and Windows 95 gaming. Many late DOS and early Windows 3.x/95 games used PCI graphics cards.
 
 Here are what the ports looked like for anyone curious to build a retro PC using original hardware:
 

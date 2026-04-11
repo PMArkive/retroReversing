@@ -35,7 +35,6 @@ Welcome to our page dedicated to Tiger Game(dot)com reverse engineering! The Tig
 So grab your Game(dot)com and get ready to dive into the exciting world of Game com reverse engineering!
 
 ---
-
 # Games
 
 ## Castlevania Symphony of the Night

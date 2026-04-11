@@ -46,7 +46,6 @@ If you're interested in reverse engineering Nintendo 3DS software, it's essentia
 In this section of our guide, we will provide you with detailed information and resources on the hardware of the Nintendo 3DS, including retail, prototype, and development hardware.
 
 ## Retail Nintendo 3DS Hardware
-
 If you're interested in learning more about the hardware architecture of the Nintendo 3DS, we highly recommend checking out the post on Copetti.org. This website is dedicated to exploring the technical details of the Nintendo 3DS hardware, including the CPU, GPU, and other components that make up the handheld console. You'll find in-depth explanations of how each component works, as well as detailed schematics and diagrams that help illustrate the inner workings of the Nintendo 3DS.
 
 {% include link-to-other-site.html url="https://www.copetti.org/writings/consoles/nintendo-3ds/" description="Copetti.org has an excellent tear down of the Nintendo 3DS Hardware and how it works" image="/public/consoles/Nintendo-3DS.png" title="Nintendo 3DS Architecture - A Practical Analysis" %}

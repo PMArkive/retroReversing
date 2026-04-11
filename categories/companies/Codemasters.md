@@ -34,7 +34,6 @@ The company initially began by developing and publishing games for home computer
 # Hardware
 
 ## Game Genie
-
 Game Genie was a series of video game enhancement devices developed by Codemasters and distributed by Galoob (later acquired by Hasbro). It was first released in 1990 for various gaming consoles, including the Nintendo Entertainment System (NES), Sega Genesis/Mega Drive, Super Nintendo Entertainment System (SNES), Game Boy, and Sega Game Gear.
 
 The Game Genie allowed players to input special codes, known as "cheat codes," which modified the behavior of games. These codes could enable features like unlimited lives, infinite ammunition, invincibility, and other gameplay enhancements that were not normally available in the game. Players could enter these codes through a simple interface before starting their game, and the effects would take place during gameplay.
@@ -47,7 +46,6 @@ Sadly this was just the company Camerica jumping the gun to announce a product t
 
 ---
 # Software (Games)
-
 Here is a list of the games codemasters are most famous for:
 * **Micro Machines** - NES, Sega Mega Drive/Genesis, Super NES, Game Boy, PlayStation, Microsoft Windows  
 * **Colin McRae Rally** - PlayStation, Microsoft Windows, Game Boy Color, Game Boy Advance, PlayStation 2, Xbox, Nintendo DS, iOS, Android  
