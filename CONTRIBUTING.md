@@ -112,7 +112,7 @@ If using a list, we have a preferred format for lists where each list item has a
 ```markdown
 First we always have a short sentence introducing the list:
 * **Item title in bold** - More information about the item
-````
+```
 
 Always have a sentence before the list explaining the list, never just have a list after a heading.
 

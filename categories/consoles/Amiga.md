@@ -193,6 +193,7 @@ If you are interested to see officially released or leaked source code, for Amig
 It explores the clever optimization techniques, such as background caching with four frame buffers, which allowed the game to maintain a smooth frame rate despite drawing hundreds of polygons on a 7MHz processor [00:09:31]. The discussion also covers the game's virtual machine architecture that facilitated easy porting [00:11:29].
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0iz9PJbs5rE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ### The Polygons of Another World: A Retrospective on 90s Graphics Hardware
 Fabien Sanglard presents a comprehensive retrospective on the technical implementation of the 1991 game *Another World* (also known as *Out of This World*), focusing on how its vector-based graphics were rendered across various early 90s hardware platforms. The article series introduces the game's core architecture as a simple virtual machine (VM) with only 29 opcodes, 256 variables, 64 threads, and four framebuffers. This approach enabled high portability and resource efficiency. It delves into platform-specific optimization tricks, such as the use of background buffers and special palette manipulations for translucency effects.
 
@@ -253,7 +254,7 @@ RobSmithDev has an excellent video about the history and reverse engineering of 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MgBm8UzyxtQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Essential Guide: The History of Trackers
-[MusicTech](https://musictech.com/guides/essential-guide/history-of-trackers/) provides a comprehensive history of music trackers, starting with Karsten Obarski's *Ultimate Soundtracker* on the Amiga and evolving through the demoscene to PC tools like *FastTracker II* and *Impulse Tracker*. The article details the technical limitations that shaped the unique "tracker sound"—such as the vertical timeline and hexadecimal commands—and discusses their lasting legacy in modern production tools like *Renoise*.
+[MusicTech](https://musictech.com/guides/essential-guide/history-of-trackers/) provides a comprehensive history of music trackers, starting with Karsten Obarski's *Ultimate Soundtracker* on the Amiga and evolving through the demoscene to PC tools like *FastTracker II* and *Impulse Tracker*. The article details the technical limitations that shaped the unique "tracker sound"-such as the vertical timeline and hexadecimal commands-and discusses their lasting legacy in modern production tools like *Renoise*.
 
 {% include link-to-other-site.html url="https://musictech.com/guides/essential-guide/history-of-trackers/" description="MusicTech chronicles the rise of music trackers, from the Amiga's 4-channel MOD format to the sophisticated multi-channel tools of the DOS era and their influence on modern DAWs." image="https://upload.wikimedia.org/wikipedia/commons/7/7b/Protracker_2.3a_screenshot.png" title="Essential Guide: History of Trackers" %}
 

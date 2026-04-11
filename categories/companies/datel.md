@@ -65,9 +65,9 @@ The Action Replay for the Super Nintendo wasn't just a cheat cartridge, it also 
 ## Game Killer
 Before the Pro Action Replay was released for the N64 Datel decided to release a similar product but instead of allowing memory editing via cheat codes it had a few built in games and would write to the SRAM (Battery backed up save data inside the cartridge).
 So for example if you plugged in Mario 64 it would edit the save data to give you all the stars and 100% completion.
-Not as useful as Action Replay as it pretty much completes the game for you, hence the name “Game Killer”.
+Not as useful as Action Replay as it pretty much completes the game for you, hence the name "Game Killer".
 
-One cool feature was that the cartridge has a card slot on it for “Killer cards” which were supposed to be cards that add support for other games but sadly none were ever released. This would be a cool reversing project to see if anyone can implement a working card for the Game Killer!
+One cool feature was that the cartridge has a card slot on it for "Killer cards" which were supposed to be cards that add support for other games but sadly none were ever released. This would be a cool reversing project to see if anyone can implement a working card for the Game Killer!
 
 For more information on the Game Killer and the 6 in built games:
 http://www.nesworld.com/article.php?system=n64&data=n64-gamekiller
@@ -162,10 +162,10 @@ The X-Port GBX allows you to upload and download saves from your GBA cartridges 
 Of course they are most famous of their Action Replay (AR) cheat devices, which would have never have received approval from Sony. Modifying memory in the way AR does would be too much of a security risk in terms of piracy/exploits.
 ![PS2ActionReplayMax](https://user-images.githubusercontent.com/40120498/235313259-8880b0a6-d964-4158-9f42-c89c682ee723.jpeg)
 
-However unlike cartridge based versions it didn’t have the Code Creation capability and thus you were reliant on the codes created by the “CodeJunkies” team. You could get these codes either on the website or use the #PS2 modem to connect to the servers, that was a nice touch!
+However unlike cartridge based versions it didn't have the Code Creation capability and thus you were reliant on the codes created by the "CodeJunkies" team. You could get these codes either on the website or use the #PS2 modem to connect to the servers, that was a nice touch!
 ![ActionReplayMaxUpgrade](https://user-images.githubusercontent.com/40120498/235313286-cea79b7d-783f-46db-a699-3746c07250c4.jpeg)
 
-But it didn’t stop there, the ability to print unofficial PS2 Discs was unique to Datel and thus they could sell products without giving a cut to Sony. So it was cheap for Datel to bring products to market, which allowed them to do cheaper per-game equivalents of Action Replay...
+But it didn't stop there, the ability to print unofficial PS2 Discs was unique to Datel and thus they could sell products without giving a cut to Sony. So it was cheap for Datel to bring products to market, which allowed them to do cheaper per-game equivalents of Action Replay...
 <img width="50%"  data-image-full="https://user-images.githubusercontent.com/40120498/235313335-2e17337e-898f-4298-9794-e861c7020ee2.jpeg" alt="Action Replay Soul Caliber" class="lazy-load" />
 
 There were many of these released for a third of the price of AR. However I believe the standard AR could do all the same cheats and would work out cheaper in the long run if you wanted to cheat in more than 3 games.
@@ -177,7 +177,7 @@ One of the best examples is when they used their technology to add official team
 If you look at the Max Payne version, it is releasing the same day as the retail game which suggests Datel seem to have had early access to the final games before their release date. Other region versions wouldn't have all the same codes as they would have been recompiled...
 <img width="50%"  data-image-full="https://user-images.githubusercontent.com/40120498/235313476-209dfa62-56fe-4dae-b6fb-d8ac811bda7d.jpeg" alt="Action Replay Max Payne" class="lazy-load" />
 
-One possibility is through their magazine subsidiary known as “Thin Ice Media” which published 3 retail magazines in the UK: GBX, G-force and PSi2. But would publishers really send preview copies to these magazines which were basically used as an advertising channel for Datel?
+One possibility is through their magazine subsidiary known as "Thin Ice Media" which published 3 retail magazines in the UK: GBX, G-force and PSi2. But would publishers really send preview copies to these magazines which were basically used as an advertising channel for Datel?
 <img width="50%"  data-image-full="https://user-images.githubusercontent.com/40120498/235313623-0cb22bca-2f21-451f-bd81-6296af62157b.jpeg" alt="PSi2 Magazine" class="lazy-load" />
 
 Although to be fair their magazines went on to be fairly successful with PSi2 having at least 38 issues (not sure if issue 39 exists or not). You see they had one advantage over the competition: the ability to burn playable PS2 cheat discs...
@@ -199,15 +199,15 @@ Side note: Action Replay was published by Karat in Japan and even had Potato Chi
 ![KaratActionReplayCrisps](https://user-images.githubusercontent.com/40120498/235313876-9408c00f-cfaa-47f9-8774-c13a6554ab85.jpeg)
 
 ## Karaoke Party
-But they didn’t just create standalone subsets of Action Replay functionality they also made entirely new software such as Karaoke Party! Which came with very popular pop songs at the time. I wonder did they license the music but not the game? Or was it used without permission?
+But they didn't just create standalone subsets of Action Replay functionality they also made entirely new software such as Karaoke Party! Which came with very popular pop songs at the time. I wonder did they license the music but not the game? Or was it used without permission?
 ![KaraokeParty](https://user-images.githubusercontent.com/40120498/235313914-ee6e7f37-e500-4a0d-b5db-ed288b626615.jpeg)
 
 ## Dance Master
-In a similar vein comes Dance Master, which was basically just a Dance Mat accessory that can work with any PS2 dancing game, but unlike competitors Datel could include its own unlicensed “Dance Work Out Game” which must have given it an edge over other 3rd party Dance Mats.
+In a similar vein comes Dance Master, which was basically just a Dance Mat accessory that can work with any PS2 dancing game, but unlike competitors Datel could include its own unlicensed "Dance Work Out Game" which must have given it an edge over other 3rd party Dance Mats.
 <img width="50%"  data-image-full="https://user-images.githubusercontent.com/40120498/235313961-0d197cb3-2d79-443b-82dc-7a0016e11f05.jpeg" alt="DanceMaster" class="lazy-load" />
 
 ## Eye Max
-Another is eyeMax which builds of the craze that was the eyeToy and turns it into a video messaging service where you can create short video content to share with friends or the “global community”. It could have been the TikTok of its day, just a shame it wasn’t very well known...
+Another is eyeMax which builds of the craze that was the eyeToy and turns it into a video messaging service where you can create short video content to share with friends or the "global community". It could have been the TikTok of its day, just a shame it wasn't very well known...
 
 <img width="50%"  data-image-full="https://user-images.githubusercontent.com/40120498/235313961-0d197cb3-2d79-443b-82dc-7a0016e11f05.jpeg" alt="eyeMax" class="lazy-load" />
 

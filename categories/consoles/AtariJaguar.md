@@ -50,7 +50,7 @@ The official "Atari Jaguar Development Manual" is available over on **archive.or
 
 
 It comes with:
-* M68000 8-/16-/32-Bit Microprocessors User’s Manual Ninth Edition written by MOTOROLA in 1993
+* M68000 8-/16-/32-Bit Microprocessors User's Manual Ninth Edition written by MOTOROLA in 1993
 * **ALN Linker** - 11 pages of linker documentation from 5th June 1995
 * Appendix A - Frequently AskedQuestions About Jaguar
 * Appendix B - Programming Guidelines

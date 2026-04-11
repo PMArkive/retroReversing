@@ -21,6 +21,7 @@ redirect_from:
 tags:
   - dreamcast
 ---
+
 # Introduction to Hacking/Reversing the SEGA Dreamcast
 Welcome to our page dedicated to SEGA Dreamcast reverse engineering! The SEGA Dreamcast was a beloved gaming console that was first released in 1998, and has since gained a cult following among retro gaming enthusiasts. 
 
@@ -42,7 +43,7 @@ So grab your VMU, fire up your Dreamcast, and get ready to dive into the excitin
 
 
 ### How the Dreamcast's Security was Hacked (MIL-CD)
-This article debunks the common myth that the Dreamcast lacked security, explaining instead how the "MIL-CD" format—intended for interactive music albums—became the system's Achilles' heel. We detail how hackers exploited this oversight to bypass GD-ROM authenticity checks, allowing modified game ISOs to run on standard CD-Rs despite the console's built-in copy protection mechanisms.
+This article debunks the common myth that the Dreamcast lacked security, explaining instead how the "MIL-CD" format-intended for interactive music albums-became the system's Achilles' heel. We detail how hackers exploited this oversight to bypass GD-ROM authenticity checks, allowing modified game ISOs to run on standard CD-Rs despite the console's built-in copy protection mechanisms.
 
 {% include_cached link-to-other-post.html post="/How-the-Dreamcast-Security-was-Hacked" %}
 
@@ -106,7 +107,7 @@ Wikipedia maintains a list of Dreamcast exclusives -  [Dreamcast-only games - Wi
 
 ## Reverse Engineering Ecco the Dolphin with Ghidra
 There is an excellent article by **Rings of Saturn** on reverse engineering Ecco the Dolphin for the Dreamcast, specifically how the cheat codes work via save names:
-[Under the microscope: Ecco the Dolphin — Defender of the Future](https://32bits.substack.com/p/under-the-microscope-ecco-the-dolphin)
+[Under the microscope: Ecco the Dolphin - Defender of the Future](https://32bits.substack.com/p/under-the-microscope-ecco-the-dolphin)
 
 ## Castlevania: Resurrection Dreamcast Reverse Engineering
 [Sega Dreamcast Info](https://www.sega-dreamcast-info-games-preservation.com/en/castlevania-dreamcast-reverse-engineering) provides a deep dive into the reverse engineering of the unreleased *Castlevania: Resurrection* E3 1999 prototype. The write-up details the discovery of plain text scripting for AI and level data, the extraction of hidden assets like music and textures, and the technical work required to create playable GDI and CDI images for modern hardware.

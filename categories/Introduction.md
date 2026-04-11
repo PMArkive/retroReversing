@@ -257,8 +257,8 @@ API functions are very useful when reversing a game or application as they tend 
 
 ## How are APIs distributed?
 APIs are typically distributed in several ways to allow developers to integrate them into their applications:
-- **Static Libraries** - Provided as .lib (Windows) or .a (Unix-like systems) files that developers link to their applications at compile time.
-- **Dynamic Libraries** - Provided as .dll (Windows) or .so (Unix-like systems) files, which are linked at runtime.
+* **Static Libraries** - Provided as .lib (Windows) or .a (Unix-like systems) files that developers link to their applications at compile time.
+* **Dynamic Libraries** - Provided as .dll (Windows) or .so (Unix-like systems) files, which are linked at runtime.
 
 ---
 ## What is a Static Library?
@@ -273,45 +273,45 @@ A dynamic library is a file containing code and data that can be used by multipl
 ### Which DLLs are used by code compiled by versions of Microsoft Visual C++?
 Here's a table of Microsoft Visual C++ (MSVC) versions and their associated runtime DLLs that can be imported. This table provides a quick reference for understanding which runtime DLLs correspond to different versions of MSVC.
 
-| **MSVC Version** | **Runtime DLLs**                       | **DLL File Names**                              |
-|------------------|----------------------------------------|-------------------------------------------------|
-| **MSVC 6.0**     | Visual C++ 6.0 runtime                 | `MSVCRT.dll`                                    |
-| **MSVC 7.0**     | Visual Studio .NET 2002 (VC7)          | `MSVCRT.dll`, `MSVCP60.dll`                     |
-| **MSVC 7.1**     | Visual Studio .NET 2003 (VC7.1)        | `MSVCRT.dll`, `MSVCP71.dll`                     |
-| **MSVC 8.0**     | Visual Studio 2005 (VC8)               | `MSVCRT.dll`, `MSVCP80.dll`, `MSVCR80.dll`      |
-| **MSVC 9.0**     | Visual Studio 2008 (VC9)               | `MSVCRT.dll`, `MSVCP90.dll`, `MSVCR90.dll`      |
-| **MSVC 10.0**    | Visual Studio 2010 (VC10)              | `MSVCRT.dll`, `MSVCP100.dll`, `MSVCR100.dll`    |
-| **MSVC 11.0**    | Visual Studio 2012 (VC11)              | `MSVCRT.dll`, `MSVCP110.dll`, `MSVCR110.dll`    |
-| **MSVC 12.0**    | Visual Studio 2013 (VC12)              | `MSVCRT.dll`, `MSVCP120.dll`, `MSVCR120.dll`    |
-| **MSVC 14.0**    | Visual Studio 2015 (VC14)              | `MSVCRT.dll`, `MSVCP140.dll`, `MSVCR140.dll`    |
-| **MSVC 14.1**    | Visual Studio 2017 (VC14.1)            | `MSVCRT.dll`, `MSVCP140.dll`, `MSVCR140.dll`    |
-| **MSVC 14.2**    | Visual Studio 2019 (VC14.2)            | `MSVCRT.dll`, `MSVCP140.dll`, `MSVCR140.dll`    |
-| **MSVC 15.0**    | Visual Studio 2022 (VC15)              | `MSVCRT.dll`, `MSVCP140.dll`, `MSVCR140.dll`    |
+**MSVC Version** | **Runtime DLLs**                       | **DLL File Names**                             
+------------------|----------------------------------------|-------------------------------------------------
+**MSVC 6.0**     | Visual C++ 6.0 runtime                 | `MSVCRT.dll`                                   
+**MSVC 7.0**     | Visual Studio .NET 2002 (VC7)          | `MSVCRT.dll`, `MSVCP60.dll`                    
+**MSVC 7.1**     | Visual Studio .NET 2003 (VC7.1)        | `MSVCRT.dll`, `MSVCP71.dll`                    
+**MSVC 8.0**     | Visual Studio 2005 (VC8)               | `MSVCRT.dll`, `MSVCP80.dll`, `MSVCR80.dll`     
+**MSVC 9.0**     | Visual Studio 2008 (VC9)               | `MSVCRT.dll`, `MSVCP90.dll`, `MSVCR90.dll`     
+**MSVC 10.0**    | Visual Studio 2010 (VC10)              | `MSVCRT.dll`, `MSVCP100.dll`, `MSVCR100.dll`   
+**MSVC 11.0**    | Visual Studio 2012 (VC11)              | `MSVCRT.dll`, `MSVCP110.dll`, `MSVCR110.dll`   
+**MSVC 12.0**    | Visual Studio 2013 (VC12)              | `MSVCRT.dll`, `MSVCP120.dll`, `MSVCR120.dll`   
+**MSVC 14.0**    | Visual Studio 2015 (VC14)              | `MSVCRT.dll`, `MSVCP140.dll`, `MSVCR140.dll`   
+**MSVC 14.1**    | Visual Studio 2017 (VC14.1)            | `MSVCRT.dll`, `MSVCP140.dll`, `MSVCR140.dll`   
+**MSVC 14.2**    | Visual Studio 2019 (VC14.2)            | `MSVCRT.dll`, `MSVCP140.dll`, `MSVCR140.dll`   
+**MSVC 15.0**    | Visual Studio 2022 (VC15)              | `MSVCRT.dll`, `MSVCP140.dll`, `MSVCR140.dll`   
 
 Notes:
-- **MSVCRT.dll** is the Microsoft C Runtime Library used across various versions.
-- **MSVCPxx.dll** refers to the Microsoft C++ Runtime Library, where `xx` denotes the version (e.g., `80` for Visual Studio 2005).
-- **MSVCRxx.dll** refers to the Microsoft C Runtime Library versioned similarly to the `MSVCPxx.dll`.
+* **MSVCRT.dll** is the Microsoft C Runtime Library used across various versions.
+* **MSVCPxx.dll** refers to the Microsoft C++ Runtime Library, where `xx` denotes the version (e.g., `80` for Visual Studio 2005).
+* **MSVCRxx.dll** refers to the Microsoft C Runtime Library versioned similarly to the `MSVCPxx.dll`.
 
 ### What tools are used to explore Executables and Compiled Libraries?
 Here's a table summarizing the tools for viewing the insides of executables and libraries:
 
-| **Tool**                | **Platform**                    | **Description**                                                                               | **Usage**                                                                 |
-|-------------------------|---------------------------------|-----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| **objdump**             | Linux, Unix, macOS, Windows     | Disassembles and displays information about object files and executables.                     | `objdump -d <file>` for disassembly, `objdump -t <file>` for symbols.     |
-| **readelf**             | Linux, Unix                     | Displays detailed information about ELF files, including headers and segments.                | `readelf -h <file>` for headers, `readelf -s <file>` for symbols.         |
-| **nm**                  | Linux, Unix, macOS, Windows     | Lists symbols from object files, executables, and libraries.                                  | `nm <file>`.                                                              |
-| **gdb**                 | Linux, Unix, macOS, Windows     | Debugger that can also inspect executable contents, disassemble code, and view symbols.       | `gdb <file>`, then use commands like `info functions` or `disassemble`.   |
-| **Ghidra**              | Windows, Linux, macOS           | Free and open source disassembler and debugger with interactive analysis capabilities.        | Load the executable into Ghidra and use the GUI for exploration.          |
-| **IDA Pro**             | Windows, Linux, macOS           | Commercial disassembler and debugger with interactive analysis capabilities.                  | Load the executable into IDA Pro and use the GUI for exploration.         |
-| **Hex-Rays Decompiler** | Windows, Linux, macOS           | Converts disassembled code back to C-like pseudo code; an add-on for IDA Pro.                 | Integrated within IDA Pro; select a function and decompile.               |
-| **Binary Ninja**        | Windows, Linux, macOS           | Modern binary analysis tool with disassembly, decompilation, and scripting.                   | Load the binary and use the GUI or API for analysis.                      |
-| **Radare2**             | Windows, Linux, macOS           | Open-source framework for reverse engineering, including disassembly and debugging.           | `r2 <file>`, then use commands like `pdf` to disassemble functions.       |
-| **PE Explorer**         | Windows                         | Commercial tool for inspecting and editing Windows PE files.                                  | Open the executable in PE Explorer and navigate through sections.         |
-| **CFF Explorer**        | Windows                         | Free tool for analyzing and editing PE files, with detailed views of file structure.          | Open the PE file in CFF Explorer and explore different sections.          |
-| **Dependency Walker**   | Windows                         | Analyzes dependencies of Windows executables and DLLs, showing imported/exported functions.   | Load the executable or DLL in Dependency Walker and explore dependencies. |
-| **dumpbin**             | Windows (Visual Studio)         | Command-line tool for inspecting PE files, showing headers, symbols, imports, and more.       | `dumpbin /all <file>` to view all available information.                  |
-| **MachOView**           | macOS                           | Tool for viewing the structure of Mach-O binaries, native to macOS executables.               | Open the Mach-O binary in MachOView and browse its segments and sections. |
+**Tool**                | **Platform**                    | **Description**                                                                               | **Usage**                                                                
+-------------------------|---------------------------------|-----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------
+**objdump**             | Linux, Unix, macOS, Windows     | Disassembles and displays information about object files and executables.                     | `objdump -d <file>` for disassembly, `objdump -t <file>` for symbols.    
+**readelf**             | Linux, Unix                     | Displays detailed information about ELF files, including headers and segments.                | `readelf -h <file>` for headers, `readelf -s <file>` for symbols.        
+**nm**                  | Linux, Unix, macOS, Windows     | Lists symbols from object files, executables, and libraries.                                  | `nm <file>`.                                                             
+**gdb**                 | Linux, Unix, macOS, Windows     | Debugger that can also inspect executable contents, disassemble code, and view symbols.       | `gdb <file>`, then use commands like `info functions` or `disassemble`.  
+**Ghidra**              | Windows, Linux, macOS           | Free and open source disassembler and debugger with interactive analysis capabilities.        | Load the executable into Ghidra and use the GUI for exploration.         
+**IDA Pro**             | Windows, Linux, macOS           | Commercial disassembler and debugger with interactive analysis capabilities.                  | Load the executable into IDA Pro and use the GUI for exploration.        
+**Hex-Rays Decompiler** | Windows, Linux, macOS           | Converts disassembled code back to C-like pseudo code; an add-on for IDA Pro.                 | Integrated within IDA Pro; select a function and decompile.              
+**Binary Ninja**        | Windows, Linux, macOS           | Modern binary analysis tool with disassembly, decompilation, and scripting.                   | Load the binary and use the GUI or API for analysis.                     
+**Radare2**             | Windows, Linux, macOS           | Open-source framework for reverse engineering, including disassembly and debugging.           | `r2 <file>`, then use commands like `pdf` to disassemble functions.      
+**PE Explorer**         | Windows                         | Commercial tool for inspecting and editing Windows PE files.                                  | Open the executable in PE Explorer and navigate through sections.        
+**CFF Explorer**        | Windows                         | Free tool for analyzing and editing PE files, with detailed views of file structure.          | Open the PE file in CFF Explorer and explore different sections.         
+**Dependency Walker**   | Windows                         | Analyzes dependencies of Windows executables and DLLs, showing imported/exported functions.   | Load the executable or DLL in Dependency Walker and explore dependencies.
+**dumpbin**             | Windows (Visual Studio)         | Command-line tool for inspecting PE files, showing headers, symbols, imports, and more.       | `dumpbin /all <file>` to view all available information.                 
+**MachOView**           | macOS                           | Tool for viewing the structure of Mach-O binaries, native to macOS executables.               | Open the Mach-O binary in MachOView and browse its segments and sections.
 
 ### How do I find out what compiler/linker was used to build an executable?
 <img width="799" height="524" alt="Detect It Easy showing the Compile and Linker for Game Maker 1.1 executable" src="https://github.com/user-attachments/assets/5b9e294f-48b4-4c80-9159-324c9230e774" />
@@ -355,16 +355,16 @@ Note that the above are the rough groups, some specific CPUs have more specialis
 ### How similar are Instruction Set Architectures
 Here is a simple comparison table that highlights some key differences between different CPU Instruction Set Architectures (ISA). Please note that this table is not exhaustive and focuses on high-level distinctions:
 
-| ISA         | Example Instructions | Number of Registers | Memory Addressing Modes | Complex Instructions | Endianness |
-|-------------|----------------------|---------------------|-------------------------|-----------------------|------------|
-| Z80         | ADD, SUB, MOV        | 8 General Purpose  | Immediate, Direct, Indexed, Register Indirect | Conditional Jumps, Bit Manipulation | Little-Endian |
-| 6502        | ADC, LDA, STA        | 3 General Purpose  | Zero Page, Absolute, Indexed, Indirect | None                  | Little-Endian |
-| 68K         | ADD, SUB, MOVE       | 16 General Purpose | Register Direct, Immediate, Memory Indirect | Multiply, Divide, Bit Manipulation | Big-Endian |
-| MIPS        | ADD, SUB, LW         | 32 General Purpose | Immediate, Register Direct, Base + Offset | Load/Store, Multiply, Divide | Big-Endian |
-| x86         | ADD, SUB, MOV        | 8 General Purpose  | Register Direct, Immediate, Memory Indirect | Complex Arithmetic, SIMD | Little-Endian |
-| ARM         | ADD, SUB, LDR        | 16 General Purpose | Immediate, Register Direct, Base + Offset | SIMD, Multiply, Divide | Little-Endian |
-| SuperH      | ADD, SUB, MOV        | 16 General Purpose | Immediate, Register Direct, Memory Indirect | Multiply, Divide, Bit Manipulation | Little-Endian |
-| PowerPC     | ADD, SUB, LWZ        | 32 General Purpose | Immediate, Register Direct, Base + Offset | SIMD, Multiply, Divide | Big-Endian |
+ISA         | Example Instructions | Number of Registers | Memory Addressing Modes | Complex Instructions | Endianness
+-------------|----------------------|---------------------|-------------------------|-----------------------|------------
+Z80         | ADD, SUB, MOV        | 8 General Purpose  | Immediate, Direct, Indexed, Register Indirect | Conditional Jumps, Bit Manipulation | Little-Endian
+6502        | ADC, LDA, STA        | 3 General Purpose  | Zero Page, Absolute, Indexed, Indirect | None                  | Little-Endian
+68K         | ADD, SUB, MOVE       | 16 General Purpose | Register Direct, Immediate, Memory Indirect | Multiply, Divide, Bit Manipulation | Big-Endian
+MIPS        | ADD, SUB, LW         | 32 General Purpose | Immediate, Register Direct, Base + Offset | Load/Store, Multiply, Divide | Big-Endian
+x86         | ADD, SUB, MOV        | 8 General Purpose  | Register Direct, Immediate, Memory Indirect | Complex Arithmetic, SIMD | Little-Endian
+ARM         | ADD, SUB, LDR        | 16 General Purpose | Immediate, Register Direct, Base + Offset | SIMD, Multiply, Divide | Little-Endian
+SuperH      | ADD, SUB, MOV        | 16 General Purpose | Immediate, Register Direct, Memory Indirect | Multiply, Divide, Bit Manipulation | Little-Endian
+PowerPC     | ADD, SUB, LWZ        | 32 General Purpose | Immediate, Register Direct, Base + Offset | SIMD, Multiply, Divide | Big-Endian
 
 This table provides a broad overview of these architectures, but there are many more details and specific instructions within each ISA. The number of registers, addressing modes, and the availability of complex instructions can significantly vary even within a single architecture, and the choice of endianness (byte order) can have important implications for software compatibility. For a deep dive into any of these ISAs, you would typically need to consult the official documentation or specific resources for each architecture.
 
@@ -409,12 +409,12 @@ The CPU also works with other parts of the console, like the graphics and sound 
 An instruction is a basic operation or command that the CPU can execute. These instructions are written in a machine-readable form, usually in binary code, and are the fundamental building blocks of a computer program. Each CPU has its own specific set of instructions, known as its instruction set architecture (ISA).
 
 Instructions can perform various tasks, such as:
-1. **Arithmetic Operations**: These include instructions for addition, subtraction, multiplication, division, and other mathematical operations.
-2. **Data Movement**: Instructions for moving data between registers, memory, and other storage locations.
-3. **Control Flow**: Instructions that control the program's flow, such as branching (jumping to a different part of the program) or conditional execution (if-then-else).
-4. **Logical Operations**: Instructions for performing logical operations like AND, OR, XOR, and NOT.
-5. **Load and Store**: These instructions load data from memory into registers or store data from registers back into memory.
-6. **Input/Output**: Instructions that allow the CPU to interact with input and output devices like keyboards, displays, and storage devices.
+* **Arithmetic Operations**: These include instructions for addition, subtraction, multiplication, division, and other mathematical operations.
+* **Data Movement**: Instructions for moving data between registers, memory, and other storage locations.
+* **Control Flow**: Instructions that control the program's flow, such as branching (jumping to a different part of the program) or conditional execution (if-then-else).
+* **Logical Operations**: Instructions for performing logical operations like AND, OR, XOR, and NOT.
+* **Load and Store**: These instructions load data from memory into registers or store data from registers back into memory.
+* **Input/Output**: Instructions that allow the CPU to interact with input and output devices like keyboards, displays, and storage devices.
 
 CPU instructions are executed sequentially, one after the other, according to the program's logic. The order and combination of these instructions determine the behavior of a computer program.
 
@@ -463,7 +463,6 @@ The CPU has designated instructions to read and write from the stack, often call
 When you need to store more data than the stack can handle or require memory that persists longer than a single function call, the heap comes into play. The heap is another part of your computer's RAM, used for dynamic memory allocation, such as storing large objects, game assets, or variables that need to exist throughout the program's execution.
 
 ## What is the Heap?
-
 You can think of the heap as a large pool of memory where you can request chunks of memory as needed. Unlike the stack, memory in the heap can be allocated and freed in any order, making it flexible but also more complex to manage.
 
 ## Which systems had a heap?
@@ -472,18 +471,15 @@ Early video game consoles typically **did not have a heap** due to their limited
 Some heaps were handled by the operating system (Xbox onwards) and others were handled by the game engines themselves (PS2, GameCube).
 
 ## How does the Heap grow?
-
 The heap grows upwards, from lower to higher memory addresses. When you request more memory (for example, creating a new object or allocating an array), the heap expands towards higher addresses. This is in contrast to the stack, which grows downwards, ensuring that both areas can grow without quickly overlapping.
 
 ## Why is the Heap important?
-
-The heap is essential for managing memory in programs where the amount of data isn't known ahead of time or varies during execution. It’s particularly useful in situations where you need to allocate large blocks of memory that might need to exist for the lifetime of the program or until explicitly freed.
+The heap is essential for managing memory in programs where the amount of data isn't known ahead of time or varies during execution. It's particularly useful in situations where you need to allocate large blocks of memory that might need to exist for the lifetime of the program or until explicitly freed.
 
 ## How do you interact with the Heap?
-
 Most programming languages provide functions or operators to allocate and free memory on the heap. In languages like C, `malloc()` and `free()` are used, while in higher-level languages like Python or Java, memory management on the heap is handled automatically through built-in mechanisms. 
 
-This allows you to dynamically allocate space when needed and release it when it’s no longer required, making the heap a powerful tool for managing memory in complex programs.
+This allows you to dynamically allocate space when needed and release it when it's no longer required, making the heap a powerful tool for managing memory in complex programs.
 
 Interacting with the heap in assembly language typically involves system calls or interrupts to request memory from the operating system. Unlike the stack, which is managed directly by the CPU with specific instructions, the heap requires explicit requests for memory allocation and deallocation. 
 
@@ -526,11 +522,11 @@ Conventions also decide who is responsible for cleaning up the stack after the f
 ### thiscall
 thiscall is a calling convention used primarily for C++ member functions. It is designed to handle the specific needs of methods that operate on objects (i.e. functions that are part of a class).
 
-- **Arguments**: Used primarily for C++ member functions.
-- **First Argument**: The this pointer (the instance of the object) is passed in a specific register (ecx on x86).
-- **Additional Arguments**: Passed on the stack.
-- **Cleanup**: The callee cleans up the stack.
-- **Return Value**: Typically returned in the eax register.
+* **Arguments**: Used primarily for C++ member functions.
+* **First Argument**: The this pointer (the instance of the object) is passed in a specific register (ecx on x86).
+* **Additional Arguments**: Passed on the stack.
+* **Cleanup**: The callee cleans up the stack.
+* **Return Value**: Typically returned in the eax register.
 
 ---
 ## Function Prologue and Epilogue
@@ -538,7 +534,7 @@ Disassemblers often rely on function prologues and epilogues as key indicators f
 
 ### Function Prologue
 <div class="emoji">🔜</div>
-The prologue is the sequence of instructions at the beginning of a function that prepares the stack and registers for the function’s execution. It typically includes saving the return address, preserving the base pointer (if used), and allocating space on the stack for local variables.
+The prologue is the sequence of instructions at the beginning of a function that prepares the stack and registers for the function's execution. It typically includes saving the return address, preserving the base pointer (if used), and allocating space on the stack for local variables.
 
   **Example (x86 Architecture)**:
   ```assembly
@@ -567,13 +563,12 @@ Here are simple examples of making a system call in assembly on Windows, Linux, 
 
 ### Windows (x86) System Call Example
 In Windows, system calls can be made directly using two different methods depending on which version of windows:
-- **`int 0x2e`**: This interrupt vector was historically used to invoke system calls by placing the syscall number in `eax` and issuing the interrupt. This method is deprecated and replaced by `SYSENTER`.
-- **`SYSENTER`**: This instruction is optimized for making system calls on modern x86 processors. Windows sets up the MSRs (Model-Specific Registers) required for `SYSENTER` during boot, so user-mode applications don't need to manage them. However, this approach is not documented for use in applications and is generally intended for internal OS use.
+* `int 0x2e`: This interrupt vector was historically used to invoke system calls by placing the syscall number in `eax` and issuing the interrupt. This method is deprecated and replaced by `SYSENTER`.
+* `SYSENTER`: This instruction is optimized for making system calls on modern x86 processors. Windows sets up the MSRs (Model-Specific Registers) required for `SYSENTER` during boot, so user-mode applications don't need to manage them. However, this approach is not documented for use in applications and is generally intended for internal OS use.
 
 Directly invoking system calls using `int 0x2e` or `SYSENTER` is highly discouraged in normal application development due to the risk of instability and compatibility issues across different Windows versions. Instead, using the Windows API (like `ExitProcess`) is the recommended and supported approach.
 
-#### Using `int 0x2e` (pre-Windows XP)
-
+#### Using int 0x2e (pre-Windows XP)
 The `int 0x2e` interrupt was used in older versions of Windows (pre-Windows XP) to invoke system calls directly. Here's an example:
 
 ```assembly
@@ -598,7 +593,6 @@ _start:
 ```
 
 #### Using SYSENTER (Modern Method)
-
 `SYSENTER` is a fast system call instruction introduced with Intel's Pentium II processors and is used internally by Windows for system calls on newer systems. This approach requires setting up specific registers before the `SYSENTER` instruction is executed:
 
 ```assembly
