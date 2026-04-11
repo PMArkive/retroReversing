@@ -33,7 +33,7 @@ Sadly, the topic was deemed too niche and only **one standalone issue** was ever
 
 ---
 # GameMaker Magazine Index of Articles
-Below is a table of all the articles known to have been included in **GameMaker** magazine’s short run. This includes when it was a standalone issue (1), when it was a section of **PC Format** (2–3), and when it was a separate supplement included with PC Format (4–7).
+Below is a table of all the articles known to have been included in **GameMaker** magazine's short run. This includes when it was a standalone issue (1), when it was a section of **PC Format** (2–3), and when it was a separate supplement included with PC Format (4–7).
 
 Issue | Name | Description
 ---|---|---
@@ -63,7 +63,7 @@ Issue | Name | Description
 7 | Homeworld 2 The Basics (Part 1) | Homeworld 2 Random Map Editor
 7 | In Hindsight | Interview with the developer of **A Tale in the Desert** (eGenesis)
 
-Issue 7 started tutorials **Call of Duty Mapping** and **Homeworld 2 The Basics**, but there was never an issue 8, so it’s unclear if Part 2 of these tutorials was ever published.
+Issue 7 started tutorials **Call of Duty Mapping** and **Homeworld 2 The Basics**, but there was never an issue 8, so it's unclear if Part 2 of these tutorials was ever published.
 
 It appeared that a GameMaker issue 8 was planned, as it was advertised at the end of issue 7, although issue 165 instead came with a Doom 3 supplement:
 ![Advert for an issue 8 of GameMaker which was to be included in PC FORMAT issue 165](https://github.com/user-attachments/assets/f90b0c35-31f6-448a-ab81-7d9338f6e457)
@@ -74,8 +74,8 @@ From issues 4 to 7, there was a one-page section at the back of the magazine whe
 
 Issue | Mod Name | Game its a mod for | Description | URL
 ---|---|---|---|---
-4 | Sweet Dreams | Unreal Tournament 2003 | A surreal, psychedelic third-person mod inspired by Rayman, featuring bizarre environments and an interactive start sequence set in the player’s bedroom. | gamestudies.oslo.org/~sdreams
-4 | Jupiter Effect | Unreal Tournament 2003 | A futuristic city combat mod reminiscent of Sega’s Virtua On and Macross, featuring light-hearted deathmatch gameplay and destructible environments. | www.planetunreal.com/jei
+4 | Sweet Dreams | Unreal Tournament 2003 | A surreal, psychedelic third-person mod inspired by Rayman, featuring bizarre environments and an interactive start sequence set in the player's bedroom. | gamestudies.oslo.org/~sdreams
+4 | Jupiter Effect | Unreal Tournament 2003 | A futuristic city combat mod reminiscent of Sega's Virtua On and Macross, featuring light-hearted deathmatch gameplay and destructible environments. | www.planetunreal.com/jei
 4 | Air Buccaneer | Unreal Tournament 2003 | A pirate-themed aerial combat mod focusing on teamwork and airship battles, combining fantasy and steampunk aesthetics. | ludocraft.oulu.fi/airbuccaneers
 4 | BiTurbo | Battlefield 1942 | A high-speed vehicle mod adding jet-like acceleration, visual effects, and new skins for planes and jeeps, designed for chaotic, fun LAN play. | www.hsilan.de/biturbo
 5 | Earth Special Forces | Half-Life | A third-person anime combat mod based on Dragonball Z, featuring playable characters like Goku with powerful energy attacks and team-based gameplay. | www.esforces.com

@@ -27,6 +27,7 @@ tags:
   - nes
   - introduction
 ---
+
 Welcome to our in-depth guide to Nintendo Entertainment System (NES) reverse engineering! This page serves two roles. It groups all of our posts related to reverse engineering for the system, and it aggregates high quality sources from the web into create a unified reference.
 
 The content starts high level, outlining the system, its history, and its official game development process, then moves into low level details with a focus on reverse engineering and homebrew development.

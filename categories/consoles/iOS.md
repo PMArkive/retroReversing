@@ -121,7 +121,7 @@ The best way to check for recommended iOS 5.x games is to check out the Bookazin
 
 {% include link-to-other-site.html url="https://frida.re/docs/ios/" description="The official Frida guide for iOS explains how to set up the environment on both jailbroken and non-jailbroken devices to perform dynamic instrumentation and function tracing." image="https://frida.re/img/logotype.svg" title="Frida: iOS Documentation" %}
 
-### **friman**: Frida Version Management Tool
+### friman: Frida Version Management Tool
 **Thelicato** has developed **friman**, a Python-based utility that simplifies the management of multiple Frida versions, which is necessary due to compatibility issues across different devices and target projects. 
 
 The tool enables seamless installation, local tracking, and switching of versions, along with specific helpers for downloading `frida-gadget` and `frida-server` assets, including a convenience utility for pushing the server to Android devices.
@@ -132,7 +132,7 @@ The tool enables seamless installation, local tracking, and switching of version
 ## File Formats
 
 ### QLCARFiles: Assets.car Viewer for macOS
-The **cgnkrz** repository provides **QLCARFiles**, a native macOS application built for the static analysis and inspection of Apple's compiled **Assets.car** files from iOS and macOS applications. This tool is valuable for reverse engineering as it offers a graphical interface to browse and view all bundled assets—including images at multiple scales, colors, and embedded data—and allows for easy extraction to disk. The project explicitly credits and builds upon the technical reverse engineering work of Timac on the underlying `.car` file format.
+The **cgnkrz** repository provides **QLCARFiles**, a native macOS application built for the static analysis and inspection of Apple's compiled **Assets.car** files from iOS and macOS applications. This tool is valuable for reverse engineering as it offers a graphical interface to browse and view all bundled assets-including images at multiple scales, colors, and embedded data-and allows for easy extraction to disk. The project explicitly credits and builds upon the technical reverse engineering work of Timac on the underlying `.car` file format.
 
 {% include link-to-other-site.html url="https://github.com/cgnkrz/QLCARFiles" description="cgnkrz's QLCARFiles is a native macOS application that enables reverse engineers to visually browse, view, and extract bundled assets (images, colors, data) from iOS and macOS Assets.car files." image="https://opengraph.githubassets.com/1/cgnkrz/QLCARFiles" title="QLCARFiles: A native macOS app to view, explore, and extract assets from .car files" %}
 

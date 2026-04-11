@@ -84,7 +84,6 @@ Matt Greer's Blog has an excellent write up about reverse engineering the Ninten
 
 
 ---
-
 # All Posts Tagged with GBA
 <div>
 

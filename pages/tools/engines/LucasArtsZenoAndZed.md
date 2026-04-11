@@ -42,7 +42,7 @@ Thus the real-time Zeno Editor known as **Zed** was born and was slowly gaining 
 At roughly the same time as the Zed project was taking off, George Lucas wanted to bring ILM and LucasArts even closer together, physically this time. He consolidated the offices and moved both LucasArts and ILM to the **Letterman Digital Arts Center** (LDAC) in Presidio California. 
 
 This accelerated development of both Zeno and Zed and was praised by the LucasArts president **Jim Ward** in **Computer Graphics World Magazine** [^11]:
->In the same spirit of collaboration and consolidation of assets and talent, ILM and LucasArts are now housed in the same building on George Lucas’s **Presidio campus**. "[The idea] came from George himself, and it’s key to rebooting our game studio."
+>In the same spirit of collaboration and consolidation of assets and talent, ILM and LucasArts are now housed in the same building on George Lucas's **Presidio campus**. "[The idea] came from George himself, and it's key to rebooting our game studio."
 
 On what was a former Presidio military base, the new 6 acre facility claimed to have the industries largest computer network, designed to accommodate 4K images via 300 10GB and 1,500 1GB ports. It was surrounded by 17 acres of public park including a creek and even a Yoda fountain! 
 
@@ -51,7 +51,7 @@ On what was a former Presidio military base, the new 6 acre facility claimed to 
 There is a very good reason why the move to the new premises keeps getting mentioned in articles about Zeno and Zed, it really was the catalyst that allowed not only knowledge to flow freely but also assets from both movies and games could be shared on the  600 miles of high speed network cable within the facility!
 
 The designer of the Zeno interface **Dennis Muren** has the following to say about the move and its impact on the Zeno pipeline: 
-> The move opened the opportunity to re-invent the pipeline, with the Star Wars movies ending, we’re going to get down to a more realistic number of shots. So we’ve given the artists the opportunity to do practically anything if they want to. [^18]
+> The move opened the opportunity to re-invent the pipeline, with the Star Wars movies ending, we're going to get down to a more realistic number of shots. So we've given the artists the opportunity to do practically anything if they want to. [^18]
 
 In the September 2005 issue of 3D World magazine [^18], they had some interesting statistics in their coverage of the move to the new building:
 ![Letterman Digital Arts Center Statistics](https://github.com/user-attachments/assets/281b5020-16d5-4837-abc6-c67373ff1b65)
@@ -95,7 +95,7 @@ We don't know all the contributors to Zeno/Zed as there is very little informati
 Zed played a major role in the development of games like **Star Wars: The Force Unleashed**, allowing seamless coordination between game asset creation and in-engine testing.
 
 Zed was intended not just for star wars but also a future Indiana Jones game that would later be cancelled:
->To create its upcoming Indiana Jones 2007 and next-gen Star Wars titles, LucasArts will also be using its **Zeno Game Editor**, which is incorporated into ILM’s Zeno Development Environment, allowing both film and game artists access to the same tools. LucasArts can now use ILM’s high-end art creation software, while ILM can tap into LucasArts’ real-time technology, which underlies their previsualization tools [^11]
+>To create its upcoming Indiana Jones 2007 and next-gen Star Wars titles, LucasArts will also be using its **Zeno Game Editor**, which is incorporated into ILM's Zeno Development Environment, allowing both film and game artists access to the same tools. LucasArts can now use ILM's high-end art creation software, while ILM can tap into LucasArts' real-time technology, which underlies their previsualization tools [^11]
 
 LucasArts used Zed/Ronin for **The Force Unleashed II** (2010), but later projects like **Star Wars 1313** were developed on Unreal Engine 3 [^9]. 
 Although sadly the **Star Wars 1313** project was cancelled after Disney shut down LucasArts in 2013.
@@ -103,12 +103,12 @@ Although sadly the **Star Wars 1313** project was cancelled after Disney shut do
 ### Later Developments and Legacy of Zed
 After the collapse of LucasArts, Zed would live on in the real-time rendering feature of **Zeno** which is still in use by ILM today.
 
-The spirit of Zed extended into **ILMxLAB** (founded in 2015) but used the **Unreal Engine** directly instead of Zed, producing projects like **Vader Immortal** and powering ILM’s StageCraft for **The Mandalorian** [^9]. It is currently unknown if they have an integration between Unreal Engine and Zeno, if so then you could say parts of Zed are still alive and well in the games industry.
+The spirit of Zed extended into **ILMxLAB** (founded in 2015) but used the **Unreal Engine** directly instead of Zed, producing projects like **Vader Immortal** and powering ILM's StageCraft for **The Mandalorian** [^9]. It is currently unknown if they have an integration between Unreal Engine and Zeno, if so then you could say parts of Zed are still alive and well in the games industry.
 
 ---
 # The Ronin Engine - Star Wars: The Force Unleashed
 In 2005, ILM Chief Technology Officer **Cliff Plumer** called Zed the LucasArts Game Engine: 
-> We’ve been working on collaborative tools with LucasArts for 18 months… Zed, which is LucasArts’ game engine, will have a live connection to Zeno [^1].
+> We've been working on collaborative tools with LucasArts for 18 months… Zed, which is LucasArts' game engine, will have a live connection to Zeno [^1].
 
 Which is somewhat true as it provided real time rendering to the Zeno platform as a sort of PC game engine, however its not to be confused with the actual game engine that ran Zed games on consumer hardware such as the Xbox 360 and PS3. So as to avoid confusion this article will call Zed the Game editor (think IDE) and Ronin the Game Engine.
 
@@ -220,7 +220,7 @@ The .zshot files store arbitrary units of a scene, enabling work to be split amo
 
 ---
 ## Simulation engine
-ILM also collaborated with Stanford’s **Ron Fedkiw** to build a unified simulation engine in Zeno for hair, cloth, skin and fluids [^1]. In 2008 he won an Academy Award for Technical Achievement for the fluid simulation system [^14].
+ILM also collaborated with Stanford's **Ron Fedkiw** to build a unified simulation engine in Zeno for hair, cloth, skin and fluids [^1]. In 2008 he won an Academy Award for Technical Achievement for the fluid simulation system [^14].
 
 ### Zeno Hair simulation in action
 You can see the animatronic Scrunt being made in the youtube video below for the movie **Lady in the Water**, this required compositing for the grass-like hairs on the creature, Zeno's existing hair simulation was used for the task.
@@ -232,12 +232,12 @@ Allowing him to define hundreds of specific "guide hairs" in the Zeno simulation
 
 These would be placed on the original model which was built in **Autodesk Maya** along with the face shapes built using Zeno's **Cart** facial animation system. Zeno was also used to place lights in the scene and the shot was finally rendered out in Pixar's RenderMan.
 
-Animators then added details such as twigs and branches on the Scrunt's face using **Pixologic’s Zbrush** along with adding  additional woody material around its nose.
+Animators then added details such as twigs and branches on the Scrunt's face using **Pixologic's Zbrush** along with adding  additional woody material around its nose.
 
 ### Plume - GPU fluid/fire dynamics simulation
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TEd510_imQ8?si=UqYY3NfNV0wleplU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-ILM **Plume** module was added to Zeno roughly around 2009 for **The Last Airbender** TV Show, Plume is an internal GPU-based fluid simulation tool developed in-house by ILM specifically for high-performance visual effects work. Plume was showcased in technical VFX presentations and is designed to handle complex fluid dynamics simulations, such as smoke, fire, and gaseous effects, using efficient GPU processing (NVIDIA’s CUDA) to enable rapid iteration, preview, and rendering. 
+ILM **Plume** module was added to Zeno roughly around 2009 for **The Last Airbender** TV Show, Plume is an internal GPU-based fluid simulation tool developed in-house by ILM specifically for high-performance visual effects work. Plume was showcased in technical VFX presentations and is designed to handle complex fluid dynamics simulations, such as smoke, fire, and gaseous effects, using efficient GPU processing (NVIDIA's CUDA) to enable rapid iteration, preview, and rendering. 
 
 ![Plume screenshot](https://github.com/user-attachments/assets/9277f5e5-1ec4-49d1-bd85-571544c2b699)
 
@@ -257,7 +257,7 @@ Modules included:
   * **Lighting** - Lux
   * **Sculpting** - Isculpt [^19]
   * **Animation** - Zeno Poseur [^19]
-  * **Painting** - Viewpaint integration with Zeno? [For more information about check out Viewpaint: ILM’s secret weapon on Jurassic Park from vfxblog](https://vfxblog.com/viewpaint/)
+  * **Painting** - Viewpaint integration with Zeno? [For more information about check out Viewpaint: ILM's secret weapon on Jurassic Park from vfxblog](https://vfxblog.com/viewpaint/)
   * **Particles** - Plume
   * **Rotoscoping**
 
@@ -267,11 +267,11 @@ According to **Chris Evans** who used to work at ILM, Zeno had **Geodesic Voxel 
 In the **Electronic art and animation** catalog from SIGGRAPH 2004 it mentions a tool called **Zeno Commodore**, but not sure what it is [^19].
 
 ### ILM Dynamic Rigging
-ILM’s Dynamic Rigging system, often associated with their **BlockParty** tool, is an advanced rigging framework designed to streamline the creation of rigged characters and assets for animation and visual effects. It was created by **Jason Smith** for the Transformers movie [^22].
+ILM's Dynamic Rigging system, often associated with their **BlockParty** tool, is an advanced rigging framework designed to streamline the creation of rigged characters and assets for animation and visual effects. It was created by **Jason Smith** for the Transformers movie [^22].
 
 This system allows artists to build detailed, flexible, and reusable rigs that can animate complex creatures as well as mechanical objects like spaceships.
 
-Key features of ILM’s Dynamic Rigging include:
+Key features of ILM's Dynamic Rigging include:
 	*	A comprehensive connection framework that integrates various rigging components consistently.
 	*	A novel graphical user interface and volumetric rig transfer to improve workflow speed and artist productivity.
 	*	The ability to reuse rig components and focus more on the artistic aspects of rigging rather than technical challenges.
@@ -287,7 +287,7 @@ For the film **Pirates of the Caribbean Dead Man's Chest**, **David Meny** desig
 
 ---
 ### MARS - Camera Tracking System module
-One of the first applications built on the Zeno framework was ILM’s new camera tracking system (codenamed **MARS**), which successfully leveraged Zeno’s scene graph to integrate 3D matchmoving data with film plates [^1]. 
+One of the first applications built on the Zeno framework was ILM's new camera tracking system (codenamed **MARS**), which successfully leveraged Zeno's scene graph to integrate 3D matchmoving data with film plates [^1]. 
 
 This module was so effective it earned an **Academy Scientific & Technical Award**. Throughout the early 2000s, ILM gradually replaced dozens of older, disconnected tools with new Zeno-based modules [^1].
 
@@ -305,9 +305,9 @@ In the July 2005 issue of CGW compositing supervisor **Marshall Krasser** discus
 ### Caricature (Cari) - Facial Animation System
 <img width="640" height="512" alt="Yoda in Cari" src="https://github.com/user-attachments/assets/e54ff7aa-27ed-42bf-8e45-33047be9d193" />
 
-For **Dragonheart** (1996), ILM created a specialized in-house tool called Caricature (nicknamed "Cari") to enable animators to work interactively on Draco’s face, with sliders and real-time feedback.
+For **Dragonheart** (1996), ILM created a specialized in-house tool called Caricature (nicknamed "Cari") to enable animators to work interactively on Draco's face, with sliders and real-time feedback.
 
-Before Cari, facial animation at ILM was handled by hand-writing text commands in files to load shapes over time — effectively like stop-motion animation via scripts.
+Before Cari, facial animation at ILM was handled by hand-writing text commands in files to load shapes over time - effectively like stop-motion animation via scripts.
 
 Animators used body motion data from Softimage (the conventional pipeline) then opened that into Caricature just for the facial animation part. 
 Caricature allowed animators to hide the rest of the dragon model and focus solely on facial expressions, making high-iteration tweaking possible (e.g. combining phoneme shapes, sneers, eyebrow movement).
@@ -315,17 +315,17 @@ Caricature allowed animators to hide the rest of the dragon model and focus sole
 Later, Caricature added model correctives, a system allowing artists to fix imperfections in geometry (like a "3D-Photoshop" for sculpted surfaces) inline. 
 
 #### Integration of Cari into Zeno
-Cari was later integrated into Zeno as stated on the official Lucasfilm website [ILM's Dragonheart Crew Looks Back - Lucasfilm.com](https://www.lucasfilm.com/news/digital-road-dragonheart/) "the techniques in Caricature were integrated into ILM’s current Zeno system in the 2000s."
+Cari was later integrated into Zeno as stated on the official Lucasfilm website [ILM's Dragonheart Crew Looks Back - Lucasfilm.com](https://www.lucasfilm.com/news/digital-road-dragonheart/) "the techniques in Caricature were integrated into ILM's current Zeno system in the 2000s."
 
 **Cary Phillips** was awarded a 1998 Academy Technical Achievement Award for the development of Caricature.
 
 ---
-### Lux - Zeno’s interactive lighting tool
-Zeno’s interactive lighting tool **Lux** enabled artists to place and adjust lights in a true 3D context while seeing immediate feedback [^2]. 
+### Lux - Zeno's interactive lighting tool
+Zeno's interactive lighting tool **Lux** enabled artists to place and adjust lights in a true 3D context while seeing immediate feedback [^2]. 
 
-Lux is true 3D lighting for particles and creatures that brings match-moving, interactive lighting, and texture painting together. The shots were later rendered with Pixar’s **RenderMan** and Mental Images’ **Mental Ray** [^1].
+Lux is true 3D lighting for particles and creatures that brings match-moving, interactive lighting, and texture painting together. The shots were later rendered with Pixar's **RenderMan** and Mental Images' **Mental Ray** [^1].
 
-Technical Directors in Zeno adjusted the direction and flicker of the Tripods’ headlights during lighting, and applied procedural 2D noise to create an "organic" glow in the alien windows — all without leaving the lighting interface [^2].
+Technical Directors in Zeno adjusted the direction and flicker of the Tripods' headlights during lighting, and applied procedural 2D noise to create an "organic" glow in the alien windows - all without leaving the lighting interface [^2].
 
 In the book **Cinefex** from 2006 **Tom Fejes** is creditied as "setting up" the Lux tool, not sure if that means he was the creator of Lux or if he was the one that set it up for the Pirates movie that the book covers [^20].
 
@@ -339,7 +339,7 @@ One of the main benefits of Zeno was the integrations with industry standard sof
 Zeno was build from the ground up to be modular, with modules easily written in Python for tasks such as converting between 3D file formats or integrating 3rd party software tools seamlessly [^1].
 
 ### Integration with Maya
-Zeno was designed with live links to **Maya** and **Photoshop** – an artist could copy and paste data or edits between Maya and Zeno in real time – and its UI was made to resemble **Maya’s Outliner** to ease adoption [^1]. 
+Zeno was designed with live links to **Maya** and **Photoshop** – an artist could copy and paste data or edits between Maya and Zeno in real time – and its UI was made to resemble **Maya's Outliner** to ease adoption [^1]. 
 
 ![Maya 7.0 Outliner inspired the Zeno UI](https://github.com/user-attachments/assets/f564e4d6-c05a-4c28-b59a-fd3aff88da55)
 **Curt Miyashiro**, digital production supervisor has the following to say about the benefits of Zeno's integration with Maya [^1]:
@@ -347,11 +347,11 @@ Zeno was designed with live links to **Maya** and **Photoshop** – an artist co
 
 ### Integration with Compositing tools
 Zeno was used in ILM along with to their usual **compositing tools** which included [^1]: 
-* **Apple’s Shake**
-* **ILM’s Saber** (based on Autodesk Media and Entertainment's Inferno)
-* **ILM’s CompTime** - In House compositor
+* **Apple's Shake**
+* **ILM's Saber** (based on Autodesk Media and Entertainment's Inferno)
+* **ILM's CompTime** - In House compositor
 
-Then final renders from **RenderMan** or **Mental Ray** could round-trip back into Zeno’s compositing module for finishing [^1]. 
+Then final renders from **RenderMan** or **Mental Ray** could round-trip back into Zeno's compositing module for finishing [^1]. 
 
 #### Integration with CompTime
 Zeno has first class support for woroking the the proprietary compositor developed in-house at ILM known as **CompTime**.
@@ -362,11 +362,11 @@ In the July 2002 issue of Linux Journel Technical Directory **Robert Weaver** no
 
 ---
 ## The Success of Zeno
-The success of zeno can not be understanted, by the mid-2000s, Zeno had become the **heart of ILM’s pipeline** and by 2004, Zeno had matured enough that ILM could **fully retire its old pipeline** [^1].
+The success of zeno can not be understanted, by the mid-2000s, Zeno had become the **heart of ILM's pipeline** and by 2004, Zeno had matured enough that ILM could **fully retire its old pipeline** [^1].
 
-Then by 2006–2007, **Pirates of the Caribbean: Dead Man’s Chest** and **At World’s End** benefited from Zeno; the CGI character **Davy Jones** was one high-profile creation that benefited from Zeno [^6].
+Then by 2006–2007, **Pirates of the Caribbean: Dead Man's Chest** and **At World's End** benefited from Zeno; the CGI character **Davy Jones** was one high-profile creation that benefited from Zeno [^6].
 
-> Seven years in the making, Zeno, ILM’s new tool set, has redefined the studio’s pipeline, opened the production process to all the artists on the crew, and positioned the studio to create future forms of entertainment [^1]
+> Seven years in the making, Zeno, ILM's new tool set, has redefined the studio's pipeline, opened the production process to all the artists on the crew, and positioned the studio to create future forms of entertainment [^1]
 
 ### Version History of Zeno
 It would be interesting to find out the version history of Zeno, all we know about so far is that in 2011 Zeno reached major version **3.0**, having experienced a major re-tooling of its interface around the time of **Transformers: Dark of the Moon** [^6].
@@ -406,7 +406,7 @@ ILM's Zviz previsualization tool was actively used and developed around the earl
 [^3]: [Star Wars: The Force Unleashed – Wikipedia (Development section)](https://en.wikipedia.org/wiki/Star_Wars:_The_Force_Unleashed#Development)
 [^4]: [The Art and Making of Star Wars: The Force Unleashed – Insight Editions (2008), cited via Wookieepedia](https://starwars.fandom.com/wiki/Ronin_%28engine%29)
 [^5]: [Industrial Light and Magic](https://linuxjournal.rubdos.be/ljarchive/LJ/099/6011.html)
-[^6]: [ILM’s Scientific Solutions – fxguide (Feb 2014)](https://www.fxguide.com/fxfeatured/ilms-scientific-solutions/)
+[^6]: [ILM's Scientific Solutions – fxguide (Feb 2014)](https://www.fxguide.com/fxfeatured/ilms-scientific-solutions/)
 [^7]: [Star Wars: The Force Unleashed – Wookieepedia (Behind the Scenes)](https://starwars.fandom.com/wiki/Star_Wars:_The_Force_Unleashed#Behind_the_scenes)
 [^8]: [ILM's Dragonheart Crew Looks Back - Lucasfilm.com](https://www.lucasfilm.com/news/digital-road-dragonheart/)
 [^9]: [Star Wars 1313 – Wikipedia](https://en.wikipedia.org/wiki/Star_Wars_1313)

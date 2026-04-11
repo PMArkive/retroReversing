@@ -57,7 +57,6 @@ There were many exclusive games for the Mega Drive and the various hardware add-
 
 
 ---
-
 # Hardware
 If you're interested in reverse engineering software for the Sega Mega Drive gaming console, it's essential to have a strong understanding of the hardware that powers it. By comprehending the inner workings of the Mega Drive hardware, you can better understand how the software interacts with the hardware and how you can potentially modify or enhance it.
 
@@ -104,7 +103,7 @@ The development of the game **Alien Soldier** and other games by **Treasure** ha
 
 ### How long did it take to develop games for the Mega Drive back in the day?
 At **Treasure** (e.g Alien Soldier) **Masato Maegawa** reveals that it takes around about 10 months but that more complicated games could last 2 years [^2]:
-> In the Megadrive days we took about 10 months for a game; now it’s about 15 months. There were some titles that took us a full 2 years, though.
+> In the Megadrive days we took about 10 months for a game; now it's about 15 months. There were some titles that took us a full 2 years, though.
 Although he also revealed that there was a tight development cycle for Alien Solider as the deadline was January 3rd 1995 and they were working through the New Year switch.
 
 ### What did a Mega Drive Design Document look like?
@@ -123,9 +122,9 @@ It was common in the industry to develop custom software in-house to make the ga
 
 ### DARI and KETCHUP (Game Arts)
 For the development of the Mega Drive game **Alisia Dragoon**, Game Arts created some in-house development software called KETCHUP and DARI:
-- **KETCHUP** was used for editing maps and defining the pattern of enemy movements by configuring basic curves in the editor, as can be seen in the image below [^3].
+* **KETCHUP** was used for editing maps and defining the pattern of enemy movements by configuring basic curves in the editor, as can be seen in the image below [^3].
 ![KETCHUP Development Software](https://github.com/user-attachments/assets/da139574-dc3a-47b9-8590-efeda984bb39)
-- **DARI** was used for editing animated Sprites for games targetting both Mega Drive and Sharp X68000 systems:
+* **DARI** was used for editing animated Sprites for games targetting both Mega Drive and Sharp X68000 systems:
 ![DARI development software](https://github.com/user-attachments/assets/95868040-6b64-4ac3-b289-398d1fd50c30)
 
 

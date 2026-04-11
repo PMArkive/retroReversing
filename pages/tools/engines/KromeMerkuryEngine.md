@@ -63,7 +63,6 @@ On the port of the Merkury engine to GameCube for **Ty the Tasmanian Tiger**, **
 
 ---
 ## Early Merkury Engine Games
-
 The original **Krome Studios** website archived back in March 2001 has the following games as using the Merkury engine [^8]:
 * **Mike Stewart's Pro Bodyboarding** - Released in  February 1999 for Windows
 * **Chronicles of Jaru Tenk** - Released in 1999 sold as shareware via ScreenOpera
@@ -76,7 +75,6 @@ However the only actual reference in the game files for the name **Merkury** was
 
 ---
 ## Krome Studios games and their engines
-
 Because not all uses of Merkury are documented, below is a table of major titles developed by Krome Studios across platforms. This is a reference for potential engine use, not confirmation of Merkury integration.
 
 | Game Title | Platform(s)| Year | Using Merkury Engine?
@@ -93,36 +91,35 @@ Because not all uses of Merkury are documented, below is a table of major titles
 | The Adventures of Jimmy Neutron: Jet Fusion | PS2, GameCube | 2003 | Yes
 | Ty the Tasmanian Tiger 2: Bush Rescue | PS2, Xbox, GameCube, Windows, HD Remasters | 2004 | Yes
 | King Arthur | PS2, Xbox, GameCube | 2004 | 
-| Ty the Tasmanian Tiger 3: Night of the Quinkan| PS2, Xbox, GameCube, Windows, HD Remasters | 2005 |
-| The Legend of Spyro: A New Beginning | PS2, Xbox, GameCube, GBA | 2006 |
-| The Legend of Spyro: The Eternal Night | PS2, Wii | 2007 |
-| Viva Piñata: Party Animals | Xbox 360 | 2007 |
-| Hellboy: The Science of Evil | PS3, Xbox 360, PSP | 2008 |
+Ty the Tasmanian Tiger 3: Night of the Quinkan| PS2, Xbox, GameCube, Windows, HD Remasters | 2005
+The Legend of Spyro: A New Beginning | PS2, Xbox, GameCube, GBA | 2006
+The Legend of Spyro: The Eternal Night | PS2, Wii | 2007
+Viva Piñata: Party Animals | Xbox 360 | 2007
+Hellboy: The Science of Evil | PS3, Xbox 360, PSP | 2008
 | Star Wars: The Force Unleashed | PS2, PSP, Wii, Nintendo Switch | 2008, 2022 | Yes
-| Star Wars: The Clone Wars - Lightsaber Duels  | Wii | 2008 |
-| Scene It? Box Office Smash | Xbox 360 | 2008 |
+Star Wars: The Clone Wars - Lightsaber Duels  | Wii | 2008
+Scene It? Box Office Smash | Xbox 360 | 2008
 | Star Wars: The Clone Wars – Republic Heroes | PS3, Xbox 360, Wii, PS2, PSP, Windows | 2009 | Yes
-| Transformers: Revenge of the Fallen | PS2, Wii | 2009 |
+Transformers: Revenge of the Fallen | PS2, Wii | 2009
 | Game Room | Xbox 360, Windows, Windows Phone 7  | 2010 | Yes (RKV files present in windows version)
 | Blade Kitten | PS3, Xbox 360, Windows | 2010, 2012 | Yes (RKV files present)
 | Legend of the Guardians: The Owls of Ga'Hoole | Xbox 360, PS3, Wii | 2010 | Yes (Merkury 3)
-| Full House Poker | Xbox 360, Windows Phone 7 | 2011 |
+Full House Poker | Xbox 360, Windows Phone 7 | 2011
 | Backyard Sports Basketball 2015 | iOS, Android | 2015 | No (Unity)
 | Ty the Tasmanian Tiger 4  | Windows | 2015 | No (Unity)
 | Ty the Tasmanian Tiger HD | Xbox One, Series X/S, Switch, PS4, Windows | 2016, 2020 | Yes (RKV files present)
 | Ty the Tasmanian Tiger 2: Bush Rescue HD | Xbox One, Series X/S, Switch, PS4, Windows | 2017, 2021 | Yes (RKV files present)
 | Ty the Tasmanian Tiger 3: Night of the Quinkan HD  | Windows | 2018 | Yes (RKV files present)
-| The Bard’s Tale Trilogy   | Windows, Xbox One | 2018, 2019 | No (Unity)
+| The Bard's Tale Trilogy   | Windows, Xbox One | 2018, 2019 | No (Unity)
 | Wasteland Remastered | Windows, Xbox One | 2020 | No (Unity)
 | Ty the Tasmanian Tiger 4: Bush Rescue Returns | Nintendo Switch | 2023 | No (Unity)
 | Monster Dash | iOS, Android | 2016 / ongoing | No (Unity)
-| Gizmotablet (Kid World, Verizon) | Android Tablet (EdTech)   | 2018 |
+Gizmotablet (Kid World, Verizon) | Android Tablet (EdTech)   | 2018
 
 
 
 ---
 # History of Krome Studios
-
 The company was originally founded as **Interactive Binary Illusions** in 1993 [^11], then renamed **Gee Wizz! entertainment** in 1996 on the release of their game Zombie Wars [^9], it was formed by partners **John Passfield** and **Steve Stamatiadis** [^10]. It later became Krome Studios on the 1st November 1999 merging with Robert Walsh's **Pacific Interactive Entertainment** [^6].
 
 Despite all the evolution, the studio continued to be based in Brisbane, Australia.
@@ -165,7 +162,7 @@ For more information, you absolutely **must read** John's blog post on the makin
 What I also thought was super cool was at the end of John's 2015 blog post he teased an Apple Watch version of the game with this screenshot:
 <img width="399" height="408" alt="Apple Watch Version of Flight of the Amazon Queen" src="https://github.com/user-attachments/assets/b170ef25-28b9-4e62-884c-f549bc00f20e" />
 
-However it was never released due to John  realizing that [there’s no market on the watch for this kind of game.](https://romchip.org/index.php/romchip-journal/article/view/164), which is sad because I would love to have seen how well this works on a watch, maybe adverture games are the perfect candidate for watch games? Although to be honest although I own an apple watch I have never downloaded a game for it... maybe I need to be the change I want to see in the market.
+However it was never released due to John  realizing that [there's no market on the watch for this kind of game.](https://romchip.org/index.php/romchip-journal/article/view/164), which is sad because I would love to have seen how well this works on a watch, maybe adverture games are the perfect candidate for watch games? Although to be honest although I own an apple watch I have never downloaded a game for it... maybe I need to be the change I want to see in the market.
 
 
 #### JASPAR2 game engine
@@ -335,7 +332,7 @@ C:\beast\animscript.cpp
 0x0000 |  0x4030A0 | float __cdecl vGetObjZWidth(int, int) | ?vGetObjZWidth@@YAMHH@Z | 0x100
 0x0000 |  0x403140 | void __cdecl vBG_GetObjectBox(int, float *, float *, float *, float *, float *, float *) | ?vBG_GetObjectBox@@YAXHPAM00000@Z | 0x100
 0x0000 |  0x4031D0 | void __cdecl vBG_MatriceClear(void) | ?vBG_MatriceClear@@YAXXZ | 0x100
-0x0000 |  0x403270 | void __cdecl vDOUT(char *) | ?vDOUT@@YAXPADZZ | 0x100
+0x0000 |  0x403270 | `void __cdecl vDOUT(char *)` | `?vDOUT@@YAXPADZZ` | 0x100
 0x0000 |  0x403360 | void __cdecl vFreeSFX(int) | ?vFreeSFX@@YAXH@Z | 0x100
 0x0000 |  0x403430 | int __cdecl vLoadSFX(char *) | ?vLoadSFX@@YAHPAD@Z | 0x100
 0x0000 |  0x403600 | void __cdecl vPlaySFX(int, int, float, float, float, int) | ?vPlaySFX@@YAXHHMMMH@Z | 0x100
@@ -830,7 +827,7 @@ It was later released for free by John Passfield on his site [Free Stuff! - Pass
 ## Screen Opera
 It was so unique that they coined their own genre: "Screen Opera" and it was followed by another game in the same genre very shortly after called Halloween Spirit Board. They also planned a third "Screen Opera" game called Star Date but it was never released.
 
-It was inspired by David Crane’s Little Computer People and then sold on their own [Screen Opera](https://web.archive.org/web/20010124005100/http://www.screenopera.com/) website [^18].
+It was inspired by David Crane's Little Computer People and then sold on their own [Screen Opera](https://web.archive.org/web/20010124005100/http://www.screenopera.com/) website [^18].
 
 
 ## Game engine - Was Merkury based on BEAST or Blast Graphics?
@@ -869,7 +866,7 @@ The PS1 version **does not use** the RKV archive format and instead has files se
 
 This is common with PS1 games as they all use a standard ISO 9660 filesystem, allowing individual files (textures, models, audio, maps, scripts, etc.) to be stored as separate, accessible files. 
 
-This makes it easy for the game executable to read specific assets directly from the disc and was practical considering memory limits and the way the PS1’s BIOS exposed disc access.
+This makes it easy for the game executable to read specific assets directly from the disc and was practical considering memory limits and the way the PS1's BIOS exposed disc access.
 
 ---
 ## Windows, Dreamcast versions of Championship Surfer
@@ -1102,7 +1099,6 @@ next i
 
 ---
 # Kat Burglar (Cancelled late 2000)
-
 It would have been used in the cancelled **Kat Burglar** game that Krome Studios was working on in late 2000, which even advertised on their official website about the use of their proprietary Merkury engine [^7]:
 ```markdown
 Kat Burglar is a 3rd person action-adventure game set in the swinging 60's. Katherine Kelly is a millionaire playgirl by day and a Robin Hood style thief by night. Katherine ("Kat" to her friends) specializes in stealing hard to get items from museums and fortified storehouses.
@@ -1160,7 +1156,7 @@ This is because it was packed with the executable packer **PEtite**, which could
 
 The copyright messages hint at a few things:
 * **Gilles Vollant** is most likely related to **zlib** compression used for the asset archives. 
-* **Thomas G. Lane** is a principal author of the IJG’s widely used JPEG image compression software libraries, commonly known as **libjpeg**.
+* **Thomas G. Lane** is a principal author of the IJG's widely used JPEG image compression software libraries, commonly known as **libjpeg**.
 * **Tal Nevo** is possibly related to executable compression but this is a guess
 
 The executable also has a few file paths left in which give a hint about the folder structure:
@@ -1173,7 +1169,6 @@ The reason we know it uses **Blast Graphics** without it having the bg.dll file 
 
 ---
 ## Asset Archive - data0.pkg
-
 Since the data0.pkg format is just simple zip compression, it is very easy to extract and modify the assets, so lets take a look at what it contains, there are 1,207 files so we will group files by their extension in the table below:
 
 Extension | Number of Files | Description
@@ -1243,11 +1238,11 @@ File formats used:
 ## Source Code Structure
 There are strings in the executable that can shad some light on what the source code structure was like, it was very organised, split into the following main folders:
 * **BarbieCommon** - Common Game Engines files
-  - these files are not Barbie specific and most of them are also seen in other Merkury engine games
-  - Located at `D:\Src\IceSkating\BarbieCommon`
-  - Also contains a **PC** sub folder with PC specific implementations (the common folder aims to be cross platform)
+  * these files are not Barbie specific and most of them are also seen in other Merkury engine games
+  * Located at `D:\Src\IceSkating\BarbieCommon`
+  * Also contains a **PC** sub folder with PC specific implementations (the common folder aims to be cross platform)
 * **Source** - Game specific functionality
-  - Located at `D:\Src\IceSkating\Source\`
+  * Located at `D:\Src\IceSkating\Source\`
 
 There are other strings throughout the executable with class and method/function names so we can infer from the file names which functions were in each source file, however this is an estimate they may have actually been located in a different file that's path was not leaked in the exe.
 
@@ -1335,7 +1330,6 @@ D:\Src\IceSkating\Source\StateMachine.h
 Ty the Tasmanian Tiger was released in 2002 for PS2, Gamecube and Xbox.
 
 ## Gamecube release of Ty (2002)
-
 The Gamecube release of **Ty the Tasmanian Tiger** contains not only debug symbols but also 364 references to the names of the C++ source code files used to build the game, all in the main executable **TY_REL.elf**. Most of the strings are located in the string table section (**.strtab**) of the GameCube ELF file and thus the location in that section may not indicate anything about the location of the functions that were contained in that source file.
 
 You can find the Source file names in the table below, any descriptions added are a guess at the purpose of the file by us:
@@ -1846,38 +1840,38 @@ Also it also highlights that the RKV files have a lot of files that are not requ
 Likely naming format breakdown:
 * **cscg001**: Likely an ID for a cutscene, always prefixed with "cs" presumably standing for cutscene.
 * **01_00**: Major/minor numbers w.g for scene/area, event, sequence, or version
-* **p01** — Possibly part 1/phase 1 or referencing a specific voice/group.
-* **dv** — Character anchors e.g dv is Darth Vader
-* **en** — Audio Language (Known values: en, fr)
+* **p01** - Possibly part 1/phase 1 or referencing a specific voice/group.
+* **dv** - Character anchors e.g dv is Darth Vader
+* **en** - Audio Language (Known values: en, fr)
 
 #### SNK Cutscene Codes
 Possible cutscene codes are presented in the table below:
 
-| Cutscene ID | Likely scene | Rationale (where applicable) |
-|---|---|---|
-| **csdv001**  | Darth Vader prologue (Kashyyyk) | "DV" = Darth Vader; prologue is a Vader mission.|
-| **cska2xx**  | Kashyyyk  | "ka" matches planet.  |
-| **csfe1xx/2xx/20x/205**| Felucia   | "fe" = Felucia. |
-| **csrp1xx/2xx**   | Raxus Prime | "rp" = Raxus Prime.   |
-| **csjt1xx/2xx**   | Jedi Temple (trials)| "jt" = Jedi Temple.   |
-| **csmu001**  | Mustafar (historic mission)   | "mu" = Mustafar. |
-| **csns201**  | Nar Shaddaa | "ns" = Nar Shaddaa.   |
-| **cstc001/101**   | TIE Construction Facility| "tc" = TIE Construction; early game mission. |
-| **csds201**  | The Dune Sea (Tatooine historic mission)| "ds" = Dune Sea; appears as historic mission.   |
-| **cscc001/201/202/204/205** | Carbonite Chamber (Bespin historic mission)  | "cc" = Carbonite Chamber.|
-| **cscg001**  | Geonosis Colosseum (historic mission)   | "cg" = Colosseum Geonosis. |
-| **csdq001**  | Dooku’s Quarters (Geonosis historic mission) | "dq" = Dooku’s Quarters.  |
-| **csvo001**  | Vader’s Observatory/Vessel?   | "vo" ambiguous; likely Vader-related interstitial. |
-| **csvf101/102/104** | Vader’s Flagship/Facility? | "vf" ambiguous; Vader-adjacent (briefings/bridges).|
-| **csqg001**  | ? Geonosis-related (Qui-Gon is unlikely)| "qg" unclear; could be internal codename. |
-| **cspl001**  | ? Palace (Jabba’s)  | "pl" plausible "(Jabba’s) Palace" historic. |
-| **csps001**  | ? Palace/Cantina sequence| "ps" ambiguous; may be Tatooine set-piece.|
-| **csrg001**  | ? Raxus (Gateway)/Royal Guard | "rg" unclear; could be encounter beat. |
-| **csrh201**  | ? Raxus H— (Hub/Hangar/Holo)  | "rh" unclear; grouped with Raxus arc number. |
-| **csrs001**  | ? Raxus Scrap (yard)| "rs" plausible for "scrapyard". |
-| **csfd001**  | ? Felucia derivative| "fd" could be Felucia boss/dialogue beat. |
-| **csil101**  | ? Imperial Laboratory/Library | "il" ambiguous; story contains Imperial facilities. |
-| **csos001**  | ? Ossus   | "os" could be Ossus (Jedi world); unconfirmed. |
+Cutscene ID | Likely scene | Rationale (where applicable)
+---|---|---
+**csdv001**  | Darth Vader prologue (Kashyyyk) | "DV" = Darth Vader; prologue is a Vader mission.
+**cska2xx**  | Kashyyyk  | "ka" matches planet. 
+**csfe1xx/2xx/20x/205**| Felucia   | "fe" = Felucia.
+**csrp1xx/2xx**   | Raxus Prime | "rp" = Raxus Prime.  
+**csjt1xx/2xx**   | Jedi Temple (trials)| "jt" = Jedi Temple.  
+**csmu001**  | Mustafar (historic mission)   | "mu" = Mustafar.
+**csns201**  | Nar Shaddaa | "ns" = Nar Shaddaa.  
+**cstc001/101**   | TIE Construction Facility| "tc" = TIE Construction; early game mission.
+**csds201**  | The Dune Sea (Tatooine historic mission)| "ds" = Dune Sea; appears as historic mission.  
+**cscc001/201/202/204/205** | Carbonite Chamber (Bespin historic mission)  | "cc" = Carbonite Chamber.
+**cscg001**  | Geonosis Colosseum (historic mission)   | "cg" = Colosseum Geonosis.
+**csdq001**  | Dooku's Quarters (Geonosis historic mission) | "dq" = Dooku's Quarters. 
+**csvo001**  | Vader's Observatory/Vessel?   | "vo" ambiguous; likely Vader-related interstitial.
+**csvf101/102/104** | Vader's Flagship/Facility? | "vf" ambiguous; Vader-adjacent (briefings/bridges).
+**csqg001**  | ? Geonosis-related (Qui-Gon is unlikely)| "qg" unclear; could be internal codename.
+**cspl001**  | ? Palace (Jabba's)  | "pl" plausible "(Jabba's) Palace" historic.
+**csps001**  | ? Palace/Cantina sequence| "ps" ambiguous; may be Tatooine set-piece.
+**csrg001**  | ? Raxus (Gateway)/Royal Guard | "rg" unclear; could be encounter beat.
+**csrh201**  | ? Raxus H- (Hub/Hangar/Holo)  | "rh" unclear; grouped with Raxus arc number.
+**csrs001**  | ? Raxus Scrap (yard)| "rs" plausible for "scrapyard".
+**csfd001**  | ? Felucia derivative| "fd" could be Felucia boss/dialogue beat.
+**csil101**  | ? Imperial Laboratory/Library | "il" ambiguous; story contains Imperial facilities.
+**csos001**  | ? Ossus   | "os" could be Ossus (Jedi world); unconfirmed.
 
 Although these are a guess, proper analysis including playing each of the SBK files while playing the game would be required to give more concrete information.
 
@@ -1981,7 +1975,6 @@ There is a video on youtube of a quick behind the scenes route of the Krome offi
 
 ---
 # Merkury 3 - Xbox 360, PS3 and Wii (2010)
-
 Lead Environment Artist at Krome Studios **Brent Waller** posted a video showing off the new Merkury 3 engine in action which was built for the Xbox 360, Playstation 3 and Wii Title: **The Legend of the Guardians: The Owls of Ga'hoole**. 
 
 To quote Brent Waller [^2]:

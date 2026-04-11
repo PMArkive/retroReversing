@@ -23,13 +23,11 @@ updatedAt: '2019-09-01'
 ---
 
 # Introduction
-
 This tutorial series will guide you through the basics of decompiling a C++ executable, from setup all the way to reversing C++ classes. 
 
 The video tutorial is created by James Tate over on his excellent YouTube channel, and it is highly recommended that you subscribe here: [James Tate - YouTube](https://www.youtube.com/channel/UCwSxJ5kXVFPWi6fYuj6o78w).
 
 ## Download and Run Ghidra
-
 The first step, of course, is to download Ghidra if you haven't already, which you can do from the official site:
 
 {% include link-to-other-site.html url="https://ghidra-sre.org/" description="Download Ghidra from the Official Site" image="[.jpg](https://ghidra-sre.org/images/GHIDRA_1.png)" title="Download Ghidra"  %}
@@ -60,14 +58,12 @@ If you already hava Java installed and just need to find the JDK home directory 
 Note that on MacOSX it installed to: `/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home`
 
 ## Create a New Project
-
 First of all, you need a project to start reverse-engineering a binary executable. To do this, use File -> New Project.
 ![GhidraNewProject](https://user-images.githubusercontent.com/40120498/233848935-697c78ab-8292-4640-8bfe-bd24bbddfa86.jpeg)
 
 Select `Non-Shared project`, give it a name such as `Example` and click Finish.
 
 ## Obtaining Your Binary Executable to Reverse
-
 To follow along in this tutorial, you can either compile the sample code provided or download the pre-compiled executables. 
 
 Both are available on James's GitHub repository: [GitHub - james-tate/ghidraExampleSource](https://github.com/james-tate/ghidraExampleSource).
@@ -78,7 +74,6 @@ You can use the compiler of your choice as long as it supports C++. So, if you h
 
 
 ## Import Your Binary Executable
-
 You can import a file into Ghidra very simply with: `File -> Import File`. Find your executable file that you built with your C++ compiler.
 ![GhidraImportFile](https://user-images.githubusercontent.com/40120498/233849087-e98e5568-47cf-433d-8e0c-2b9c97e0a17b.jpeg)
 
@@ -97,7 +92,6 @@ It will now start importing the file and ask you if you want to analyze it. Sele
 
 
 ## How to Find the Main Function
-
 If you have symbols, you can use the `Navigation -> Go To...` menu and type "main". But if you don't have symbols (e.g you used the stripped version), then we will need to find it ourselves.
 ![GhidraGoTo](https://user-images.githubusercontent.com/40120498/233849786-e202b2aa-f998-4a97-a9f0-1d902eaeef3f.jpeg)
 ![GhidraGoToMain](https://user-images.githubusercontent.com/40120498/233849850-2e6165fe-cdc9-4aef-92e9-273182e7f9b8.jpeg)
@@ -127,27 +121,26 @@ If you have debug symbols in the executable then it will look very similar to th
 In this section, we will learn how to use structures in Ghidra by applying them to data and navigating through the program using cross-references. We will also learn how to change the function signature to improve data presentation and how to create an array and apply it to a global offset [^3].
 
 ## Setting Up Structures in Ghidra
-
 Before we can use structures in Ghidra, we need to set them up. To do this, we can follow these steps:
 
-1. Open the program in Ghidra and go to the Data Type Manager:
+* Open the program in Ghidra and go to the Data Type Manager:
 ![GhidraDataTypeManager](https://user-images.githubusercontent.com/40120498/233852800-747420e6-2045-404f-b54e-94cd3dc6fe1b.jpeg)
 
-2. Create a new structure and name it:
+* Create a new structure and name it:
 ![GhidraNewStructure](https://user-images.githubusercontent.com/40120498/233852854-c1813250-9d6e-4645-ac26-d385e742c1a4.jpeg)
 
-3. Add fields to the structure and set their data types and offsets.
+* Add fields to the structure and set their data types and offsets.
 ![GhidraCreateCharField](https://user-images.githubusercontent.com/40120498/233853020-444cafdd-33d2-46ad-8fb6-2f3e3c40d51a.jpeg)
 
-4. Save the structure.
+* Save the structure.
 ![GhidraSaveStruct](https://user-images.githubusercontent.com/40120498/233853180-82ce838f-e5ff-4577-8885-55ae00638e4f.jpeg)
 
 
 Once we have set up the structure, we can apply it to data by following these steps:
 
-1. Highlight the data and right-click.
-2. Choose "Data Type" and select the structure we created.
-3. Click "Apply" to apply the structure to the data.
+* Highlight the data and right-click.
+* Choose "Data Type" and select the structure we created.
+* Click "Apply" to apply the structure to the data.
 ![GhidraManuallySetDataType](https://user-images.githubusercontent.com/40120498/233853376-a4d177cc-2dcf-4e95-a822-97c43ba72baf.jpeg)
 
 
@@ -161,7 +154,6 @@ There is also a short cut for doing this directly from the decompile view by rig
 ![GhidraAutoCreateStructure](https://user-images.githubusercontent.com/40120498/233853414-17e9ed98-bfb8-4211-a72d-d62fc6841539.jpeg)
 
 ---
-
 # Creating Arrays and Changing Function Signatures
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xP6ddyVeUWg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -172,32 +164,31 @@ To see where the global structure or function is being used, we can go to the li
 
 To navigate through the program using cross-references, we can follow these steps:
 
-1. Go to the listing view and look for the cross-references.
+* Go to the listing view and look for the cross-references.
 ![GhidraXRef](https://user-images.githubusercontent.com/40120498/233861646-c9728e88-0bb2-4e07-ae8f-62e34bf8eee8.jpeg)
-2. Click on the cross-reference to go directly to the function.
-3. Note the 'R' or 'W' beside the Cross Reference indicating whether the function Reads or Writes to it.
+* Click on the cross-reference to go directly to the function.
+* Note the 'R' or 'W' beside the Cross Reference indicating whether the function Reads or Writes to it.
 
 ## Changing Function Signatures and Naming
-
 To change the function signature in Ghidra, we can follow these steps:
 
-1. Highlight the function and right-click.
+* Highlight the function and right-click.
 ![GhidraEditFunctionSignature](https://user-images.githubusercontent.com/40120498/233861985-552b8f50-8c76-4ece-a294-468beeb0e13d.jpeg)
-2. Choose "Edit Function Signature".
-3. Change the data type to the correct type (in this case, a global structure pointer).
+* Choose "Edit Function Signature".
+* Change the data type to the correct type (in this case, a global structure pointer).
 ![GhidraEditFunctionDialog](https://user-images.githubusercontent.com/40120498/233862062-b7e49446-1d41-4134-9daf-dade181bc6a2.jpeg)
-4. Click "OK" to save the changes.
+* Click "OK" to save the changes.
 
 ## Creating Arrays
 We can also use Ghidra to create arrays. To do this, we first need to identify the size of the elements in the array. In our example, we can see that the size of each element is 4 bytes. We can then right-click on the global variable and select "Create Array". We can then specify the number of elements we want to create, making sure not to create too many and overwrite existing data.
 
 To create an array in Ghidra, we can follow these steps:
 
-1. Highlight the data and right-click.
-2. Choose "Data Type" and select "Create Array".
+* Highlight the data and right-click.
+* Choose "Data Type" and select "Create Array".
 ![GhidraCreateArray](https://user-images.githubusercontent.com/40120498/234082791-55044731-0dc2-4dd6-a403-9d20fa23035a.jpeg)
-3. Choose the number of elements and the data type.
-4. Click "OK" to create the array.
+* Choose the number of elements and the data type.
+* Click "OK" to create the array.
 
 ---
 # Analyzing and Identifying C++ Classes in Ghidra
@@ -222,17 +213,15 @@ Note that `operator.new` only appears if you have added the external libC librar
 The line `FUN_000111f4(ppcVar1);` is most likely a constructor call as it comes directly after the new call and also takes in the `this` pointer.
 
 ## Step 2: Create a class in Ghidra
-
 Now that you have a better understanding of the code, let's create a class in Ghidra:
 
-1. Edit the constructor function signature and select the calling convention as `thiscall` and save.
+* Edit the constructor function signature and select the calling convention as `thiscall` and save.
 ![GhidraThisCall](https://user-images.githubusercontent.com/40120498/234084458-881184c8-ef2b-44fb-bdee-c76514037bd3.jpeg)
-2. Now when you right-click on the first parameter to the constructor function you can choose "Auto Create Class" to create the class.
+* Now when you right-click on the first parameter to the constructor function you can choose "Auto Create Class" to create the class.
 ![GhidraAutoCreateClass](https://user-images.githubusercontent.com/40120498/234085183-2a6c8a3e-5808-4140-b607-172648e5c4fb.jpeg)
-3. Give the auto-generated class a more meaningful name.
+* Give the auto-generated class a more meaningful name.
 
 ## Step 3: Give your class members meaningful names
-
 Take some time to identify the data types of the class members. Once you know what each member is, update their names to make your code easier to understand.
 
 ![GhidraRenameField](https://user-images.githubusercontent.com/40120498/234085780-391cbedb-82ce-453f-8475-166c2a5da347.jpeg)
@@ -245,10 +234,10 @@ If you click on the `PTR___cxa_pure_virtual_000117ec` it will take you to the li
 ![Ghidra4VirtualFunctions](https://user-images.githubusercontent.com/40120498/234086983-e9b11b80-d4a4-4274-99ef-c7bd19d9bb26.jpeg)
 
 It's time to create a structure to represent the VTable for the Base class:
-1. Create a new structure (New -> Structure) called "BaseVtable" with a virtual function.
+* Create a new structure (New -> Structure) called "BaseVtable" with a virtual function.
 ![GhidraBaseVTableStructure](https://user-images.githubusercontent.com/40120498/234087693-cc502518-4c49-463f-9b72-568d10fd3b4b.jpeg)
-2. Add the other virtual functions in the same way (`func *`)
-3. Now do the same for the Derived class as it will override some of the virtual functions
+* Add the other virtual functions in the same way (`func *`)
+* Now do the same for the Derived class as it will override some of the virtual functions
 
 If you click on `PTR_FUN_000112a8+1_000117c` you will be taken to the listing view with 6 functions listed:
 ![GhidraFunctionsThatMakeUpVTable](https://user-images.githubusercontent.com/40120498/234089886-a012dd6c-231d-4058-80ee-0b702a1d651f.jpeg)
@@ -265,8 +254,8 @@ In this tutorial, we will learn how to analyze a derived class in C++ and rename
 If we go through all of our virtual functions in the VTable you will eventually find the Destructor for the class, which calls `operator.delete` (if you have the libc library).
 ![GhidraDestructor](https://user-images.githubusercontent.com/40120498/234090989-55711641-2978-4214-bcf3-a91520d2f161.jpeg)
 
-1. Set it to a `__thiscall`
-2. Rename them to a suitable deconstructor name `~ClassNameDestructor`
+* Set it to a `__thiscall`
+* Rename them to a suitable deconstructor name `~ClassNameDestructor`
 
 ![GhidraDecompileDestructure](https://user-images.githubusercontent.com/40120498/234092112-ac80ec5f-502d-4017-a1a5-26572ff8f86a.jpeg)
 
@@ -277,7 +266,6 @@ If we go through all of our virtual functions in the VTable you will eventually 
 In this tutorial, we'll explore a derived class constructor and its associated members. We'll also create a virtual table pointer for better understanding of the virtual function calls.
 
 ## Analyzing the Derived Class Constructor
-
 The derived class has the following decompilation after setting most of the variable names: 
 
 ```cpp
@@ -334,25 +322,22 @@ Global classes are setup before the main function is even called in a function c
 Reverse engineering on shared libraries can be a time-consuming task, especially when dealing with embedded systems. In this tutorial, we will explore the tools and capabilities available in native Linux, as well as the scripting interface and headless analysis tool that Ghidra offers. We will use a nonsensical example to show how to use Ghidra's headless analysis tool to scan multiple shared libraries in order to speed up your analysis.
 
 ## Prerequisites
-
 Before starting, make sure that you have the following tools installed on your system:
 
-- `ldd` - to list shared library dependencies
-- `objdump` - to display information about object files
-- Ghidra
+* `ldd` - to list shared library dependencies
+* `objdump` - to display information about object files
+* Ghidra
 
 You will also need a set of shared libraries to work with. You can download the example libraries from the author's [GitHub page]([https://github.com/ctberthiaume/gr-example-shared-libs](https://github.com/james-tate/ghidra_headless_example)).
 
 ## Analyzing Shared Libraries
 
-### Using `ldd` and `objdump`
-
+### Using ldd and objdump
 We can use the `ldd` command to list the shared library dependencies for a given binary. For example, running `ldd <binary>` will show which shared libraries the binary will try to pull in to execute.
 
 We can also use `objdump` to display information about object files. For example, running `objdump -T <binary>` will show the exported symbols from the binary.
 
 ### Using Ghidra
-
 To use Ghidra for reverse engineering shared libraries, we first need to load the shared libraries into the project. We can do this by selecting "File > Import > External Libraries" and then selecting the shared libraries we want to load.
 
 We can then use Ghidra to analyze the shared libraries. For example, we can click on a function in the binary and Ghidra will automatically switch to the location of where that function lives inside of the shared library.
@@ -360,7 +345,6 @@ We can then use Ghidra to analyze the shared libraries. For example, we can clic
 However, if we have hundreds of binaries or shared libraries to analyze, this process can be time-consuming. In such cases, we can use Ghidra' headless analysis tool and scripting interface.
 
 ## Using Ghidra' Headless Analysis Tool and Scripting Interface
-
 To use Ghidra' headless analysis tool, we need to create a python script using the python Ghidra `FlatProgramAPI` to perform our analysis. Here, we will create a script to extract the names of objects created by calling the `setname` function:
 
 ```python

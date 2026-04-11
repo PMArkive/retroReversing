@@ -234,12 +234,14 @@ function applyLineRules(lines) {
 
 function applyMultiLineRules(text, fixes) {
   // Rule: ensure blank line after frontmatter closing --- before any content/heading
-  // Frontmatter is identified by --- at the start (line 1), YAML with :, then closing ---
-  const frontmatterMatch = text.match(/^---\n([\s\S]*?)\n---\n/);
+  // Frontmatter is identified by --- at the very start (line 1), then closing ---
+  const isFrontmatter = /^---\n[\s\S]*?\n---\n/.test(text);
+  
   let after0 = text;
-  if (frontmatterMatch && frontmatterMatch[1].includes(':')) {
-    // This looks like frontmatter; ensure blank line after closing ---
-    after0 = text.replace(/^(---\n[\s\S]*?\n---)(\n)(?=[^\n])/m, '$1\n\n');
+  if (isFrontmatter) {
+    // For frontmatter files, ensure there's a blank line after closing ---
+    // Match: opening ---, any content, closing ---, optional newline, then non-newline char
+    after0 = text.replace(/^(---\n[\s\S]*?\n---)(\n)(?=\S)/m, '$1\n\n');
     if (after0 !== text) {
       fixes.push('multiline: missing blank line after frontmatter');
     }
@@ -247,18 +249,24 @@ function applyMultiLineRules(text, fixes) {
 
   // Rule: no blank line(s) between a --- HR and the next heading
   // e.g.  ---\n\n## Heading  →  ---\n## Heading
-  // But SKIP this if the --- is closing frontmatter (already handled above)
+  // For frontmatter files, don't apply this to the closing --- of frontmatter
   let after1 = after0;
-  if (!frontmatterMatch || !frontmatterMatch[1].includes(':')) {
+  if (!isFrontmatter) {
     after1 = after0.replace(/^---\n\n+(#{1,5} )/gm, '---\n$1');
     if (after1 !== after0) {
       fixes.push('multiline: blank between HR and heading');
     }
   } else {
-    // For frontmatter files, still apply the rule but skip the first --- block
-    after1 = after0.replace(/(?<=\n)---\n\n+(#{1,5} )/gm, '---\n$1');
-    if (after1 !== after0) {
-      fixes.push('multiline: blank between HR and heading');
+    // For frontmatter files, only apply the HR rule to HRs AFTER the frontmatter
+    const frontmatterEnd = after0.search(/\n---\n/);
+    if (frontmatterEnd !== -1) {
+      const frontmatterPart = after0.substring(0, frontmatterEnd + 5); // +5 for "\n---\n"
+      const restPart = after0.substring(frontmatterEnd + 5);
+      const fixedRest = restPart.replace(/^---\n\n+(#{1,5} )/gm, '---\n$1');
+      if (fixedRest !== restPart) {
+        fixes.push('multiline: blank between HR and heading');
+        after1 = frontmatterPart + fixedRest;
+      }
     }
   }
 

@@ -44,28 +44,28 @@ Breakpoint support in GDB is particularly advantageous for reverse engineers dis
 # GDB CheatSheet
 Here's a table format for some of the most commonly used GDB commands:
 
-| Command                       | Abbreviation | Description                                              |
-| ----------------------------- | ------------ | -------------------------------------------------------- |
-| `run`                         | `r`          | Start program execution from the beginning.              |
-| `break`                       | `b`          | Set a breakpoint at a specified location.                |
-| `continue`                    | `c`          | Continue program execution until the next breakpoint.    |
-| `step`                        | `s`          | Execute the current line and stop at the first instruction of called functions. |
-| `next`                        | `n`          | Execute the current line and stop at the next line in the same function. |
-| `finish`                      |              | Execute remaining lines of the current function and stop when the function returns. |
-| `list`                        | `l`          | Display source code around the current line.             |
-| `info breakpoints`            |              | Display information about set breakpoints.               |
-| `print`                       | `p`          | Print the value of a variable or expression.             |
-| `backtrace`                   | `bt`         | Display a backtrace of the call stack.                  |
-| `info locals`                 |              | Display values of local variables in the current stack frame. |
-| `info registers`              |              | Display values of CPU registers.                         |
-| `set variable`                |              | Set the value of a variable during debugging.           |
-| `display`                     |              | Display the value of an expression after each debugger command. |
-| `delete`                      |              | Delete a specific breakpoint or all breakpoints.         |
-| `watch`                       |              | Set a watchpoint on a variable.                          |
-| `info threads`                |              | Display information about threads in a multithreaded program. |
-| `thread`                      |              | Switch between threads in a multithreaded program.       |
-| `set pagination off`          |              | Disable pagination, allowing GDB to display long output without pausing. |
-| `quit`                        | `q`          | Exit GDB.                                                |
+Command                       | Abbreviation | Description                                             
+----------------------------- | ------------ | --------------------------------------------------------
+`run`                         | `r`          | Start program execution from the beginning.             
+`break`                       | `b`          | Set a breakpoint at a specified location.               
+`continue`                    | `c`          | Continue program execution until the next breakpoint.   
+`step`                        | `s`          | Execute the current line and stop at the first instruction of called functions.
+`next`                        | `n`          | Execute the current line and stop at the next line in the same function.
+`finish`                      |              | Execute remaining lines of the current function and stop when the function returns.
+`list`                        | `l`          | Display source code around the current line.            
+`info breakpoints`            |              | Display information about set breakpoints.              
+`print`                       | `p`          | Print the value of a variable or expression.            
+`backtrace`                   | `bt`         | Display a backtrace of the call stack.                 
+`info locals`                 |              | Display values of local variables in the current stack frame.
+`info registers`              |              | Display values of CPU registers.                        
+`set variable`                |              | Set the value of a variable during debugging.          
+`display`                     |              | Display the value of an expression after each debugger command.
+`delete`                      |              | Delete a specific breakpoint or all breakpoints.        
+`watch`                       |              | Set a watchpoint on a variable.                         
+`info threads`                |              | Display information about threads in a multithreaded program.
+`thread`                      |              | Switch between threads in a multithreaded program.      
+`set pagination off`          |              | Disable pagination, allowing GDB to display long output without pausing.
+`quit`                        | `q`          | Exit GDB.                                               
 
 
 ---
