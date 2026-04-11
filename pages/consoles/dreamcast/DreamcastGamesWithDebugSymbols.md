@@ -22,6 +22,7 @@ recommend:
 editlink: /consoles/dreamcast/DreamcastGamesWithDebugSymbols.md
 updatedAt: '2019-10-19'
 ---
+
 <section class="postSection">
     <img src="/public/images/dreamcast/Dreamcast-Games-With-Debug-Symbols.jpg" style="width:inherit;" class="wow slideInLeft postImage" />
 <div markdown="1">
@@ -51,7 +52,6 @@ The french game Taxi 2 contained the PDB files for all the libraries provided by
 However it doesn't seem to have the actual .pdb file from the Taxi2 game itself sadly.
 
 ---
-
 # Unstripped ELF files
 Unstripped ELF files are a rare gem, very rare and they pretty much crack the game wide open with their debug symbols.
 
@@ -80,7 +80,6 @@ Judging by the symbols the game was written in C++ so it must have used the GNU 
 This game includes a file called `CDIMAGE.ELF` but it does not seem to be a valid ELF executable and it doesn't contain debug symbols as far as I can tell.
 
 ---
-
 # Linker .map files
 During the build process for games the source code gets compiled and then linked into a final executable, in the dreamcast case it becomes the `1st_read.bin`.
 

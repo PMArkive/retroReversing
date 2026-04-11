@@ -28,11 +28,12 @@ updatedAt: '2019-10-31'
 GD Workshop was developed by CrossProducts as a tool to not only burn GD-Rs but also to create virtual GDROM images for use on the **DEV.BOX** development hardware.
   </div>
 </section>
-  
+
 # Running GD Workshop
 Although the Katana development kit Dev.BOX is basically a windows PC with a GD-ROM drive, it cannot run on standard PCs without being patched.
 
 ---
+
 # Burning GD-Rs
 It normally takes around 1-hour to burn a physical GD-R disc so this wasn't a quick process. So an alternative is to Emulate the GD-ROM disc so it can be booted straight away.
 

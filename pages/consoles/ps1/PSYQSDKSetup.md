@@ -232,7 +232,6 @@ pause
 Now right click this file and select open with DOSBOX which will run the batch script and leave you at a new command prompt in DOS. If everything went successfuly you will notice a generated file called HELLO.EXE.
 
 ---
-
 # TOMB5 Example
 Tomb Raider 5 (Chronicles) reversing project. It uses a modern version of make with the original PSYQ compilers so you can't run it through PSYMAKE.
 In order to get this to run on MacOSX and Linux I needed to create a windows .bat file to wrap around the `cc1psx.exe` file so that we can run it in wineconsole with all the paths already setup.

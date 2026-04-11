@@ -24,8 +24,8 @@ recommend:
 - introduction
 editlink: /consoles/nes/NES-Sprite-Tile-Editing.md
 ---
-# Sprite Tile editing with Tile Layer Pro
 
+# Sprite Tile editing with Tile Layer Pro
 If you have ever wondered how graphical rom hacks are made this is for you! This should work for most early games such as NES and Game Boy. Future generation games start to compress their sprites which makes it more difficult.
 
 Back in the day of NES and Game Boy development, the sprites and tiles were saved in the rom file completely uncompressed and thus visible with the correct editor, one such editor is **Tile Layer Pro**.

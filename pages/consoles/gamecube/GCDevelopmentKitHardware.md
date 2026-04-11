@@ -198,7 +198,7 @@ The main modification to the hardware other than the optical disc reader is that
 </section>
 
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">𝘿𝙚𝙫𝙚𝙡𝙤𝙥𝙚𝙧𝙨 𝙆𝙞𝙩 𝙤𝙛 𝙩𝙝𝙚 𝙙𝙖𝙮<br><br>If you’re wondering why this <a href="https://twitter.com/hashtag/Gamecube?src=hash&amp;ref_src=twsrc%5Etfw">#Gamecube</a> has such an odd color, that’s because it’s a devkit. This is called an NR- reader. It only reads NR discs. <a href="https://twitter.com/hashtag/gaming?src=hash&amp;ref_src=twsrc%5Etfw">#gaming</a> <a href="https://twitter.com/hashtag/nintendo?src=hash&amp;ref_src=twsrc%5Etfw">#nintendo</a> <a href="https://twitter.com/hashtag/gamersunite?src=hash&amp;ref_src=twsrc%5Etfw">#gamersunite</a> <a href="https://t.co/rXA20vuTnc">pic.twitter.com/rXA20vuTnc</a></p>&mdash; 🕹 ᄃӨᄂӨПΣᄂ FΛᄂᄃӨП 🕹 (@ColonelFalcon) <a href="https://twitter.com/ColonelFalcon/status/1068871756327337988?ref_src=twsrc%5Etfw">December 1, 2018</a></blockquote> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">𝘿𝙚𝙫𝙚𝙡𝙤𝙥𝙚𝙧𝙨 𝙆𝙞𝙩 𝙤𝙛 𝙩𝙝𝙚 𝙙𝙖𝙮<br><br>If you're wondering why this <a href="https://twitter.com/hashtag/Gamecube?src=hash&amp;ref_src=twsrc%5Etfw">#Gamecube</a> has such an odd color, that's because it's a devkit. This is called an NR- reader. It only reads NR discs. <a href="https://twitter.com/hashtag/gaming?src=hash&amp;ref_src=twsrc%5Etfw">#gaming</a> <a href="https://twitter.com/hashtag/nintendo?src=hash&amp;ref_src=twsrc%5Etfw">#nintendo</a> <a href="https://twitter.com/hashtag/gamersunite?src=hash&amp;ref_src=twsrc%5Etfw">#gamersunite</a> <a href="https://t.co/rXA20vuTnc">pic.twitter.com/rXA20vuTnc</a></p>&mdash; 🕹 ᄃӨᄂӨПΣᄂ FΛᄂᄃӨП 🕹 (@ColonelFalcon) <a href="https://twitter.com/ColonelFalcon/status/1068871756327337988?ref_src=twsrc%5Etfw">December 1, 2018</a></blockquote> 
 
 ## NR-Writer
 <section class="postSection">
@@ -227,7 +227,6 @@ The GCP-2000 USB Adapter connects via a Gamecube's memory card slot and has a us
 
 
 ---
-
 # SN Systems Development Kits
 SN Systems are very well known for their quality third party development kit hardware and SDKs and the gamecube was one of the last non-Sony platforms that they supported after being bought out by Sony.
 
@@ -250,7 +249,7 @@ It provided double the amount of RAM (48MB) as a standard Nintendo Gamecube whic
 
 The SN-TDEV unit supports the SN Systems SDK known as PRO-DG, including the performance optimiser known as **Tuner** [^11].
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">𝘿𝙚𝙫𝙚𝙡𝙤𝙥𝙚𝙧𝙨 𝙆𝙞𝙩 𝙤𝙛 𝙩𝙝𝙚 𝙙𝙖𝙮<br><br>This is a chocolate brown <a href="https://twitter.com/hashtag/Nintendo?src=hash&amp;ref_src=twsrc%5Etfw">#Nintendo</a> <a href="https://twitter.com/hashtag/Gamecube?src=hash&amp;ref_src=twsrc%5Etfw">#Gamecube</a> TDEV. It’s a devkit that was also used in Universities. It does not play regular games, only NR discs. (Found at <a href="https://t.co/RfI4EsLWv6">https://t.co/RfI4EsLWv6</a>) <a href="https://twitter.com/hashtag/retrogaming?src=hash&amp;ref_src=twsrc%5Etfw">#retrogaming</a> <a href="https://t.co/W7uVfQBGfP">pic.twitter.com/W7uVfQBGfP</a></p>&mdash; 🕹 ᄃӨᄂӨПΣᄂ FΛᄂᄃӨП 🕹 (@ColonelFalcon) <a href="https://twitter.com/ColonelFalcon/status/949407089524342785?ref_src=twsrc%5Etfw">January 5, 2018</a></blockquote> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">𝘿𝙚𝙫𝙚𝙡𝙤𝙥𝙚𝙧𝙨 𝙆𝙞𝙩 𝙤𝙛 𝙩𝙝𝙚 𝙙𝙖𝙮<br><br>This is a chocolate brown <a href="https://twitter.com/hashtag/Nintendo?src=hash&amp;ref_src=twsrc%5Etfw">#Nintendo</a> <a href="https://twitter.com/hashtag/Gamecube?src=hash&amp;ref_src=twsrc%5Etfw">#Gamecube</a> TDEV. It's a devkit that was also used in Universities. It does not play regular games, only NR discs. (Found at <a href="https://t.co/RfI4EsLWv6">https://t.co/RfI4EsLWv6</a>) <a href="https://twitter.com/hashtag/retrogaming?src=hash&amp;ref_src=twsrc%5Etfw">#retrogaming</a> <a href="https://t.co/W7uVfQBGfP">pic.twitter.com/W7uVfQBGfP</a></p>&mdash; 🕹 ᄃӨᄂӨПΣᄂ FΛᄂᄃӨП 🕹 (@ColonelFalcon) <a href="https://twitter.com/ColonelFalcon/status/949407089524342785?ref_src=twsrc%5Etfw">January 5, 2018</a></blockquote> 
 
 ## SN Systems ProDG Devlink
 <section class="postSection">

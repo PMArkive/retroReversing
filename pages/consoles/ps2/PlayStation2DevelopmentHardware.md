@@ -31,6 +31,7 @@ videocarousel:
     youtube: 'G2ep1X_BS-Q'
 updatedAt: '2020-01-11'
 ---
+
 This post covers the hardware used to develop Playstation 2 games by major studios back in the day, for the software side see the post on the Official PS2 SDK.
 
 {% include_cached link-to-other-post.html post="/ps2-official-sdk" description="For the software side of the PS2 Development Kit check out this post." %}

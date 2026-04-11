@@ -18,6 +18,7 @@ breadcrumbs:
 recommend: ps1
 editlink: /consoles/ps1/PS1_Radare2.md
 ---
+
 This guide will presume you have already installed the radare2 suite of binary analysis tools on your computer.
 
 # Opening a PSX executable in radare2

@@ -26,6 +26,7 @@ recommend: n64
 editlink: /consoles/n64/Turok64SourceCode.md
 updatedAt: '2018-12-15'
 ---
+
 # Introduction to Turok 64
 <section class="postSection">
 <img src="/public/games/turok/Turok - Dinosaur Hunter (USA) (Rev B) 3D.png" class="wow slideInLeft postImage" />
@@ -46,7 +47,6 @@ The source code is almost completely written in C with only 2 or 3 assembly file
 </section>
 
 ---
-
 # Development Tools
 
 ## Developer Operating Systems
@@ -85,14 +85,13 @@ You can find out more about RNC Compression over at SegaRetro - [Rob Northen com
 
 Specifically the library used is `RNC ProPack` which handles packing and unpacking game data.
 
-It looks like Iguana also used RNC for PS1 games as the file `rnc.s` contains a reference to Sony PSX for its “PROPACK Unpack” code written in assembly [^6].
+It looks like Iguana also used RNC for PS1 games as the file `rnc.s` contains a reference to Sony PSX for its "PROPACK Unpack" code written in assembly [^6].
 
 In the source code `boot.c` looks for an  RNC2 header for assets and decompresses the data if it is found.
 </div>
 </section>
 
 ---
-
 # The Code
 
 ## Cheats
@@ -152,7 +151,6 @@ The format uses the RNC Compression we talked about earlier in this page to keep
 Also I had a look at a early demo version of Turok for Windows 95 that was shipped with the Italian PC Gamer Magazine issue 28 (1998) and it also has a data file, this time called `demodata.dat`. After a brief look this file also contains RNC compressed sections and it looks to be a very similar format to the n64 `cartdata.dat`
 
 ---
-
 # Cartridge and Development Hardware
 <section class="postSection">
   <img src="/public/N64/N64Cart_NUS_01A_01.png" class="wow bounceInLeft postImage" />
@@ -328,7 +326,6 @@ It is unknown if they had these units during the original Turok but it is quite 
 </section>
 
 ---
-
 # 3D Models
 <section class="postSection">
 <img src="/public/software/3dsmax/WinWare-3d Studio 4.png" class="wow slideInLeft postImage" />
@@ -355,7 +352,6 @@ It would be unlikely to be `3D Studio Max v4` as they say due to it being releas
 </section>
 
 ---
-
 # World
 <section class="postSection">
 <div markdown="1">

@@ -264,7 +264,6 @@ Note some are EEPROM and others are EEPROM1, not sure what the difference was, b
 
 
 ---
-
 ## IS-TWL-DEBUGGER
 <section class="postSection">
     <img src="/public/images/ds/IS-TWL-DEBUGGER.jpg" class="wow slideInLeft postImage" />
@@ -320,7 +319,7 @@ TAD files are the equivalent of Wii's WAD file format but for Twilight (DSi).
  </div>
 </section> 
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Today’s arrival : a boxer Nintendo DSI panda (dev console) with a development box ! (Where usually all box actually know for those panda was just no name white box).<br><br>And I also got two cards, including one of the four Nintendo factory devcart that was recently found. <a href="https://t.co/w4O188jCx8">pic.twitter.com/w4O188jCx8</a></p>&mdash; Michel Gaschet (@Michel_Gaschet) <a href="https://twitter.com/Michel_Gaschet/status/1315986618227068931?ref_src=twsrc%5Etfw">October 13, 2020</a></blockquote> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Today's arrival : a boxer Nintendo DSI panda (dev console) with a development box ! (Where usually all box actually know for those panda was just no name white box).<br><br>And I also got two cards, including one of the four Nintendo factory devcart that was recently found. <a href="https://t.co/w4O188jCx8">pic.twitter.com/w4O188jCx8</a></p>&mdash; Michel Gaschet (@Michel_Gaschet) <a href="https://twitter.com/Michel_Gaschet/status/1315986618227068931?ref_src=twsrc%5Etfw">October 13, 2020</a></blockquote> 
 
 ---
 # Third party Development Kits

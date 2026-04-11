@@ -24,6 +24,7 @@ recommend:
 editlink: /consoles/n64/iQueSDK.md
 updatedAt: '2020-05-11'
 ---
+
 The iQue Player was a sort of plug and play version of the Nintendo 64 system sold in China with its main aim to stop the rampant piracy in the market.
 
 It is a mystery how someone managed to leak the iQue SDK as no 3rd party software was ever released for the platform, so it is quite impressive that someone managed to obtain and leak this Software Development Kit.

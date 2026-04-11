@@ -35,7 +35,6 @@ The main output after the user has finished playing is a couple of files: an n64
 </section>
 
 ---
-
 # Features
 
 ## Auto detection of ASM regions
@@ -47,7 +46,6 @@ Using DMA and TLB data we can auto detect regions of the rom which are interpret
 </section>
 
 ---
-
 ## Auto detection of data reads to ROM addresses
 <section class="postSection">
   <img src="/public/mupenRE/MupenRE headers.png" class="wow bounceInUp postImage" />
@@ -61,7 +59,6 @@ This information is written out into the n64split config file allowing the split
 </section>
 
 ---
-
 ## Auto detection of Function names
 <section class="postSection">
   <img src="/public/mupenRE/mupenRE Library.png" class="wow bounceInUp postImage" />
@@ -73,7 +70,6 @@ This information is written out into the n64split config file allowing the split
 </section>
 
 ---
-
 ## Finding common functions across games
 <section class="postSection">
   <img src="/public/mupenRE/Mupen64+ RE Common Functions.jpeg" class="wow bounceInUp postImage" />
@@ -94,7 +90,6 @@ Here is part of the n64split label output of playing a single race in top gear o
 ￼</section>
 
 ---
-
 ## Auto detection of Audio regions
 <section class="postSection">
 <img src="/public/mupenRE/Mupen64+ Reversers Edition.jpeg" class="wow bounceInUp postImage" />
@@ -103,7 +98,6 @@ Here is part of the n64split label output of playing a single race in top gear o
  </div>
 </section>
 ---
-
 ## Configurable Dynamic Memory Corruption
 <section class="postSection">
 <div markdown="1">
@@ -120,7 +114,6 @@ One effective way to find out what to name certain areas of a rom is to corrupt 
 </section>
 
 ---
-
 # Future Plans
 * Auto detection of Texture/3D data?
 * Auto detection of memcopy
@@ -135,7 +128,6 @@ One effective way to find out what to name certain areas of a rom is to corrupt 
 ￼
 ---
 # Download & Source Code
-
 You can get a pre-built MacOSX binary for intel Mac's only here:
 [MACOSX Release](https://www.mediafire.com/file_premium/sxuwpv43vaufaqr/mupen64RERelease0.2.zip/file)
 

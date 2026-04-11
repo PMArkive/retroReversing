@@ -23,7 +23,6 @@ The Reality Signal Processor or `RSP` is not only used for the games graphics, i
 The RSP is where all the low-level audio processing is done, decoding the audio sample data and passing it on to be played through TV speakers.
 
 ---
-
 # N64 Sound Banks
 N64 sound banks are composed of two files: the ctl and tbl. 
 
@@ -42,21 +41,18 @@ The tool attempts to locate ctl via its magic word (0x42310001), then tries to g
 [^2]
 
 ---
-
 # Official Sound Tools
 The official N64 Development Sound tools were released by Nintendo for use by Musicians to create and test sounds for N64 hardware.
 
 The Sound Tools has two applications bundled, one is the `N64 Waveform Editor (dse.exe)` and the other is the `N64 Sequencer (dream.exe)`
 
 ---
-
 # N64 Sound Libraries
 There are 2 known officials sound libraries for N64 development, the `Sound Tools API Library` and the `N_Audio Driver for Sound Tools`.
 
 The N_Audio Driver is the new version of the older SGI Sound Tools API and is more optimised for playing sounds. Most later games used this API.
 
 ---
-
 # Sound Player (Sound effects)
 At the start of the game the Sound Player is initialised and assigned a `bank of sound effects`.
 
@@ -132,7 +128,6 @@ bank Wave1
 ```
 
 ---
-
 # Sound Sequencer (Music)
 At the start of the game the Sound Sequencer is initialised and assigned a `bank of instruments` and a `bank of MIDI sequences`.
 
@@ -150,7 +145,6 @@ The Sequence Bank format is just a bunch of .seq files added together.
 To generate a .sbk file the Musician would compile the MIDI first into .seq files and then merge multiple .seq into a single .sbk file.
 
 ---
-
 # References
 [^1]: https://n64squid.com/homebrew/ProgManual/chapter_libuse.html
 [^2]: https://www.therwp.com/project/n64-sound-tool 

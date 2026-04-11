@@ -23,6 +23,7 @@ recommend:
 - megadrive
 editlink: /consoles/Mega Drive/MegaDriveSDK.md
 ---
+
 # Sega Mega Drive (Genesis) SDK
 Unlike the original Master System or SG-1000 systems, **SEGA** provided third party developers with some tools to make **Mega Drive** development easier.
 

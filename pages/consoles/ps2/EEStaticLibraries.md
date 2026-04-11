@@ -20,6 +20,7 @@ recommend:
 - sdk
 editlink: /consoles/ps2/EEStaticLibraries.md
 ---
+
 This post will cover the programming libraries that were provided by the Official PS2 SDK for the Emotion Engine (the main processor for the PS2).
 
 ## Main Emotion Engine SDK libraries

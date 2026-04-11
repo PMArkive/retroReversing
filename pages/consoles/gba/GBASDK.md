@@ -64,7 +64,6 @@ sgi2bmp | .exe | Converts an SGI format image into a BMP format image
 
 ---
 # Documentation (/doc folder)
-
 This folder contains all the documentation provides for the various tools and libraries provided in the Game Boy Advance SDK.
 
 File Name | Extension | Description

@@ -21,7 +21,6 @@ recommend:
 editlink: /consoles/gba/GBASDKSamples.md
 ---
 
-
 # Blib sample (/blib_sample)
 This folder contains 
 

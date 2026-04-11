@@ -90,13 +90,13 @@ Microcode (otherwise known as uCode) is similar to assembly language but optimiz
 Although you can initially think of the RSP microcode as similar to a modern Shader language, as they are both used to implement a programmable graphics pipeline, this is not quite the case in practise. Most of the time the developers used the Nintendo written microcode and called it as if it was a normal Fixed function pipeline. 
 
 ## Custom Microcode
-It wasn’t common for developers to write their own microcode for their games until near the end of the N64 lifecycle. 
+It wasn't common for developers to write their own microcode for their games until near the end of the N64 lifecycle. 
 So most early games used pre-written microcode developed by SGI and Nintendo and used it like a fixed function graphical pipeline.
 
 In fact the main reason for the lack of custom microcode development by 3rd party games is due to the poor tools and documentation provided by nintendo. Not to mention the complexity of programming for it and no debugger was provided [^1].
 
 ## The Microcode wizard - Yoshitaka Yasumoto
- Yoshitaka Yasumoto is credited in many games as being the microcode programmer (e.g Yoshi’s story) but most games use his microcode without explicitly giving credit as it was part of the Official N64 SDK. 
+ **Yoshitaka Yasumoto** is credited in many games as being the microcode programmer (e.g Yoshi's story) but most games use his microcode without explicitly giving credit as it was part of the Official N64 SDK. 
 
 If you search a N64 rom file for his name "Yoshitaka Yasumoto" you will likely find the microcode that he has written. This works for most games unless they used their own custom uCode.
 
@@ -174,7 +174,7 @@ Instructions must fit in the 4KB IMEM memory region so this limits the microcode
 To get around this limitation code `overlays` can be used and will be discussed further on, however it is important to note that the use of code `overlays` has a negative performance impact.
 
 # Display Lists
-Display lists can be thought of as a set of commands that can be used by the programmer to manipulate the RSP’s currently running microcode [^5]. Basically we want the CPU to setup a list of commands that the RSP will use to calculate the next frame, which the RSP will run in parallel while the CPU is computing game logic. 
+Display lists can be thought of as a set of commands that can be used by the programmer to manipulate the RSP's currently running microcode [^5]. Basically we want the CPU to setup a list of commands that the RSP will use to calculate the next frame, which the RSP will run in parallel while the CPU is computing game logic. 
 
 So you can think of a display list as an array of 64-bit words (8 bytes) where each element of the array is a command that the RSP will use to render the frame.
 

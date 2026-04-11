@@ -20,8 +20,8 @@ breadcrumbs:
 recommend: n64
 editlink: /consoles/n64/Mystical-Ninja-N64-Memory-Rom-Editing.md
 ---
-# Mystical Ninja N64 Memory Rom Editing with CheatEngine and MuPen64
 
+# Mystical Ninja N64 Memory Rom Editing with CheatEngine and MuPen64
 ![image alt text]({{ site.url }}/public/zPL1VU0wRtcGNpCC99q46g_img_0.png)
 
 In this video the author goes over some progress he has made trying to understand the layout of the Goemon rom file. He seems to have made great progress and it is documented in a number of text files and even has a collaboration CheatEngine file!

@@ -21,6 +21,7 @@ recommend:
 - sdk
 updatedAt: '2021-03-25'
 ---
+
 # Introduction
 If you are interested in the Playstation 2, especially reversing or developing  games for it, you will eventually come across files with the .IRX extension.
 
@@ -34,14 +35,14 @@ Most IRX files are used for Input devices, such as the joypads, Light Guns, Eyet
 
 ## How are they used?
 You can load an IOP Module from Emotion Engine code using one of the following API commands:
- - **sceSifLoadModule**()
- - **sceSifLoadModule**()
- - **sceSifLoadStartModule**()
- - **sceSifLoadStartModule**()
- - **sceSifLoadModuleBuffer**()
- - **sceSifLoadModuleBuffer**()
- - **sceSifLoadStartModuleBuffer**()
- - **sceSifLoadStartModuleBuffer**()
+ * **sceSifLoadModule**()
+ * **sceSifLoadModule**()
+ * **sceSifLoadStartModule**()
+ * **sceSifLoadStartModule**()
+ * **sceSifLoadModuleBuffer**()
+ * **sceSifLoadModuleBuffer**()
+ * **sceSifLoadStartModuleBuffer**()
+ * **sceSifLoadStartModuleBuffer**()
 
 ## Where do I find them?
 You should be able to find some of these in the **MODULES** folder of a Playstation 2 disk (but the folder depends on the disc).

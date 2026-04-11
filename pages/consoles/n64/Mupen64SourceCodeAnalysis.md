@@ -184,7 +184,6 @@ In debugger mode PC starts at 0xA4000040 (2751463488) with:
 mtc0 $zero,C0_CAUSE
 ```
 ---
-
 # Mupen64+ Features
 
 ## GlideHQ (Texture upscale)
@@ -193,7 +192,6 @@ GlideHQ is a texture upscale for the Glide graphics emulator plugin. This uses a
 GlideHq comes as part of the Mupen64+ Glide64 source code.
 
 ---
-
 # Source code analysis
 
 ## Device folder
@@ -208,22 +206,37 @@ More information about the CPU can be found here:
 [N64 Programming/CPU overview - Wikibooks, open books for an open world](https://en.wikibooks.org/wiki/N64_Programming/CPU_overview)
 
 ### rdp_core
+
 ### rsp_core
+
 ### ai_controller
+
 ### mi_controller
+
 ### pi_controller
+
 ### ri_controller
+
 ### si_controller
+
 ### vi_controller
+
 ### pif;
+
 ### rdram
+
 ### memory
 
 ### game_controller 
+
 ### biopak 
+
 ### mempak
+
 ### rumblepak
+
 ### transferpak
+
 ### gb_cart
 
 ### cart

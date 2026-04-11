@@ -34,8 +34,8 @@ However Assembly language programs are written for a specific CPU and not portab
 
 Most commercial games written for Game Boy/Game Boy Color/NES/SNES/SMS/MegaDrive are written in an Assembly language such as Z80/6502/68000 as C compilers were generally not good enough at the time to create optimized code for those platforms.
 
-## x86 Assembly Language 
-  
+## x86 Assembly Language
+
 ### x86-64 Playground
 [x64.halb.it](https://x64.halb.it/) is an interactive, browser-based environment for writing, running, and debugging x86-64 assembly code. Created by Alberto Ventafridda, it utilizes a WASM port of the Blink emulator to provide a full Linux-compatible runtime with a GDB-like interface for inspecting registers and memory, making it an excellent tool for learning binary exploitation without a local setup. 
 
@@ -84,7 +84,7 @@ C/C++ Compilers:
 Shaders are tiny programs that run on GPUs and thus have their own category of programming languages more suited to the task, as general purpose programming languages are too bloated and contain too many concepts that would not work on a GPU.
 
 ## Nvidia Cg
-Nvidia’s Cg (C for Graphics) is a high-level C-like graphics programming language first released in 2002, with the second version being released in 2007 [^6].
+Nvidia's Cg (C for Graphics) is a high-level C-like graphics programming language first released in 2002, with the second version being released in 2007 [^6].
 
 The language is part of the Cg Toolkit which consists of a compiler, runtime libraries for both DirectX and OpenGL and a standalone shader viewer for testing.
 

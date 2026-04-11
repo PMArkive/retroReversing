@@ -20,6 +20,7 @@ recommend: n64
 editlink: /consoles/n64/n64_Radare2.md
 updatedAt: '2019-11-20'
 ---
+
 This guide will presume you have already installed the radare2 suite of binary analysis tools on your computer.
 
 Radare 2 supports *z64* big endian binaries using the r_bin plugin that comes preloaded with radare2, so you might need to convert your roms to this format if they are in v64 or little endian format.
@@ -50,7 +51,7 @@ Having all the functions named fcn.<hex Location> is not very helpful, so lets f
 It is common for developers to copy and paste sample code so lets see if we can match any sample code function names in this rom.
 **TODO**
 
-So now you will be left with a bunch of game specific functions that can’t be renamed (unless you have a linker map file). So the real reverse engineering starts!
+So now you will be left with a bunch of game specific functions that can't be renamed (unless you have a linker map file). So the real reverse engineering starts!
 
 We need to use a mixture of radare2, emulator and memory editors to try to figure out what to call these functions.
 

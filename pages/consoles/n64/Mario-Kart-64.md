@@ -38,7 +38,6 @@ The source code is almost completely written in C and compiled with IDO C compil
 </section>
 
 ---
-
 # Documentation about Mario Kart 64
 * [Home · RenaKunisaki/mariokart64 Wiki](https://github.com/RenaKunisaki/mariokart64/wiki)
 * [https://github.com/shygoo/mk64project](https://github.com/shygoo/mk64project) 
@@ -56,11 +55,9 @@ The source code is almost completely written in C and compiled with IDO C compil
 ## Text and Localisation
 
 ---
-
 # Tools
 
 ## Mario Kart 64 World Viewer
-
 ![image alt text]({{ site.url }}/public/0pZkOKRfCUlcJDX5TiJL8g_img_0.png)
 
 This is a very cool tool, it actually allows you to see the tracks from Mario Kart 64 in your web browser! I wish more tools were developed as client side web apps as they are much more cross-platform friendly and don't require the hassle of download/dependencies etc.
