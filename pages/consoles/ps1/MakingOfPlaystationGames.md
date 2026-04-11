@@ -24,8 +24,8 @@ videocarousel:
     youtube: 'ieoMqvFuUbw'
 editlink: /consoles/ps1/MakingOfPlaystationGames.html
 ---
-# PlayStation Underground
 
+# PlayStation Underground
 List of known issues (CD-ROMs):
 ```
 PlayStation Underground Volume 1.1

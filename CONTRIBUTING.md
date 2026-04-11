@@ -130,8 +130,10 @@ First we always have a short sentence introducing the list:
 However, if the list is too long (e.g. more than 10 items), use a Markdown table instead. The site supports searching within Markdown tables, which is not useful for short lists but ideal for long ones.
 
 ### Table Rules
-* NEVER use excessive spacing in Markdown tables.
-* Rows in Markdown tables should not start or end with `|` as Markdown handles this automatically.
+* **Always have a sentence before a table** - Tables should be introduced by a short sentence that explains what the reader is looking at, rather than appearing immediately after a heading with no context.
+* **Avoid excessive spacing** - Keep table rows compact so the markdown stays easy to scan and edit.
+* **Do not pad table rows with extra spaces** - Keep Markdown tables compact so they stay easy to scan and edit.
+* **Do not wrap tables in pipe characters** - Rows should not start with `|` because Markdown handles that automatically.
 
 
 ### Glossary Rules
@@ -406,7 +408,6 @@ sleep(1);
 {% endraw %}
 
 ---
-
 ## Code Cards
 When referencing a real source file:
 * Use `source-code-card.html` and/or `source-code-card-grid.html` when you are actually showing the contents of a source file, such as its functions, variables, structs, or other internal symbols

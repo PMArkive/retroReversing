@@ -29,6 +29,9 @@ const IMAGE_HEIGHT = 720;
 const CONFIG_PATH = path.join(ROOT_DIR, '_config.yml');
 const RR_LOGO_IMAGE = path.join(ROOT_DIR, 'public', 'images', 'RetroReversingLogo.png');
 const RSVG_CONVERT_PATH = findExecutable('rsvg-convert');
+const IMAGE_MAGICK_CONVERT_PATH = findExecutable('convert');
+const IMAGE_MAGICK_PATH = findExecutable('magick');
+const SIPS_PATH = findExecutable('sips') || 'sips';
 const imageDimensionCache = new Map();
 
 function findContentFiles(directory) {
@@ -442,6 +445,52 @@ function buildOutputPath(permalink) {
     };
 }
 
+function convertPngToJpeg(inputPath, outputPath, quality = '88') {
+    if (IMAGE_MAGICK_CONVERT_PATH) {
+        execFileSync(IMAGE_MAGICK_CONVERT_PATH, [
+            inputPath,
+            '-quality',
+            String(quality),
+            outputPath
+        ], { stdio: 'pipe' });
+        return true;
+    }
+
+    if (IMAGE_MAGICK_PATH) {
+        execFileSync(IMAGE_MAGICK_PATH, [
+            'convert',
+            inputPath,
+            '-quality',
+            String(quality),
+            outputPath
+        ], { stdio: 'pipe' });
+        return true;
+    }
+
+    if (SIPS_PATH) {
+        execFileSync(SIPS_PATH, [
+            inputPath,
+            '--setProperty',
+            'format',
+            'jpeg',
+            '--setProperty',
+            'formatOptions',
+            String(quality),
+            '--out',
+            outputPath
+        ], { stdio: 'pipe' });
+        return true;
+    }
+
+    return false;
+}
+
+function canGenerateJpg() {
+    const hasRenderer = Boolean(Resvg || RSVG_CONVERT_PATH);
+    const hasPngToJpegConverter = Boolean(IMAGE_MAGICK_CONVERT_PATH || IMAGE_MAGICK_PATH || SIPS_PATH);
+    return hasRenderer && hasPngToJpegConverter;
+}
+
 function shouldGenerate(metadata) {
     if (!metadata.title || !metadata.permalink) {
         return false;
@@ -466,14 +515,9 @@ function generateImage(svgPath, outputPath) {
         const pngBuffer = resvg.render().asPng();
         const tempPngPath = `${outputPath}.tmp.png`;
         fs.writeFileSync(tempPngPath, pngBuffer);
-        execFileSync('convert', [
-            tempPngPath,
-            '-quality',
-            '88',
-            outputPath
-        ], { stdio: 'pipe' });
+        const converted = convertPngToJpeg(tempPngPath, outputPath, '88');
         fs.unlinkSync(tempPngPath);
-        return true;
+        return converted;
     }
     if (!RSVG_CONVERT_PATH) {
         return false;
@@ -489,14 +533,9 @@ function generateImage(svgPath, outputPath) {
         '-o',
         tempPngPath
     ], { stdio: 'pipe' });
-    execFileSync('convert', [
-        tempPngPath,
-        '-quality',
-        '88',
-        outputPath
-    ], { stdio: 'pipe' });
+    const converted = convertPngToJpeg(tempPngPath, outputPath, '88');
     fs.unlinkSync(tempPngPath);
-    return true;
+    return converted;
 }
 
 function main() {
@@ -510,6 +549,7 @@ function main() {
     let skippedCount = 0;
     let missingResvgWarningShown = false;
     let missingRsvgWarningShown = false;
+    let missingConverterWarningShown = false;
     let missingGeoPatternWarningShown = false;
 
     for (const filePath of contentFiles) {
@@ -531,8 +571,8 @@ function main() {
         const outputPaths = buildOutputPath(metadata.permalink);
         const inputTimestamp = getInputTimestamp(filePath, CONFIG_PATH);
 
-        const canGenerateJpg = Boolean(Resvg || RSVG_CONVERT_PATH);
-        const jpgUpToDate = !canGenerateJpg || isUpToDate(outputPaths.jpg, inputTimestamp);
+        const jpgGenerationAvailable = canGenerateJpg();
+        const jpgUpToDate = !jpgGenerationAvailable || isUpToDate(outputPaths.jpg, inputTimestamp);
         if (!forceRegenerate && jpgUpToDate && isUpToDate(outputPaths.svg, inputTimestamp)) {
             skippedCount++;
             continue;
@@ -561,9 +601,16 @@ function main() {
                 console.warn('Warning: rsvg-convert is not installed, so JPG placeholder generation is being skipped.');
                 missingRsvgWarningShown = true;
             }
+            if (!missingConverterWarningShown && !IMAGE_MAGICK_CONVERT_PATH && !IMAGE_MAGICK_PATH && !SIPS_PATH) {
+                console.warn('Warning: no PNG-to-JPEG converter was found (tried convert, magick, sips), so JPG placeholder generation is being skipped.');
+                missingConverterWarningShown = true;
+            }
         } else if (!missingRsvgWarningShown && !RSVG_CONVERT_PATH) {
             console.warn('Warning: rsvg-convert is not installed, so JPG placeholder generation is being skipped.');
             missingRsvgWarningShown = true;
+        } else if (!missingConverterWarningShown && !IMAGE_MAGICK_CONVERT_PATH && !IMAGE_MAGICK_PATH && !SIPS_PATH) {
+            console.warn('Warning: no PNG-to-JPEG converter was found (tried convert, magick, sips), so JPG placeholder generation is being skipped.');
+            missingConverterWarningShown = true;
         }
         generatedCount++;
     }
