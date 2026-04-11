@@ -21,6 +21,7 @@ tags:
   - snes
 updatedAt: '2025-12-07'
 ---
+
 # Introduction
 Welcome to our page dedicated to Super Nintendo reverse engineering! The Super Nintendo Entertainment System, or SNES, was a popular gaming console released by Nintendo in 1990. If you're interested in learning more about the technical aspects of this console and how it works, you've come to the right place. 
 
@@ -38,9 +39,9 @@ Most game development teams only had a handful of people working full time on th
 
 Some examples of the length of time it took to develop Super Nintendo games are:
 * **Spider Man & X-Men in Arcade's revenge** - Took roughly 6-7 months from start to final build using a team of 4 highly experienced game programmers, 2 talented musicians and 6 brilliant artists[^1]:
-  - Programmers:	Mike Follin, Kevin Edwards, Stephen Ruddy and Michael Webb
-  - Artwork:	Anthony Anderson, Craig Houston, David McLachlan, James Clarke, Jonathan M. Smith and Ste Pickford
-  - Music:	Geoff Follin and Tim Follin
+  * Programmers:	Mike Follin, Kevin Edwards, Stephen Ruddy and Michael Webb
+  * Artwork:	Anthony Anderson, Craig Houston, David McLachlan, James Clarke, Jonathan M. Smith and Ste Pickford
+  * Music:	Geoff Follin and Tim Follin
 * **Super Mario World 2: Yoshi's Island** - Took exactly 3 years and 5 months to complete (February 1st, 1992 until June  29th 1995 [^2]) with a team of 12 programmers.
 * **RPM Racing (Interplay)** - In an interview with SuperPro (October 1992) **Brian Fargo** explains that they only had **4-5 months** to implement the game after finding out the specs of the Super Nintendo. But he goes on to say that games after that took **1-3 years** on average to get a better level of polish. It was developed with the **Sluggo III** SNES development kit [^4].
 
@@ -111,7 +112,6 @@ However looking closely at the keyboard and the PC we can see its a **Sony NEWS*
 
 ---
 ## ROM and RAM Mapping on the SNES
-
 The Super Nintendo (SNES) features a **24-bit address space** split into 256 banks of **64KB** each.  
 However, only select banks are addressable via the SNES's CPU at any given time, necessitating careful mapping of ROM, RAM, and I/O registers.  
 
@@ -136,26 +136,25 @@ The [Tale of LoROM and MMIO Emudev article](https://emudev.de/q00-snes/memory-ma
 The ROM header is used to convey metadata about the cartridge, including its memory mapping configuration, it is essential for proper ROM emulation but ignored on the SNES hardware itself. 
 
 It is typically just before the interrupt vector table but its physical location within the ROM file varies based on the memory mapping mode:
-- **LoROM**: Header at offset 0x7FC0 in the ROM file.  
-- **HiROM**: Header at offset 0xFFC0 in the ROM file.  
-- **ExHiROM**: Header at offset 0x40FFC0 in the ROM file.  
+* **LoROM**: Header at offset 0x7FC0 in the ROM file.  
+* **HiROM**: Header at offset 0xFFC0 in the ROM file.  
+* **ExHiROM**: Header at offset 0x40FFC0 in the ROM file.  
 
 These mappings align the header to $00:FFC0 in the SNES memory map, ensuring consistent access across different ROM configurations[^11].
 
 #### What is the format of the ROM Header?
-
 The ROM header comprises several fields that define the cartridge's characteristics:
 
-- **0xFFC0–0xFFD4**: Game Title (21 bytes, ASCII)  
-- **0xFFD5**: ROM Speed and Mapping Mode (e.g speeds: 2.68 MHz/3.58 MHz, modes: LoROM/HiROM)
-- **0xFFD6**: Cartridge Type (e.g., presence of coprocessors, SRAM)  
-- **0xFFD7**: ROM Size (encoded as 2^n KB)  
-- **0xFFD8**: SRAM Size (encoded as 2^n KB)  
-- **0xFFD9**: Region Code (e.g., NTSC, PAL)  
-- **0xFFDA**: Developer ID  
-- **0xFFDB**: ROM Version  
-- **0xFFDC–0xFFDD**: Checksum Complement  
-- **0xFFDE–0xFFDF**: Checksum  
+* **0xFFC0–0xFFD4**: Game Title (21 bytes, ASCII)  
+* **0xFFD5**: ROM Speed and Mapping Mode (e.g speeds: 2.68 MHz/3.58 MHz, modes: LoROM/HiROM)
+* **0xFFD6**: Cartridge Type (e.g., presence of coprocessors, SRAM)  
+* **0xFFD7**: ROM Size (encoded as 2^n KB)  
+* **0xFFD8**: SRAM Size (encoded as 2^n KB)  
+* **0xFFD9**: Region Code (e.g., NTSC, PAL)  
+* **0xFFDA**: Developer ID  
+* **0xFFDB**: ROM Version  
+* **0xFFDC–0xFFDD**: Checksum Complement  
+* **0xFFDE–0xFFDF**: Checksum  
 
 
 <rr-sandpack
@@ -165,7 +164,6 @@ The ROM header comprises several fields that define the cartridge's characterist
 
 ---
 # Sound and Music
-
 For anyone interested in how Sound works on the SNES you should watch **SNES Audio System Overview** from **Retro Game Mechanics Explained** on Youtube:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zrn0QavLMyo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -186,7 +184,7 @@ For an in-depth look at the SNES Retail hardware architecture check out the exce
 
 ### Was the SNES backwards compatible with the NES?
 No, but it was intended to be during early development of the SNES which we found out thanks to an interview with **Masayuki Uemura** [^8]:
-> In truth, we actually wanted the Super Famicom to be able to play Famicom games too. We used a CPU that’s equipped with a 6502 emulation mode and everything. However, the sheer amount of games released for the Famicom, plus the fact that they often used different types of ROMs and chips made it too difficult to produce a perfect conversion.
+> In truth, we actually wanted the Super Famicom to be able to play Famicom games too. We used a CPU that's equipped with a 6502 emulation mode and everything. However, the sheer amount of games released for the Famicom, plus the fact that they often used different types of ROMs and chips made it too difficult to produce a perfect conversion.
 
 ---
 ## SNES in-flight Airplane hardware (Nintendo Gateway)
@@ -207,8 +205,8 @@ Also if you prefer video-based content the youtuber **Top Hat Gaming Man** has c
  In 2020 Luigiblood did a presentation to the **AirGap2020** conference about **Satellaview Reverse Engineering** which can be watched below:
  <iframe width="560" height="315" src="https://www.youtube.com/embed/mTRm2hcBrww" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
  
-### BS-X Cartridges
 
+### BS-X Cartridges
  The **Satellaview** has little Memory Packs with only 1MB (8 MegaBit) of flash storage space that would slot into the BS-X Satellaview cartridges, it was a cartridge that had a smaller cartridge slot on top. Note that there was one other game that supported these Memory Packs, it was a game creator called **RPG Maker**.
 
 The BS-X cartridge has that name because it was the entry point into the Broadcast Satellaview (BS) network, and the "X" signified the virtual town interface that users navigated.

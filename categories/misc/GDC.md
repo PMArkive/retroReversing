@@ -85,7 +85,7 @@ The conference did not become an annual event until a few years later.
 From a programming perspective the session **Developing for MS-DOS** would have been one of the highlights of the conference. Evan and Nicky Robinson were both programmers on hit games **Star Control** and **Mail Order Monsters**. So to hear their perspective on developing games for MS-DOS would have been incredible!
 
 In the Journal for Computer Game Development December 1988 issue Eric Goldberg wrote the following about the session:
-> Evan and Nicky Robinson’s “Developing for MS-DOS” was praised by many attendees. While no one professed a desire to grapple with an operating system universally regarded as clunky, the Robinsons were given full marks for a concise explanation of how to get through the odious task of supporting all four of the CGA, EGA, VGA, and Hercules graphics standards. The IBM PC and clone family is clearly where the most money is to be made in games.
+> Evan and Nicky Robinson's "Developing for MS-DOS" was praised by many attendees. While no one professed a desire to grapple with an operating system universally regarded as clunky, the Robinsons were given full marks for a concise explanation of how to get through the odious task of supporting all four of the CGA, EGA, VGA, and Hercules graphics standards. The IBM PC and clone family is clearly where the most money is to be made in games.
 [^10]
 
 
@@ -497,7 +497,6 @@ The Writers' Roundtable | C. Marx, Michele Em, K. Lawrence | General Interest | 
 This years show even had IBM trying to get people to write games for **OS/2** with their sponsored "OS/2 as a Viable PC Games Platform" sessions, I wonder how many developers were convinced because it certainly did not become a viable PC Games Platform and was competing with Windows 95 DirectX talks. I would love to see what content was presented at that, fantastic bit of game development history, what APIs were even shown off for OS/2?
 
 ---
-
 ## CGDC 1996
 ![CGDC 1996](https://github.com/user-attachments/assets/f171d6a3-2725-43c9-9840-8875ede96bda)
 
@@ -801,7 +800,6 @@ These tutorials only took a day to complete and were all on the 26th of April, t
 Sadly the website didn't list who actually presented these tutorials but if you know please submit a Pull Request or leave a comment below.
 
 ### Game Marketing and Distribution Conference
-
 The first day talks were:
 * Going Global: Worldwide Strategies for International Markets
 * Breaking Into the Chinese Market: Market Entry, Publishing and Distribution of CD-Rom Titles in China
@@ -834,7 +832,6 @@ The second day talks were:
 Pretty much nothing is available online about who gave these talks or what they contained.
 
 ### Managing Game Development Conference
-
 The first day talks were:
 * Team == Software
 * Lucid Ignorance
@@ -853,7 +850,6 @@ The Day 2 talks were:
 Pretty much nothing is available online about who gave these talks or what they contained.
 
 ---
-
 ### Classic CGDC Conference
 The Classic CGDC Conference had 200+ different sessions split up into the following four types:
 * Lectures - Typical Conference presentation format with Powerpoint Slides
@@ -1100,7 +1096,6 @@ ATI's Hi-Volume RAGE PRO Graphics Chip | ATI Technologies  | Sponsored Session |
 For me some of the most interesting sessions from this day were the **Sponsored Sessions** presented by Industry Heavyweights that are still household gaming names today and others who have fallen by the wayside (Nichimen Graphics, I am looking at you!).
 
 ---
-
 ### Microsoft DirectX Sessions
 Microsoft had sessions advertising their DirectX technology (DirectPlay, DirectSound, Direct3D and DirectDraw) and even from their hardware division (Sidewinder Group).
 
@@ -1445,7 +1440,6 @@ Smart Toys: Benefits of Technology-Enhanced Play | Amy Francetic, Helen Shwe | G
 Storytelling in Action | Bob Bates | Game Design | 
 
 ---
-
 ### Microsoft DirectX Developer Day (March 8th)
 It included a "Microsoft DirectX Developer Day" on the 8th of March held by Microsoft who presented multiple lectures explaining how to use the new functions of the DirectX 8 SDK. The knowledge about DirectX 8 was so cutting-edge that it required a Non-Disclosure Agreement (NDA) to be signed to even attend [^6]! But you would walk out not just having the knowledge of DirectX 8 but also an early build exclusive to attendees.
 
@@ -1577,7 +1571,7 @@ Designing Web Games that Make Business Sense | Kim | Game Design |
 Shockwave Tutorial: Building Web Games in Flash | Kim | Game Design | Tutorial
 How to Balance a Real-Time Strategy Game: Lessons from the Age of Empires Series | Kidd, Petersen, Street | Game Design | 
 Interaction Design for Immersive Public Entertainment Spaces | Kaufman, Kline | Game Design | 
-Oddfellows: Character Design the Oddworld Way | O’Connor, Ulm, Varahramyan | Game Design | Panel
+Oddfellows: Character Design the Oddworld Way | O'Connor, Ulm, Varahramyan | Game Design | Panel
 Principles for Designing Successful Games | Shelley | Game Design | 
 Story: Writing Skills for Game Developers | Bates | Game Design | 
 Using Video Input for Games | Marks | Game Design | 
@@ -2102,7 +2096,7 @@ Time | Session Name
 11:30 - 11:45  | NVIDIA OpenGL SL implementation + demos – Simon Green
 11:45 - 12:30 | OpenGL 2.0 proposed extensions – Cass Everrit
 12:30 - 2:00 | Lunch
-2:00 - 2:45  | New ATI extensions (“Uber” buffers) – Rob Mace
+2:00 - 2:45  | New ATI extensions ("Uber" buffers) – Rob Mace
 2:45 - 3:30  | New NVIDIA extensions + demos – Simon Green
 3:30 - 4:00  |  Tools and Libraries – Sebastien Domine, Evan Hart
 4:00 - 4:15  | Break
@@ -2138,6 +2132,7 @@ Satoru Iwata was the president of Nintendo at the time of the 2005 Keynote, his 
  Overall, the video is a reflection on the history of Nintendo and the importance of innovation in the video game industry. It is also a personal story about Iwata's own experiences as a game developer. 
 
  ---
+
 # References
 [^1]: Tom Kalinske in RETRO volume 9 (page 25)
 [^2]: [Game Developers Conference (Concept) - Giant Bomb](https://www.giantbomb.com/game-developers-conference/3015-6699/)

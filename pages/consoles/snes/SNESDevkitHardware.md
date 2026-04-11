@@ -233,7 +233,6 @@ Games that were developed using the Sluggo:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/N5MKMnIn8Rc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
-
 ## Rare Ltd
 <section class="postSection">
   <img src="/public/images/snes/Rare SNES Development kit 1995.jpg" class="wow slideInLeft postImage" />
@@ -358,7 +357,7 @@ The image on the left was kindly taken by `GlitchedHeart` over on her Twitter [^
 
 ## MusiCart by Chip Level Designs
 The **MusiCart** was a custom made SNES cartridge that allowed audio engineers to test directly on SNES hardware. It came with a PCI card and an Inteface port to connect the cartridge to the PC card with a parallel cable.
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Here’s a cool find of the week! A Super Nintendo developer sound cart called the MusiCart. This kit would allow you to output music your developing from your PC to the SNES console. <a href="https://t.co/WSyamVMZOg">pic.twitter.com/WSyamVMZOg</a></p>&mdash; Andrew (@GamingLegend64) <a href="https://twitter.com/GamingLegend64/status/1261650654759514112?ref_src=twsrc%5Etfw">May 16, 2020</a></blockquote> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Here's a cool find of the week! A Super Nintendo developer sound cart called the MusiCart. This kit would allow you to output music your developing from your PC to the SNES console. <a href="https://t.co/WSyamVMZOg">pic.twitter.com/WSyamVMZOg</a></p>&mdash; Andrew (@GamingLegend64) <a href="https://twitter.com/GamingLegend64/status/1261650654759514112?ref_src=twsrc%5Etfw">May 16, 2020</a></blockquote> 
 
 
 ---
@@ -368,7 +367,7 @@ The **MusiCart** was a custom made SNES cartridge that allowed audio engineers t
 [^3]: [Shiggsy's Place](https://web.archive.org/web/20110726073425/http://shiggsy.gbadev.org/section.php?s=snes)
 [^4]: [N-Force - No 2 (1992-08)(Europress Impact)(GB)](https://archive.org/stream/N-Force_No_2_1992-08_Europress_Impact_GB#page/n6/mode/1up)
 [^5]: [ACE Issues Oct 1987-April 1992](https://archive.org/stream/ACE35Aug90/ACE/ACE36-Sep90#page/n11/mode/2up/search/ramboy)
-[^6]: [Argonaut RAMBOY 5 - SNES Development Hardware circa 1992 — GoCollect Forum](https://web.archive.org/web/20210321044213/https://connect.gocollect.com/discussion/184683/argonaut-ramboy-5-snes-development-hardware-circa-1992)
+[^6]: [Argonaut RAMBOY 5 - SNES Development Hardware circa 1992 - GoCollect Forum](https://web.archive.org/web/20210321044213/https://connect.gocollect.com/discussion/184683/argonaut-ramboy-5-snes-development-hardware-circa-1992)
 [^7]: [SNES - SF BOX-II with SA-1 EMULATOR - ObscureGamers - Prototopia](https://www.obscuregamers.com/threads/sf-box-ii-with-sa-1-emulator.146/)
 [^8]: [SF Box-II](https://archive.org/details/sfbox2sfd)
 [^9]: [How Games are Made -- Page 2](http://www.chrismcovell.com/secret/weekly/How_Games_Are_Made_DQVI_2.html)

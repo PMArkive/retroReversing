@@ -46,18 +46,18 @@ For an in-depth look at the PlayStation 2 Retail hardware architecture check out
 
 ### What were the specs of the PS2?
 Display Specs:
- - Supports 480p progressive
- - MPEG-2 Full Motion Video (FMV)
+ * Supports 480p progressive
+ * MPEG-2 Full Motion Video (FMV)
  
 Sound Specs:
-- Dolby pro logic 2 (5.1 Surround sound)
-- DTS
-- Streaming Audio
+* Dolby pro logic 2 (5.1 Surround sound)
+* DTS
+* Streaming Audio
 
 Max Game Specs Per frame:
- - 120,000 and 6,000 tris
- - 3Mb of Textures 
- - Frame rate of 30 or 60fps
+ * 120,000 and 6,000 tris
+ * 3Mb of Textures 
+ * Frame rate of 30 or 60fps
 
 
 ### Emotion Engine

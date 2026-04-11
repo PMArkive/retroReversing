@@ -68,7 +68,7 @@ Windows has played a significant role in the world of PC gaming, offering a vast
 In the past, many classic video games were developed for and played on DOS-based PCs. With the introduction of the Windows operating system, gaming transitioned to a more user-friendly and graphical environment, but many DOS games continued to run using compatibility features provided by Windows. 
 
 The Windows platform offers backward compatibility for DOS games, allowing enthusiasts to relive the nostalgia of classic titles from the DOS era. This compatibility, along with the vast library of modern Windows-based games, showcases the ongoing role of Windows as a versatile and enduring platform for gamers.
- 
+
 ## Windows Executable File Formats (NE,LE and PE)
 We have separated out the information on Windows executable (exe) file formats into its own post:
 {% include_cached link-to-other-post.html post="/WindowsExecutables" description="For more information on Windows Executables check out this post." %}

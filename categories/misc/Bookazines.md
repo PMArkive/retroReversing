@@ -18,6 +18,7 @@ tags:
  - books
  - industry
 ---
+
 What do you call a product that collects articles from monthly magazines into a single yearly publication? 
 The publishers came up with the term "Bookazine" to cover this concept of a very large magazine related to a specific topic.
 
@@ -223,5 +224,5 @@ QUESTIONS AND ANSWERS 3 | Modelling dinosaurs and more! |
 QUESTIONS AND ANSWERS 4 | Includes a mech design masterclass | 
 QUESTIONS AND ANSWERS 5 | Global illumination in C4D and more | 
 QUESTIONS AND ANSWERS 6 | Includes how to create realistic materials | 
-PORTFOLIOS | The pro’s guide to building a better portfolio by Andrew Gordon | 
+PORTFOLIOS | The pro's guide to building a better portfolio by Andrew Gordon | 
 PUT YOURSELF IN THE FRAME | Follow these tips to land your dream job by Ian Dean | 

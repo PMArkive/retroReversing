@@ -22,6 +22,7 @@ breadcrumbs:
 recommend: saturn
 editlink: /consoles/saturn/SegaSaturnSampleCompilation.md
 ---
+
 This guide will walk you through compiling the official Sega Saturn samples which are part of the Sega Basic Library.
 
 ---
@@ -87,6 +88,7 @@ This happened when I set the SHC_LIB directory wrong. To fix it make sure this e
 Uses `gcc` to compile the *.c files and `gasm` to assemble the assembly files.
 
 ## Libraries Included
+
 name | purpose
 ---|---
 segadgfs.a | General File System

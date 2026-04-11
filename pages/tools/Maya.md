@@ -24,7 +24,6 @@ It has evolved over time and in 2025 it is one of the most used 3D Modeling prog
 
 ---
 # Version History
-
 Technically the history of Maya goes all the way back to the founding of **Alias Research** (by Stephen Bingham, Nigel McGrath, Susan McKenna and David Springer) back in 1983.
 
 ## Alias/1 (1985-1988)
@@ -44,7 +43,7 @@ Before Maya, Alias PowerAnimator (also just "Alias") was Alias Research's flagsh
 
 Notably, it was used to create groundbreaking effects like the water pseudopod in **The Abyss** (1989) and the liquid-metal T-1000 in **Terminator 2** [^3].
 
-In game development, PowerAnimator was part of **Nintendo 64**'s SGI-based dev kit and was used for modeling/animation on several ‘90s games. 
+In game development, PowerAnimator was part of **Nintendo 64**'s SGI-based dev kit and was used for modeling/animation on several '90s games. 
 
 **Crash Bandicoot** (1996) on PS1 is another example of a game whose characters and environments were built with PowerAnimator. 
 
@@ -69,7 +68,6 @@ Its debut was highly anticipated in both the film and game industries.
 
 ---
 ## Maya 1.5 (1998)
-
 Later in 1998, Alias|Wavefront released Maya 1.5 – an interim update primarily for SGI IRIX users. Maya 1.5 (IRIX-only) introduced some features that hadn't made it into the initial Windows release. 
 
 For example, Depth of Field (DOF) rendering, which was present in the IRIX Maya 1.5 – allowed artists to achieve in-camera focus effects (albeit with heavy render times). 
@@ -93,9 +91,9 @@ Other enhancements included true Depth of Field and 3D motion blur effects in th
 
 While Maya's native renderer still wasn't as acclaimed as RenderMan or Mental Ray at this point, 2.0 gave artists more control and preview capability than before. 
 
-In animation, Maya 2.0 improved character setup and effects – e.g. particle systems gained the ability to instance geometry for richer effects (useful for “chunky” explosions). 
+In animation, Maya 2.0 improved character setup and effects – e.g. particle systems gained the ability to instance geometry for richer effects (useful for "chunky" explosions). 
 
-Reviewers noted that Maya 2.0 “puts more power in the hands of the artist” and was a big stride toward Maya becoming the leading all-in-one 3D package. The community's reception was positive; technical directors who had used 1.0 recognized 2.0 as a “great leap forward” in functionality and a sign of Maya's maturity. By the end of 1999, more game developers were starting to adopt Maya 2.x for its strong character animation tools, now that the platform had stabilized and performance improved.
+Reviewers noted that Maya 2.0 "puts more power in the hands of the artist" and was a big stride toward Maya becoming the leading all-in-one 3D package. The community's reception was positive; technical directors who had used 1.0 recognized 2.0 as a "great leap forward" in functionality and a sign of Maya's maturity. By the end of 1999, more game developers were starting to adopt Maya 2.x for its strong character animation tools, now that the platform had stabilized and performance improved.
 
 ---
 ## Maya 2.5 (1999)
@@ -152,7 +150,6 @@ Maya 3.5 on Mac effectively broadened Maya's user base, although in the long run
 
 ---
 # Retro Games that used Maya
-
 Many influential games from the late 1990s and 2000s utilized Maya (or its predecessor PowerAnimator) in their development, the table below highlights a few notable examples of retro games and evidence of Maya's use in their creation:
 
 Game | Developer | Console | Proof of Maya Usage

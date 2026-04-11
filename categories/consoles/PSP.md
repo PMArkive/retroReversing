@@ -19,6 +19,7 @@ breadcrumbs:
 tags:
   - psp
 ---
+
 # Introduction
 Welcome to our page dedicated to PSP reverse engineering! The PlayStation Portable, or PSP, was a popular handheld gaming console released by Sony in 2004. If you're interested in learning more about the technical aspects of this console and how it works, you've come to the right place. 
 
@@ -75,7 +76,7 @@ This section lists all the file formats that are useful to know about for revers
 On official PSP discs, there are actually two executables included in the **SYSDIR** folder: **BOOT.BIN** and **EBOOT.BIN** the former is uncompressed/unencrypted and suitable for reverse engineering and the latter is the encrypted version that is loaded by the PSP retail firmware.
 
 * **BOOT.BIN** - uncompressed, unencrypted executable, typically used during development and debugging.
-* **EBOOT.BIN** - encrypted, compressed version of the same executable. Sony’s encryption prevents casual tampering and reverse engineering.
+* **EBOOT.BIN** - encrypted, compressed version of the same executable. Sony's encryption prevents casual tampering and reverse engineering.
 
 Sometimes the **BOOT.BIN** file is filled with zero bytes, this was more common with later PSP games, in which case you will need to decrypt **EBOOT.BIN** manually instead.
 
@@ -88,7 +89,7 @@ Homebrew/custom firmware can be configured to load either, which is why **BOOT.B
 ---
 ## PSP Game File Formats
 Officially the PSP either used physical Universal Media Discs (UMD) or PBP files to distrubte games, but there are a variety of formats available for storing PSP games:
-*	**ISO** - The most common format for PSP game files, an ISO is a disc image containing all the game disc’s data, essentially a copy of the Universal Media Disc (UMD) used by the PSP console.
+*	**ISO** - The most common format for PSP game files, an ISO is a disc image containing all the game disc's data, essentially a copy of the Universal Media Disc (UMD) used by the PSP console.
 *	**CSO** - A compressed version of an ISO file that reduces file size for storage and sharing but might result in slightly longer load times during gameplay.
 *	**PBP** - Used for official PSP game files downloaded from the PlayStation Network, this format contains multiple compressed files such as the game executable, data, and media.
 *	**CHD** - Another compressed and compact format supported by many PSP emulators.
@@ -127,7 +128,7 @@ Tools like **UMDGen**, commonly used for creating and editing PSP UMD ISO files,
 
 ---
 ### PARAM.SFO
-**PARAM.SFO** is a small but critical metadata file used by the PSP (and also PS3/PS4/PS5 with different schema). It’s stored in the root of the **PSP_GAME** folder and sometimes inside the **SYSDIR**/**UPDATE** folders too.
+**PARAM.SFO** is a small but critical metadata file used by the PSP (and also PS3/PS4/PS5 with different schema). It's stored in the root of the **PSP_GAME** folder and sometimes inside the **SYSDIR**/**UPDATE** folders too.
 
 The purpose of the file is to **describes the game** (or update package) to the PSP system, so that the XMB had the data for displaying the game icon, title, version, and other details. It also tells the firmware what minimum system software version is required to run.
 
@@ -141,7 +142,7 @@ Typical Fields (for a PSP game):
 * **REGION** - Sometimes embedded to limit compatibility.
 
 The PSP will **refuse to boot the game** if PARAM.SFO is missing or corrupted, so make sure that when modding or trimming ISOs, PARAM.SFO must stay intact in the root!
-The update folder’s PARAM.SFO is only used if you try to run the included firmware updater.
+The update folder's PARAM.SFO is only used if you try to run the included firmware updater.
 
 It can be edited (with tools like **PSP SFO Editor**) to spoof firmware requirements, useful for running older ISOs on newer/different firmware.
 
@@ -171,7 +172,6 @@ An excellent way to start reverse engineering is to find games where the develop
 
 ---
 # Reverse Engineering PSP Games with Ghidra
-
 First step is to find your **BOOT.BIN** file, normally in the **PSP_GAME/SYSDIR** folder of the extracted game ISO. If you only have an EBOOT.BIN file you will need to convert it to a BOOT.BIN with a tool such as **PRXDecrypter**.
 
 Since **BOOT.BIN** files are standard ELF executables compiled for the **MIPS R4000** (little-endian) instruction set you can import directly into Ghidra without any plugins!
