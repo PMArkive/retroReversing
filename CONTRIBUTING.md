@@ -135,6 +135,7 @@ Here are some of the markdown rules:
 * **No line between heading and first paragraph** - the next line after a heading should always be the first paragraph of the section
 * **Never use numbered lists** - Just use `*` for all unordered lists.
 * **Short inline code** - If the code is short, wrap it with backticks (e.g. `eax, 0x00`).
+* **Don't mix bold and inline code** - Avoid `**\`literal\`**` styling. Use backticks for literals (commands, file names, extensions) and bold for emphasis, but not both at the same time.
 * **HR before H2/H3** - Have an HR before HR/H3 but only if its not the first sub heading under a heading
 
 

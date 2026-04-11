@@ -19,7 +19,7 @@ recommend:
 - gameboy
 - fileformats
 editlink: /consoles/gameboy/GameBoyFileFormats.md
-updatedAt: '2026-03-28'
+updatedAt: '2026-04-04'
 excerpt: Find out about the most common Game Boy File formats in this post
 ---
 
@@ -91,6 +91,59 @@ The most important refinement now is that the extension alone does not tell you 
 A `.CGX` file in a DMG-targeted workspace can still be ordinary 2bpp Game Boy tile data, while the matching `.SCR` and `.COL` files tell you how that bank was actually being laid out or colored inside the editor pipeline.
 
 ---
+## IS-CGB-CAD data formats
+The IS-SUPPORT leak material includes an `IS-CGB-CAD` tool distribution with a small set of internal file formats documented in Japanese as `DCG`, `DSC`, `DOB`, and `DCL`.
+These are useful because they spell out the exact bit packing for Game Boy Color tile data, per-tile attributes, and object layout.
+
+The formats line up closely with what the hardware expects on CGB.
+They also clarify why the same project can carry both SNES-like CAD extensions (`CGX`, `COL`, `SCR`) and more directly named Game Boy specific blobs in the same workflow.
+
+### DCG format - Tile Data
+`DCG` is a tile + attribute + color bundle used by the CAD tool.
+
+Range | Size | Meaning
+---|---:|---
+0x0000-0x17FF | 0x1800 | Character (tile) data
+0x1800-0x197F | 0x0180 | Attributes (palette info in IS-CGB-CAD)
+0x1980-0x19FF | 0x0080 | Color data
+
+The character data is classic Game Boy 2bpp tiles: 16 bytes per 8x8 tile, with 2 bytes per row (low bitplane byte then high bitplane byte).
+
+This plays the same role as SNES `CGX` (a raw tile bank), but the packing is different: Game Boy uses 2bpp row pairs, while SNES `CGX` is planar bitplanes (commonly 4bpp).
+
+### DSC format - Screen Data
+`DSC` is a background screen map in the same split form that the CGB hardware uses: one byte of tile index per cell and one byte of attributes per cell.
+
+Range | Size | Meaning
+---|---:|---
+0x0000-0x03FF | 0x0400 | Character code (tile index)
+0x0400-0x07FF | 0x0400 | Attribute byte
+
+The attribute byte is documented with this bit layout:
+
+Bits | Meaning
+---|---
+0-2 | CGB palette index
+3 | character bank select
+4 | unused (but used inside IS-CGB-CAD)
+5 | horizontal flip
+6 | vertical flip
+7 | priority (0: follow OBJ-side priority, 1: BG highest priority)
+
+This plays the same role as SNES `SCR` (a background tilemap), but the storage model differs: SNES packs tile index and attributes into 16-bit words, while CGB splits the tile index and attributes into separate byte arrays.
+
+### DCL format - Palette data
+`DCL` is a small palette block. It stores 2 bytes per color with 5 bits each for R, G, and B.
+
+
+### DOB format - Object Data
+`DOB` is a chunked object and animation container with tagged blocks like `"CGB "`, `"ANIM"`, `"GRP "`, `"SIZE"`, `"LINK"`, `"VER "`, and `"END "`.
+Unlike many SNES CAD blobs that are fixed-size record regions, `DOB` is explicitly variable-length and carries its own version and filename link table.
+
+If you are comparing this to the SNES CAD families, `DSC` is closest to `SCR` (BG tilemap), while `DOB` is closer to `OBJ`/`OBX` (object placement plus animation-related data).
+
+
+---
 ## ICE and Debugger Support Files
 Some of the strangest extensions in the leak make more sense once you look at the debugger workflow rather than the game code alone.
 
@@ -121,4 +174,3 @@ Tool | Role
 `isas32` | Later assembler used heavily in Color-era branches
 `islk32` | Later linker used with the newer assembler flow
 `isd` | Debugger front end used with ICE startup scripts and debugger images
-

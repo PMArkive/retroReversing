@@ -39,6 +39,7 @@ body {
   justify-content: space-between;
   display: flex;
   min-width:95vw;
+  flex-wrap: nowrap;
 }
 
 .nav {
@@ -54,6 +55,8 @@ body {
 #header .logo {
   color: white;
   font-weight: 600;
+  min-width:120px;
+  margin-right: 5px;
 }
 /* #endregion */
 
