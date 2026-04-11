@@ -25,6 +25,7 @@ references:
   - BehindTheScreens
   - DevsPlay
 ---
+
 # Introduction to Crash Bandicoot
 Crash Bandicoot was one of the first 3D Platform games that managed to deliver both quality gameplay and impressive graphics for its time. It was developed Naughty Dog for release on the original Playstation console with the aim for it to become the Mascot character for the console, this aim paid off for the creators.
 

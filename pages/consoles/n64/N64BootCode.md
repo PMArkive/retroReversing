@@ -346,7 +346,6 @@ u8 SevenSeventyEight_a4000778() {
 ```
 
 ## EightEighty()
-
 ```c
 u4 EightEighty_a4000880() {
   int iVar5;
@@ -375,7 +374,6 @@ u4 EightEighty_a4000880() {
 
 ---
 # Assembly Code
-
 Some basics before reading the assembly listing:
 ```
 $t0.. Temporary registers

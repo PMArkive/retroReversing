@@ -30,7 +30,6 @@ editlink: /consoles/dreamcast/How the Dreamcast's Security was Hacked.md
 updatedAt: '2020-06-27'
 ---
 
-
 ## History of Dreamcast Hacking
 [Neperos](https://www.neperos.com/article/p5rxdje14b48db27) hosts an article (originally from *Retro Revival* magazine) that chronicles the rise of the Sega Dreamcast homebrew scene. The piece details how the "MIL-CD" exploit and the release of the **Utopia Boot Disc** bypassed the console's copy protection, paving the way for homebrew development tools like **KallistiOS** and the porting of emulators and media players such as **DCDivX** and **ScummVM**.
 

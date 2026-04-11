@@ -449,7 +449,6 @@ sotleo.c |
 ucode_f.h |
 
 ## Textures (IMAGES folder)
-
 There are some interesting images in the F-Zero X source code, including an image of Beavis from Beavis and Butthead.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I FOUND THIS IN THE F-ZERO X TEXTURES <a href="https://t.co/tlu1I2Tv9c">pic.twitter.com/tlu1I2Tv9c</a></p>&mdash; Zeether (@Zeether77) <a href="https://twitter.com/Zeether77/status/1287421325477392391?ref_src=twsrc%5Etfw">July 26, 2020</a></blockquote>  
@@ -503,6 +502,7 @@ sliencV11 | SLI compressor (Version 1.1)
 What is interesting about the tools above is that it uses the SZS extension for compression, so Nintendo have been using this format from at least the N64 until present day Switch titles!
 
 --- 
+
 # Mario Kart 64 (mk64 folder)
 The source code for Mario Kart 64 seems to be missing most of the game engins source code, and appears to be mainly the game assets and code for screens that are heavily localized such as the Menus and End screens of the game.
 

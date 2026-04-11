@@ -31,6 +31,7 @@ recommend:
 editlink: /consoles/gba/GBASDKDemos.md
 updatedAt: '2021-03-28'
 ---
+
 Version 3.0 of the Game Boy Advance Software Development Kit (SDK) was leaked on to the internet for everyone to enjoy.
 
 There are some very interesting findings in this SDK, but this post will cover something particularly interesting, the demo games developed by Nintendo to show off the power of the GBA to developers.

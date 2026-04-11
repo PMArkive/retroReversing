@@ -87,7 +87,6 @@ static char FILEIO_CDINDEX[64] = "\\CRTEST.DAT;1"; //	"\\MYGAME.DAT;1"
 #define FLA_MAGIC			0x32414c46			// Magic number 'FLA2' INTEL
 ```
 ---
-
 # Games Referenced in the Source code
 Developers tend to reuse the same engine or parts of the same engine for multiple games across a wide range of platforms (one of the beenfits of writing in cross-patform C), which means there are other games that will share many of the same source files used in chicken run. 
 Here is a list of games that have been referenced in the source code:
@@ -96,9 +95,7 @@ Here is a list of games that have been referenced in the source code:
 * Frogger 2
 
 ---
-
 # Dreamcast Engine
-
 Most of the Dreamcast specific code has a DCK_ prefix, presumable short for Dreamcast Katana (Katana was the code name for the Dreamcast).
 Some example:
 * DCK_System
@@ -107,7 +104,6 @@ Some example:
 Presumably there were versions of this code with N64 and PS1 prefix used at ISL but they weren't released with this source code unfortunately. As most of the game code is cross platform but these files contain the very platform specific code for the Dreamcast.
 
 ---
-
 # Compiling for PlayStation 1 with PSYQ
 So although it was originally compiled for PS1, all the sourcecode has been modified for the Dreamcast version so it will need some modifications in order to compile for the PlayStation.
 
@@ -121,7 +117,6 @@ There are a 2 linker files `crtest.lnk` and `crdemo.lnk` which are for the PS1 d
 These files are vital for piecing together the PS1 source code as it contains the exact specifications for the object files and libraries that were linked in to get the final and demo executables for the PlayStation.
 
 ---
-
 # Missing Files
 As with most leaked source code there are some missing files these are:
 * `shinobi.h` (Dreamcast SDK)
@@ -129,7 +124,6 @@ As with most leaked source code there are some missing files these are:
 * km*.h (Dreamcast SDK)
 
 ---
-
 # C Game Source Code
 Some of the source code for the game Chicken Run has been available to the internet as part of a "Dreamcast source code" bundle. After extracting the archive we are presented with two folders, "simple model shell" and "cr". 
 
@@ -190,7 +184,6 @@ ultra64.h | n64 header (Copyright (C) 1994, Silicon Graphics, Inc.)
 
 ---
 # CR (Chicken run source)
-
 We actually have multiple versions of the chicken run source code:
 * the main cr folder
 * source folder under cr (ps1 makefile so guessing ps1)
@@ -734,7 +727,7 @@ Have All Map Pieces (GS 2.2 or Higher Needed) |	50000901 0000 300AA1F1 0001[^1]
 
 # Game Credits
 * **Fred Williams** (Lead Programmer) - https://twitter.com/RFredW
-  - ```c
+  * ```c
     // I'll do these things for platforms, with a view to copying 'em into the main collision code
     // when it's free. Luv, Fred.
     ```

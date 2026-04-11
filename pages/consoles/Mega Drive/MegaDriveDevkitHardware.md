@@ -42,6 +42,7 @@ redirect_from:
   - /sega-mega-drive-genesis-development-kit/
 updatedAt: '2020-11-25'
 ---
+
 The SEGA Mega drive was released on October 29th 1988 in Japan following with North America almost a year later and Europe another whole year later than that! 
 
 During its lifespan it became incredibly popular especially in Brazil and European markets where it lasted long after the death of its successor the Saturn.
@@ -161,7 +162,6 @@ The developer could run `SEGALOAD GameName.bin` to load a compiled Sega Mega Dri
  <iframe class="wow slideInLeft" width="560" height="315" src="https://www.youtube.com/embed/A9zQueGP4iI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
-
 # Official Development Kits for Mega Drive Addons
 The SEGA Mega drive is one of the most upgradable consoles ever on the market due to SEGAs initiatives to keep the hardware up to date with up coming 32-bit systems.
 

@@ -42,6 +42,7 @@ Join us on a journey through the digital past, where lines between curiosity, pi
  **W32Dasm** was used for cracking early PC games. It was a valuable tool for reverse engineers who wanted to understand how the games worked and to find ways to bypass their copy protection. It was a particularly powerful tool because it was specifically designed for disassembling 32-bit Windows executables.
 
  ---
+
 # OllyDbg
 **OllyDbg** was a 32-bit debugger for Microsoft Windows that was designed for analyzing and reverse engineering binary code. It was initially developed by **Oleh Yuschuk** and first released in 2002 [^1]. OllyDbg quickly gained popularity among security professionals and enthusiasts due to its user-friendly interface, extensive feature set, and active community support.
 

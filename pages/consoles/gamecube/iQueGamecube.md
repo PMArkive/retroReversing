@@ -153,7 +153,7 @@ Official MIPS documentation can be found online without the need to download thi
 File Name | Extension | Description
 ---|---|---
 MIPS32INT-AFP-00.95 | .pdf | Introduction to the MIPS32 Architecture Document officially from MIPS
-R4400_Uman_book_Ed2 | .pdf | The MIPS R4000 Microprocessor User’s Manual by Joe Heinrich
+R4400_Uman_book_Ed2 | .pdf | The MIPS R4000 Microprocessor User's Manual by Joe Heinrich
 ejtag200 | .pdf | Document created by MIPS containing the EJTAG Debuging solution (can easily be found officially online)
 
 Older Documentation by T-Square Design:

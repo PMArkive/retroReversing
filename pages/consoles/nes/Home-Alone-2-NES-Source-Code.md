@@ -16,7 +16,6 @@ updatedAt: '2018-09-19'
 ---
 
 # Home Alone 2 NES Source Code
-
 The Source Code for "Home Alone 2" was kindly released by Frank Cifaldi from GameHistoryorg ([@frankcifald](https://twitter.com/frankcifaldi)).
 
 # Games on the same engine
@@ -844,7 +843,6 @@ This section will analyze the source code for Home Alone 2 on the Nintendo Enter
 ## Directory Analysis
 
 ### UTL Directory (Utility directory)
-
 Thanks to "**freem**" on the NesDev forums we have a good description of the tools available in the UTL directory of the source code.
 
 <table>
@@ -907,7 +905,6 @@ Most likely; here are some results after looking through the files in the "UTL" 
 [[https://forums.nesdev.com/viewtopic.php?f=5&t=14339](https://forums.nesdev.com/viewtopic.php?f=5&t=14339) ]
 
 ### File Formats
-
 The file formats used in the source are listed in the following table:
 
 <table>
@@ -955,7 +952,6 @@ The file formats used in the source are listed in the following table:
 
 
 ### Game Asset Pipeline
-
 The game uses GNU Makefiles to build its assets into the shippable product. It all starts with Deluxe Paint on the Amiga, the artists draw pixel art on pre-defined templates and save them as the standard Deluxe Paint .LBM files.
 
 Those LBM files need to be converted into a format that the game engine can read and display on the screen. To convert the .LBM format into a NES friendly (2bpp) image format the developers use a tool called "l2n" which I presume they developed themselves or license from another game development studio.
@@ -979,11 +975,9 @@ movie1.nin:	movie1.lbm
 Where movie1.nin is the output file expected by the makefile and movie1.lbm is the input file.
 
 ### BASE Directory
-
 The BASE directory contains all the glue code that puts everything together, sets up the banking etc.
 
 #### BASE.A65 vs BASE.CEW
-
 There seems to be three different versions of the "BASE" file, all with minor differences. I'm trying to figure out what CEW stands for as I presume the main build is the BASE.A65 file. 
 
 It looks like BASE.CEW is older than its .A65 sibling as the A65 version has additional code plus some of the CEW code commented out.
@@ -991,7 +985,6 @@ It looks like BASE.CEW is older than its .A65 sibling as the A65 version has add
 The third file is BASE.OLD which presumably is just an older version of BASE.A65 and not that interesting.
 
 ### DEVDOC Directory (Developer Documentation)
-
 This directory contains some very interesting documentation written by the developers for how to use the game engine, scripting etc.
 
 <table>
@@ -1027,19 +1020,16 @@ This directory contains some very interesting documentation written by the devel
 
 
 ### PUB (Public?) Directory
-
 This directory seems to contain all the assets that are required on every level, for example the main character sprites and pickups.
 
 I presume its called public because other developers can work on their own "local levels" but share the PUB folder with each other when they make changes.
 
 #### PUB/GR (Public Graphics directory)
-
 Mainly contains LBM files (Deluxe Paint) for Kevin and pickups used in all the other levels.
 
 ![image alt text]({{ site.url }}/public/XYg5KG06Vbr1qMtPjnDcXg_img_2.jpg)
 
 ### Local Level Directories (ll0 -> ll4)
-
 I presume these are the different game levels?
 
 #### Common FIles
@@ -1067,25 +1057,20 @@ I presume these are the different game levels?
 ### Local Level 0
 
 #### Local level 0 Backgrounds
-
 ![image alt text]({{ site.url }}/public/XYg5KG06Vbr1qMtPjnDcXg_img_3.jpg)
 
 #### Local Level 0 Graphics (ll0/GR)
-
 ![image alt text]({{ site.url }}/public/XYg5KG06Vbr1qMtPjnDcXg_img_4.jpg)
 
 ### Local Level 1
 
 #### Local Level 01 Backgrounds
-
 ![image alt text]({{ site.url }}/public/XYg5KG06Vbr1qMtPjnDcXg_img_5.jpg)
 
 #### Local Level 01 Graphics
-
 ![image alt text]({{ site.url }}/public/XYg5KG06Vbr1qMtPjnDcXg_img_6.jpg)
 
 ### Local vs Full Game build
-
 It looks like there are 2 different ways to compile the game, one is a 'local build' which only contains a certain level (ll0, ll1 etc) and the other is the full game which contains all the levels.
 
 ### ENG (Game Engine) Directory

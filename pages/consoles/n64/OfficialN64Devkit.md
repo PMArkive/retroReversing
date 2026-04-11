@@ -43,7 +43,6 @@ updatedAt: '2020-01-11'
 The website N64Squid has a page dedicated to Nintendo 64 development hardware that is well worth a look: [Nintendo 64 development hardware - N64 Squid](https://n64squid.com/homebrew/n64-sdk/development-hardware/). This page aims to compliment that page and give additional details about the hardware, so it is recommended you read that page first [^3]. 
 
 # Official Development Kit 
-
 SGI started work on what it called the `Reality Engine` in 1992, this technology cost $100,000 but produced some of the most beautiful 3D demos that the world had ever seen. An SGI employee called `Tim Van Hook` then took this technology and produced a functionally similar engine at a much cheaper price point and called it the `Multimedia Engine` [^16].
 
 It was this technology that SGI wanted to bring into the home, but they decided that they would need the help of a major player in the video game industry, Nintendo. Thus in August 1993 the `Ultra64` project began its life as a partnership between Nintendo and SGI.
@@ -104,7 +103,7 @@ If you look closer you will notice that there is a number of ethernet ports whic
 </div>
 </section>
 
- <blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">But wait a minute; don’t u64 development boards require a ‘Joybus’ adapter? <br>Yep, but only if they’re interfacing with retail type controllers (which may have been available not too long after RJ-11 development controllers)... <a href="https://t.co/kY3wOjPQug">pic.twitter.com/kY3wOjPQug</a></p>&mdash; Shane Battye (@shanebattye) <a href="https://twitter.com/shanebattye/status/1175540587941879808?ref_src=twsrc%5Etfw">September 21, 2019</a></blockquote>  
+ <blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">But wait a minute; don't u64 development boards require a 'Joybus' adapter? <br>Yep, but only if they're interfacing with retail type controllers (which may have been available not too long after RJ-11 development controllers)... <a href="https://t.co/kY3wOjPQug">pic.twitter.com/kY3wOjPQug</a></p>&mdash; Shane Battye (@shanebattye) <a href="https://twitter.com/shanebattye/status/1175540587941879808?ref_src=twsrc%5Etfw">September 21, 2019</a></blockquote>  
 
 
 ---
@@ -114,7 +113,7 @@ The `Nintendo 64 Development Unit` later evolved into the `Partner-N64` series o
 ### KMC Partner-N64NW (Network SGI workstations)
 Unlike the `Nintendo 64 Development Unit` this development kit didn't contain an add-on board and instead connected directly to a modified retail N64. This was achieved using a custom cartridge known as a `Debugger Pak` slotted in the N64 with a network adapter that could be connected directly to an SGI workstation such as an Indy [^14].
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Check this out!<br>Here is an Ultra rare <a href="https://twitter.com/hashtag/N64?src=hash&amp;ref_src=twsrc%5Etfw">#N64</a> development kit. The “Partner-N64 NW”.<br><br>Targeted at Game development Studio’s using SGI Indy computer systems. <br><br>This version of the Partner dev system communicates with the Indy over the Ethernet LAN port. <a href="https://twitter.com/hashtag/N64Dev?src=hash&amp;ref_src=twsrc%5Etfw">#N64Dev</a> <a href="https://twitter.com/hashtag/RETROGAMING?src=hash&amp;ref_src=twsrc%5Etfw">#RETROGAMING</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/SEHLgRece1">pic.twitter.com/SEHLgRece1</a></p>&mdash; BehindTheCode (@GerryRobotics) <a href="https://twitter.com/GerryRobotics/status/1337199038488317954?ref_src=twsrc%5Etfw">December 11, 2020</a></blockquote> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Check this out!<br>Here is an Ultra rare <a href="https://twitter.com/hashtag/N64?src=hash&amp;ref_src=twsrc%5Etfw">#N64</a> development kit. The "Partner-N64 NW".<br><br>Targeted at Game development Studio's using SGI Indy computer systems. <br><br>This version of the Partner dev system communicates with the Indy over the Ethernet LAN port. <a href="https://twitter.com/hashtag/N64Dev?src=hash&amp;ref_src=twsrc%5Etfw">#N64Dev</a> <a href="https://twitter.com/hashtag/RETROGAMING?src=hash&amp;ref_src=twsrc%5Etfw">#RETROGAMING</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/SEHLgRece1">pic.twitter.com/SEHLgRece1</a></p>&mdash; BehindTheCode (@GerryRobotics) <a href="https://twitter.com/GerryRobotics/status/1337199038488317954?ref_src=twsrc%5Etfw">December 11, 2020</a></blockquote> 
 
 ### KMC Partner-N64PC (Windows PCs)
 The Partner-N64PC was another full official development kit by KMC (Kyoto Microcomputer, Co. Ltd.) specifically for Windows PCs. 
@@ -165,72 +164,72 @@ Ultra64.ca has an excellent tutorial which shows you how to *create your own* Pa
 The official Partner64 development kit was quite popular and used both inside and outside of Nintendo.
 
 Here is a list of games that still contain KMC Partner64 debug code thanks to a Pastebin by user `ZOINKITY` [^8]:
-1. 1080 TenEighty Snowboarding
-2. 64 Oozumou 2
-3. 64 Trump Collection - Alice no Wakuwaku Trump World
-4. AI Shougi 3
-5. Aidyn Chronicles - The First Mage
-6. Battlezone - Rise of the Black Dogs
-7. Blues Brothers 2000
-8. Brunswick Circuit Pro Bowling
-9. Buck Bumble
-10. Charlie Blast's Territory
-11. Dragon Sword 64 (NTSC) (Proto)  [[NOT PAL!]]
-12. Earthworm Jim 3D
-13. Elmo's Letter Adventure
-14. Elmo's Number Journey
-15. Fighter Destiny 2
-16. Fighting Force 64
-17. GameShark Pro (v2.0)
-18. Ganbare Goemon - Neo Momoyama Bakufu no Odori / Mystical Ninja Starring Goemon
-19. Ganbare! Nippon! Olympics 2000
-20. Gex 3 - Deep Cover Gecko
-21. Gex 64 - Enter the Gecko
-22. Glover 2 (USA) (Proto)  [[internal crc B7F40BCF 553556A5]]
-23. Harvest Moon 64 / Bokujou Monogatari 2
-24. Hercules - The Legendary Journeys
-25. Hyper Olympics in Nagano 64 / Nagano Winter Olympics '98
-26. Ide Yosuke no Mahjong Juku
-27. International Superstar Soccer 2000
-28. International Track & Field - Summer Games / International Track & Field 2000
-29. Jikkyou J.League 1999 - Perfect Striker 2
-30. Kakutou Denshou - F-Cup Maniax
-31. Legend of Zelda, The - Majora's Mask (Debug)
-32. Lylat Wars  [[PAL only, not NTSC!]]
-33. Mario Party (Europe)    [[not NTSC!]]
-34. Mario Party 3   [[USA, PAL, +not+ Japan]]
-35. Micro Machines 64 Turbo
-36. Midway's Greatest Arcade Hits - Volume 1
-37. Mischief Makers (USA) (Rev A)   [[not in other versions]]
-38. MRC - Multi Racing Championship
-39. NFL Blitz - Special Edition
-40. NFL Blitz 2001
-41. Nightmare Creatures
-42. Parlor! Pro 64 - Pachinko Jikki Simulation Game
-43. Pokemon Puzzle League
-44. Pokemon Stadium 2 / Pocket Monster Stadium 3
-45. Polaris SnoCross
-46. Powerpuff Girls, The - Chemical X-Traction
-47. Premier Manager 64
-48. Ready 2 Rumble Boxing
-49. Ready 2 Rumble Boxing - Round 2
-50. Road Rash 64
-51. Rockman 64 (Japan) (Proto)
-52. Star Fox 64 (Rev A) [[Japan and USA; not in v1.0]]
-53. Superman (USA) (Proto)  [[not in retail]]
-54. Tom and Jerry in Fists of Furry
-55. Triple Play 2000
-56. WCW Nitro   [[both versions]]
-57. 4567 (64DD)
-58. Dezaemon DD (64DD)
-59. Doshin the Giant (retail and demo) (64DD)
-60. Doshin the Giant 2 (64DD)
-61. Mario Artist Communication Kit (64DD)
+* 1080 TenEighty Snowboarding
+* 64 Oozumou 2
+* 64 Trump Collection - Alice no Wakuwaku Trump World
+* AI Shougi 3
+* Aidyn Chronicles - The First Mage
+* Battlezone - Rise of the Black Dogs
+* Blues Brothers 2000
+* Brunswick Circuit Pro Bowling
+* Buck Bumble
+* Charlie Blast's Territory
+* Dragon Sword 64 (NTSC) (Proto)
+* Earthworm Jim 3D
+* Elmo's Letter Adventure
+* Elmo's Number Journey
+* Fighter Destiny 2
+* Fighting Force 64
+* GameShark Pro (v2.0)
+* Ganbare Goemon - Neo Momoyama Bakufu no Odori / Mystical Ninja Starring Goemon
+* Ganbare! Nippon! Olympics 2000
+* Gex 3 - Deep Cover Gecko
+* Gex 64 - Enter the Gecko
+* Glover 2 (USA) (Proto)  [[internal crc B7F40BCF 553556A5]]
+* Harvest Moon 64 / Bokujou Monogatari 2
+* Hercules - The Legendary Journeys
+* Hyper Olympics in Nagano 64 / Nagano Winter Olympics '98
+* Ide Yosuke no Mahjong Juku
+* International Superstar Soccer 2000
+* International Track & Field - Summer Games / International Track & Field 2000
+* Jikkyou J.League 1999 - Perfect Striker 2
+* Kakutou Denshou - F-Cup Maniax
+* Legend of Zelda, The - Majora's Mask (Debug)
+* Lylat Wars
+* Mario Party (Europe)
+* Mario Party 3   [[USA, PAL, +not+ Japan]]
+* Micro Machines 64 Turbo
+* Midway's Greatest Arcade Hits - Volume 1
+* Mischief Makers (USA) (Rev A)
+* MRC - Multi Racing Championship
+* NFL Blitz - Special Edition
+* NFL Blitz 2001
+* Nightmare Creatures
+* Parlor! Pro 64 - Pachinko Jikki Simulation Game
+* Pokemon Puzzle League
+* Pokemon Stadium 2 / Pocket Monster Stadium 3
+* Polaris SnoCross
+* Powerpuff Girls, The - Chemical X-Traction
+* Premier Manager 64
+* Ready 2 Rumble Boxing
+* Ready 2 Rumble Boxing - Round 2
+* Road Rash 64
+* Rockman 64 (Japan) (Proto)
+* Star Fox 64 (Rev A) (Japan and USA; not in v1.0)
+* Superman (USA) (Proto) (not in retail version)
+* Tom and Jerry in Fists of Furry
+* Triple Play 2000
+* WCW Nitro
+* 4567 (64DD)
+* Dezaemon DD (64DD)
+* Doshin the Giant (retail and demo) (64DD)
+* Doshin the Giant 2 (64DD)
+* Mario Artist Communication Kit (64DD)
 
 ---
 ## Monegi Smart Pack
 
-<blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">Also on display will be a <a href="https://twitter.com/hashtag/64DD?src=hash&amp;ref_src=twsrc%5Etfw">#64DD</a> dev kit with Monegi Smart Pack. These setups were probably the last ‘official’ N64 development systems and likely used for later Hudson titles as well as being sold alongside the CodeWarrior IDE. They supported 512mb ROMs and 64DD out of the box <a href="https://t.co/We3h3ahXa3">pic.twitter.com/We3h3ahXa3</a></p>&mdash; Shane Battye (@shanebattye) <a href="https://twitter.com/shanebattye/status/1180613606892683264?ref_src=twsrc%5Etfw">October 5, 2019</a></blockquote> 
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">Also on display will be a <a href="https://twitter.com/hashtag/64DD?src=hash&amp;ref_src=twsrc%5Etfw">#64DD</a> dev kit with Monegi Smart Pack. These setups were probably the last 'official' N64 development systems and likely used for later Hudson titles as well as being sold alongside the CodeWarrior IDE. They supported 512mb ROMs and 64DD out of the box <a href="https://t.co/We3h3ahXa3">pic.twitter.com/We3h3ahXa3</a></p>&mdash; Shane Battye (@shanebattye) <a href="https://twitter.com/shanebattye/status/1180613606892683264?ref_src=twsrc%5Etfw">October 5, 2019</a></blockquote> 
 
 ---
 ## IS-Viewer 64
@@ -289,10 +288,10 @@ SN Systems released their own cheaper Nintendo 64 development kit aimed at small
 
 You can view a cached version of the official SN systems SN64 development kit thanks to Icequake [SN64 Nintendo64 Development Tools](http://n64.icequake.net/mirror/slaanesh79/Dev/SN%20Systems_files/n64.htm)
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Check this out!!<br>I recently acquired these <a href="https://twitter.com/hashtag/N64dev?src=hash&amp;ref_src=twsrc%5Etfw">#N64dev</a> cartridges called the “SN64” and the “Maestro64”. <br><br>Manufactured by the company:<br>“SN Systems”. The more Rare of the two is the Maestro64, which was used for N64 Sound development. <a href="https://twitter.com/hashtag/N64?src=hash&amp;ref_src=twsrc%5Etfw">#N64</a> <a href="https://twitter.com/hashtag/RETROGAMING?src=hash&amp;ref_src=twsrc%5Etfw">#RETROGAMING</a> <a href="https://t.co/9vvlB1MOQ7">https://t.co/9vvlB1MOQ7</a> <a href="https://t.co/NRHoj2Uu34">pic.twitter.com/NRHoj2Uu34</a></p>&mdash; Gerry_MAN (@GerryRobotics) <a href="https://twitter.com/GerryRobotics/status/1179955009800286208?ref_src=twsrc%5Etfw">October 4, 2019</a></blockquote> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Check this out!!<br>I recently acquired these <a href="https://twitter.com/hashtag/N64dev?src=hash&amp;ref_src=twsrc%5Etfw">#N64dev</a> cartridges called the "SN64" and the "Maestro64". <br><br>Manufactured by the company:<br>"SN Systems". The more Rare of the two is the Maestro64, which was used for N64 Sound development. <a href="https://twitter.com/hashtag/N64?src=hash&amp;ref_src=twsrc%5Etfw">#N64</a> <a href="https://twitter.com/hashtag/RETROGAMING?src=hash&amp;ref_src=twsrc%5Etfw">#RETROGAMING</a> <a href="https://t.co/9vvlB1MOQ7">https://t.co/9vvlB1MOQ7</a> <a href="https://t.co/NRHoj2Uu34">pic.twitter.com/NRHoj2Uu34</a></p>&mdash; Gerry_MAN (@GerryRobotics) <a href="https://twitter.com/GerryRobotics/status/1179955009800286208?ref_src=twsrc%5Etfw">October 4, 2019</a></blockquote> 
 
 Gerry also managed to get it up and running:
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Check this out!<br>The “SN64” SRAM development cartridge. Developed by SN-Systems in the 90’s for the <a href="https://twitter.com/hashtag/N64?src=hash&amp;ref_src=twsrc%5Etfw">#N64</a>.<br><br>My test setup entails a PCMCIA SCSI-2 interface card, docked to a PC dev laptop running Windows 2000. Software is ProDG debugger + rom uploader GUI.<br>😎👌<a href="https://twitter.com/hashtag/N64Dev?src=hash&amp;ref_src=twsrc%5Etfw">#N64Dev</a> <a href="https://twitter.com/hashtag/RETROGAMING?src=hash&amp;ref_src=twsrc%5Etfw">#RETROGAMING</a> <a href="https://t.co/fPCBGRUz50">pic.twitter.com/fPCBGRUz50</a></p>&mdash; BehindTheCode (@GerryRobotics) <a href="https://twitter.com/GerryRobotics/status/1366538395321778177?ref_src=twsrc%5Etfw">March 1, 2021</a></blockquote> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Check this out!<br>The "SN64" SRAM development cartridge. Developed by SN-Systems in the 90's for the <a href="https://twitter.com/hashtag/N64?src=hash&amp;ref_src=twsrc%5Etfw">#N64</a>.<br><br>My test setup entails a PCMCIA SCSI-2 interface card, docked to a PC dev laptop running Windows 2000. Software is ProDG debugger + rom uploader GUI.<br>😎👌<a href="https://twitter.com/hashtag/N64Dev?src=hash&amp;ref_src=twsrc%5Etfw">#N64Dev</a> <a href="https://twitter.com/hashtag/RETROGAMING?src=hash&amp;ref_src=twsrc%5Etfw">#RETROGAMING</a> <a href="https://t.co/fPCBGRUz50">pic.twitter.com/fPCBGRUz50</a></p>&mdash; BehindTheCode (@GerryRobotics) <a href="https://twitter.com/GerryRobotics/status/1366538395321778177?ref_src=twsrc%5Etfw">March 1, 2021</a></blockquote> 
 
 ## Maestro64
 SN Systems also released an unofficial development kit created specifically for Musicians called the Maestro64, we have another post specifically for this piece of hardware.
@@ -317,7 +316,6 @@ The SDK also came with the `N64 Sound Tools` and `MusyX Audio Tools` which conta
 
 
 ## NUS-SUD (Sound development)
-
 **Gerry_MAN** has taken some excellent photos of his NUS-SUD on Twitter along with photos of him actually managing to connect and send data from his PC to the hardware!
 <blockquote class="twitter-tweet" data-lang="en-gb"><p lang="en" dir="ltr">Check this out!<br>The <a href="https://twitter.com/hashtag/N64dev?src=hash&amp;ref_src=twsrc%5Etfw">#N64dev</a> SoundTools Dev cart streams Music or samples in real-time to the <a href="https://twitter.com/hashtag/N64?src=hash&amp;ref_src=twsrc%5Etfw">#N64</a>. Sent over an LPT printer cable. Notice the white squares? @ the bottom of the screen? <br>Sound PEAK meters!!<br>Inactive when the Cart is not streaming sound.<br>Pretty cool!! <a href="https://twitter.com/hashtag/RETROGAMING?src=hash&amp;ref_src=twsrc%5Etfw">#RETROGAMING</a> <a href="https://t.co/ZpgL1RtSdD">pic.twitter.com/ZpgL1RtSdD</a></p>&mdash; Gerry_MAN (@GerryRobotics) <a href="https://twitter.com/GerryRobotics/status/1182083779915071498?ref_src=twsrc%5Etfw">10 October 2019</a></blockquote>
 
@@ -328,7 +326,7 @@ The SDK also came with the `N64 Sound Tools` and `MusyX Audio Tools` which conta
 
 ## Full Devkit used by Sound designers 
 The full n64 development kit was used by Sound designer Grant Kirkhope at Rare to produce masterpieces such as Banjo-Kazooie and GoldenEye. This consisted of a Silicon Graphics Indy with the N64 hardware used as an extension inside it [^2].
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hmmm I don’t think I did. I had a Silicon Graphics Indy computer with the Ultra 64 circuit board inside it. I connected my PC to it via midi</p>&mdash; Grantilda Von Scarehope (@grantkirkhope) <a href="https://twitter.com/grantkirkhope/status/1182160711377506304?ref_src=twsrc%5Etfw">October 10, 2019</a></blockquote> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hmmm I don't think I did. I had a Silicon Graphics Indy computer with the Ultra 64 circuit board inside it. I connected my PC to it via midi</p>&mdash; Grantilda Von Scarehope (@grantkirkhope) <a href="https://twitter.com/grantkirkhope/status/1182160711377506304?ref_src=twsrc%5Etfw">October 10, 2019</a></blockquote> 
 
 # References
 [^1]: [EDGE 20 1995-05](https://archive.org/stream/EDGE.N020.1995.05/EDGE.N020.1995.05-Escapade#page/n7/mode/2up/search/%22SN+Systems%22)

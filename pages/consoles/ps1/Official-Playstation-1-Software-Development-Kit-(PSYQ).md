@@ -16,6 +16,7 @@ recommend:
 - sdk
 editlink: /consoles/ps1/Official-Playstation-1-Software-Development-Kit-(PSYQ).md
 ---
+
 # History for the PSY-Q SDK
 The History of the PSYQ PS1 Software development kit is fascinating, it starts with a collaboration between two UK companies, SN Systems and Cross Products, to find out more we need to go a litter further back to the history of these two companies.
 
@@ -29,7 +30,6 @@ List of games that used SNASM:
 * Lemmings [[https://twitter.com/mdf200/status/804438544940822528](https://twitter.com/mdf200/status/804438544940822528) ]
 
 ## Collaboration with Cross Products
-
 ![image alt text]({{ site.url }}/public/dxKAltqL5nu5zsKQCL9fFg_img_0.png)
 
 The earliest use of SN systems products by "Cross Products" was suggested on the SegaRetro wiki claiming that Ian Oliver (joint-founder of Cross Products) manually made a RAM board for Mega Drive development which needed an Assembler for the Motorola 68K processor in the MD and thus SNASM68K was born [2].
@@ -49,7 +49,6 @@ The website makes quite a claim that 'Since then most Sega Genesis games have be
 On the official Cross Products website in 1997 it mentions builds of the SNASM2.1 Assembler and Debugger, which Cross Products were selling as part of their Sega Saturn Development Kit [1].
 
 ## Birth of Psy-Q
-
 ```
 
 In 1993 we launched Psy-Q with Psygnosis - this second generation product included C source level stepping and breakpointing and was even faster than the original SNasm. 
@@ -63,23 +62,19 @@ PSY-Q for PS1 was later rebranded as **SDevTC** (Sony Developer Toolchain) somet
 
 ---
 # Hardware by SN Systems for Psy-Q debugging
-
 ![image alt text]({{ site.url }}/public/dxKAltqL5nu5zsKQCL9fFg_img_1.jpg)
 
 [Next generation issue 15 from March 1996]
 
 ## Psy-Q for Other Platforms (Sega and PC)
-
 ![image alt text]({{ site.url }}/public/dxKAltqL5nu5zsKQCL9fFg_img_2.jpg)
 
 Advert for PsyQ from Edge magazine, interestingly it says in the Ad that its a "Sony Electronic Publishing Company" but advertises its Sega 32X and PC products [Edge Magazine issue 14 from November 1994].
 
 ## Psygnosis
-
 YouTube documentary about Psygnosis - [https://www.youtube.com/watch?v=tvYlxnHOY-Q](https://www.youtube.com/watch?v=tvYlxnHOY-Q)
 
 # The Psy-Q Software Suite
-
 The official SN Systems website advertised the Psy-Q Software Suite with the following blurb:
 
 ```
@@ -99,7 +94,6 @@ From the blurb it looks like it contained a version of the open source GNU C com
 I'm not sure what they meant by a Librarian as thats not a common term when speaking about development toolchains but my guess is that it would just be software to manage all the different pre-compiled psx libraries.
 
 ## Next generation/EDGE Article
-
 The following article was published by EDGE in the UK and later "Next generation" magazine in the US:
 
 ![image alt text]({{ site.url }}/public/magazine/Next_Generation_Issue_006_June_1995_0052.jpg)
@@ -107,7 +101,6 @@ The following article was published by EDGE in the UK and later "Next generation
 # Games Developed With Psy-Q
 
 ## Colony Wars Red Sun (Ps1) (Psygnosis)
-
 Psygnosis used its own development kit to create the PS1 game "Colony Wars Red Sun" and in the Game Developer Magazine from August 2000 they have an Postmortem that you can view here:
 
 [https://archive.org/stream/GDM_August_2000#page/n31/mode/2up/search/%22SN+Systems%22](https://archive.org/stream/GDM_August_2000#page/n31/mode/2up/search/%22SN+Systems%22)
@@ -120,7 +113,6 @@ Notes from article:
 
 ---
 # Other SN Systems Development Kits
-
 According to the Official SN Systems "PC Development System for the Nintendo 64" guide (Thanks to Ultra64.ca), the list of SN systems development kits are as follows:
 * Sony PlayStation (PSY-Q)
 * SEGA Saturn
@@ -134,7 +126,6 @@ According to the Official SN Systems "PC Development System for the Nintendo 64"
 
 ---
 # References
-
 [^1]: Archive of Cross Products website - [https://web.archive.org/web/19970217103603/http://www.crossprod.co.uk:80/devserv3.htm](https://web.archive.org/web/19970217103603/http://www.crossprod.co.uk:80/devserv3.htm)
 [^2]: SN Systems information on SegaRetro - [https://segaretro.org/SN_Systems](https://segaretro.org/SN_Systems)
 [^3]: Psy-Q for the Sony PlayStation official website Archive - [https://web.archive.org/web/19970709125031/http://www.snsys.com:80/](https://web.archive.org/web/19970709125031/http://www.snsys.com:80/)

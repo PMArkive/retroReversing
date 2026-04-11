@@ -21,6 +21,7 @@ editlink: /consoles/n64/N64SDK.md
 updatedAt: '2020-08-09'
 twitterimage: https://www.retroreversing.com/public/N64/N64 SDK.jpg
 ---
+
 This post covers the Official Nintendo 64 Software Development kit that was sent to developers is actually split among a number of different discs due to its size.
 
 These Discs include:

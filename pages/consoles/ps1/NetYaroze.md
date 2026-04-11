@@ -42,7 +42,7 @@ The NetYaroze Start up Guide has 39 pages going through topics such as the membe
 ![NetYarozeLibraryReference](https://github.com/RetroReversing/retroReversing/assets/40120498/7fbd3ea7-2f97-4372-b727-d39ca674bb8e)
 The NetYaroze Library Reference book has 332 or 349 pages depending on version and is blueish-green in color, it contains the API documentation for Graphics, Sound, Standard and Mathematical functions. It has full descriptions of each of the functions, their arguments and return values.
 
-### User Guide (**020-1997-userguide.pdf**)
+### User Guide (020-1997-userguide.pdf)
 ![NetYarozeUserGuide](https://github.com/RetroReversing/retroReversing/assets/40120498/2603d9fc-7be2-438d-ae7f-d9d4b776a3ac)
 The NetYaroze User Guide has 207 pages and is yellow in color, it contains tutorials for game development such as frame buffer, integrated graphics, sound, kernel management, cd-rom management,  and peripheral devices management. Along with documentation for how to use the Sound/Programming and Console tools.
 

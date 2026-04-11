@@ -51,10 +51,10 @@ The hardware SDK toolchain was found still alive on the Epson website: https://w
 However you are most likely wanting to run it on a more modern operating system and that is where the `c88-pokemin` project comes in. It will run through all the steps, even downloading the zip file from epson (or Internet Archive) and extracting the contents of the setup executable!
 
 The main steps to set this up are as follows:
-1. Clone or download: https://github.com/pokemon-mini/c88-pokemini
-2. If downloaded as zip Extract the contents
-3. Go into the directory named `c88-pokemini`
-4. Run `make`
+* Clone or download: https://github.com/pokemon-mini/c88-pokemini
+* If downloaded as zip Extract the contents
+* Go into the directory named `c88-pokemini`
+* Run `make`
 
 If everything has succeeded then you are in luck and can proceed to the next stage, otherwise we have a few tips to help fix the problem.
 
@@ -75,7 +75,6 @@ The documentation given to the developers would be fairly limited in comparison 
 As the CPU used `Seiko S1c88 assembly language` which was a very specialised dialect of assembly there was only one assembler that could handle it and it was made by a cooperation between `Seiko EPSON` and `Tasking Inc`.
 
 ## Official C Compiler
-
 The official SDK provided a proprietary C compiler developed by `Tasking Inc` and licensed by Seiko EPSON for distribution with their SDK.
 
 ### Compiler Optimizations
@@ -86,7 +85,6 @@ Simulator doc: https://global.epson.com/products_and_drivers/semicon/pdf/id00092
 ```the simulator works fine for standard S1C88 parts, but only the info file was provided, and the V20 core.  It was missing some DLL files specific to that part though```
 
 ## Minlib
-
 Minlib is a library of code either written by Nintendo or Jupiter and included in all of the games developed for the Pokemon Mini. 
 
 It contains common functionality such as displaying the boot logo and audio functions.

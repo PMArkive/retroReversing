@@ -410,7 +410,7 @@ RSP/RSPPROGGUIDELABELS.FM | List of Labels
 RSP/RSPPROGGUIDELOF.DOC | List of Figures
 RSP/RSPPROGGUIDELOT.DOC | List of Tables
 RSP/RSPPROGGUIDETOC.DOC | Table of Contents
-RSP/RSPREFCARD.FM | Reality Signal Processor Programmer’s Reference Card
+RSP/RSPREFCARD.FM | Reality Signal Processor Programmer's Reference Card
 RSP/TITLEPAGE.DOC | Title Page of Documentation
 RSP/VUINST.DOC | Vector Unit Instructions
 

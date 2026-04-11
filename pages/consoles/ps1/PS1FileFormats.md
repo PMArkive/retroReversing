@@ -33,7 +33,6 @@ Extension | Description
 .PBP | **Playstation Boot Package** - PS1 games that run on the PSP (and also PS Classic)
 
 ---
-
 # File formats Located on the PS1 Disc
 After mounting a PS1 Disc ISO/BIN/CUE you can view the file system of the Disc and you will see files with a variety of extensions, some of these extensions are standard across games and are listed in the table below.
 

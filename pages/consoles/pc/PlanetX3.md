@@ -43,7 +43,7 @@ PlanetX3 is a brand new game developed by YouTube 8-bit guy for MS-DOS and relea
 
 The game was developed using crowd funding through Kickstarter [^1].
 
-The Kickstarter for the project is available here: [Planet X3 for MS-DOS by David Murray — Kickstarter](https://www.kickstarter.com/projects/1973096722/planet-x3-for-ms-dos)
+The Kickstarter for the project is available here: [Planet X3 for MS-DOS by David Murray - Kickstarter](https://www.kickstarter.com/projects/1973096722/planet-x3-for-ms-dos)
 
 As it is a very late release MS-DOS game it is a great case study for MS-DOS programming and can be an excellent way to learn how DOS games were made in the past, which is knowledge that can be vital to anyone who wants to reverse engineer a DOS game.
 
@@ -122,7 +122,7 @@ We hope that this becomes the case in the near future!
 
 
 # References
-[^1]: [Planet X3 for MS-DOS by David Murray — Kickstarter](https://www.kickstarter.com/projects/1973096722/planet-x3-for-ms-dos)
+[^1]: [Planet X3 for MS-DOS by David Murray - Kickstarter](https://www.kickstarter.com/projects/1973096722/planet-x3-for-ms-dos)
 [^2]: [Planet X3 -The Making of, Part 4 - YouTube](https://www.youtube.com/watch?v=wCx32lrBSNQ)
 [^3]: [Planet X3 for MS-DOS Development - Part 1 - YouTube](https://www.youtube.com/watch?v=szhv6fwx7GY)
 [^4]: [Planet X3 for MS-DOS Update & KIckstarter - YouTube](https://www.youtube.com/watch?v=QUzVesdY6OU)

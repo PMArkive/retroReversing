@@ -23,14 +23,15 @@ tags:
   - windows
   - fileformats
 ---
+
 This page provides a comprehensive guide to **reverse engineering** Windows executable files, focusing on the evolution from classic **New Executable (NE)** and **Linear Executable (LE)** formats to the modern **Portable Executable (PE)** format used in all current Windows systems. 
 
 Whether you are interested in reverse engineering, game modding, or simply curious about how Windows programs work under the hood, you'll find practical information about:
-- Tools and techniques for dumping and inspecting Windows executable files.
-- How to extract and analyze metadata from Windows executables, including headers and sections.
-- Understanding the Rich Header and its significance for identifying compiler and linker toolchains.
-- Exploring debug symbols with a focus on CodeView formats and how to locate them in classic game executables.
-- The history and structure of NE, LE, and PE executable formats.
+* Tools and techniques for dumping and inspecting Windows executable files.
+* How to extract and analyze metadata from Windows executables, including headers and sections.
+* Understanding the Rich Header and its significance for identifying compiler and linker toolchains.
+* Exploring debug symbols with a focus on CodeView formats and how to locate them in classic game executables.
+* The history and structure of NE, LE, and PE executable formats.
 
 By the end of this guide, you'll have a solid foundation for exploring and dissecting Windows executables, with resources and examples tailored for retro game reverse engineering and technical analysis.
 
@@ -98,12 +99,12 @@ objdump -x yourfile.exe
 
   Here is what each of these fields means and how **rabin2** got the value:
 
-| Field        | Meaning / Use                                                                             | PE Source / Structure                                                                                                                                                 |
-| ------------ | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **dbg_file** | If non-empty, often indicates a path or name of an external debug file (e.g. a `.pdb`)    | Found in the **IMAGE_DEBUG_DIRECTORY** (Data Directory entry 6). The record type `IMAGE_DEBUG_TYPE_CODEVIEW` contains the PDB path and GUID.                          |
-| **stripped** | `true` means debugging symbols or metadata have been removed                              | Determined by absence of a **COFF symbol table** (`PointerToSymbolTable` = 0) or missing **Debug Directory** entry in the optional header.                            |
-| **linenum**  | Indicates presence of **line number mapping** (address ↔ source line)                     | Derived from **section headers**: each `IMAGE_SECTION_HEADER` has `NumberOfLinenumbers` and `PointerToLinenumbers` fields; non-zero means line info is present.       |
-| **lsyms**    | Indicates presence of **local symbols**, e.g. function & variable names within the binary | Based on **COFF symbol table** in the PE header (`NumberOfSymbols` and `PointerToSymbolTable`). Non-zero values mean the table exists and local symbols are included. |
+Field        | Meaning / Use                                                                             | PE Source / Structure                                                                                                                                                
+------------ | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**dbg_file** | If non-empty, often indicates a path or name of an external debug file (e.g. a `.pdb`)    | Found in the **IMAGE_DEBUG_DIRECTORY** (Data Directory entry 6). The record type `IMAGE_DEBUG_TYPE_CODEVIEW` contains the PDB path and GUID.                         
+**stripped** | `true` means debugging symbols or metadata have been removed                              | Determined by absence of a **COFF symbol table** (`PointerToSymbolTable` = 0) or missing **Debug Directory** entry in the optional header.                           
+**linenum**  | Indicates presence of **line number mapping** (address ↔ source line)                     | Derived from **section headers**: each `IMAGE_SECTION_HEADER` has `NumberOfLinenumbers` and `PointerToLinenumbers` fields; non-zero means line info is present.      
+**lsyms**    | Indicates presence of **local symbols**, e.g. function & variable names within the binary | Based on **COFF symbol table** in the PE header (`NumberOfSymbols` and `PointerToSymbolTable`). Non-zero values mean the table exists and local symbols are included.
 
   For more information on Debug Data inside PE executables please see the section below.
 
@@ -119,21 +120,21 @@ The information includes:
 * **Version** - internal build number of that tool.
 * **Count** - number of object files generated by that tool that were linked into the executable.
 
-Together, these entries form a fingerprint of the binary’s compilation lineage, can be used for **compiler version identification** which is very useful for decompilation projects which are aiming for an exact match when re-compiling.
+Together, these entries form a fingerprint of the binary's compilation lineage, can be used for **compiler version identification** which is very useful for decompilation projects which are aiming for an exact match when re-compiling.
 
-| Name pattern   | Created by         | Purpose                                                 | Typical count      |
-| -------------  | ----------------   | ----------------------------------------------------  | ------------------ |
-| **UtcXX_C**    | cl.exe             | C front end producing COFF .obj modules               | tens to hundreds   |
-| **UtcXX_CPP**  | cl.exe             | C++ front end producing COFF .obj modules             | few to tens        |
-| **MasmXXX**    | ml.exe, ml64.exe   | Assembler-generated .obj modules                      | few to dozens      |
-| **CvtresXXX**  | cvtres.exe         | Converts .res to .obj for linking resources           | 1 to few           |
-| **CvtomfXXX**  | cvtomf.exe         | OMF-to-COFF conversion for legacy OMF objects (VC6 era)                                                  | 0-few         |
-| **LinkerXXX**  | link.exe           | Internal linker-generated COFF objects for runtime stubs, section defaults, incremental-link bookkeeping | ~5–15         |
-| **AliasObjXX** | link.exe / lib.exe | Symbol alias / weak extern redirection (`/ALIAS`, CRT startup, alternate names)                          | few–dozen     |
-| **RCXXX**      | rc.exe             | Resource compiler generated inputs (shows when rc participates in toolchain lineage)                     | 0-few         |
-| **Import0**    | link.exe           | Import thunk/stub objects generated for imported DLL symbols                                             | dozens-hundreds |
-| **Export0**    | link.exe           | Export table helper objects (when exporting symbols from an EXE/DLL)                                     | 0-few         |
-| **LibXXX**     | lib.exe            | Librarian-produced member objects pulled from static libraries                                           | few-dozens    |
+Name pattern   | Created by         | Purpose                                                 | Typical count     
+-------------  | ----------------   | ----------------------------------------------------  | ------------------
+**UtcXX_C**    | cl.exe             | C front end producing COFF .obj modules               | tens to hundreds  
+**UtcXX_CPP**  | cl.exe             | C++ front end producing COFF .obj modules             | few to tens       
+**MasmXXX**    | ml.exe, ml64.exe   | Assembler-generated .obj modules                      | few to dozens     
+**CvtresXXX**  | cvtres.exe         | Converts .res to .obj for linking resources           | 1 to few          
+**CvtomfXXX**  | cvtomf.exe         | OMF-to-COFF conversion for legacy OMF objects (VC6 era)                                                  | 0-few        
+**LinkerXXX**  | link.exe           | Internal linker-generated COFF objects for runtime stubs, section defaults, incremental-link bookkeeping | ~5–15        
+**AliasObjXX** | link.exe / lib.exe | Symbol alias / weak extern redirection (`/ALIAS`, CRT startup, alternate names)                          | few–dozen    
+**RCXXX**      | rc.exe             | Resource compiler generated inputs (shows when rc participates in toolchain lineage)                     | 0-few        
+**Import0**    | link.exe           | Import thunk/stub objects generated for imported DLL symbols                                             | dozens-hundreds
+**Export0**    | link.exe           | Export table helper objects (when exporting symbols from an EXE/DLL)                                     | 0-few        
+**LibXXX**     | lib.exe            | Librarian-produced member objects pulled from static libraries                                           | few-dozens   
 
 ### How do I extract the Rich Header Information?
 You can use **richprint** an open source tool by **dishather** that you can find here:
@@ -174,39 +175,39 @@ If you are reversing a Windows PC game (not DOS) then the format you need to kno
 ---
 ## MZ Executable Header - Common to all Windows executable formats
 All DOS and Windows executables start with an **MZ header**, named after **Mark Zbikowski**, who designed the format for **MS-DOS**.  
-It describes how to load the executable in real mode: how many bytes to load, where the program’s stack begins, and how much memory to reserve.
+It describes how to load the executable in real mode: how many bytes to load, where the program's stack begins, and how much memory to reserve.
 
 Every NE, LE, and PE file also begins with an MZ header and a **DOS stub program** (usually printing "This program cannot be run in DOS mode"), followed by a pointer to the next header which will say what the rest of the exe format will be such as **NE** or **PE**.
 
-| Offset | Size (bytes) | Name | Description |
-|---|---:|---|---|
-| 0x00 | 2 | Signature | Must be "MZ" (0x4D, 0x5A). Identifies an MS-DOS executable. |
-| 0x02 | 2 | Bytes on Last Page | Number of bytes used on the last 512-byte page of the file. 0 means exactly 512 bytes. Used to compute the total image size. |
-| 0x04 | 2 | Pages in File | Total number of 512-byte pages in the file. Together with the previous field, gives total file size. |
-| 0x06 | 2 | Relocation Entries | Count of relocation records immediately following the header. Each relocation is a segment:offset pair that the loader adjusts to the program’s load address. |
-| 0x08 | 2 | Header Size (paragraphs) | Size of the header in 16-byte paragraphs. The loader skips this much before copying the program image into memory. |
-| 0x0A | 2 | Minimum Extra Paragraphs | Minimum additional memory (in 16-byte paragraphs) to allocate after the program image — similar to a heap. |
-| 0x0C | 2 | Maximum Extra Paragraphs | Maximum additional memory to allocate; the loader tries to give this amount if available. |
-| 0x0E | 2 | Initial SS | Initial value of the stack segment, relative to the program’s load segment. |
-| 0x10 | 2 | Initial SP | Initial stack pointer. Together with SS, defines the starting stack position. |
-| 0x12 | 2 | Checksum | Simple word checksum (two’s complement) over the file. Usually 0. |
-| 0x14 | 2 | Initial IP | Instruction pointer for program start (CS:IP). |
-| 0x16 | 2 | Initial CS | Code segment for program start, relative to load segment. |
-| 0x18 | 2 | Relocation Table Offset | File offset (in bytes) to the relocation table, which follows the header. |
-| 0x1A | 2 | Overlay Number | Overlay index; 0 for the main program. Used by old overlay managers. |
-| 0x1C | 8 | Reserved | Four 2-byte reserved words, not used by DOS. |
-| 0x24 | 2 | OEM Identifier | OEM ID value used by non-Microsoft tools (rarely used). |
-| 0x26 | 2 | OEM Information | OEM-specific information field. |
-| 0x28 | 20 | Reserved 2 | Ten more 2-byte reserved words. |
-| 0x3C | 4 | Pointer to New Header | File offset of the next header — for example, the **NE** or **PE** header. For pure DOS executables, this points past the file. |
-| 0x40+ | ... | Relocation Table | List of segment:offset pairs that need to be fixed to the program’s load segment. |
-| — | — | DOS Stub | Actual DOS code to run if executed under MS-DOS. In Windows executables, this typically prints "This program cannot be run in DOS mode." |
+Offset | Size (bytes) | Name | Description
+---|---:|---|---
+0x00 | 2 | Signature | Must be "MZ" (0x4D, 0x5A). Identifies an MS-DOS executable.
+0x02 | 2 | Bytes on Last Page | Number of bytes used on the last 512-byte page of the file. 0 means exactly 512 bytes. Used to compute the total image size.
+0x04 | 2 | Pages in File | Total number of 512-byte pages in the file. Together with the previous field, gives total file size.
+0x06 | 2 | Relocation Entries | Count of relocation records immediately following the header. Each relocation is a segment:offset pair that the loader adjusts to the program's load address.
+0x08 | 2 | Header Size (paragraphs) | Size of the header in 16-byte paragraphs. The loader skips this much before copying the program image into memory.
+0x0A | 2 | Minimum Extra Paragraphs | Minimum additional memory (in 16-byte paragraphs) to allocate after the program image - similar to a heap.
+0x0C | 2 | Maximum Extra Paragraphs | Maximum additional memory to allocate; the loader tries to give this amount if available.
+0x0E | 2 | Initial SS | Initial value of the stack segment, relative to the program's load segment.
+0x10 | 2 | Initial SP | Initial stack pointer. Together with SS, defines the starting stack position.
+0x12 | 2 | Checksum | Simple word checksum (two's complement) over the file. Usually 0.
+0x14 | 2 | Initial IP | Instruction pointer for program start (CS:IP).
+0x16 | 2 | Initial CS | Code segment for program start, relative to load segment.
+0x18 | 2 | Relocation Table Offset | File offset (in bytes) to the relocation table, which follows the header.
+0x1A | 2 | Overlay Number | Overlay index; 0 for the main program. Used by old overlay managers.
+0x1C | 8 | Reserved | Four 2-byte reserved words, not used by DOS.
+0x24 | 2 | OEM Identifier | OEM ID value used by non-Microsoft tools (rarely used).
+0x26 | 2 | OEM Information | OEM-specific information field.
+0x28 | 20 | Reserved 2 | Ten more 2-byte reserved words.
+0x3C | 4 | Pointer to New Header | File offset of the next header - for example, the **NE** or **PE** header. For pure DOS executables, this points past the file.
+0x40+ | ... | Relocation Table | List of segment:offset pairs that need to be fixed to the program's load segment.
+* | - | DOS Stub | Actual DOS code to run if executed under MS-DOS. In Windows executables, this typically prints "This program cannot be run in DOS mode."
 
 Since the MZ format is for DOS and not Windows in will not be covered in this page.
 
-This structure is known as **IMAGE_DOS_HEADER** in Microsoft’s `WinNT.h` and can be seen on their official rust api docs here [IMAGE_DOS_HEADER](https://microsoft.github.io/windows-docs-rs/doc/windows/Win32/System/SystemServices/struct.IMAGE_DOS_HEADER.html)
+This structure is known as **IMAGE_DOS_HEADER** in Microsoft's `WinNT.h` and can be seen on their official rust api docs here [IMAGE_DOS_HEADER](https://microsoft.github.io/windows-docs-rs/doc/windows/Win32/System/SystemServices/struct.IMAGE_DOS_HEADER.html)
 
-For a deep dive into the MZ header and the DOS stub check out **0xRick's** excellent page: [A dive into the PE file format - DOS Header, DOS Stub and Rich Header - 0xRick’s Blog](https://0xrick.github.io/win-internals/pe3/)
+For a deep dive into the MZ header and the DOS stub check out **0xRick's** excellent page: [A dive into the PE file format - DOS Header, DOS Stub and Rich Header - 0xRick's Blog](https://0xrick.github.io/win-internals/pe3/)
 
 ---
 ## New Executable Format (NE) - Windows 1.0 to Windows 3.1
@@ -280,43 +281,44 @@ There is a lot of interesting metadata that you can use to learn about your exec
 
 Most offsets in the table below are from the "NE" header as the DOS stub could be of variable size, but some are offsets relative to the start of the file so be careful.
 
-| Offset (from NE header start) | Size (bytes) | Name | Description |
-|---|---:|---|---|
-| 0x00 | 2 | Signature | Must be "NE" (0x4E, 0x45).  |
-| 0x02 | 1 | Major Linker Version | Linker major version that produced the image.  |
-| 0x03 | 1 | Minor Linker Version | Linker minor revision.  |
-| 0x04 | 2 | Entry Table Offset | Offset to the **entry table** which maps ordinals to code entry points; used by the loader and by fixups that call exported ordinals.  |
-| 0x06 | 2 | Entry Table Length | Size of the entry table in bytes.  |
-| 0x08 | 4 | File Load CRC | 32-bit checksum of the whole file (often 0); the checksum field is treated as 0 during calculation.  |
-| 0x0C | 2 | Flag Word | Module attributes: data model, DLL bit, CPU/NPX usage, etc. Useful to spot DLLs and memory model.  |
-| 0x0E | 2 | Auto Data Segment Index | Segment number for the automatic data segment (0 if none).  |
-| 0x10 | 2 | Initial Heap Size | Extra local heap bytes added to the data segment at load time.  |
-| 0x12 | 2 | Initial Stack Size | Bytes reserved for the initial stack.  |
-| 0x14 | 4 | Entry Point | Initial CS:IP as a pair of segment number and offset where execution begins.  |
-| 0x18 | 4 | Initial Stack Pointer | Initial SS:SP as a pair of segment number and offset.  |
-| 0x1C | 2 | Segment Count | Number of entries in the **segment table**. Each segment entry describes where a code/data segment lives in the file, its length, flags (CODE/DATA, MOVEABLE, PRELOAD, RELOCINFO, discard priority), and its minimum allocation size.  |
-| 0x1E | 2 | Module Reference Count | Number of entries in the **module reference table** (imported modules).  |
-| 0x20 | 2 | Non-resident Name Table Size | Size in bytes of the **non-resident name table** (strings not kept resident in memory).  |
-| 0x22 | 2 | Segment Table Offset | Offset to the **segment table**. File offsets inside segment entries are stored in logical sectors, scaled by the header’s Align Shift Count.  |
-| 0x24 | 2 | Resource Table Offset | Offset to the **resource table**. Contains its own alignment count and records that group resources by type with per-resource location and size.  |
-| 0x26 | 2 | Resident Name Table Offset | Offset to the **resident name table**. Holds the module name and exported names that must stay in memory; names are length-prefixed and carry an ordinal.  |
-| 0x28 | 2 | Module Reference Table Offset | Offset to the **module reference table**. Each 2-byte entry points to a module name string in the Imported Names Table.  |
-| 0x2A | 2 | Imported Names Table Offset | Offset to the **imported names table** (Pascal-style strings for imported module and procedure names referenced by fixups).  |
-| 0x2C | 4 | Non-resident Name Table Offset (file) | Absolute file offset of the **non-resident name table**; contains the module description and additional exported names, not kept resident.  |
-| 0x30 | 2 | Movable Entry Count | Number of entry-table entries that refer to moveable segments (helps loader manage movable code).  |
-| 0x32 | 2 | Align Shift Count | Logical sector alignment for **segment table** offsets: file offsets are stored in units of 1 << count (default 9 = 512 bytes).  |
-| 0x34 | 2 | Resource Entry Count | Number of resource entries in the resource table (not bytes).  |
-| 0x36 | 1 | Target OS | Executable type used by the loader, e.g. 0x02 = Windows.  |
-| 0x37 | 1 | Other Flags | Additional compatibility flags; some toolchains set bits like "supports long names". Often 0 in practice.  |
-| 0x38 | 2 | Return Thunks Offset | Offset (from NE header) to return thunk data for mixed-mode thunking; commonly 0 for normal apps.  |
-| 0x3A | 2 | Segment Ref Bytes Offset | Offset (from NE header) to per-segment reference bytes used by the loader; commonly 0.  |
-| 0x3C | 2 | Minimum Code Swap Area | Minimum code swap area size; reserved by Microsoft in some docs.  |
-| 0x3E | 2 | Expected Windows Version | Expected Windows version as a WORD (major/minor packed). Used for runtime version checks.  |
+Offset (from NE header start) | Size (bytes) | Name | Description
+---|---:|---|---
+0x00 | 2 | Signature | Must be "NE" (0x4E, 0x45). 
+0x02 | 1 | Major Linker Version | Linker major version that produced the image. 
+0x03 | 1 | Minor Linker Version | Linker minor revision. 
+0x04 | 2 | Entry Table Offset | Offset to the **entry table** which maps ordinals to code entry points; used by the loader and by fixups that call exported ordinals. 
+0x06 | 2 | Entry Table Length | Size of the entry table in bytes. 
+0x08 | 4 | File Load CRC | 32-bit checksum of the whole file (often 0); the checksum field is treated as 0 during calculation. 
+0x0C | 2 | Flag Word | Module attributes: data model, DLL bit, CPU/NPX usage, etc. Useful to spot DLLs and memory model. 
+0x0E | 2 | Auto Data Segment Index | Segment number for the automatic data segment (0 if none). 
+0x10 | 2 | Initial Heap Size | Extra local heap bytes added to the data segment at load time. 
+0x12 | 2 | Initial Stack Size | Bytes reserved for the initial stack. 
+0x14 | 4 | Entry Point | Initial CS:IP as a pair of segment number and offset where execution begins. 
+0x18 | 4 | Initial Stack Pointer | Initial SS:SP as a pair of segment number and offset. 
+0x1C | 2 | Segment Count | Number of entries in the **segment table**. Each segment entry describes where a code/data segment lives in the file, its length, flags (CODE/DATA, MOVEABLE, PRELOAD, RELOCINFO, discard priority), and its minimum allocation size. 
+0x1E | 2 | Module Reference Count | Number of entries in the **module reference table** (imported modules). 
+0x20 | 2 | Non-resident Name Table Size | Size in bytes of the **non-resident name table** (strings not kept resident in memory). 
+0x22 | 2 | Segment Table Offset | Offset to the **segment table**. File offsets inside segment entries are stored in logical sectors, scaled by the header's Align Shift Count. 
+0x24 | 2 | Resource Table Offset | Offset to the **resource table**. Contains its own alignment count and records that group resources by type with per-resource location and size. 
+0x26 | 2 | Resident Name Table Offset | Offset to the **resident name table**. Holds the module name and exported names that must stay in memory; names are length-prefixed and carry an ordinal. 
+0x28 | 2 | Module Reference Table Offset | Offset to the **module reference table**. Each 2-byte entry points to a module name string in the Imported Names Table. 
+0x2A | 2 | Imported Names Table Offset | Offset to the **imported names table** (Pascal-style strings for imported module and procedure names referenced by fixups). 
+0x2C | 4 | Non-resident Name Table Offset (file) | Absolute file offset of the **non-resident name table**; contains the module description and additional exported names, not kept resident. 
+0x30 | 2 | Movable Entry Count | Number of entry-table entries that refer to moveable segments (helps loader manage movable code). 
+0x32 | 2 | Align Shift Count | Logical sector alignment for **segment table** offsets: file offsets are stored in units of 1 << count (default 9 = 512 bytes). 
+0x34 | 2 | Resource Entry Count | Number of resource entries in the resource table (not bytes). 
+0x36 | 1 | Target OS | Executable type used by the loader, e.g. 0x02 = Windows. 
+0x37 | 1 | Other Flags | Additional compatibility flags; some toolchains set bits like "supports long names". Often 0 in practice. 
+0x38 | 2 | Return Thunks Offset | Offset (from NE header) to return thunk data for mixed-mode thunking; commonly 0 for normal apps. 
+0x3A | 2 | Segment Ref Bytes Offset | Offset (from NE header) to per-segment reference bytes used by the loader; commonly 0. 
+0x3C | 2 | Minimum Code Swap Area | Minimum code swap area size; reserved by Microsoft in some docs. 
+0x3E | 2 | Expected Windows Version | Expected Windows version as a WORD (major/minor packed). Used for runtime version checks. 
 
 
 Here is the a C structure for the **New Executable** header from the MinGW version of **winnt.h** (Under GPL license): [File: winnt.h - IMAGE_OS2_HEADER](https://sources.debian.org/src/mingw-w64/5.0.1-1/mingw-w64-tools/widl/include/winnt.h/#L1156)
 
 --- 
+
 ## Portable Executable - Windows NT3.1+ - The modern executable
 You can find the structure of the PE file format in the C Header file called `winnt.h` located in any Windows NT based Software Development Kit or from the open source MinGW (Minimalist GNU for Windows) collection.
 
@@ -369,11 +371,11 @@ Depending on the age of the game (what version of Visual Studio was used) the de
 
 You can find a table of the rough time frame when you can find each version of CodeView Debug symbols:
 
-| Era          | Toolchain            | CodeView Signature | Typical Year | Debug Symbol Data Location     |
-| ------------ | -------------------- | ------------------ | ------------ | ----------------- |
-| CodeView 2.x | MS C 6.0             | `NB02`             | ~1990        | Inside executable           |
-| CodeView 4.x | MSVC 4.x–6.0         | `NB09`             | ~1995–2000   | Inside executable or path to external `.pdb` file  |
-| CodeView 7.0 | MSVC 7.0+ (.NET era) | `RSDS` (or `CV7`)  | 2002–present | GUID + Age + path |
+Era          | Toolchain            | CodeView Signature | Typical Year | Debug Symbol Data Location    
+------------ | -------------------- | ------------------ | ------------ | -----------------
+CodeView 2.x | MS C 6.0             | `NB02`             | ~1990        | Inside executable          
+CodeView 4.x | MSVC 4.x–6.0         | `NB09`             | ~1995–2000   | Inside executable or path to external `.pdb` file 
+CodeView 7.0 | MSVC 7.0+ (.NET era) | `RSDS` (or `CV7`)  | 2002–present | GUID + Age + path
 
 If the executable is pre-1995 e.g **Microsoft C 6.0** and compiled with debug mode on then it is likely to contain debug symbols directly inside the executable in the **.rdata** section of the exe file.
 
@@ -381,10 +383,10 @@ If the executable was built using **Visual C++ 4.x to 6.0** the symbols could be
 
 It all depended on the compile switch used for building the executable:
 
-| Compiler switch     | Where symbols end up                          | Typical header in EXE                         |
-| ------------------- | --------------------------------------------- | --------------------------------------------- |
-| `/Zi` + link /DEBUG | External `.pdb` file (partial info in .exe)   | `NB09` or `NB10` block with a path to the PDB |
-| `/Z7` (no /DEBUG)   | **Inline CodeView info inside the .obj/.exe** | `NB11` (sometimes `CV4`) directly embedded    |
+Compiler switch     | Where symbols end up                          | Typical header in EXE                        
+------------------- | --------------------------------------------- | ---------------------------------------------
+`/Zi` + link /DEBUG | External `.pdb` file (partial info in .exe)   | `NB09` or `NB10` block with a path to the PDB
+`/Z7` (no /DEBUG)   | **Inline CodeView info inside the .obj/.exe** | `NB11` (sometimes `CV4`) directly embedded   
 
 
 For example the game **Mike Stewart's Pro Bodyboarding** from 1999 was compiled with the Inline CodeView information. However opening it in Ghidra or radare they are unable to do anything with this information so its very easy to miss if you don't know where to look. It if very common to just rely on reversing tools like Ghidra to look for debug symbols and presume they are not there if it doesn't find them, but this can miss vital information.
@@ -465,14 +467,14 @@ struct NB11Header
 
 Table of the subtypes:
 
-| Signature | Contents             |
-| --------- | -------------------- |
-| `NB11T`   | Type records         |
-| `NB11S`   | Symbol records       |
-| `NB11P`   | Public symbol table  |
-| `NB11M`   | Module info table    |
-| `NB11F`   | File/line info       |
-| `NB11`    | Generic header block |
+Signature | Contents            
+--------- | --------------------
+`NB11T`   | Type records        
+`NB11S`   | Symbol records      
+`NB11P`   | Public symbol table 
+`NB11M`   | Module info table   
+`NB11F`   | File/line info      
+`NB11`    | Generic header block
 
 You can find out more here: [DebugInfo.com - Matching debug information](https://www.debuginfo.com/articles/debuginfomatch.html)
 
@@ -481,7 +483,7 @@ You can find out more here: [DebugInfo.com - Matching debug information](https:/
 Before an executable file (`.exe` or `.dll`) is created, compilers first produce **object files**, typically one per source code file, for example a `main.obj` **object file** would be created from a `main.cpp` source file.
 
 ## What is an Object file?
-An object file is an intermediate binary that contains machine code, data, relocation entries, and symbol information — but it is **not yet executable**. In order to make it executable it needs to be linked together with the other compiled translation units (objects) to become a single executable or library, this is what a **linker** does.
+An object file is an intermediate binary that contains machine code, data, relocation entries, and symbol information - but it is **not yet executable**. In order to make it executable it needs to be linked together with the other compiled translation units (objects) to become a single executable or library, this is what a **linker** does.
 
 ## Why care about Object file formats?
 So you might wonder why you should care about the object file formats, as after all it is unlikely that the developers would distribute their intermediate .obj files along with a retail game, and that is true. 
@@ -502,8 +504,8 @@ Unless you are reverse engineering an early windows or DOS game, the format you 
 ## COFF Object Files (1990s–present) - The foundation of PE executables
 **Common Object File Format** (COFF) is the object module format produced by Microsoft and LLVM toolchains on Windows before linking into a PE image.
 
-The **Portable Executable (PE)** and **Common Object File Format (COFF)** are directly related — the PE format is essentially an extension of COFF.
-Microsoft built PE on top of COFF to support Windows’ runtime loader while keeping compatibility with existing compiler and linker infrastructure.
+The **Portable Executable (PE)** and **Common Object File Format (COFF)** are directly related - the PE format is essentially an extension of COFF.
+Microsoft built PE on top of COFF to support Windows' runtime loader while keeping compatibility with existing compiler and linker infrastructure.
 
 ### What is in a COFF .obj?
 A COFF object contains the following data:

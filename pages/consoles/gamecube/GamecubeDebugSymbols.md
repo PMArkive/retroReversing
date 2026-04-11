@@ -20,6 +20,7 @@ recommend: gamecube
 editlink: /consoles/gamecube/GamecubeDebugSymbols.md
 updatedAt: '2020-04-25'
 ---
+
 If you are interested in reverse engineering a Gamecube game, the first step is to find out if the game has its debug symbols available, this makes it much easier to reverse as all the functions will have nice friendly human readable names.
 
 Gamecube game executable can come in a number of different formats, one is the standard .DOL file (short for dolphin) and the other is the ELF which is a standard format for Unix based systems.
@@ -27,7 +28,6 @@ Gamecube game executable can come in a number of different formats, one is the s
 If a Gamecube game disc has the elf file available then it is possible that it will have debug information embedded inside it, the easiest way to check is to look at the size or run the **strings** command on it.
 
 # ELF Files
-
 ELF files can contain many debug symbols such as the function, variable and sometimes even file names.
 
 You can normally see the symbols by opening in a dissasembler such as Radare2 or IDA Pro.

@@ -81,6 +81,5 @@ c:/ultra/gcc/mipse/bin/ld.out: cannot open c:\ultra/usr/lib/PR/gspF3DEX2.fifo.o:
 For some reason some of the libraries have been renamed instead of `.fifo` they have `_fifo`, you will need to rename these as a batch.
 
 ---
-
 # Official Nintendo SDK Documentation
 * http://level42.ca/projects/ultra64/Documentation/man/n64man/misc/search.html 

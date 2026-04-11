@@ -17,6 +17,7 @@ tags:
   - ghidra
   - tools
 ---
+
 Ghidra is the most advanced reverse engineering tool on the market, and best of all it is completely free and open source! Most of the content on RetroReversing will be using Ghidra going forward due to it being much more accessible than competitors such as IDA Pro.
 
 # Introduction to Ghidra

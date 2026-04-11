@@ -24,6 +24,7 @@ recommend:
 editlink: /consoles/dreamcast/DreamcastWindowsCESDK.md
 updatedAt: '2019-10-31'
 ---
+
 <section class="postSection">
     <img src="/public/images/dreamcast/Dreamcast-WIndows-CE-SDK.jpg" style="width:inherit;" class="wow slideInLeft postImage" />
 <div markdown="1">

@@ -22,6 +22,7 @@ recommend: gamecube
 editlink: /consoles/gamecube/007 Agent Under Fire.md
 updatedAt: '2019-11-07'
 ---
+
 # Introduction
 Welcome to our page dedicated to the technical details of the Gamecube game **007 Agent Under Fire**! If you're a fan of this classic first-person shooter game, you might be interested in learning more about the technical aspects that make it all possible. 
 
@@ -31,8 +32,8 @@ So grab your controller and let's take a deep dive into the technical details of
 
 # Game Engine
 The game actually used two complete different engines to make up the complete game, one engine for the First Person Shooter part and the other for the Dirivng missions:
- - **Action Engine**: ID Tech 3 engine
- - **Driving Engine**: Believed to be the Need for Speed engine
+ * **Action Engine**: ID Tech 3 engine
+ * **Driving Engine**: Believed to be the Need for Speed engine
 
 ## IDTech Engine
 The FPS part of the game is using the id Tech 3 engine with ÜberTools, for more information about this engine checkout the following sources:

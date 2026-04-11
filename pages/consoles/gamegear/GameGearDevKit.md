@@ -42,7 +42,7 @@ The image on the left is from the excellent Andrew Earley (@AndrewEarley7).
  </div>
 </section> 
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Find of the week! Sega Game Gear Development Board!! There’s a lot of mystery with this board because there’s little to no info if it online and the cartridge port is for Master System carts. I’ll be mailing this to <a href="https://twitter.com/GerryRobotics?ref_src=twsrc%5Etfw">@GerryRobotics</a> to replace capacitors and get the unit working! <a href="https://t.co/SsV8OXdCs6">pic.twitter.com/SsV8OXdCs6</a></p>&mdash; Andrew (@AndrewEarley7) <a href="https://twitter.com/AndrewEarley7/status/1266102158614654976?ref_src=twsrc%5Etfw">May 28, 2020</a></blockquote> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Find of the week! Sega Game Gear Development Board!! There's a lot of mystery with this board because there's little to no info if it online and the cartridge port is for Master System carts. I'll be mailing this to <a href="https://twitter.com/GerryRobotics?ref_src=twsrc%5Etfw">@GerryRobotics</a> to replace capacitors and get the unit working! <a href="https://t.co/SsV8OXdCs6">pic.twitter.com/SsV8OXdCs6</a></p>&mdash; Andrew (@AndrewEarley7) <a href="https://twitter.com/AndrewEarley7/status/1266102158614654976?ref_src=twsrc%5Etfw">May 28, 2020</a></blockquote> 
 
 In a **Game SoundTracks** interview with Paul Hutchinson, he references a Game Gear Development board which I believe is the same as the image above [^6]:
 > The Game Gear had a special development board, into which the ZAX-ICE plugged, it looked nothing like an actual Game Gear.

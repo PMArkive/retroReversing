@@ -185,7 +185,7 @@ Games built using this development system include but is not limited to:
 </div>
 </section>
 
-## HAL “Game Maker” (Twin Famicom)
+## HAL "Game Maker" (Twin Famicom)
 <section class="postSection">
     <img src="/public/images/nes/TwinFamicomGameMaker.png" class="wow slideInLeft postImage" />
 
@@ -343,8 +343,8 @@ Some sources such as [^3] suggest that there was an official Nintendo assembler 
 [^3]: [What was dev like on the NES back in 1987?](https://forums.nesdev.com/viewtopic.php?f=2&t=10169)
 [^4]: [Bagshot Row : The Chuckie Egg Professional's Resource Kit](http://www.bagshot-row.org/chuckie-egg/authors.html)
 [^5]: [Stars of Famicom Games](http://www.chrismcovell.com/secret/weekly/Stars_of_the_Family_Computer.html)
-[^6]: [Nintendo’s Development Disks « Famicom World](https://famicomworld.com/workshop/tech/nintendos-development-disks/)
-[^7]: [Kirby’s Development Secrets – Source Gaming](http://www.sourcegaming.info/2017/04/19/kirbys-development-secrets/)
+[^6]: [Nintendo's Development Disks « Famicom World](https://famicomworld.com/workshop/tech/nintendos-development-disks/)
+[^7]: [Kirby's Development Secrets – Source Gaming](http://www.sourcegaming.info/2017/04/19/kirbys-development-secrets/)
 [^8]: NintendoAge e-Zine Issue 02 2009
 [^9]: Edge UK Issue 136
 [^10]: [How Do You Make a Game? Part 2: Development Tools – The History of How We Play](https://thehistoryofhowweplay.wordpress.com/2018/07/10/how-do-you-make-a-game-part-2-development-tools/)

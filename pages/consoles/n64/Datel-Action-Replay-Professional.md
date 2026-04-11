@@ -23,24 +23,22 @@ breadcrumbs:
 recommend: n64
 editlink: /consoles/n64/Datel-Action-Replay-Professional.md
 ---
+
 # Datel Action Replay Professional
 
 ## V-Ram functionality
+![Action Replay Viewer]({{ site.url }}/public/images/actionreplay/ActionReplayViewer.jpg)
 
-![image alt text]({{ site.url }}/public/images/actionreplay/ActionReplayViewer.jpg)
-
-You could press a "Freeze button" on the Action Replay to “see images not normally visible during playing of the game”. The video seems to be showing different render frames from the game Top Gear Overdrive.
+You could press a "Freeze button" on the Action Replay to "see images not normally visible during playing of the game". The video seems to be showing different render frames from the game Top Gear Overdrive.
 
 Not sure why this would be useful apart from taking screenshots for magazines or just to see inside the renderer.
 
 ## Code Generator 
-
 Action Replay has a Code Generator which is very similar to other tools in the cheat cartridge/engine world. For example if you have ever used the tool Cheat Engine on PC and used the search/sub-search feature you will be right at home.
 
 If not you might want to read up on how Cheat Engine works and the basics of Memory and hexadecimal notation.
 
 ### Action Replay Code Format
-
 ![image alt text]({{ site.url }}/public/images/actionreplay/ActionReplayCodeFormat.jpg)
 
 An action replay code is made up of 2 parts, the address and the value. In the screenshot above you can see that the address is highlighted in yellow.
@@ -50,13 +48,11 @@ The address is just the Hexadecimal representation of the memory position of the
 The value on the right is the value we want to put into the lives variable, in this case 2.
 
 ## Tutorial - Finding a cheat in Duke Nukem 64
-
 ![image alt text]({{ site.url }}/public/images/actionreplay/ActionReplayCodeOn.jpeg)
 
 First press the freeze button on the AR device to access the in-game menu. And go to Code Generator.
 
 ### Known Value Search
-
 ![image alt text]({{ site.url }}/public/images/actionreplay/ActionReplayKnownValueSearch.jpeg)
 
 Since we know the value of Duke Nukem's bullets we enter the "Known Value Search" option. This will allow us to search for the value of bullets (48) in memory.
@@ -78,14 +74,13 @@ Now select one to make it active by pressing the 'A' button and go back to the g
 ## Tutorial - Mortal Kombat Trilogy
 
 ### Unknown Value Search
-
 A health bar is the perfect example of an Unknown value since it doesn't display the exact number of health you have just a big green bar.
 
-![image alt text]({{ site.url }}/public/images/actionreplay/ActionReplayStart.jpeg)
+![Action Replay Start]({{ site.url }}/public/images/actionreplay/ActionReplayStart.jpeg)
 
 Choose 'Start' to start the Action Replay search system, now return to the game and loose some health.
 
-![image alt text]({{ site.url }}/public/images/actionreplay/ActionReplayLessThanLast.jpeg)
+![Less than last]({{ site.url }}/public/images/actionreplay/ActionReplayLessThanLast.jpeg)
 
 Now press the Freeze button on the AR and select "Less than Last" since we reduced health.
 
@@ -94,6 +89,5 @@ Now press the Freeze button on the AR and select "Less than Last" since we reduc
 Now just repeat the process until you get around 20 options and test out each one until you find one that doesn't allow the player to lose any health.
 
 ## Full Video
-
-Link to the video on youtube is here: [https://www.youtube.com/watch?v=Gq8VQBKBKqI](https://www.youtube.com/watch?v=Gq8VQBKBKqI) 
+Link to the video on YouTube is here: [https://www.youtube.com/watch?v=Gq8VQBKBKqI](https://www.youtube.com/watch?v=Gq8VQBKBKqI) 
 

@@ -66,9 +66,9 @@ Revisions might involve minor changes or improvements to the board's design, man
 
 ### The ROM
 If you legally back up your Super Mario Bros NES ROM you will notice that the size of the ROM is about 41KB (40,976 bytes to be precise), this makes sense as the ROM file is based on the storage of the cartridge plus a 16 byte header of information about the cartridge:
-- **32 KB** (32,768 bytes) of Program Code (PRG) ROM
-- **8 KB** (8,192 bytes) of Graphics (CHR) ROM
-- **16 bytes** of iNES header
+* **32 KB** (32,768 bytes) of Program Code (PRG) ROM
+* **8 KB** (8,192 bytes) of Graphics (CHR) ROM
+* **16 bytes** of iNES header
 
 The total of these is:
 
@@ -89,7 +89,7 @@ An **iNES Mapper** is a component of the iNES format, which is a standard for re
 
 The iNES header is only used for emulators (and flash carts) because the same data is available in the game cartridge in physical hardware form (e.g the number of chips on the board or how they are wired together).
 
-Super Mario Bros. uses iNES Mapper 0. This is a simple and straightforward mapper configuration that doesn't involve advanced features like bank switching or additional memory management. The game’s ROM is directly mapped into the NES's memory space, which fits within the constraints of Mapper 0’s capabilities.
+Super Mario Bros. uses iNES Mapper 0. This is a simple and straightforward mapper configuration that doesn't involve advanced features like bank switching or additional memory management. The game's ROM is directly mapped into the NES's memory space, which fits within the constraints of Mapper 0's capabilities.
 
 ### Mapper Hacks for Super Mario Bros
 So to extend Super Mario Bros. such as adding new levels you will need more space to work with, to do this you will need to modify the ROM to use a different mapper (such as Mapper 0) to give more bytes to play around with.
@@ -396,10 +396,10 @@ By clearing the lower nibble (with `& 0xF0`), the code is explicitly resetting b
 #### What are the Lower nibble bytes doing?
 **PPU Control Register 1** is an 8-bit register with various bits controlling different aspects of the NES's PPU operation. The bits in the lower nibble (bits 0–3) are particularly important for configuring background and sprite rendering:
 
-- **Bit 0** (`Base nametable address`): Controls which nametable (background map) is used as the base for the background.
-- **Bit 1** (`VRAM address increment`): Determines the increment value for the PPU's address after accessing its data.
-- **Bit 2** (`Sprite pattern table address for 8x8 sprites`): Selects which 4 KB of pattern table memory to use for sprites.
-- **Bit 3** (`Background pattern table address`): Selects which 4 KB of pattern table memory to use for the background.
+* **Bit 0** (`Base nametable address`): Controls which nametable (background map) is used as the base for the background.
+* **Bit 1** (`VRAM address increment`): Determines the increment value for the PPU's address after accessing its data.
+* **Bit 2** (`Sprite pattern table address for 8x8 sprites`): Selects which 4 KB of pattern table memory to use for sprites.
+* **Bit 3** (`Background pattern table address`): Selects which 4 KB of pattern table memory to use for the background.
 
 ---
 ## The InitScroll function
@@ -709,7 +709,7 @@ void WriteBufferToScreen() {
 # OperModeExecutionTree function - Heart of the game
 The OperModeExecutionTree function is essentially a dispatcher that calls different functions based on the value of operMode. 
 
-The specific functions it calls—TitleScreenMode(), GameMode(), VictoryMode(), and GameOverMode()— handle the different modes of the game.
+The specific functions it calls-TitleScreenMode(), GameMode(), VictoryMode(), and GameOverMode()- handle the different modes of the game.
 
 ```c
 void OperModeExecutionTree() {
