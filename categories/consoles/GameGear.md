@@ -52,7 +52,7 @@ We know of two confirmed assemblers that were used for Game Gear programming:
 ## How was the final ROM built?
 Normally it was up to the main programmer to put everything together, all the images, sounds, music and other assets into the final game ROM that would be sent to Sega. 
 
-Developers such as **Paul Hutchinson** wrote programs with Turbo C++ to convert the asset data into assembler files (Define Byte (`.DB`), Define Word (`.DW`) etc statements) [^2]. Then an assembler is used to put everything together into a single file that can then be burned onto an EPROM using hardware such as **Needham’s Electronics EPROM programmer**.
+Developers such as **Paul Hutchinson** wrote programs with Turbo C++ to convert the asset data into assembler files (Define Byte (`.DB`), Define Word (`.DW`) etc statements) [^2]. Then an assembler is used to put everything together into a single file that can then be burned onto an EPROM using hardware such as **Needham's Electronics EPROM programmer**.
 
 The EPROM was then inserted on to a development cartridge and tested on the retail system before finally sending to Sega via their Bullitin Board System (BBS) [^2].
 

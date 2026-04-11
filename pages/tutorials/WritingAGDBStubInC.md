@@ -19,6 +19,7 @@ tags:
 editlink: /tutorials/WritingAGDBStubInC.md
 _updatedAt: '2024-09-29'
 ---
+
 # Tutorial: Building a GDB Stub in C
 
 ## Step 1: Setting Up the Project
@@ -64,7 +65,6 @@ First lets do some initial setup by creating the project folder and going inside
    ```
 
 ---
-
 ## Step 2: Creating a TCP Socket
 
 ### Add Required Headers:
@@ -127,7 +127,6 @@ First lets do some initial setup by creating the project folder and going inside
    ```
 
 ---
-
 ## Step 3: Accepting a Client Connection
 
 ### Accept Client Connections:
@@ -188,7 +187,6 @@ First lets do some initial setup by creating the project folder and going inside
    (You'll need to connect using GDB later to see the "GDB connected" message.)
 
 ---
-
 ## Step 4: Receiving Data from GDB
 
 ### Receive Data:
@@ -283,7 +281,6 @@ First lets do some initial setup by creating the project folder and going inside
    ```
 
 ---
-
 ## Step 5: Sending a Response Back to GDB
 The main function is getting a bit large so lets create some new functions for the next part of the functionality, we won't keep posting the full code for every step.
 

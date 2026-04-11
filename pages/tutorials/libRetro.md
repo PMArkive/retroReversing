@@ -92,11 +92,11 @@ The core is the actual emulator, while the frontend provides the user interface 
 ## Cores
 Each core implements the libRetro API, which includes functions for:
 
-- Initialization
-- Frame rendering
-- Input handling
-- Audio processing
-- Save state management
+* Initialization
+* Frame rendering
+* Input handling
+* Audio processing
+* Save state management
 
 The cores are responsible for emulating the hardware of a specific system. 
 They take care of processing the game code, rendering graphics, and managing audio, effectively mimicking the original hardware's behavior. 
@@ -142,7 +142,7 @@ The retro_api_version function returns the version of the libRetro API that the 
 ## Callbacks
 In libRetro, several functions must be set up before the emulation process begins. These functions are responsible for handling various aspects of the emulation, such as video rendering, audio output, and input management. T
 
-These callback functions play a vital role in the core's ability to interface with the frontend. By setting these functions before the first call to `retro_run()`, libRetro ensures that the necessary resources—video rendering, audio playback, and input handling—are properly configured.
+These callback functions play a vital role in the core's ability to interface with the frontend. By setting these functions before the first call to `retro_run()`, libRetro ensures that the necessary resources-video rendering, audio playback, and input handling-are properly configured.
 
 The following is an explanation of the key callback functions that are initialized before the emulation starts.
 
@@ -203,7 +203,7 @@ The frontend then takes care of displaying the frame on the screen. This functio
 ### retro_set_audio_sample
 `retro_set_audio_sample(retro_audio_sample_t)` registers the callback for audio output. This function handles individual audio samples, allowing the core to pass sound data to the frontend.
 
-It’s useful when the core outputs audio on a per-sample basis, and the frontend is responsible for processing these audio samples to ensure they are played in sync with the video.
+It's useful when the core outputs audio on a per-sample basis, and the frontend is responsible for processing these audio samples to ensure they are played in sync with the video.
 
 ### retro_set_audio_sample_batch
 `retro_set_audio_sample_batch(retro_audio_sample_batch_t)` is similar to `retro_set_audio_sample`, but instead of handling individual samples, it handles batches of audio samples at once. This is typically more efficient and commonly used by cores that generate a larger number of audio samples in one go.

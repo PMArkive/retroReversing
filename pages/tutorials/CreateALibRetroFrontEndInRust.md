@@ -22,12 +22,12 @@ recommend:
 editlink: /tutorials/CreateALibRetroFrontEndInRust.md
 updatedAt: '2023-05-07'
 ---
+
 Welcome to this comprehensive tutorial on creating a LibRetro Frontend using Rust! If you're passionate about retro gaming and interested in creating your very own emulation frontend from scratch, you've come to the right place. Rust, with its strong safety guarantees, performance, and concurrency support, makes it an ideal choice for developing such applications.
 
 In this tutorial, we will walk you through the process of building a fully-functional LibRetro frontend from the ground up. We will start by introducing you to the basics of creating a graphical Rust application and the LibRetro API, then delve into essential concepts such as handling input, video, and audio. By the end of this tutorial, you'll have a solid understanding of the inner workings of a LibRetro frontend and the knowledge to create your own customized version to relive your favorite gaming memories.
 
 # Step 1 - Setup MiniFB
-
 The first step was just to get a window where we can draw pixels and respond to user input, we want it to be very simple and cross-platform so we can use the `minifb` library.
 
 ```rust
@@ -80,7 +80,6 @@ The result of this is that it draws a blue pixel at an x,y position and you can 
 
 ---
 # Step 2 - Clear the screen every frame
-
 The line effect is cool but we should clear the screen to black every frame so that the player can just move the individual pixel around the screen, you can do this by adding the following code to the start of the loop:
 
 ```rust
@@ -91,7 +90,6 @@ for pixel in &mut buffer {
 ```
 
 # Step 3 - Display the Frames per second
-
 That looks great but is it efficinet to loop through the whole array every frame (60 times a second) to set every pixel to black? Probably not, but it would be good to have a way to measure this, lets display the frames per second and we can compare the speed of future changes.
 
 To display the fps, you can use the Instant type from the std::time module to measure the time between frames. Here's an updated version of your code that displays the fps in the window title:
@@ -162,7 +160,6 @@ fn main() {
 In this updated code, we use an Instant timer to measure the elapsed time between frames. We keep track of the number of frames rendered (fps_counter) and the time elapsed since the last fps update (fps_timer). When a second has passed, we calculate the fps and update the window title using the Window::set_title() method. Finally, we reset the fps counter and timer.
 
 # Step 4 - Using buffer.fill instead of looping through array
-
 Now that we can measure the frames per second we can test to see if using buffer.fill is more efficinet that looping through each pixel and setting to black, so replace the loop with:
 
 ```rust
@@ -180,7 +177,6 @@ while window.is_open() && !window.is_key_down(Key::Escape) {
 This gets a much higher fps, of course this is not particularly useful right now as when creating a game it is unlikely that we will just update a single pixel per frame, but it is good to keep in mind for future optimizations, the less pixels we update per frame the more efficient we can be.
 
 # Step 5 - Load a Dynamic Library (dll/dylib) from the code
-
 All libRetro cores are compiled into platform-specific dynamic libraries (dylib on MacOSX and dll on Windows), we want to be able to call one of these functions from our code in order to get our frontend to do anything.
 
 In order to do this we need to add the **libloading** crate as a dependency inside the **Cargo.toml** file like so:
@@ -213,7 +209,6 @@ Note if you are on Windows make sure your core ends with `.dll`, on Linux `.so` 
 You can download cores for your platform using the LibRetro BuildBot available here: [LibRetro Nightly Builds](https://buildbot.libretro.com/nightly/).
 
 # Step 6 - Calling a function from the Core (Dynamic Library)
-
 As an example lets call the function `retro_init` as it is one of the simplest functions (it doesn't require any parameters).
 
 ```rust
@@ -232,7 +227,6 @@ When running this may actually cause a Segmentation fault depending on which cor
 For more information about retro-init and the callback functions it requires you can checkout the guide: [Developing Cores for LibRetro](https://docs.libretro.com/development/cores/developing-cores/).
 
 # Step 7 - Retrieving a response from the Core
-
 Before we call the setup functions we should make sure that the core is written using a version of the LibRetro API that is compatible with what we expect.
 
 The function `retro_api_version` is used for this purpose and at the time of current written just returns the number 1, we can call this function from the core and retrieve its value and print it to the console like so:
@@ -256,7 +250,6 @@ fn load_core() {
 ```
 
 # Step 8 - Setting up the environment for the Core
-
 Now to fix that segmentation fault error when calling `retro_init`, all we need to do it set whats called an `**Environment Callback**` function and pass it to the core. The Environment Callback function is used to allow the core to call back to the frontend to request information.
 
 The information they can request comes in the form of a Command ID and is passed back to the core using a data buffer, so the Environment Callback takes in those two paramaters, we can implement this like so:
@@ -311,7 +304,6 @@ For example you can see that the first value `52` is called `RETRO_ENVIRONMENT_G
 We could define all these constants outselves, but after a quick google search you can see that there is already a rust library with these defined called `libretro-sys` that we can use instead.
 
 # Step 9 - Using the types from libretro-sys cargo
-
 We can now add the following to our `Cargo.toml` file:
 
 ```rust
@@ -399,7 +391,6 @@ Then it will not need to be returned and will not cause a segmentation fault.
 Although this is just temporary, in the future we will move all this into its own data structure with additional settings, if/when we add the ability to change cores on the fly.
 
 # Step 10 - Read Command Line arguments for ROM to load
-
 Currently we have hard-coded the dynamic library into the code but now we can write code to read both the core to load and the ROM name to load from the command line arguments.
 
 In order to be a drop-in replacement for RetroArch we should try to use the same command Line options, which are available on their website [here](https://docs.libretro.com/guides/cli-intro/).
@@ -452,7 +443,6 @@ You now need to pass a ROM file to the program in order to get past the argument
 ```
 
 # Step 11 - Loading the ROM file
-
 Now that we have the path of the ROM file to load we need to pass it to our core using the `retro_load_game` function. The function takes in a structure which the Rust `libretro-sys` crate calls `GameInfo`.
 
 Lets look at the definition of the `GameInfo` struct:
@@ -639,7 +629,6 @@ libretro_environment_callback Called with command: 65578
 I am going to ignore the `gbc_bios.bin` error message for now, Tetris isn't a GBC game and I believe the BIOS is optional for this emulator anyway.
 
 # Step 12 - Running the core with retro_run
-
 Lets now see what happens when we request the core to run a whole frame of emulation, we can do this with the `retro_run` function like so:
 
 ```rust
@@ -746,7 +735,6 @@ libretro_set_input_state_callback
 ```
 
 # Step 13 - Get the pixel buffer from the core
-
 Now that we have the core running it would be nice to actually see what the emulator is doing, for that we need to get the pixel buffer and display it instead of our moving blue pixel.
 
 To get the pixel buffer from the libretro core we need to properly implement the `libretro_set_video_refresh_callback` we just created a dummy for as it is called every frame when the core has finished writing all the pixels to the frame buffer.
@@ -804,7 +792,6 @@ unsafe extern "C" fn libretro_set_video_refresh_callback(frame_buffer_data: *con
 This fixes the segmentation fault and highlights a piece of useful information, that the frame_buffer_data is sometimes null, this could be related to the dupe frames mentioned earlier, maybe if it is null it expects the frontend to just display the previous frame?
 
 # Step 14 - Displaying the Pixel Buffer to the screen
-
 Now we have a buffer of pixels from the core, we need to figure out how we can display them to the screen, we have two problems to solve:
 
 * We got the buffer of pixels in our callback function but how do we get that data into the main game loop to draw to our screen?
@@ -930,7 +917,6 @@ unsafe {
 ```
 
 # Step 15 - Handling the core Pixel Format
-
 Ok lets finally handle the Pixel format correctly, do you remember this dummy code block we created earlier:
 
 ```rust
@@ -1032,7 +1018,6 @@ static mut CURRENT_EMULATOR_STATE: EmulatorState = EmulatorState {
 I set the default value to the 32 byte version as `minifb` uses that but it should always be overridden by the core anyway.
 
 # Step 16 - Converting one Pixel Format to another
-
 Now that we have saved the pixel format into the global variable we can use it to convert the buffer from the core's pixel format into the `minifb` pixel format.
 
 So lets have a look at the video refresh callback function again:
@@ -1167,7 +1152,6 @@ If you run the program now you will get something that looks like this:
 
 
 # Step 17 - Fixing display issues
-
 Remember the `pitch` parameter that the core sends us? Yeah turns out it is very important as it is basically the width of the frame buffer, with `width` parameter is the part of the pitch that is actually used for the gameboy screen and the rest of the pixels are black. So we can actually make this a lot better by just changing the WIDTH and HEIGHT to the following values:
 
 ```rust
@@ -1243,7 +1227,6 @@ unsafe {
 ```
 
 # Step 18 - Input Handling
-
 The ROM will load, get the the main menu and then if you wait long enough it will show a brief demo of the gameplay before going back to the menu and repeating. This is cool but it would be better if we could actually **play** the game. We already have logic that checks the state of the arrow keys for when we had the blue pixel moving on screen so lets see if we can pass that information to the core and start moving Tetris pieces in the game.
 
 First of all how does the core request from the frontend which buttons are pressed? It uses the input state callback which we created a dummy for previously, if we modify it slightly to print out the parameters that the core are passing in like so:
@@ -1416,7 +1399,6 @@ unsafe extern "C" fn libretro_set_input_state_callback(port: libc::c_uint, devic
 Now run the program and we can play the full game of Tetris!
 
 # Step 19 - Mapping the input buttons
-
 This is great but there are a few limitations, for one we only mapped the buttons for the Game Boy and this wouldn't work on cores that use more buttons and second it doesn't allow the users to configure which buttons do what.
 
 Since we are a aiming to be a lightweight drop-in-replacement for RetroArch lets find out if RetroArch has a common config format for this purpose so users will be able to use their existing configuration.
@@ -1580,7 +1562,6 @@ Lets start keeping track of the size of the executable, I should have done this 
 
 ---
 # Step 20 - Saving and Loading state
-
 We are doing well but we still haven't implemented one of my favourite features of emulators, save states. In the config file we have two settings for the buttons used to trigger saving and loading states:
 
 * `input_save_state`
@@ -1725,7 +1706,6 @@ And we can call it similar to how we call `save_state`:
 ```
 
 # Step 21 - Supporting save slots
-
 You will notice that we hard coded the `save_slot_index` to 0, we can now store the current save slot index in our global variable and then allow the user to increment and decrement the current save slot, allowing them to have different save states for the same game.
 
 First lets add another field to our global to keep track of the current slot:
@@ -1788,7 +1768,6 @@ And now read them from out input handling code:
 Now if you run the program you can incfrease and decrease the save slots and it will allow you to have multiple saves for the same game.
 
 # Step 22 - Audio Support
-
 So far the game is playable but rather... quiet, lets change that by adding audio support!
 
 We already implemented the two audio callbacks as dummy functions before to prevent the core from causing a segmentation fault but they don't do anything yet:
@@ -1913,7 +1892,6 @@ You will notice that this has helped the frame rate a bit (around 30 fps on my m
 > Size of executable so far: 1.4MB
 
 # Step 23 - Creating an Audio Thread
-
 Audio processing is very cpu intensive and so far we have done all our logic in a single thread, this is now affecting the frame rate of games  being played in our frontend. One solution for this is to put the audio processing in its own thread and just pass the audio data between the threads.
 
 Lets first modify the Audio setup so that iut creates a new thread and creates the Rodeo Sink inside that thread like so:
@@ -1982,7 +1960,6 @@ thread '<unnamed>' panicked at 'called `Result::unwrap()` on an `Err` value: Rec
 ```
 
 # Step 24 - Get Audio/Video Data from the core
-
 You will notice that in the previous step we hard coded the audio sample rate at `32768`, while this is correct for the Game Boy, it won;'t be correct for other cores, so it would be ideal to be able to allow each core to specify its own sample rate. This is where the libRetro function `retro_get_system_av_info` comes in.
 
 So just after the call to `retro_init` we can call it and print the result we get back like so:
@@ -2085,7 +2062,6 @@ Now we should be able to support more cores in the future!
 
 
 # Step 25 - Game Controller support
-
 Lets add the `gilrs` cargo to our rust project:
 
 ```rust
