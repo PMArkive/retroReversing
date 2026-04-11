@@ -43,6 +43,7 @@ Note that as Nintendo kept private information about this individual such as rea
 # Documents.7z
 The Documents archive contains exactly what it says on the tin, internal documents related to security of the 3DS, Switch and WiiU Amiibos.
  
+
 ## Root files
 The files at the root after extracting the directory are:
 * AP紹介.pptx - Associated Press introduction
@@ -581,7 +582,6 @@ These documents are very low level dealing with the switch hardware power and he
 
 ---
 # NintendoSDK_fromSSD_IKEDA_20151124.zip
-
 This folder contains the following files:
 * NintendoSDK
 * パッケージを取ってきた元.txt - just links to internal Nintendo sites like Teamcity

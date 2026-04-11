@@ -20,6 +20,7 @@ breadcrumbs:
 recommend: saturn
 editlink: /consoles/saturn/SegaSaturnIP.BIN.md
 ---
+
 The first 15 sectors (32KB) of a SEGA Saturn CD contains the Boot System Initial Program code known as IP.BIN [^1]. In this post we will explore what it is, the purpose of it and how it works. 
 
 # What is it for?

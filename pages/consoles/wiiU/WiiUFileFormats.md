@@ -64,6 +64,7 @@ The Title Metadata file (.tmd) contains the required `IOS` version (WiiUOS) and 
 The `.tmd` file contains all Sha1 of the content, but it's a SHA1 hash of decrypted files, not encrypted .app files. So it requires decryption and file extraction to check integrity.
 
 --- 
+
 # Decrypted WiiU NUS file formats
 When the nus .app files have been decrypted and extracted you will get all the game files you need for modding/reversing. The main files we are interested in are RPX and RPL.
 
@@ -83,6 +84,7 @@ Youtube video:
 Source code to the IDA pro loader: [ida_gel/src/wiiu at master · aerosoul94/ida_gel](https://github.com/aerosoul94/ida_gel/tree/master/src/wiiu) 
 
 --- 
+
 # WiiU Asset File Formats
 
 ## SZS Compressed File Format

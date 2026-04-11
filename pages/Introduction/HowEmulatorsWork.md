@@ -22,6 +22,7 @@ recommend:
 editlink: /Introduction/HowEmulatorsWork.md
 updatedAt: '2022-10-09'
 ---
+
 Have you ever wondered how emulators work? How would you implement an emulator? Where should you start if you are interested in emulator development? 
 This post attempts to answer all those questions.
 
@@ -74,7 +75,6 @@ Instead of interpreting source code an emulator operates on compiled (assembled)
 Emulators must also model registers, memory buses, I/O devices, and the timing between these components, which has no analogue in most high level interpreters.
 
 ---
-
 ## Why are some emulators fast and others slow?
 Speed depends on how much hardware detail is modeled and whether the emulator interprets instructions or uses JIT compilation.
 
@@ -173,7 +173,7 @@ A byte is just eight 1s and 0s in a row and could look like this to a CPU: `0000
 ## Instructions & Opcodes
 Now that we know we can represent CPU instructions as hex values, we can look at some real CPU instructions used by a number of common processors:
 * **0x04** - In a **Z80 CPU**, this hex increments the **B Register**. Think of the B register as similar to the Program Counter, but it doesn't just store where we are in the program; it can store whatever number you would like.
-* **0xEA** - In a **6502 CPU**, this hex is called a No-Operation or NOP for short. Yes, doing nothing is a valid thing for a CPU to do—CPUs need time to relax too, you know!
+* **0xEA** - In a **6502 CPU**, this hex is called a No-Operation or NOP for short. Yes, doing nothing is a valid thing for a CPU to do-CPUs need time to relax too, you know!
 
 These are two examples of different CPUs from real Nintendo game consoles: the Z80 CPU was used in the Game Boy, and the 6502 was used in the NES.
 
@@ -181,7 +181,7 @@ Note that in these two examples, the instruction was only one byte long. As you 
 
 But in all CPUs, the first byte is known as the **Opcode** and is used to determine how many bytes long the instruction will be.
 
-Also, just in case you start to panic and think you need to learn all sorts of different hex values and what they do, you don't—emulator developers always have a reference for this nearby, and there is a much simpler way to write instructions known as **Assembly Language**. Most emulators, however, use the hex value in the CPU emulation loop to **decode** which instruction it should now execute.
+Also, just in case you start to panic and think you need to learn all sorts of different hex values and what they do, you don't-emulator developers always have a reference for this nearby, and there is a much simpler way to write instructions known as **Assembly Language**. Most emulators, however, use the hex value in the CPU emulation loop to **decode** which instruction it should now execute.
 
 ### Opcode Mnemonics & Assembly language
 Most humans find it easier to remember patterns of letters (mnemonics) than a set of hex values such as `0x45 0xFF 0xEA`. The mnemonics used to represent opcodes are called **Assembly Language**, and they are normally just shorthand for what the operation does, e.g.:
@@ -206,7 +206,6 @@ For the 6502 CPU the reddit user **mysticreddit** suggests breaking the 56 instr
 * **Undocumented instructions** - The CPU Vendor has never told anyone what these do
 
 ## Putting it all together
-
 Here is some pseudo code to piece together that we have talked about so far:
 ```js
 var instructions = [0xEA, 0xEA, 0xEA,...]; // All the steps that make up our recipe/program
@@ -233,7 +232,7 @@ Now that you understand the Pseudo code, you can look at how real emulators are 
 ## Complexities
 We have covered CPU emulation at a very high level, simplifying the details to make it easier to understand, but note that CPU emulation is far from a trivial problem to solve. 
 
-One of the reasons for complexity is that we are trying to simulate physical hardware—hardware with multiple chips working in parallel with each other. 
+One of the reasons for complexity is that we are trying to simulate physical hardware-hardware with multiple chips working in parallel with each other. 
 
 Whenever you have multiple tasks running in parallel, you encounter issues with **timing**, such as the audio processor being out of sync with the CPU, causing the sound to not match what would play on the real hardware.
 
@@ -288,7 +287,7 @@ A memory map is a piece of documentation that is used to indicate which address 
 
 You will notice that for many game consoles and other systems, there are tons of memory addresses that are mapped to nothing at all. It seems like a huge waste of memory to emulate these unused addresses in a big byte array.
 
-So instead of a simple array for all of RAM, it might be better to have smaller arrays—one for each type of memory—and have specific read and write functions that handle going to the correct memory array.
+So instead of a simple array for all of RAM, it might be better to have smaller arrays-one for each type of memory-and have specific read and write functions that handle going to the correct memory array.
 
 Here is some pseudo code after taking into account what was have said above:
 ```js

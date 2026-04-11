@@ -30,7 +30,6 @@ List of Games for wiiU eShop:
 * Freedom Planet
 
 ---
-
 ## BluePoint Engine
 It could be argued that this is more of an in-house engine as it is mostly used by BluePoint games, but there are enough other games companies using this engine to keep it in this category.
 
@@ -88,7 +87,7 @@ Used by `Shin'en Multimedia` for the following wiiU games:
 * Nano Assault Neo
 * Fast Racing Neo
 
-The have provided some details about their engine in an interview [Shin’en Multimedia Mega Interview: Harnessing the Wii U power! - Dromble](https://www.dromble.com/2012/11/03/shinen-multimedia-mega-interview-harnessing-the-wii-u-power/).
+The have provided some details about their engine in an interview [Shin'en Multimedia Mega Interview: Harnessing the Wii U power! - Dromble](https://www.dromble.com/2012/11/03/shinen-multimedia-mega-interview-harnessing-the-wii-u-power/).
 
 They claim to have used the same engine in 17 games which is impressive.
 
@@ -102,6 +101,7 @@ Used in the game Chasing Aurora and can be seen in a video by one of the develop
 [(204) Let's Make Chasing Aurora: #1 Slippery Peak - YouTube](https://www.youtube.com/watch?v=SiZTWOZG6ws)
 
 --- 
+
 ## Zen Studios Engine
 Zen Studios have developed a custom proprietary game engine mostly used for their pinball games on the WiiU such as:
 * Zen Pinball 2
@@ -111,12 +111,12 @@ It was also used for their `CastleStorm` game which was more of a tower defence 
 
 ---
 ## UbiArt Engine
-
 WiiU Games:
 * CHILD of LIGHT
 * Rayman Legends: Challenges App
 
 --- 
+
 ## EngineBlack Wayforward Game Engine
 The EngineBlack Game Engine is used by the developers Wayforward to create beautiful 2D platformers, it has been ported to multiple platforms but the wiiU eShop games that use this engine are:
 Uses lua scripting
@@ -131,17 +131,17 @@ Uses lua scripting
 * LUA scripting
 
 ### Modding
-Tool to extract the game’s .pak files is available: https://forum.xentax.com/viewtopic.php?f=32&t=10687 
+Tool to extract the game's .pak files is available: https://forum.xentax.com/viewtopic.php?f=32&t=10687 
 
 ---
 ## DrinkBox Engine
-
 Used for:
 * Guacamelee! Super Turbo Championship Edition
 * Severed
 [Gamasutra - Postmortem: DrinkBox Studios' Guacamelee!](http://www.gamasutra.com/view/feature/200658/postmortem_drinkbox_studios_.php?page=5)
 
 --- 
+
 ## Nicalis Game Engine
 Used in:
 * 1001 Spikes
@@ -154,7 +154,7 @@ WiiU Games built with this engine:
 It looks very little has been discovered about this game engine so far: [BIT.TRIP RUNNER - XeNTaX](https://forum.xentax.com/viewtopic.php?t=8646)
 
 ---
-## Cobra - Frontier’s Game Engine
+## Cobra - Frontier's Game Engine
 Used for `Coaster Crazy Deluxe` on the WiiU, it was built using the same engine as `Zoo Tycoon` [^3].
 
 More information can be found on their official website [Technology - Frontier](https://www.frontier.co.uk/node/639)
@@ -206,7 +206,6 @@ The list of wiiU games/apps are:
 * Wii U Panorama View Trailer
 
 ---
-
 ## Emulated Games
 Ignoring the virtual console which are all emulated games, a few eShop games are retro games running on an emulator compiled for wiiU.
 

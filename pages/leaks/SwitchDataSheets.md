@@ -21,6 +21,7 @@ recommend:
 editlink: /leaks/SwitchDataSheets.md
 updatedAt: '2021-07-20'
 ---
+
 <section class="postSection">
     <img src="/public/images/leaks/Nintendo Switch Game Card Leak.jpg" class="wow slideInLeft postImage" />
 

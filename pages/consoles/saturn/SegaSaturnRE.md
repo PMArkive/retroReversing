@@ -19,6 +19,7 @@ recommend: saturn
 updatedAt: '2020-07-04'
 editlink: /consoles/saturn/SegaSaturnRE.md
 ---
+
 # Introduction
 <section class="postSection">
 <img src="/public/images/saturn/SegaSaturnReversingEmulatorScreenshot.jpg" class="wow slideInLeft postImage" />
@@ -56,7 +57,6 @@ One very important feature of the reversing emulator is the ability to record al
 </div>
 </section>
 ---
-
 ## Named Save States and Frame Usage logging
 <section class="postSection">
   <img src="/public/images/saturn/Saturn Reversing - Named Save States.jpg" class="wow bounceInUp postImage" />

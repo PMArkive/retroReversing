@@ -447,7 +447,6 @@ Symbol | Notes
 ---
 # Sega Saturn Memory Symbols
 
-
 Address | Symbol | Notes
 ---|---|---
 060FC770 | FEATHER2_Stats | 

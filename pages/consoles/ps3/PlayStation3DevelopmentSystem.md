@@ -25,6 +25,7 @@ videocarousel:
     youtube: 'shr7kbAiyhs'
 updatedAt: '2020-11-13'
 ---
+
 This post covers the hardware used to develop Playstation 3 games by major studios back in the day, for the software side see the post on the Official PS3 SDK.
 
 Unlike previous generations, Sony was the only provider of PS3 development hardware, so everyone needed the official development consoles in order to ship for the system.

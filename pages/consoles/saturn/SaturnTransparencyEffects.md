@@ -25,6 +25,7 @@ videocarousel:
 recommend: sega
 editlink: /consoles/saturn/SaturnTransparencyEffects.md
 ---
+
 The Sega Saturn's unique way of drawing 3D vertices made life very difficult for developers to implement Alpha Transparency techniques such as objects fading into view.
 In Sonic R the developer Travellers Tales took a very clever approach to implementing this feature despite the lack of hardware support.
 

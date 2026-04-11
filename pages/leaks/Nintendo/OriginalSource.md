@@ -28,6 +28,7 @@ editlink: /leaks/Nintendo/OriginalSource.md
 twitterimage_: https://www.retroreversing.com/public/images/leaks/OriginalSource.jpg
 updatedAt: '2020-10-03'
 ---
+
 On the 11th April 2020 the source code to the original generation of Pokemon games was released to 4chan as **osrc.zip**. 
 This zip archive contained a password protected zip file called **OriginalSouce.zip** which was quickly cracked and found that the password was **poke1024**.
 
@@ -1319,21 +1320,21 @@ PUTEBONE | .DAT |
     
 The files are named in a specic way:
 * First character is the type
-  - T for Town
-  - D for Dungeon
-  - R for Route?
+  * T for Town
+  * D for Dungeon
+  * R for Route?
 * Second and third characters are the number of that specifc type
-    - T01 is Pallet Town
-    - T02 is Viridian City
-    - T03 is Pewter City
-    - T04 is Cerulean City
-    - T05 is Lavender Town
-    - T06 is Vermillion City
-    - T07 is Celadon City
-    - T08 is Fuchsia City
-    - T09 is Cinnabar Island
-    - T10 is Indigo Plateau
-    - T11 is Saffron City
+    * T01 is Pallet Town
+    * T02 is Viridian City
+    * T03 is Pewter City
+    * T04 is Cerulean City
+    * T05 is Lavender Town
+    * T06 is Vermillion City
+    * T07 is Celadon City
+    * T08 is Fuchsia City
+    * T09 is Cinnabar Island
+    * T10 is Indigo Plateau
+    * T11 is Saffron City
 * Fourth character is R presumable standing for Room
   </div>
 </section>  

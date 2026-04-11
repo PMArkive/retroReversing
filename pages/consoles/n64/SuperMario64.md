@@ -59,7 +59,7 @@ You can view his videos on his Twitch channel: [Salmence100's Videos - Twitch](h
 <div markdown="1">
 A newly imported object can appear very plain without any enemies or coins to collect, so lets add some objects!
 
-You can use the program called "Toad's Tool" to edit the objects for the level, It’s quite a simple tool, it allows you to view each world and edit the x,y,z coordinates of each object.
+You can use the program called "Toad's Tool" to edit the objects for the level, It's quite a simple tool, it allows you to view each world and edit the x,y,z coordinates of each object.
 
 Also contains basic functionality for texture editing.
 </div>
@@ -136,7 +136,7 @@ git clone https://github.com/n64decomp/sm64.git
 ```
 
 ## Exploring the code
-
+<!-- cspell:disable -->
 <div id="filelist" markdown="1">
  * ./tools
  * ./tools/sdk-tools
@@ -3874,7 +3874,7 @@ git clone https://github.com/n64decomp/sm64.git
  * /src/engine/behavior_script.c
  * /src/engine/geo_layout.c
 </div>
-
+<!-- cspell:enable -->
 {% include folder-browser.html selector="#filelist" %}
 
 ---
@@ -3884,6 +3884,5 @@ The official source code for Super Mario 64 was leaked as part of the second Gig
 {% include_cached link-to-other-post.html post="/gigaleak2" description="For more information about Gigaleak 2 check out this post." %}
 
 ---
-
 # References
 [^1]: [Super Mario 64 Credits](https://nintendo.fandom.com/wiki/Super_Mario_64/credits#)

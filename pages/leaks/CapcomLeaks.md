@@ -39,10 +39,10 @@ On 1st November 2020 CAPCOM was targeted by known hacker group **RagnarLeaks** a
 
 # Files leaked
 There were four archives leaked, and due to size were split into multiple 7Zip parts.
-1. **CAPCOMinr1.7z** - No source code (please avoid downloading if you see this file uploaded)
-2. **CAPCOMPart2ID.7z** - Umbrella Chronicles source code (21.1GB in 3 parts)
-3.  **Capcom3ID451.7z** - Devil May Cry 2 Source code ( 11.2GB in 2 parts)
-4. **CAPCOM4_ID442.7z** - The Misadventures of Tron Bonne PS1 source code (1.38GB)
+* **CAPCOMinr1.7z** - No source code (please avoid downloading if you see this file uploaded)
+* **CAPCOMPart2ID.7z** - Umbrella Chronicles source code (21.1GB in 3 parts)
+*  **Capcom3ID451.7z** - Devil May Cry 2 Source code ( 11.2GB in 2 parts)
+* **CAPCOM4_ID442.7z** - The Misadventures of Tron Bonne PS1 source code (1.38GB)
 
 The archives released after these (5-7) do not contain any source code unfortunately, so will not be covered in this post.
 

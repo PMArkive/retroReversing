@@ -25,6 +25,7 @@ recommend:
 - gamecube
 editlink: /consoles/wii/WiiDiagnosticDisc.md
 ---
+
 In the Nintendo leak on 20th July 2021 an archive called **DIAG4RVL.7z** was released to the internet, this archive contains a CVS repository containing  3 different software development kits for the Wii (codename Revolution).
 
 The three folders that were contained inside this archive were:

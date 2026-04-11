@@ -34,7 +34,6 @@ This post will cover the details we have discovered so far about how the WiiU vi
 </section>
 
 ---
-
 # Common
 This section will cover the common files that are in all the Virtual Console titles, in fact most WiiU software contain these files.
 These files basically tell the WiiU Operating system (CafeOs) how to deal with certain parts of the application.
@@ -57,7 +56,6 @@ Contains data such as publisher name, game code etc. There are editors that can 
 A short wiiU boot movie that is played when you select this game, you can play this in VLC.
 
 ---
-
 # Game Boy Advance (M2Engage)
 The Game Boy Advance emulator for the WiiU was developed by the Japanese game development company **M2**. They are also the company that developed some of the emulators for the original Wii Virtual Console.
 

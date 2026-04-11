@@ -21,6 +21,7 @@ recommend:
 editlink: /hardware/Verilog.md
 updatedAt: '2020-05-08'
 ---
+
 <section class="postSection">
     <img src="/public/images/hardware/Verilog Hardware Description Language.jpg" style="width:inherit;" class="wow slideInLeft postImage" />
 <div markdown="1">

@@ -47,7 +47,7 @@ In the table below the number of symbols is based on the main executable (RPX) e
  ACT IT OUT! A Game of Charades | 14,582 | Unity
  Advance Wars: Dual Strike | 7,067 | DS Emulation
  Adventure Time: Finn & Jake Investigations | 14,973 | 
- Adventure Time: Explore the Dungeon Because I DON’T KNOW! | 33,058 | 
+ Adventure Time: Explore the Dungeon Because I DON'T KNOW! | 33,058 | 
  Adventures of Pip | 35,849 | Unity
  Affordable Space Adventures | 18,552 | Unity
  Alphadia Genesis™ | 3,986 | Unity
@@ -111,7 +111,7 @@ In the table below the number of symbols is based on the main executable (RPX) e
  Darksiders II |  | 
  Darts Up |  | 
  Defend Your Crypt |  | 
- Devil’s Third |  | 
+ Devil's Third |  | 
  Dinox |  | 
  Disney Epic Mickey 2: The Power of Two |  | 
  Disney Infinity |  | 
@@ -119,7 +119,7 @@ In the table below the number of symbols is based on the main executable (RPX) e
  Disney Infinity 3.0 : Play without limits |  | 
  DK™ Jungle Climber |  | 
  Donkey Kong Country: Tropical Freeze |  | 
- Dr Kawashima’s BRAIN TRAINING™: How Old is Your Brain? |  | 
+ Dr Kawashima's BRAIN TRAINING™: How Old is Your Brain? |  | 
  Dr. Luigi™ |  | 
  Dr.LUIGI & 細菌撲滅 |  | 
  Dracula's Legacy |  | 
@@ -394,7 +394,7 @@ In the table below the number of symbols is based on the main executable (RPX) e
  Xenoblade Chronicles™ X | 
  XenobladeX ゼノブレイドクロス | 
  Year Walk | 
- Yoshi’s Island DS™ | 
+ Yoshi's Island DS™ | 
  Yoshi™ Touch & Go | 
  Ziggurat | 
  Zombie Defense | 

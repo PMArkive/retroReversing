@@ -22,6 +22,7 @@ tags:
 editlink: /consoles/xbox/XboxGameEngines.md
 updatedAt: '2019-04-28'
 ---
+
 # Introduction
 When the Xbox came out in 2001 most game developers were still getting used to the new layer of abstractions and code re-use provided by the superior hardware of consoles compared to the previous generations.
 
@@ -176,20 +177,17 @@ Games:
 
 ---
 ## Open Dynamics Engine
-
 Games:
 * Aeon Flux
 * BloodRayne 2
 
 ---
 ## Avalanche Engine
-
 Games:
 * Just Cause
 
 ---
 ## Zero Engine (Pandemic)
-
 Games:
 * Mercenaries (mentions redengine?)
 * Star Wars The Clone Wars

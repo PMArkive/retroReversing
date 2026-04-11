@@ -92,7 +92,6 @@ This is clearly Super Mario Kart material, with direct references to:
 
 ---
 ## Glossary
-
 * **CAR**: Super Mario Kart art and UI workspace
 * **MD7**: raw SNES Mode 7 map data, here stored as 32,768-byte files
 * **JUGEM**: Lakitu

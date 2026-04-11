@@ -67,7 +67,6 @@ This section will cover the folders and files that you will often find in a decr
 The **RO** folder is where all the application and license files that don't need to be editable by the game/application reside.
 
 ### Application Folder
-
 Some common files that are in this folder:
 * **app.exe** - The main game executable - decompile this to understand how the game logic works
 * **app.info** - Binary file with **PSMA** file header, presumably meta data about the application

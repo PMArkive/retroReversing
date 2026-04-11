@@ -24,6 +24,7 @@ recommend:
 editlink: /leaks/Emerald.md
 twitterimage: https://www.retroreversing.com/public/images/leaks/EmeraldLeak.jpg
 ---
+
 The Emerald leak occurred on the 2nd of September 2020 and included about 700MB of content related to the Wii and gamecube. So this would not quite qualify as a "Gigaleak" but it was definitely from the same source as the Gigaleak.
 
 {% include_cached link-to-other-post.html post="/gigaleak" description="For more information on the original Gigaleak check out this post." %}
@@ -232,7 +233,6 @@ It also contains cygwin GCC executables that can be used to compile the C-source
 
 ---
 ## Hardware Verilog source code (tako_main_052306.tgz/hw)
-
 Contains:
 * Makefile - main makefile to build all the Verilog and **C** source code
 * chip
@@ -277,7 +277,6 @@ Converts a PPM Image to whatever the output of the function **gxuGetTiledImage**
 
 ---
 # Gamecube Portable
-
 The GC portable was mentioned in a 2003 presentation, note that this is 3 years before the Wii was released on to the market.
 
 There was plans to make a console much more powerful than what became the Wii and there was also to be a portable version with a dock similar to the Nintendo Switch.

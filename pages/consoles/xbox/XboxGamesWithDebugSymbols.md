@@ -22,6 +22,7 @@ recommend:
 editlink: /consoles/xbox/XboxGamesWithDebugSymbols.md
 updatedAt: '2020-01-12'
 ---
+
 **Debug symbols** left in games make reverse engineering almost a piece of cake, giving useful names to each of the functions in an executable and sometimes even full local variable naming and source code references.
 
 However most developers are very careful not to leak any debug symbols, especially into retail releases, so most games will not have publicly available debug symbols. 

@@ -75,7 +75,6 @@ However version 6.6.0 of the official SDK does contains the ProDG installers fro
 
 ---
 # Pro DG for PSP 1.4.1 (ProDGforPSPv1.4.1.exe)
-
 The **ProDGforPSPv1.4.1.exe** installer is the last version we are aware of for the PRODG SDK and was released in the official Sony SDK version 6.6.0 in 2011. 
 
 It is a windows setup executable thats installs the main SDK to **C:\Program Files\SN Systems\PSP\** but not the Artist tools (ProView) or the performance optimizer (Tuner).
@@ -459,7 +458,6 @@ main | .c | Example calling sceIoOpen, sceIoWrite etc
 
 ---
 # ProView for PSP 1.2.1 (ProViewforPSPv1.2.1.exe)
-
 The installer executable contains the following files:
 * Target Manager v1.8.4
 * Target Manager SDK
@@ -468,7 +466,6 @@ The installer executable contains the following files:
 * Documentation in CHM and PDF format
 
 ## Install Process
-
 It installs into **C:\Program Files\SN Systems\PSP\**:
 <img width="495" alt="image" src="https://github.com/user-attachments/assets/9bd979bd-9542-4afa-833e-38cc756128b9">
 

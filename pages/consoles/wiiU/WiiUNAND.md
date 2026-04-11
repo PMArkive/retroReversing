@@ -31,7 +31,7 @@ Be very careful with NAND changes as the wiiU has no way of fixing the NAND if i
 
 ## NAND Backup
 Every NAND backup is unique and only belongs to the system it came from. Every console has it's own unique soul you can say [^1].
-So you can’t use someone else’s NAND backup for your own wiiU!
+So you can't use someone else's NAND backup for your own wiiU!
 
 ## redNAND (Redirected NAND)
 Imagine you could use your SD card instead of the internal system NAND, that means you could modify it as much as you want and when it bricks you just fix the files on SD card. Well that is exactly what redNAND does!

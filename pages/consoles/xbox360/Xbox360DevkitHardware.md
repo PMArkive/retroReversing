@@ -113,7 +113,6 @@ The second Beta version was very similar to the first however it has the huge ad
 
 ---
 # Final XDK Development Kits
-
 There were multiple motherboard variations of the final development kits, to match the retail Xbox 360 which had the same motherboards:
 * Xenon (2005) - First 360 motherboard, similar to the XeDK Alpha and Beta [^6]
 * Zephyr(2007) - Introduced with the Xbox 360 Elite [^6]
@@ -153,7 +152,6 @@ Video of it in action:
 
 ---
 # Xbox 360 Slim Development Kit
-
 The Sidecar for the Xbox 360 S Development kit is optional, and when not present it is a Test Kit instead [^5], which is an efficient way to produce both test and development kits, and allows game studios to upgrade test kits when needed.
 Some units are dated from 2011.
 

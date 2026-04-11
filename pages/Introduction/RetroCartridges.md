@@ -32,6 +32,7 @@ videocarousel:
     youtube: 'gYQMdox5gzI'
 updatedAt: '2020-08-24'
 ---
+
 Have you ever wondered what exactly is inside those retro game Cartridges (ROMs)? In this post we will find out the purpose of ROM cartridges and how they worked.
 
 # Advantages of Cartridges

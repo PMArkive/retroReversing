@@ -38,7 +38,6 @@ For Zelda, this archive is far more revealing than a simple source drop. It pres
 
 ---
 ## At a Glance
-
 **Key takeaways**
 
 * `Disk1` is the most important part of the leak: the main JP3/US3/EU2 snapshot, plus demo material, SRAM samples, and bug-fix notes
@@ -54,7 +53,7 @@ Disk2 | More localisation branches and another demo workspace | Shows how the pr
 Disk3 | Test builds, support folders, experiments, and utilities | Feels like an active working disk rather than a clean backup
 
 ---
-## What’s Inside CGB.7z
+## What's Inside CGB.7z
 {% capture root_body %}
 At the root level the archive contains one Zelda DX source backup and one unrelated Hamtaro 2 master build folder.
 {% endcapture %}
@@ -202,7 +201,6 @@ C_USA | .PIF | Project/debug configuration file for the US branch
 c_usa | .isx | US in-circuit emulator image
 
 ### Why This Branch Matters
-
 If you only explore one regional branch in the whole DX archive, the US one is probably the best choice. It shows the project at three different layers at once:
 
 * `cgb` as the shared engine workspace
@@ -210,7 +208,6 @@ If you only explore one regional branch in the whole DX archive, the US one is p
 * `gb` as the older monochrome Game Boy path still living inside the Color project
 
 ### The Shared cgb Engine Layer
-
 The base `cgb` folder still looks like the common engine room for all regions. Instead of separating clean source from generated files, it keeps everything in one working directory.
 
 Type | Examples | What it tells us
@@ -220,10 +217,9 @@ Object outputs | `ZMA.o`, `ZPL.o`, `ZEX.o`, `ZEND.o`, `ZDB.o`, `ZMS.o` | The fol
 Raw assets | `C1.CHR`-`C8.CHR`, `BGM_1.HEX`, `BGM_2.HEX`, `SE.HEX`, `RZ.ICE` | Graphics, music, sound, and compressed/debug assets sit right beside the code
 Build/debug files | `C.isx`, `C.map`, `.prn` listings, `isdwdcmd.dat`, `isdwdrng.dat`, `isdwdsym.dat` | The team was building and debugging directly out of this branch with Intelligent Systems tooling
 
-That makes `cgb` feel less like a preserved “source folder” and more like a bench covered in tools, parts, and half-finished work.
+That makes `cgb` feel less like a preserved "source folder" and more like a bench covered in tools, parts, and half-finished work.
 
 ### The US-Specific cgb_usa Overlay
-
 `cgb_usa` is where the branch becomes much more interesting. This is not just translated text dropped on top of a shared codebase. It is a full US production overlay with region-specific source, generated outputs, content folders, and editorial notes.
 
 Folder | What is inside | Why it is interesting
@@ -247,7 +243,6 @@ Interesting US-only files worth calling out:
 Taken together, `cgb_usa` reads like a real production branch, with content, tools, generated data, and notes all living side by side rather than being cleaned up for archiving.
 
 ### The Hidden DMG Project Inside DX
-
 The `gb` folder under `CGB_zeldaUSA` may be the single most revealing part of the entire US branch.
 
 It preserves what is effectively a near-complete monochrome Game Boy Zelda tree inside the DX project, including:
@@ -315,13 +310,11 @@ CGX, COLOR, COLOR2, ATR, ATR2, OBJ, TEXT, PHOTO, Geki, ENDING, COM | folders | M
 debug, save, aada | .txt / .doc | Internal notes for debugging, SRAM layout, and code cross-references
 
 ### Built Outputs and Build Scripts
-
 The top level is full of finished or near-finished outputs, not just source. `AZLJ01-0.GB`, `AZLJ01-1.GB`, and `cgbzelda.gb` are all full 1 MB ROM images, while `cgbzelda.com` and `dmzel5.com` preserve different points in the build history. The date spread is useful here: `dmzel5.com` is from 14 July 1998, but the main `AZLJ01-*` builds are from 10 November 1998, which makes `DEMO_zelda` look like a workspace that stayed active over several months rather than a one-off demo drop.
 
 The build scripts back that up. `cgal.bat` assembles a much broader module set than the plain regional branches, including `ZDB2`, `ZCOL`, `ZCOLSUB`, `ZPLSUB`, `ZWIN`, `ZJP`, `ZFADE`, `ZBDATR`, `ZATR`, `ZMAP`, `ZPR`, `ZGEKI`, `ZGKDAT`, `ZGKANM`, `ZGKSCR`, `ZEND2`, and `zsgb`. That looks less like a simple region overlay and more like a feature-heavy demo or presentation branch with extra cutscene, fade, panel, map, and Super Game Boy support code wired in.
 
 ### Internal Notes and Debug Aids
-
 Some of the most revealing material in the folder is not code at all:
 
 * `debug.txt` explains hidden debug behavior for the DX build, including a START+SELECT style BG-collision bypass, a way to reset photo-related demo state, and a shortcut that jumps straight to the ending
@@ -329,10 +322,9 @@ Some of the most revealing material in the folder is not code at all:
 * `aada.doc` is a developer cross-reference note that points to exact source files and labels for systems like Marin behavior, hidden or "cheat" mode, BG pass-through, dungeon entrance data, rotating doors, item display logic, and new-dungeon setup
 * `TEST1.SCR` and `TEST2.SCR` suggest dedicated screen-layout experiments were being kept right in the same working folder
 
-That combination makes `DEMO_zelda` especially valuable for low-level research, because it does not just preserve source - it also preserves the team’s own notes for how to navigate and manipulate the build.
+That combination makes `DEMO_zelda` especially valuable for low-level research, because it does not just preserve source - it also preserves the team's own notes for how to navigate and manipulate the build.
 
 ### Graphics and Content Work Areas
-
 The asset side is just as busy. `CGX` alone contains a dense mix of title, level, event, and character graphics such as `title.cgx`, `zora.cgx`, `gekituri.cgx`, `gekituric.cgx`, `clz1_DEMO.cgx`, `clz4_USA.cgx`, and `TEST_clz5.cgx`. `COLOR` and `COLOR2` hold large banks of `.CDT` color-definition files with names tied to maps, cutscenes, dungeons, the camera/photo system, and specific background groups.
 
 The supporting folders make the same point from different angles:
@@ -368,7 +360,6 @@ Type | Approximate count | What that suggests
 `.PNL` | 47 | Panel or attribute-layout resources were part of the same workflow
 
 ### What the Folder Looks Like
-
 The top level already feels like a designer or artist sandbox. Files such as `gekigake1.scr`, `gekiwanc.scr`, `cameururira.cgx`, `phoshasinya_p.cgx`, `BGUNCH.pnl`, `DJUNCH.pnl`, `tamesi50.col`, and `zelobjcol.col.BAK` mix event graphics, photo-related assets, test colors, and panel data in one place. Even before looking into the level folders, it is obvious that this was not arranged as a neat export directory.
 
 Below that, `kimura` branches into per-dungeon work areas like `Level-1`, `Level-2`, `Level-4`, `Level-5`, and `Level-6`. Each one follows a very hands-on pattern:
@@ -383,7 +374,6 @@ Below that, `kimura` branches into per-dungeon work areas like `Level-1`, `Level
 That makes the folder read less like "graphics resources" and more like a per-room edit history.
 
 ### Level-2 as a Worked Example
-
 `Level-2` is especially revealing because it preserves active room-by-room work. The folder contains files like `ROOM20.CGX`, `ROOM20.MAP`, `ROOM20.SCR`, then repeats the same pattern through `ROOM3F`, usually with `.BAK` copies sitting right next to the active file. It also includes alternate screen variants like `ROOM20c.SCR`, `ROOM21c.SCR`, `ROOM22c.SCR`, and `ROOM23c.SCR`.
 
 The timestamps make the process visible:
@@ -395,7 +385,6 @@ The timestamps make the process visible:
 That pattern suggests the team was touching graphics, maps, and screen scripts in separate passes rather than exporting everything in one go.
 
 ### Why the Backups Matter
-
 The huge number of `.BAK` files is probably the most interesting part of `kimura`. These are not just a few safety copies. They exist for room graphics, room maps, room screens, panel files, color files, and top-level event assets across multiple levels.
 
 For low-level development history, that matters because it preserves something source trees often lose:
@@ -425,7 +414,6 @@ Disk 1 also preserves two separate save-data areas, and both are useful for unde
 {% include connected-folder-tree.html folder="Save RAM" path="/SRAMデータ and /azljsram" body=save_ram_body %}
 
 ### Quick SRAM Snapshots
-
 `SRAMデータ` literally means "SRAM data" and contains four standalone save dumps:
 
 File Name | Extension | Description
@@ -439,7 +427,6 @@ All four files are exactly 8192 bytes, which matches a single 64 kbit SRAM bank 
 
 ---
 ### The azljsram Archive
-
 The `azljsram` folder is much more formal. Its `readme.txt` says the archive contains SRAM data for the "Zelda no Densetsu: Yume o Miru Shima DX" cartridge, and explains that each `No1` to `No4` folder stores a 256 kbit SRAM image split into 64 kbit chunks named `azlj??-?.bin`, where the first number is the cartridge number and the second is the SRAM bank number.
 
 That structure is worth spelling out more clearly:
@@ -453,7 +440,6 @@ Folder | Contents | What stands out
 
 ---
 ### What the Bank Layout Shows
-
 Looking more closely at the data, the split archive behaves less like four save slots and more like four separate cartridge captures:
 
 * `azlj01-0.bin` through `azlj04-0.bin` are the only consistently "live" banks, each containing a mix of real data, `00`, and large `FF` regions
@@ -463,7 +449,6 @@ Looking more closely at the data, the split archive behaves less like four save 
 
 ---
 ### Dates and Tooling
-
 The timestamps also split into two useful phases:
 
 * the raw `azlj??-?.bin` cartridge chunks were written on 15 June 1999
@@ -473,7 +458,6 @@ That suggests `azljsram` was not just a folder of save files copied out of the g
 
 ---
 ### Why It Matters
-
 Taken together, Disk 1 seems to preserve two different save-data workflows at once:
 
 * `SRAMデータ` for quick one-bank snapshots with informal labels
@@ -652,7 +636,6 @@ Folder | What it looks like | Why it matters
 
 ---
 ## TEST_zelda
-
 `TEST_zelda` is the most informative new folder on Disk 3. It is smaller than `DEMO_zelda`, but it is much more focused. Instead of being a broad release or regional branch, it looks like a dedicated test workspace for room data, dungeon resources, and colorised asset experiments.
 
 File counts help show the difference in scale:
@@ -665,7 +648,6 @@ Folder | Files | Directories
 That makes `TEST_zelda` large enough to be a serious project folder, but still compact enough that its purpose reads more clearly.
 
 ### How Separate It Is from DEMO_zelda
-
 The first important point is that `TEST_zelda` is not just a trimmed demo copy.
 
 Measure | `TEST_zelda` versus Disk 3 `DEMO_zelda`
@@ -679,7 +661,6 @@ That overlap is real, but it is much smaller than it first appears. The shared s
 Even inside the shared set, many files are not identical. `zmap.s`, `zti.s`, `gbmsdt.s`, `cgal.bat`, `ddd`, `C.isx`, `T.isx`, both map files, many `CGX` graphics, and many `.CDT` color files all differ from the copies in `DEMO_zelda`.
 
 ### A Dungeon and Room Test Bench
-
 The strongest clue is the layout of the level folders:
 
 * `Level-5`, `Level-6`, `Level-7`, and `Level-8` each split into `CGX` and `SCR`
@@ -700,7 +681,6 @@ Folder | What survives there | What it suggests
 The room ranges also feel deliberate rather than arbitrary. `Level-5` preserves `ROOM80.bin` through `ROOMA9.bin`, `Level-6` runs through `ROOMB0.bin` onward, `Level-7` adds special files like `HASIRA.bin`, and `Level-8` carries another long contiguous room run. With `MAP/zel_map1.MDT` and `MAP/zel_map2.MDT` sitting beside them, the branch reads like a real dungeon test harness.
 
 ### Japanese Staging Folders
-
 Some of the most revealing content is in the Japanese-named side folders:
 
 Folder | What is inside | Why it matters
@@ -712,7 +692,6 @@ Folder | What is inside | Why it matters
 Those folders make the branch feel much more practical. Instead of everything being folded back into the main tree, the team left behind little staging zones for testing UI pieces, attribute data, and ending screens in isolation.
 
 ### Two Build Paths in One Folder
-
 Like the main demo workspace, `TEST_zelda` is not cleanly separated into source versus build. The code, tools, intermediates, and debugger outputs all live together:
 
 * source files like `zma.s`, `zpl.s`, `zti.s`, `zchr.s`, `zcol.s`, and `gbmsdt.s`
@@ -732,14 +711,12 @@ So `TEST_zelda` was not just a content test folder. It was a place where overlap
 The timestamps back that up too. Most of the source and object files cluster around mid-1998 through September 1, 1998, while inherited files like `GBMSDT.DMG`, `BGM_1.HEX`, and `SE.HEX` still carry much older 1993 dates.
 
 ### What Makes It Different from DEMO_zelda
-
 `TEST_zelda` overlaps heavily with the broader Zelda workspaces, but it is not just a smaller copy. The room-heavy level folders, the test graphics like `TEST.CGX`, the standalone `TEST1.SCR` and `TEST2.SCR`, the Japanese staging folders, and the concentration of panel/color resources all make it feel like a staging area for dungeon and screen experiments.
 
 If Disk 1 showed how the main project was organised, `TEST_zelda` shows how specific parts of it were actually poked, rebuilt, and checked. It is one of the clearest places in the leak where Nintendo's dungeon iteration process, low-level asset pipeline, and overlapping DMG/CGB tooling all sit together in one branch.
 
 ---
 ## DEMO_zelda on Disk 3
-
 Disk 3 also carries another `DEMO_zelda`, but this one is much rougher than the cleaner snapshots on Disk 1 and Disk 2.
 
 A recursive compare against Disk 1 shows the overall shape:
@@ -763,7 +740,6 @@ That makes the Disk 3 copy valuable in a different way from Disk 1. Disk 1 is th
 
 ---
 ## bgcheck
-
 `bgcheck` is one of the nicest little utility folders in the whole leak.
 
 Its `readme.txt` describes it as a CGB one-picture CG check program. The workflow is very direct:
@@ -781,7 +757,6 @@ The shape of the tool suggests something important. `bgcheck` itself looks gener
 The implementation details make it even better. `XYZ.BAT` assembles only two modules, `hy_main` and `chars`, then links them into `X`. That means this was deliberately kept tiny: a miniature viewer, not a cut-down copy of the main game.
 
 ### How the Viewer Actually Works
-
 The code in `hy_main.s` and `hy_prog.s` shows that `bgcheck` is not limited to a single static screen. It is a small banked browser.
 
 Part | What it does | Why it matters
@@ -795,7 +770,6 @@ Part | What it does | Why it matters
 So while the `readme.txt` talks about checking one picture, the actual program is closer to a compact preset viewer. It can step through multiple packed screens without rebuilding the whole viewer each time.
 
 ### What chars.s Reveals
-
 `chars.s` is where the most interesting evidence lives. Instead of embedding placeholder data, it `libbin`s real Zelda assets directly into banked slots.
 
 The packed presets include:
@@ -833,7 +807,6 @@ The subfolders are even better:
 Those subfolders also make it easier to guess what the names mean. `KIMKYO` is very likely another Kimura-linked art workspace, while `HABU` looks like a separate contributor's sample set. Either way, `bgcheck` was clearly being used with real Link's Awakening DX assets, not just neutral test data.
 
 ### Why It Matters
-
 This folder is such a strong survivor because it captures a step that is usually invisible in release-era archives: the quick art-check loop.
 
 Instead of:
@@ -848,7 +821,6 @@ The evidence also supports a slightly broader point. I did not find another copy
 
 ---
 ## The DMG Support Folders
-
 `GBZE` and `gbzelda` are the clearest reminder on Disk 3 that the DX project was still carrying around a full monochrome Zelda world.
 
 Both folders are flat DMG-era workspaces full of familiar pieces:
@@ -871,7 +843,6 @@ Neither folder is as rich as the Disk 1 regional trees, but together they reinfo
 
 ---
 ## CGB_samp
-
 `CGB_samp` looks like a general low-level Game Boy Color sample package rather than a Zelda branch.
 
 Its file list is built around reusable test programs and helper modules:
