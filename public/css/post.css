@@ -28,13 +28,23 @@
 @media (max-width: 768px) {
     .post h1 {
       font-size: 20px;
-      margin-left: unset! important;
+      margin-left: unset !important;
+    }
+    .post {
+      /* On Phone don't have the text touching the side */
+      margin-left: 1vw;
     }
 
     /* Youtube videos should be full width on phone */
     .post iframe {
       width: 100vw !important;
-      margin-left: -20px !important;
+      margin-left: -5px !important;
+    }
+
+    .post table {
+      display: block !important;
+      max-width: 100vw !important;
+      overflow: scroll;
     }
 }
 

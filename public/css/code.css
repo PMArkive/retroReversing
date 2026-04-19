@@ -7,6 +7,11 @@
     margin-bottom: 0
 }
 
+.gist {
+    max-height: 50vw !important;
+    overflow: scroll !important;
+}
+
 .gist .gist-file {
     font-family: Menlo, Monaco, "Courier New", monospace !important
 }
