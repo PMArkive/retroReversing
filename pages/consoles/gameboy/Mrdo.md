@@ -925,7 +925,7 @@ If you want to run the `rgbasm`/`rgblink` sanity-check commands locally, install
 * **Linux** - Install via your distro package manager, or use the official release tarball + `install.sh` [^9].
 * **Windows** - Use WSL and follow the Linux instructions, or use the official `.zip` release and add it to your `PATH` [^10].
 
-To generate a converted file:
+To generate a converted file we have a script [convert-mrdo-to-rgbds.py](https://gist.github.com/RetroGameDeveloper/bfecf7c09eea56398f4bc66d25d4d5ee#file-convert-mrdo-to-rgbds-py):
 ```bash
 python3 scripts/convert-mrdo-to-rgbds.py mrdo.asm build/mrdo.rgbds.asm
 ```
@@ -971,6 +971,20 @@ The direct conversion build does not match the retail binary byte-for-byte (it i
 * **Window coverage** - at a 256-byte window size, `17024/32768` bytes (52.0%) from `build/mrdo.gb` appear verbatim somewhere in the retail ROM.
 * **Offset equality is low** - only `1731/32768` bytes (5.28%) are identical at the same file offsets because the retail image is banked and laid out differently.
 * **Different build lineage strings** - text like `"CLONE"` / `"TWINS"` / `"REMIX"` appears in the source-derived builds but does not appear in the retail ROM, which is a quick way to confirm you are not comparing a simple re-link.
+
+---
+#### Build completeness sanity check
+Because the direct conversion output is only 32 KiB, it is reasonable to ask whether code went missing during conversion/linking.
+To make that question testable, we have a small audit script:
+[audit-mrdo-build-completeness.py](https://gist.github.com/RetroGameDeveloper/bfecf7c09eea56398f4bc66d25d4d5ee#file-audit-mrdo-build-completeness-py)
+
+```bash
+python3 scripts/audit-mrdo-build-completeness.py
+```
+
+At the moment, it reports:
+* every ROM-side "procedure-style" label from the released source snapshot is present in `build/mrdo.map`.
+* none of those labels were accidentally assembled into a RAM region (they all land in `ROM0` or `ROMX`).
 
 ---
 #### Header-level differences
