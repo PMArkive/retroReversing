@@ -39,7 +39,7 @@ Use this skill whenever you create or edit content in the `retroReversing` repo 
    * For external "standalone" links (own paragraph/line), use the include:
      * `link-to-other-site.html` with `title`, `url`, `description`.
    * For links to other RetroReversing pages, prefer:
-     * `{% include_cached link-to-other-post.html post="/permalink" %}`
+     * `{% raw %}{% include_cached link-to-other-post.html post="/permalink" %}{% endraw %}`
 8) Code examples:
    * Use TypeScript when it's runnable interactively in-browser; otherwise use Python for local scripts.
    * Use fenced code blocks with a language tag; use `nasm` for assembly highlighting.
@@ -47,7 +47,7 @@ Use this skill whenever you create or edit content in the `retroReversing` repo 
 
 ### Preferred Site Components (use instead of ad-hoc HTML)
 * External "standalone" link blocks: `link-to-other-site.html`.
-* Internal links to RetroReversing pages: `link-to-other-post.html` via `{% include_cached ... %}`.
+* Internal links to RetroReversing pages: `link-to-other-post.html` via `{% raw %}{% include_cached ... %}{% endraw %}`.
 * Folder listings / nested trees: `connected-folder-tree.html` rather than raw HTML or bullet dumps.
 * Source-file callouts: `source-code-card.html` / `source-code-card-grid.html` when actually showing real file contents/symbols.
   * The `functions`, `variables`, and `lines` fields must be exact numeric counts from the file.
