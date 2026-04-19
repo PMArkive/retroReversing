@@ -5,8 +5,9 @@ tags:
 - games
 - sourcecode
 title: Mr Do! Source Code (Game Boy)
-category: gameboy
-youtube: "qLtNkZ1GHh0"
+category: 
+- gameboy
+- sourcecode
 image: /public/games/MrDoGameboy.jpg
 permalink: /mrdo
 breadcrumbs:
@@ -16,8 +17,6 @@ breadcrumbs:
     url: /gameboy
   - name: Mr Do! Source Code (Game Boy)
     url: #
-recommend:
-- gameboy
 editlink: /consoles/gameboy/Mrdo.md
 updatedAt: '2026-04-14'
 ---
@@ -76,6 +75,8 @@ If you are new to Game Boy reverse engineering terminology, this quick glossary 
 * <a id="glossary-vram"></a>**VRAM** - Video RAM (`$8000-$9FFF`) containing tile graphics and background/window tilemaps [^3].
 * <a id="glossary-wram"></a>**WRAM** - Work RAM (`$C000-$DFFF`) used for variables, buffers, and scratch space [^3].
 * <a id="glossary-hram"></a>**HRAM** - High RAM (`$FF80-$FFFE`) used here to run short routines (including the DMA trigger) without being blocked during OAM DMA [^3].
+* <a id="glossary-mbc1"></a>**MBC1** - A Game Boy cartridge mapper that enables ROM bank switching (writes to `$2000-$3FFF` select the active `ROMX` bank) [^3].
+* <a id="glossary-rom0"></a>**ROM0 / ROMX** - The fixed 16 KiB window at `$0000-$3FFF` (ROM0) and the switchable 16 KiB window at `$4000-$7FFF` (ROMX) [^3].
 
 ---
 # Code overview
