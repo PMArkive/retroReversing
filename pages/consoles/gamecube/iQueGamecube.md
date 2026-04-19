@@ -17,7 +17,6 @@ breadcrumbs:
     url: #
 redirect_from:
  - /ique
- - /ique-gamecube/
 recommend: 
 - gamecube
 - sdk
