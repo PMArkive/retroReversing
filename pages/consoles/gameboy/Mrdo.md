@@ -18,7 +18,7 @@ breadcrumbs:
   - name: Mr Do! Source Code (Game Boy)
     url: #
 editlink: /consoles/gameboy/Mrdo.md
-updatedAt: '2026-04-14'
+updatedAt: '2026-04-19'
 ---
 
 # Introduction
@@ -912,15 +912,11 @@ We have written a best-effort converter that keeps the original `mrdo.asm` untou
 What it does:
 * converts `EQU`/`DEFB`/`DEFW`/`DEFS`, turns `HEX` into `db $..`, and maps each `ORG` to an explicit `SECTION`.
 * **Heuristic bank split** - The converter includes a pragmatic split so the output links as a simple ROM-only build: `ORG $800` becomes fixed ROMX bank 1 code, and the `SCENE1`+ data block is placed back into ROM0 at `$0800`.
-* **Retail-style profile** - The converter also supports a `--profile retail-mbc1` mode that attempts to produce a 64 KiB `MBC1`-style image by placing a handful of large asset blocks into banks that match signature hits in the retail ROM.
 * **Main limitation** - The original toolchain could pre-initialize RAM, but RGBDS cannot, so WRAM/HRAM sections in the output are primarily for symbol addresses (you still need real init/copy code for a working rebuild).
 * **Interrupt vector stubs** - The converter injects `reti` stubs at `$0040/$0048/$0050/$0058/$0060` because the release enables interrupts (`IE=1` then `EI`) but does not define handlers in the vector table. Without this, a rebuild will often crash or "flash" as soon as VBlank fires [^3].
 
 One thing to keep in mind is that this converted build is not trying to match the retail ROM layout.
-The retail Mr Do! ROM is a banked `MBC1` cartridge and is effectively a 64 KiB-class image (4 x 16 KiB banks), while the current converter is set up to link a minimal 2-bank layout so you can explore the code paths quickly.
-To produce a ROM image that matches retail size and banking, you will need to:
-* split the file into multiple `ROMX` banks (and use a MBC header / `rgbfix` flags that match the chosen banking model) and
-* reconcile which content belongs in which bank by comparing against a known-good retail ROM (checksums + bank contents).
+The retail Mr Do! ROM is a banked `MBC1` cartridge and is effectively a 64 KiB-class image (4 x 16 KiB banks), while the direct conversion build is a minimal 32 KiB `ROM ONLY` image so you can explore code and data quickly.
 
 
 ### Installing RGBDS
@@ -949,88 +945,37 @@ It supports three useful comparisons:
 * **Coverage scan** - a fast sliding-window scan that estimates how much of the rebuilt ROM appears verbatim in the retail ROM (useful for data/graphics blocks that should match exactly).
 * **Signature search from a map** - take a `rgblink -m` map from the rebuilt ROM and search for `N`-byte sequences inside the retail ROM to find where specific labels land.
 
-For a retail-like 64 KiB build attempt:
-```bash
-python3 scripts/convert-mrdo-to-rgbds.py mrdo.asm build/mrdo.retail.rgbds.asm --profile retail-mbc1
-rgbasm -o build/mrdo.retail.o build/mrdo.retail.rgbds.asm
-rgblink -m build/mrdo.retail.map -n build/mrdo.retail.sym -o build/mrdo.retail.gb build/mrdo.retail.o
-rgbfix -v -p 0xFF -m MBC1 -t "MR.DO!" build/mrdo.retail.gb
-```
-
-Then compare it against your retail ROM:
+Then compare the direct conversion build against your retail ROM:
 ```bash
 python3 scripts/compare-gb-roms.py \
-  --rebuilt build/mrdo.retail.gb \
+  --rebuilt build/mrdo.gb \
   --original build/mrdo_original.gb \
-  --map build/mrdo.retail.map \
+  --map build/mrdo.map \
   --scan-map \
-  --sig-len 128 \
+  --sig-len 32 \
   --window 256 \
   --strings
 ```
 
 ---
 #### Current repo comparison results
-This repository already includes a known-good retail ROM at `build/mrdo_original.gb`, plus two rebuild outputs (`build/mrdo.gb` and `build/mrdo.retail.gb`).
-As of `2026-04-12`, the headline results are:
+This repository already includes a known-good retail ROM at `build/mrdo_original.gb`, plus the direct conversion build at `build/mrdo.gb`.
+As of `2026-04-19`, the headline results are:
 
 ROM | Size | Title | Cart type | SHA256
 ---|---|---|---|---
 `build/mrdo_original.gb` | 64 KiB | `MR.DO!` | `MBC1` | `c19f7ec9ff29fa438d7ef189f81711dcaedaa55c86b192d6d9020f5f7dc22702`
-`build/mrdo.retail.gb` | 64 KiB | `MR.DO!` | `MBC1` | `d6e4a52072e4c6d4d1a34bd126617ce4340150cd351ddeafdcc7d842bbb6e4f3`
 `build/mrdo.gb` | 32 KiB | `MRDO!` | `ROM ONLY` | `bb824ead872abaf5055be48c42c01873bbda749afb400353682bea9bfc565fda`
 
-Both 64 KiB images use the same visible header identity (title `MR.DO!`, cartridge type `MBC1`, ROM size code `0x01`).
-However, neither rebuilt image matches the retail binary byte-for-byte:
-* **No exact bank matches** - none of the 16 KiB banks in `build/mrdo.retail.gb` are identical to any bank in `build/mrdo_original.gb`.
-* **High verbatim data coverage** - a 256-byte sliding window scan finds `49600/65536` bytes (75.7%) from `build/mrdo.retail.gb` somewhere in the retail ROM.
-* **Explore build coverage is lower** - the ROM-only explore build (`build/mrdo.gb`) still finds `17024/32768` bytes (52.0%) somewhere in the retail ROM, which is a useful sanity check that many assets are shared even when the overall layout differs.
+The direct conversion build does not match the retail binary byte-for-byte (it is a different size and layout), but it still contains many verbatim data/code blocks:
+* **Window coverage** - at a 256-byte window size, `17024/32768` bytes (52.0%) from `build/mrdo.gb` appear verbatim somewhere in the retail ROM.
+* **Offset equality is low** - only `1731/32768` bytes (5.28%) are identical at the same file offsets because the retail image is banked and laid out differently.
 * **Different build lineage strings** - text like `"CLONE"` / `"TWINS"` / `"REMIX"` appears in the source-derived builds but does not appear in the retail ROM, which is a quick way to confirm you are not comparing a simple re-link.
-
-If you use `--scan-map` with a longer signature length (128 bytes), you do start getting "anchor" hits for a handful of large `HEX` blocks and assets.
-These are useful when tightening the bank-placement heuristic for a more retail-like layout:
-
-Symbol | Rebuilt bank:addr | Retail hit bank:addr
----|---|---
-`CBADS` | `bank3:$4C00` | `bank1:4C00`, `bank3:4C00`
-`CHEADS` | `bank2:$4D60` | `bank2:4D60`
-`CHRTABLE` | `bank0:$0400` | `bank0:0400`
-`CICONS` | `bank2:$4B20` | `bank2:4B20`
-`CLOGO` | `bank2:$4080` | `bank2:4080`
-`CMRDO` | `bank3:$4000` | `bank3:4000`
-`CMRSDO` | `bank3:$4300` | `bank3:4300`
-`CSTAR` | `bank2:$47F0` | `bank2:47F0`
-`LOGO` | `bank0:$0E3B` | `bank0:0E3B`
-
-These numbers can look contradictory at first glance (for example: a symbol can have a 128-byte signature hit, while still sitting inside a "no 256-byte window match" region).
-That is simply an artifact of the window size: 128-byte runs can match without any 256-byte run matching.
 
 ---
 #### Header-level differences
 The retail ROM's banking/layout is not described by the header block embedded in the released `mrdo.asm`.
 For example, the source's `ORG $100` header declares `ROM ONLY` and a ROM size code of `0`, while the retail ROM is a 64 KiB `MBC1` image.
-
-In this repository, the retail-style converter can splice the exact `$0100-$014F` header bytes from `build/mrdo_original.gb` into the rebuilt image so the header matches retail byte-for-byte.
-This is useful for isolating layout and bank-placement differences from header/metadata differences.
-If you run `rgbfix -v` afterwards, RGBDS will recalculate and overwrite the checksum fields (`$014D` and `$014E-$014F`), so the rebuilt header will no longer be byte-identical to retail even if the title/logo fields match.
-
----
-#### Offset-aligned similarity vs relocated similarity
-There are two different "closeness" metrics that are both useful:
-* **Offset-aligned equality** - how many bytes are identical at the same file offsets.
-* **Window coverage** - how much of the rebuild appears verbatim *somewhere* in the retail ROM, even if it moved.
-
-For the current retail-style rebuild, only `16278/65536` bytes (24.8%) are identical at the same offsets, because large blocks have moved between banks and within banks.
-By contrast, the 256-byte window coverage scan finds 75.7% of rebuilt bytes occurring verbatim somewhere in retail (and 77.9% at a 128-byte window).
-
-Per-bank offset-aligned equality looks like this:
-
-Bank | Equal bytes at same offsets | Notes
----|---|---
-bank0 | `1496/16384` (9.1%) | Header is identical, but ROM0 tables are still in flux
-bank1 | `1080/16384` (6.6%) | Bank 1 still differs heavily (code + tables)
-bank2 | `5560/16384` (33.9%) | Many assets line up at the same offsets
-bank3 | `8142/16384` (49.7%) | Largest "same-offset" overlap in this build
 
 ---
 #### Why the banking/layout differs
@@ -1058,13 +1003,17 @@ Treat the `ORG $100` header block in `mrdo.asm` as "what this particular source 
 
 ---
 #### What is in the "no 256-byte match" regions
-The 256-byte window scan flags a few large regions where **no 256-byte chunk** matches anywhere in the retail ROM.
-To make those regions actionable, here are the notable map labels that live inside them:
+The 256-byte window scan flags a few large regions where **no 256-byte chunk** from the direct conversion build appears anywhere in the retail ROM.
+Those regions are interesting because they are strong candidates for:
+* toolchain-generated tables that never existed in the source snapshot,
+* later bugfix/content additions,
+* code/data that is present in the released source but gets rearranged enough that 256-byte windows no longer line up.
 
-* `bank1:4000..bank1:56DE` - tables + core code, including `DMATRANS`, `SYSETUP`, and `START`.
-* `bank2:4EC0..bank2:56FF` - large graphics blocks `CBIGMRDO` and `CBIGAPPLES`.
-* `bank3:4C00..bank3:609F` - a large asset + menu cluster starting at `CBADS`, plus `MENU`/`SLOGO`/`OPTIONS` and friends.
-* `bank0:0000..bank0:03FF` - boot/interrupt-area differences (the converter emits minimal `reti` stubs rather than retail handlers).
+In the current `build/mrdo_original.gb` vs `build/mrdo.gb` comparison, the largest retail-only regions (window=256) start at:
+* `bank1:4600..bank1:7FFF` - text/tables-heavy region.
+* `bank0:0608..bank0:3FFF` - a large ROM0 region with many strings/tables.
+* `bank2:4EC0..bank2:7FFF` - a large bank 2 region.
+* `bank3:4600..bank3:6FFF` - a large bank 3 region.
 
 If you see:
 * **No exact bank matches** - that is normal when the layout does not match byte-for-byte.
@@ -1379,7 +1328,7 @@ Procedure | Rebuilt bank:addr | Retail bank:addr | Retail file offset
 
 ---
 ### Retail offsets for known verbatim code blocks
-If you want to map the retail ROM quickly, these labels have a unique 32-byte verbatim signature match inside `build/mrdo_original.gb` (found by scanning `build/mrdo.retail.map` against the retail binary):
+If you want to map the retail ROM quickly, these labels have a unique 32-byte verbatim signature match inside `build/mrdo_original.gb` (found by scanning `build/mrdo.map` against the retail binary):
 
 Label | Retail bank:addr | Retail file offset
 ---|---|---
